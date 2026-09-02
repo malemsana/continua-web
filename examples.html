@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 10 Mathematics Chapter 1 Real Numbers Examples — Continua</title>
+  <meta name="title" content="Class 10 Mathematics Chapter 1 Real Numbers Examples — Continua">
+  <meta name="description" content="Worked examples from Class 10 Mathematics Chapter 1 Real Numbers — sequential solved examples with step-by-step reasoning.">
+  <link rel="canonical" href="https://continua.edu/class-10/mathematics/real-numbers/examples/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+  <style>
+    :root {
+      --color-navy: #1e293b;
+      --color-navy-dark: #0f172a;
+      --color-navy-light: #334155;
+      --color-bg-page: #ffffff;
+      --color-bg-surface: #f8fafc;
+      --color-bg-card-hover: #f1f5f9;
+      --color-bg-hero: #eff2fa;
+      --color-border: #e2e8f0;
+      --color-border-subtle: #edf2f7;
+      --color-border-navy: rgba(255, 255, 255, 0.12);
+      --color-text-main: #0f172a;
+      --color-text-body: #1e293b;
+      --color-text-subtle: #475569;
+      --color-text-muted: #64748b;
+      --color-text-light: #94a3b8;
+      --color-text-inverse: #ffffff;
+      --color-text-inverse-muted: #94a3b8;
+      --font-serif: "Iowan Old Style", "Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", Georgia, serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --max-width-header: 1200px;
+      --reading-width: 680px;
+      --transition-standard: 0.15s ease-in-out;
+    }
+    *, *::before, *::after {box-sizing:border-box;margin:0;padding:0}
+    body {background-color:var(--color-bg-page);color:var(--color-text-main);font-family:var(--font-sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;min-height:100vh;display:flex;flex-direction:column}
+    a {color:inherit;text-decoration:none;transition:color var(--transition-standard),opacity var(--transition-standard)}
+    img, svg {display:block;max-width:100%}
+    .container {width:100%;max-width:var(--max-width-header);margin:0 auto;padding:0 1.5rem}
+    .global-header {background-color:var(--color-navy);border-bottom:1px solid var(--color-border-navy);color:var(--color-text-inverse);position:sticky;top:0;z-index:100}
+    .header-inner {display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 2rem;width:100%}
+    .header-left {display:flex;align-items:stretch;height:100%;gap:2rem}
+    .header-brand {display:flex;align-items:center;gap:0.85rem;height:100%}
+    .header-logo {width:36px;height:36px;flex-shrink:0}
+    .header-title {font-family:var(--font-serif);font-size:1.4rem;font-weight:500;letter-spacing:0.01em;color:var(--color-text-inverse)}
+    .header-nav {display:flex;align-items:stretch;height:100%}
+    .header-nav-link {display:flex;align-items:center;height:100%;padding:0 1.25rem;color:#cbd5e1;font-size:0.92rem;font-weight:500;border-radius:0;border-bottom:3px solid transparent;transition:color var(--transition-standard),background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-nav-link:hover {color:#ffffff;background-color:rgba(255,255,255,0.08);border-bottom-color:#93c5fd}
+    .header-right {display:flex;align-items:center;gap:1rem}
+    .header-search {display:flex;align-items:center;background-color:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:2px;padding:0.32rem 0.75rem;width:270px;transition:background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-search:focus-within {background-color:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.35)}
+    .header-search-icon {width:14px;height:14px;color:var(--color-text-inverse-muted);margin-right:0.5rem;flex-shrink:0}
+    .header-search-input {background:transparent;border:none;outline:none;color:var(--color-text-inverse);font-size:0.82rem;width:100%;font-family:inherit}
+    .header-search-input::placeholder {color:var(--color-text-inverse-muted)}
+    .header-menu-btn {display:none;background:transparent;border:1px solid rgba(255,255,255,0.18);border-radius:2px;width:36px;height:36px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:6px;transition:background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-menu-btn:hover,.header-menu-btn[aria-expanded="true"] {background-color:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.35)}
+    .menu-bar {display:block;width:18px;height:2px;background-color:#ffffff;transition:transform 0.2s ease,opacity 0.2s ease}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(1){transform:translateY(6px) rotate(45deg)}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(2){opacity:0}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+    .mobile-nav-panel {display:none;background-color:var(--color-navy-dark);border-top:1px solid var(--color-border-navy);padding:1rem 1.5rem;flex-direction:column;gap:0.75rem}
+    .mobile-nav-panel.open {display:flex}
+    .mobile-nav-link {color:#ffffff;font-size:1rem;font-weight:500;padding:0.5rem 0.25rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+    .breadcrumb-section {background-color:var(--color-bg-page);border-bottom:1px solid var(--color-border);padding:0.55rem 0;position:sticky;top:60px;z-index:95}
+    .breadcrumbs {display:flex;align-items:center;gap:0.45rem;font-size:0.82rem;color:var(--color-text-muted);flex-wrap:wrap}
+    .breadcrumb-item {display:inline-flex;align-items:center;gap:0.45rem}
+    .breadcrumb-link {color:var(--color-text-subtle);transition:color var(--transition-standard)}
+    .breadcrumb-link:hover {color:var(--color-navy);text-decoration:underline}
+    .breadcrumb-separator {color:var(--color-text-light);user-select:none}
+    .breadcrumb-current {color:var(--color-text-main);font-weight:500}
+    .floating-control-btn {display:inline-flex;align-items:center;justify-content:center;gap:0.45rem;background-color:#ffffff;border:1px solid #cbd5e1;border-radius:0;color:var(--color-navy);font-size:0.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 10px rgba(15,23,42,0.08);transition:all var(--transition-standard);position:fixed;z-index:120}
+    .floating-control-btn:hover {background-color:var(--color-navy);border-color:var(--color-navy);color:#ffffff}
+    #openDrawerBtn {top:114px;left:24px;padding:0.42rem 0.75rem}
+    #openDrawerBtn.drawer-open {display:none!important}
+    #moreMenuWrapper {position:fixed;top:114px;right:24px;z-index:120}
+    #moreMenuBtn {position:static;width:36px;height:36px;padding:0}
+    #moreMenuBtn[aria-expanded="true"] {background-color:var(--color-navy);border-color:var(--color-navy);color:#ffffff}
+    .more-menu-dropdown {display:none;position:absolute;top:calc(100% + 5px);right:0;background-color:#ffffff;border:1px solid #cbd5e1;border-radius:0;box-shadow:0 6px 20px rgba(15,23,42,0.12);min-width:230px;z-index:150;flex-direction:column}
+    .more-menu-dropdown.open {display:flex}
+    .more-menu-item {display:flex;align-items:center;gap:0.75rem;padding:0.65rem 0.85rem;background:transparent;border:none;border-bottom:1px solid var(--color-border-subtle);width:100%;text-align:left;font-family:inherit;color:var(--color-text-main);cursor:pointer;transition:background-color var(--transition-standard)}
+    .more-menu-item:last-child{border-bottom:none}
+    .more-menu-item:hover{background-color:var(--color-bg-card-hover)}
+    .more-menu-item svg{width:15px;height:15px;color:var(--color-navy);flex-shrink:0}
+    .more-menu-text{display:flex;flex-direction:column}
+    .more-menu-title{font-size:0.82rem;font-weight:500;color:var(--color-navy-dark);line-height:1.2}
+    .more-menu-meta{font-size:0.7rem;color:var(--color-text-muted);margin-top:1px}
+    .toc-drawer {position:fixed;top:60px;left:0;width:260px;height:calc(100vh - 60px);background-color:#ffffff;border-right:1px solid var(--color-border);box-shadow:2px 0 16px rgba(15,23,42,0.06);z-index:110;transform:translateX(-100%);transition:transform 0.22s cubic-bezier(0.16,1,0.3,1);display:flex;flex-direction:column}
+    .toc-drawer.open {transform:translateX(0)}
+    .drawer-header {padding:0.9rem 1.25rem;background-color:var(--color-navy);color:#ffffff;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--color-border-navy)}
+    .drawer-title-group{display:flex;flex-direction:column}
+    .drawer-label{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8}
+    .drawer-heading{font-family:var(--font-serif);font-size:1.1rem;font-weight:500;color:#ffffff}
+    .drawer-close-btn{background:transparent;border:1px solid rgba(255,255,255,0.2);color:#ffffff;width:26px;height:26px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.95rem;transition:background-color var(--transition-standard)}
+    .drawer-close-btn:hover{background-color:rgba(255,255,255,0.15)}
+    .drawer-body{padding:1.25rem;overflow-y:auto;flex-grow:1}
+    .drawer-group{margin-bottom:1.5rem}
+    .drawer-group-title{font-size:0.88rem;font-weight:700;color:var(--color-navy-dark);margin-bottom:0.65rem;padding-bottom:0.35rem;border-bottom:1px solid var(--color-border);display:flex;justify-content:space-between;align-items:baseline}
+    .drawer-q-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.35rem}
+    .drawer-q-link{display:flex;align-items:center;justify-content:center;height:32px;font-family:var(--font-serif);font-size:0.88rem;font-weight:500;color:var(--color-navy);background-color:var(--color-bg-surface);border:1px solid var(--color-border);transition:all var(--transition-standard)}
+    .drawer-q-link:hover{background-color:var(--color-navy);border-color:var(--color-navy);color:#ffffff}
+    .drawer-q-link.active{background-color:var(--color-navy);border-color:var(--color-navy);color:#ffffff}
+    .drawer-backdrop{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background-color:rgba(15,23,42,0.45);backdrop-filter:blur(2px);z-index:105;opacity:0;transition:opacity 0.2s ease}
+    .drawer-backdrop.open{display:block;opacity:1}
+    .solution-book-section{padding:2.25rem 0 4rem;flex-grow:1;display:flex;width:100%}
+    .solution-book-container{width:100%;max-width:var(--reading-width);margin:0 auto;padding:0 1.5rem}
+    @media (min-width:1200px){.solution-book-container{margin-left:calc(50vw - 340px - 50px);margin-right:auto}}
+    .solution-book-masthead{margin-bottom:2.25rem;padding-bottom:0.65rem;border-bottom:1px solid var(--color-border)}
+    .solution-book-title{font-family:var(--font-serif);font-size:1.85rem;font-weight:500;color:var(--color-navy-dark);line-height:1.2;letter-spacing:-0.01em}
+    .solution-book-subtitle{font-size:0.85rem;color:var(--color-text-muted);margin-top:0.2rem;font-style:italic}
+    .solution-book-intro{font-size:0.92rem;color:var(--color-text-subtle);margin-top:0.45rem;line-height:1.5}
+    .question-entry{margin-bottom:1.85rem;scroll-margin-top:110px;transition:background-color 0.25s ease}
+    .question-entry.highlight-pulse{background-color:#eff6ff;padding:0.65rem 0.85rem;margin-left:-0.85rem;margin-right:-0.85rem;border-left:3px solid #3b82f6}
+    .question-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:0.35rem}
+    .question-heading{font-family:var(--font-serif);font-size:1.1rem;font-weight:600;color:var(--color-navy-dark);letter-spacing:-0.01em}
+    .question-source{font-size:0.75rem;color:var(--color-text-muted);font-style:italic}
+    .question-body{font-size:0.95rem;line-height:1.5;color:var(--color-text-main);margin-bottom:0.85rem}
+    .solution-block{margin-top:0.65rem}
+    .solution-label{font-family:var(--font-serif);font-size:0.95rem;font-weight:600;color:var(--color-navy-dark);margin-bottom:0.45rem;display:inline-block;border-bottom:1px solid var(--color-navy);padding-bottom:1px}
+    .solution-content{font-size:0.93rem;line-height:1.52;color:var(--color-text-body)}
+    .solution-content p{margin-bottom:0.5rem}
+    .solution-content h3,.solution-content h4{font-family:var(--font-serif);color:var(--color-navy-dark);margin:0.75rem 0 0.25rem;font-weight:600}
+    .solution-content h3{font-size:1rem}
+    .solution-content h4{font-size:0.92rem}
+    .solution-content ul,.solution-content ol{margin:0.45rem 0 0.65rem 1.4rem}
+    .solution-content li{margin-bottom:0.25rem}
+    .solution-content hr{border:none;border-top:1px dashed #cbd5e1;margin:0.85rem 0}
+    .question-divider{border:none;border-top:1px solid var(--color-border);margin:1.85rem 0}
+    .katex-display{margin:0.65rem 0!important;overflow-x:auto;overflow-y:hidden;padding:0.2rem 0}
+    .options-list{margin:0.6rem 0 0.8rem 1.2rem;list-style:none}
+    .options-list li{display:flex;gap:0.5rem;font-size:0.92rem;margin-bottom:0.35rem}
+    .options-label{font-weight:600;color:var(--color-navy-dark);min-width:1.2rem}
+    .empty-state{border:1px dashed var(--color-border);background:var(--color-bg-surface);padding:2rem 1.25rem;text-align:center;color:var(--color-text-muted);font-size:0.92rem}
+    .empty-state strong{color:var(--color-text-main)}
+    .resource-pager-section{background-color:var(--color-bg-surface);border-top:1px solid var(--color-border);padding:1.5rem 0}
+    .resource-pager-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .pager-link{display:inline-flex;align-items:center;gap:0.45rem;font-size:0.85rem;font-weight:500;color:var(--color-text-main);padding:0.45rem 0.8rem;background-color:var(--color-bg-page);border:1px solid var(--color-border);transition:all var(--transition-standard)}
+    .pager-link:hover{background-color:var(--color-navy);border-color:var(--color-navy);color:var(--color-text-inverse)}
+    .global-footer{background-color:var(--color-navy);color:var(--color-text-inverse);padding:3.5rem 0 2rem;border-top:1px solid var(--color-border-navy);margin-top:auto}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1fr;gap:2rem 1.25rem;padding-bottom:2.75rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+    .footer-brand{display:flex;flex-direction:column;padding-right:1.5rem}
+    .footer-brand-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem}
+    .footer-brand-logo{width:30px;height:30px}
+    .footer-brand-title{font-family:var(--font-serif);font-size:1.35rem;font-weight:500;color:var(--color-text-inverse)}
+    .footer-tagline{font-size:0.9rem;color:var(--color-text-inverse-muted);font-weight:500;margin-bottom:0.5rem}
+    .footer-description{font-size:0.82rem;color:var(--color-text-inverse-muted);line-height:1.55;margin-bottom:1.25rem}
+    .footer-socials{display:flex;align-items:center;gap:1rem}
+    .footer-social-link{color:var(--color-text-inverse-muted);transition:color var(--transition-standard);display:flex;align-items:center}
+    .footer-social-link:hover{color:var(--color-text-inverse)}
+    .footer-social-icon{width:17px;height:17px;fill:currentColor}
+    .footer-col-title{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-inverse-muted);margin-bottom:1rem}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:0.65rem}
+    .footer-link{font-size:0.85rem;color:#cbd5e1;transition:color var(--transition-standard)}
+    .footer-link:hover{color:var(--color-text-inverse)}
+    .footer-bottom{padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;color:var(--color-text-inverse-muted)}
+    @media (max-width:900px){#openDrawerBtn{display:none!important}#moreMenuWrapper{top:104px;right:14px}.toc-drawer{width:290px;max-width:85vw;z-index:200;box-shadow:4px 0 24px rgba(15,23,42,0.2)}}
+    @media (max-width:768px){
+      .header-inner{padding:0 1.25rem}.header-nav{display:none}.header-search{display:none}.header-menu-btn{display:flex}
+      .solution-book-section{padding:1.75rem 0 2.5rem}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:1.75rem}
+      .footer-brand{grid-column:1/-1;padding-right:0}
+      .breadcrumb-section{transition:padding 0.2s ease,box-shadow 0.2s ease}
+      .breadcrumb-section.is-compact{padding:0.35rem 0;box-shadow:0 2px 8px rgba(15,23,42,0.08)}
+      .breadcrumb-section.is-compact .breadcrumbs{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+      .breadcrumb-section.is-compact .breadcrumbs::-webkit-scrollbar{display:none}
+      .breadcrumb-section.is-compact .breadcrumb-ancestor{display:none!important}
+    }
+    @media (max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:0.75rem;text-align:center}}
+  </style>
+</head>
+<body>
+  <header class="global-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="/" class="header-brand" aria-label="Continua Home"><img src="assets/logo.svg" alt="Continua Logo" class="header-logo"><span class="header-title">Continua</span></a>
+        <nav class="header-nav" aria-label="Main Navigation"><a href="/resources/pyq-library/" class="header-nav-link">PYQ Library</a></nav>
+      </div>
+      <div class="header-right">
+        <div class="header-search" role="search"><svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><input type="text" class="header-search-input" placeholder="Search chapters, questions and resources..." aria-label="Quick search"></div>
+        <button class="header-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav"><span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span></button>
+      </div>
+    </div>
+    <div class="mobile-nav-panel" id="mobileNav" aria-hidden="true"><nav class="mobile-nav-links"><a href="/resources/pyq-library/" class="mobile-nav-link">PYQ Library</a></nav></div>
+  </header>
+
+  <main id="main-content">
+    <nav class="breadcrumb-section" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Continua</span></a><meta itemprop="position" content="1"><span class="breadcrumb-separator">/</span></li>
+          <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/class-10/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Class 10</span></a><meta itemprop="position" content="2"><span class="breadcrumb-separator">/</span></li>
+          <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/class-10/mathematics/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Mathematics</span></a><meta itemprop="position" content="3"><span class="breadcrumb-separator">/</span></li>
+          <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/class-10/mathematics/real-numbers/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Real Numbers</span></a><meta itemprop="position" content="4"><span class="breadcrumb-separator">/</span></li>
+          <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span class="breadcrumb-current" itemprop="name">Examples</span><meta itemprop="position" content="5"></li>
+        </ol>
+      </div>
+    </nav>
+
+    <button class="floating-control-btn" id="openDrawerBtn" aria-label="Toggle Table of Contents" aria-controls="tocDrawer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+      <span>Contents</span>
+    </button>
+
+    <div id="moreMenuWrapper">
+      <button class="floating-control-btn" id="moreMenuBtn" aria-label="More resource options" aria-expanded="false" aria-haspopup="true">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:15px;height:15px;"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg>
+      </button>
+      <div class="more-menu-dropdown" id="moreMenuDropdown" role="menu" aria-hidden="true">
+        <button type="button" class="more-menu-item" id="menuContentsBtn" role="menuitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          <div class="more-menu-text"><span class="more-menu-title">Table of Contents</span><span class="more-menu-meta">Example index</span></div>
+        </button>
+        <button type="button" class="more-menu-item" id="menuCopyLinkBtn" role="menuitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <div class="more-menu-text"><span class="more-menu-title" id="copyLinkTitle">Copy Examples Link</span><span class="more-menu-meta">Shareable permalink</span></div>
+        </button>
+        <button type="button" class="more-menu-item" id="menuPrintBtn" role="menuitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          <div class="more-menu-text"><span class="more-menu-title">Print Examples</span><span class="more-menu-meta">Browser print dialog</span></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="toc-drawer" id="tocDrawer" aria-label="Table of Contents Drawer" aria-hidden="true">
+      <div class="drawer-header">
+        <div class="drawer-title-group"><span class="drawer-label">On This Page</span><h2 class="drawer-heading">Examples</h2></div>
+        <button class="drawer-close-btn" id="closeDrawerBtn" aria-label="Close Table of Contents">&times;</button>
+      </div>
+      <div class="drawer-body" id="drawerBody"></div>
+    </aside>
+
+    <section class="solution-book-section">
+      <div class="solution-book-container">
+        <header class="solution-book-masthead">
+          <h1 class="solution-book-title">Chapter Examples</h1>
+          <p class="solution-book-subtitle">Class 10 Mathematics · Real Numbers</p>
+          <p class="solution-book-intro">Worked examples from this chapter.</p>
+        </header>
+        <div id="examplesBookContent"></div>
+      </div>
+    </section>
+
+    <nav class="resource-pager-section" aria-label="Related Resources">
+      <div class="container resource-pager-inner">
+        <a href="ncert-solutions.html" class="pager-link"><span>←</span><span>Previous: <strong>NCERT Solutions</strong></span></a>
+        <a href="ncert-formulae.html" class="pager-link"><span>Next: <strong>Formulae Sheet</strong></span><span>→</span></a>
+      </div>
+    </nav>
+  </main>
+
+  <footer class="global-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-header"><img src="assets/logo.svg" alt="Continua" class="footer-brand-logo"><span class="footer-brand-title">Continua</span></div>
+          <p class="footer-tagline">School study material.</p>
+          <p class="footer-description">NCERT solutions, reference materials, formulae, notes and practice papers for Classes 8–12.</p>
+          <div class="footer-socials">
+            <a href="https://github.com" class="footer-social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+            <a href="https://youtube.com" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="mailto:contact@continua.edu" class="footer-social-link" aria-label="Email Us"><svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+          </div>
+        </div>
+        <div><div class="footer-col-title">Classes</div><ul class="footer-links"><li><a href="/class-12/" class="footer-link">Class 12</a></li><li><a href="/class-11/" class="footer-link">Class 11</a></li><li><a href="/class-10/" class="footer-link">Class 10</a></li><li><a href="/class-9/" class="footer-link">Class 9</a></li><li><a href="/class-8/" class="footer-link">Class 8</a></li></ul></div>
+        <div><div class="footer-col-title">Subjects</div><ul class="footer-links"><li><a href="/subjects/mathematics/" class="footer-link">Mathematics</a></li><li><a href="/subjects/physics/" class="footer-link">Physics</a></li><li><a href="/subjects/chemistry/" class="footer-link">Chemistry</a></li><li><a href="/subjects/biology/" class="footer-link">Biology</a></li><li><a href="/subjects/science/" class="footer-link">Science</a></li></ul></div>
+        <div><div class="footer-col-title">Resources</div><ul class="footer-links"><li><a href="/resources/ncert-solutions/" class="footer-link">NCERT Solutions</a></li><li><a href="/resources/pyq-library/" class="footer-link">PYQ Library</a></li><li><a href="/resources/formulae/" class="footer-link">Formulae</a></li><li><a href="/resources/reference-materials/" class="footer-link">Reference Materials</a></li><li><a href="/resources/notes/" class="footer-link">Notes</a></li><li><a href="/resources/practice-papers/" class="footer-link">Practice Papers</a></li></ul></div>
+        <div><div class="footer-col-title">Support</div><ul class="footer-links"><li><a href="/about/" class="footer-link">About Us</a></li><li><a href="/contact/" class="footer-link">Contact Us</a></li><li><a href="/faq/" class="footer-link">FAQ</a></li><li><a href="/sitemap.xml" class="footer-link">Sitemap</a></li></ul></div>
+        <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a href="/privacy/" class="footer-link">Privacy Policy</a></li><li><a href="/terms/" class="footer-link">Terms of Use</a></li><li><a href="/disclaimer/" class="footer-link">Disclaimer</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><div>&copy; 2026 Continua. All rights reserved.</div></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script src="assets/continua-renderer.js"></script>
+  <script>
+    const FALLBACK_EXAMPLES_DATA = {
+      "id": "c10_mathemat_ch1_example",
+      "chapterId": "c10_mathemat_ch1",
+      "friendlyName": "Examples",
+      "questions": [
+        {
+          "id": "c10_mathemat_ch1_example_main_q21",
+          "displayOrder": 21,
+          "questionText": "Two numbers are in the ratio $5 : 7$ and their LCM is $420$. Find the HCF and the two numbers.",
+          "solutionText": "Let the two numbers be $a = 5k$ and $b = 7k$, where $k$ is a positive integer.\n\nSince $5$ and $7$ are prime to each other ($\\gcd(5, 7) = 1$):\n\n$$\n\\text{LCM}(5k, 7k) = 5 \\times 7 \\times k = 35k\n$$\n\nWe are given that $\\text{LCM} = 420$:\n\n$$\n35k = 420 \\implies k = \\frac{420}{35} = 12\n$$\n\nSince $\\text{HCF}(5k, 7k) = k$, we have:\n\n$$\n\\text{HCF} = 12\n$$\n\nThe two numbers are:\n\n$$\na = 5 \\times 12 = 60\n$$\n\n$$\nb = 7 \\times 12 = 84\n$$\n\n**Answer:** $\\text{HCF} = 12$; the numbers are $60$ and $84$.",
+          "options": []
+        },
+        {
+          "id": "c10_mathemat_ch1_example_main_q1",
+          "displayOrder": 1,
+          "questionText": "Express the number $420$ as a product of its prime factors in ascending order of primes.",
+          "solutionText": "To express $420$ as a product of prime factors, we divide successively by the smallest possible prime numbers.\n\n$$\n\\begin{aligned}\n420 &= 2 \\times 210 \\\\\n&= 2 \\times 2 \\times 105 \\\\\n&= 2^2 \\times 3 \\times 35 \\\\\n&= 2^2 \\times 3 \\times 5 \\times 7\n\\end{aligned}\n$$\n\nWe have expressed $420$ with primes in ascending order $2 < 3 < 5 < 7$.\n\n**Answer:** $420 = 2^2 \\times 3 \\times 5 \\times 7$.\n\n> Note: This is the **Fundamental Theorem of Arithmetic** — every composite number has a unique prime factorisation.",
+          "options": []
+        },
+        {
+          "id": "c10_mathemat_ch1_example_main_q2",
+          "displayOrder": 2,
+          "questionText": "Express $7560$ as a product of powers of prime factors.",
+          "solutionText": "We factorise $7560$ step by step:\n\n$$\n\\begin{aligned}\n7560 &= 2 \\times 3780 \\\\\n&= 2^2 \\times 1890 \\\\\n&= 2^3 \\times 945 \\\\\n&= 2^3 \\times 3 \\times 315 \\\\\n&= 2^3 \\times 3^2 \\times 105 \\\\\n&= 2^3 \\times 3^2 \\times 5 \\times 21 \\\\\n&= 2^3 \\times 3^3 \\times 5 \\times 7\n\\end{aligned}\n$$\n\nCheck with $\\text{HCF}$ and $\\text{LCM}$ concepts:\n\n* $7560 = 2^3 \\cdot 3^3 \\cdot 5^1 \\cdot 7^1$\n* Number of prime factors (with multiplicity) is $3+3+1+1 = 8$.\n\n**Answer:** $7560 = 2^3 \\times 3^3 \\times 5 \\times 7$.",
+          "options": []
+        }
+      ]
+    };
+    document.addEventListener('DOMContentLoaded', async () => {
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      if (mobileMenuBtn && mobileNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isOpen = mobileNav.classList.toggle('open');
+          mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+          mobileNav.setAttribute('aria-hidden', !isOpen);
+        });
+      }
+      const moreMenuBtn = document.getElementById('moreMenuBtn');
+      const moreMenuDropdown = document.getElementById('moreMenuDropdown');
+      const menuContentsBtn = document.getElementById('menuContentsBtn');
+      const menuCopyLinkBtn = document.getElementById('menuCopyLinkBtn');
+      const copyLinkTitle = document.getElementById('copyLinkTitle');
+      const menuPrintBtn = document.getElementById('menuPrintBtn');
+      if (moreMenuBtn && moreMenuDropdown) {
+        moreMenuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = moreMenuDropdown.classList.toggle('open');
+          moreMenuBtn.setAttribute('aria-expanded', isOpen);
+          moreMenuDropdown.setAttribute('aria-hidden', !isOpen);
+        });
+        document.addEventListener('click', (e) => {
+          if (!moreMenuBtn.contains(e.target) && !moreMenuDropdown.contains(e.target)) {
+            moreMenuDropdown.classList.remove('open');
+            moreMenuBtn.setAttribute('aria-expanded', 'false');
+            moreMenuDropdown.setAttribute('aria-hidden', 'true');
+          }
+        });
+        if (menuContentsBtn) {
+          menuContentsBtn.addEventListener('click', () => {
+            moreMenuDropdown.classList.remove('open');
+            moreMenuBtn.setAttribute('aria-expanded', 'false');
+            openDrawer();
+          });
+        }
+        if (menuCopyLinkBtn && copyLinkTitle) {
+          menuCopyLinkBtn.addEventListener('click', async () => {
+            try {
+              await navigator.clipboard.writeText(window.location.href);
+              copyLinkTitle.textContent = 'Link Copied!';
+              setTimeout(() => { copyLinkTitle.textContent = 'Copy Examples Link'; moreMenuDropdown.classList.remove('open'); }, 1200);
+            } catch(e) {}
+          });
+        }
+        if (menuPrintBtn) {
+          menuPrintBtn.addEventListener('click', () => { moreMenuDropdown.classList.remove('open'); window.print(); });
+        }
+      }
+      const openDrawerBtn = document.getElementById('openDrawerBtn');
+      const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+      const tocDrawer = document.getElementById('tocDrawer');
+      const drawerBackdrop = document.getElementById('drawerBackdrop');
+      function openDrawer(){ if(!tocDrawer) return; tocDrawer.classList.add('open'); tocDrawer.setAttribute('aria-hidden','false'); if(openDrawerBtn) openDrawerBtn.classList.add('drawer-open'); if(drawerBackdrop && window.innerWidth<=900) drawerBackdrop.classList.add('open'); }
+      function closeDrawer(){ if(!tocDrawer) return; tocDrawer.classList.remove('open'); tocDrawer.setAttribute('aria-hidden','true'); if(openDrawerBtn) openDrawerBtn.classList.remove('drawer-open'); if(drawerBackdrop) drawerBackdrop.classList.remove('open'); }
+      function toggleDrawer(){ if(tocDrawer && tocDrawer.classList.contains('open')) closeDrawer(); else openDrawer(); }
+      if(openDrawerBtn) openDrawerBtn.addEventListener('click', toggleDrawer);
+      if(closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+      if(drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ closeDrawer(); if(moreMenuDropdown) moreMenuDropdown.classList.remove('open'); }});
+
+      let data = FALLBACK_EXAMPLES_DATA;
+      try {
+        const res = await fetch('assets/c10_mathemat_ch1_example.json');
+        if(res.ok) data = await res.json();
+        else {
+          const res2 = await fetch('c10_mathemat_ch1_example.json');
+          if(res2.ok) data = await res2.json();
+        }
+      } catch(err){ console.warn('Using fallback examples payload'); }
+      renderExamples(data, closeDrawer);
+    });
+
+    function renderExamples(data, closeDrawerFn){
+      const container = document.getElementById('examplesBookContent');
+      const drawerBody = document.getElementById('drawerBody');
+      if(!container) return;
+      const questions = (data.questions || []).slice().sort((a,b)=> (a.displayOrder||0)-(b.displayOrder||0));
+      if(questions.length===0){
+        container.innerHTML = '<div class=\"empty-state\"><strong>No examples available</strong><br>Worked examples for this chapter will appear here when published.</div>';
+        if(drawerBody) drawerBody.innerHTML = '<div style=\"font-size:0.85rem;color:var(--color-text-muted);\">No examples</div>';
+        return;
+      }
+      let html = '';
+      let drawerHtml = '<div class=\"drawer-group\"><div class=\"drawer-group-title\"><span>Examples</span><span style=\"font-size:0.72rem;color:#64748b;font-weight:normal;\">' + questions.length + ' items</span></div><div class=\"drawer-q-grid\">';
+      questions.forEach((q, idx)=>{
+        const n = q.displayOrder;
+        const anchorId = 'example-' + n;
+        const formattedNum = String(n).padStart(2,'0');
+        drawerHtml += '<a href=\"#' + anchorId + '\" class=\"drawer-q-link\" data-target=\"' + anchorId + '\">' + formattedNum + '</a>';
+        let qHtml = '';
+        if (window.ContinuaRenderer && window.ContinuaRenderer.renderMarkdown) {
+          qHtml = window.ContinuaRenderer.renderMarkdown(q.questionText || '');
+        } else {
+          qHtml = (q.questionText||'').replace(/\n\n/g,'<br><br>');
+        }
+        let solHtml = '';
+        if (window.ContinuaRenderer && window.ContinuaRenderer.renderMarkdown) {
+          solHtml = window.ContinuaRenderer.renderMarkdown(q.solutionText || '');
+        } else {
+          solHtml = (q.solutionText||'').replace(/\n\n/g,'<br><br>');
+        }
+        // Options rendering
+        let optionsHtml = '';
+        if (q.options && Array.isArray(q.options) && q.options.length>0) {
+          optionsHtml = '<ol class=\"options-list\">';
+          q.options.forEach((opt, oi)=>{
+            const label = String.fromCharCode(65+oi);
+            let optText = typeof opt === 'string' ? opt : (opt.text || opt.label || JSON.stringify(opt));
+            if (window.ContinuaRenderer && window.ContinuaRenderer.renderMarkdown) {
+              // Render option inline without wrapping <p>
+              optText = window.ContinuaRenderer.renderMarkdown(optText).replace(/^<p>/,'').replace(/<\/p>$/,'');
+            }
+            optionsHtml += '<li><span class=\"options-label\">' + label + '.</span><span>' + optText + '</span></li>';
+          });
+          optionsHtml += '</ol>';
+        }
+        html += '<article class=\"question-entry\" id=\"' + anchorId + '\" data-num=\"' + n + '\">'
+              + '<div class=\"question-header\"><h3 class=\"question-heading\">Example ' + n + '</h3></div>'
+              + '<div class=\"question-body\">' + qHtml + '</div>'
+              + optionsHtml
+              + '<div class=\"solution-block\"><span class=\"solution-label\">Solution</span><div class=\"solution-content\">' + solHtml + '</div></div>'
+              + '</article>';
+        if(idx < questions.length-1) html += '<hr class=\"question-divider\">';
+      });
+      drawerHtml += '</div></div>';
+      container.innerHTML = html;
+      if(drawerBody) drawerBody.innerHTML = drawerHtml;
+      // Attach drawer link handlers
+      if(drawerBody){
+        drawerBody.querySelectorAll('.drawer-q-link').forEach(link=>{
+          link.addEventListener('click', ()=>{
+            if(window.innerWidth<=900 && closeDrawerFn) closeDrawerFn();
+          });
+        });
+      }
+      // KaTeX
+      if(window.ContinuaRenderer && window.ContinuaRenderer.renderMath){
+        window.ContinuaRenderer.renderMath(container);
+      } else if(window.renderMathInElement){
+        renderMathInElement(container, {delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});
+      }
+      // Highlight and scrollspy
+      setupScrollSpy(questions);
+      handleHash();
+      window.addEventListener('hashchange', handleHash);
+    }
+
+    function setupScrollSpy(questions){
+      const entries = document.querySelectorAll('.question-entry');
+      if(!entries.length || !('IntersectionObserver' in window)) return;
+      const observer = new IntersectionObserver((ents)=>{
+        ents.forEach(e=>{
+          if(e.isIntersecting){
+            const num = e.target.getAttribute('data-num');
+            // Mark active in drawer
+            document.querySelectorAll('.drawer-q-link').forEach(l=>{
+              const target = l.getAttribute('data-target');
+              if(target === 'example-'+num) l.classList.add('active');
+              else l.classList.remove('active');
+            });
+          }
+        });
+      }, {rootMargin:'-90px 0px -55% 0px'});
+      entries.forEach(el=>observer.observe(el));
+      const bc=document.querySelector('.breadcrumb-section');
+      function onScroll(){ if(!bc) return; if(window.innerWidth<=768){ if(window.scrollY>45) bc.classList.add('is-compact'); else bc.classList.remove('is-compact'); } else bc.classList.remove('is-compact'); }
+      window.addEventListener('scroll', onScroll, {passive:true});
+      window.addEventListener('resize', onScroll, {passive:true});
+      onScroll();
+    }
+    function handleHash(){
+      const hash = window.location.hash.replace('#','');
+      if(!hash) return;
+      const el = document.getElementById(hash);
+      if(el){
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+        el.classList.add('highlight-pulse');
+        setTimeout(()=> el.classList.remove('highlight-pulse'), 2000);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1404 @@
+
+Saturday 8:30 PM
+Images background Inspiration-opt.webp
+I actually like this design as an inspiration, especially that clip art like thing in hero screen
+
+Generated image: Continua Educational Study Portal
+
+
+Edit
+
+
+Can  you please stop generateing images, i didn't ask
+
+Yep. My bad. 😅
+
+You were showing me an inspiration screenshot and discussing the design, not asking me to generate a new image. I jumped the gun.
+
+From here on, I'll only use image generation when you explicitly ask me to create/edit/generate an image.
+
+And yes, the screenshot you showed gives us a much better direction for the LV0 concept—especially the academic illustration in the hero and the subject visuals. We can discuss and translate those ideas into the HTML/CSS without generating anything.
+
+
+e7c28634-8d02-4690-bdb4-1e6e957aa868.png
+And if have chosen these set of icons for subjects, (though for Science, little unsure)
+
+Yes — the subject icons are a good idea, and this particular set is much closer to the visual language I think Continua needs.
+
+The important thing is that they're doing something text alone can't: you can scan the page and recognize the subject almost instantly. That's especially useful when the homepage is essentially a catalogue.
+
+Your current mapping is quite strong:
+
+Subject	Icon	Verdict
+Mathematics	Calculator + set square	Excellent
+Physics	Atom	Excellent
+Chemistry	Flask	Excellent
+Biology	Microscope	Excellent
+Science	Rocket	Questionable
+The first four have a nice logic
+Mathematics → calculator + geometry tools
+
+Immediately says mathematics, and the combination is better than just a calculator.
+
+Physics → atom
+
+Very recognizable and visually distinct from the other subjects.
+
+Chemistry → flask
+
+Basically the universal shorthand for chemistry.
+
+Biology → microscope
+
+Also extremely recognizable, and importantly, it doesn't look like the chemistry icon.
+
+So those four form a very coherent family.
+
+Science is the awkward bastard
+I agree with your hesitation about the rocket.
+
+A rocket says:
+
+🚀 Space / aerospace / physics
+
+It doesn't naturally say:
+
+Science
+
+And that's particularly problematic because your Class 10 page has Science as a combined subject, unlike Classes 11–12 where you split it into Physics, Chemistry and Biology.
+
+So you actually need an icon that communicates:
+
+general science
+
+rather than one branch of science.
+
+I'd rank alternatives roughly like this:
+1. Atom / scientific symbol
+
+Very universal, but you already use it for Physics. So I'd avoid duplicating it.
+
+2. Laboratory flask + something
+
+Probably the strongest conceptual option. But your Chemistry flask is already occupying that territory.
+
+3. Microscope
+
+Very recognizable as science, but then Biology loses its identity.
+
+4. Book + scientific element
+
+Potentially excellent for Continua because it communicates science as a school subject, rather than a scientific profession.
+
+5. Rocket
+
+Visually attractive and energetic, but semantically the weakest.
+
+So ironically, the rocket might be the prettiest choice but not the best choice.
+
+There's another thing I really like about this system
+Look at your rows:
+
+[icon] Mathematics →
+[icon] Physics    →
+[icon] Chemistry  →
+[icon] Biology    →
+That's much better than:
+
+Mathematics →
+Physics →
+Chemistry →
+Biology →
+because the icons give each subject a visual identity.
+
+And then the class number can remain purely typographic:
+
+12   Class 12
+
+     [📐] Mathematics →
+     [⚛] Physics     →
+     [⚗] Chemistry   →
+     [🔬] Biology    →
+That creates a very nice visual hierarchy:
+
+Large number → class → icon → subject → navigation
+
+It feels like a catalogue rather than a collection of UI cards.
+
+I'd also keep the icons relatively small
+This is important.
+
+Don't let them become:
+
+       🔬
+    BIOLOGY
+They're navigation cues, not illustrations.
+
+Something around the visual weight shown in your screenshot works well: the icon catches your eye first, then the subject name, then the arrow.
+
+And I'd keep the icon style consistent across the entire subject system. Don't have a hand-drawn microscope next to a photorealistic calculator next to a flat SVG atom. The consistency is what makes this feel like a designed publication.
+
+One other design decision I'd make now
+Don't put the subject icon into the URL/data identity.
+
+The manifest says:
+
+Mathematics
+math
+The template decides:
+
+math → mathematics-icon.svg
+Same for:
+
+phy → physics-icon.svg
+chem → chemistry-icon.svg
+bio → biology-icon.svg
+That way the content schema remains completely independent of presentation.
+
+If three years from now you hate the microscope and replace it with a DNA icon, you change the website template/assets—not the Publishing Studio data.
+
+That's exactly the separation we want.
+
+My current verdict
+Keep:
+
+Mathematics — calculator + geometry
+
+Physics — atom
+
+Chemistry — flask
+
+Biology — microscope
+
+Don't commit to the rocket yet.
+
+I'd specifically search for a general-school-science icon that belongs to the same illustration family. If nothing beats the rocket, the rocket is still usable—but I'd consider it the one icon in the set that needs another round.
+
+
+e9e0623f-7a76-40d4-894c-aff078539ff1.png
+And this is the chosen clip art 
+
+(I have decided to keep the rocket for class 10, or devide it into physics, chemistry bio forcefully)
+
+
+Continua Web Client — V1 Frontend Requirements & Conceptual Design Brief
+Status: Frontend design specification
+Scope: Static public website, V1
+Purpose: Define the visual system, page hierarchy, layouts, components, and frontend behaviour before implementing the Web Builder.
+
+1. Product Concept
+Continua is a static educational content website generated from published canonical content.
+
+The frontend should feel like:
+
+An established academic publisher / digital textbook library that has quietly existed for many years.
+
+It should not feel like:
+
+A modern EdTech startup
+
+An LMS dashboard
+
+A SaaS application
+
+An AI product
+
+A marketing landing page
+
+A social platform
+
+The website's primary objective is extremely simple:
+
+Student
+   ↓
+Find class
+   ↓
+Find subject
+   ↓
+Find chapter
+   ↓
+Find resource
+   ↓
+Read
+Speed, readability and navigation take priority over visual spectacle.
+
+2. Visual Identity
+Primary colours
+Navy: #1e293b
+
+White: #ffffff
+
+Supporting neutral tones should remain within a restrained slate/grey palette.
+
+Suggested supporting colours:
+
+#f8fafc
+#f1f5f9
+#e2e8f0
+#cbd5e1
+#64748b
+#475569
+The overall site should remain predominantly:
+
+Navy + White + Neutral
+
+Avoid introducing numerous brand colours.
+
+3. Design Character
+The visual language should be:
+
+Academic
+
+Mature
+
+Quiet
+
+Editorial
+
+Minimal
+
+Structured
+
+Trustworthy
+
+Slightly archival
+
+Information-dense without feeling cluttered
+
+Important distinction
+The site should not artificially look old.
+
+Do not use:
+
+Fake vintage textures
+
+Skeuomorphism
+
+Dated gradients
+
+Faux paper effects
+
+Old-fashioned UI elements
+
+The goal is:
+
+Modern engineering underneath, established publishing aesthetic on top.
+
+4. Branding
+The canonical Continua logo already exists.
+
+Frontend must use:
+
+/assets/logo.svg
+Do not recreate the logo using CSS or substitute another logo.
+
+The logo should remain relatively compact and should feel like a publisher masthead, not a giant startup logo.
+
+5. Global Page Shell
+Every generated page should share a common shell:
+
+┌───────────────────────────────────────────┐
+│                HEADER                     │
+├───────────────────────────────────────────┤
+│                                           │
+│             PAGE CONTENT                  │
+│                                           │
+├───────────────────────────────────────────┤
+│                FOOTER                     │
+└───────────────────────────────────────────┘
+The Web Builder should implement this shell once and feed page-specific content into it.
+
+6. Global Header
+The header is a permanent global component.
+
+Appearance
+Full-width #1e293b navy background
+
+White logo/branding
+
+Compact but substantial height
+
+Thin subtle bottom border
+
+No unnecessary controls
+
+Desktop concept
+┌──────────────────────────────────────────────────────┐
+│  [Continua Logo] CONTINUA             Search         │
+└──────────────────────────────────────────────────────┘
+V1 controls
+Home/brand link
+
+Search
+
+No:
+
+Login
+
+Account
+
+Dashboard
+
+Notifications
+
+Premium
+
+AI Tutor
+
+Gamification controls
+
+7. Global Footer
+The footer is a major structural component, not a small copyright strip.
+
+It uses the same:
+
+#1e293b
+navy colour.
+
+It should have substantial vertical space and enough room for Continua's growing navigation.
+
+Concept
+┌──────────────────────────────────────────────────────┐
+│                                                      │
+│  CONTINUA                                             │
+│  School study material.                              │
+│                                                      │
+│  Classes       Subjects       Resources      Support │
+│  Class 12      Mathematics    NCERT          About   │
+│  Class 11      Physics        Solutions      Contact │
+│  Class 10      Chemistry      Formulae       FAQ     │
+│  Class 9       Biology        References     Sitemap │
+│                Science        Notes                  │
+│                                                      │
+│──────────────────────────────────────────────────────│
+│                                                      │
+│  About  Contact  Privacy  Terms             © ...   │
+│                                                      │
+└──────────────────────────────────────────────────────┘
+The exact links are data/configuration driven where appropriate.
+
+The footer should be designed to accommodate future additions such as:
+
+More classes
+
+More subjects
+
+More resource types
+
+App links
+
+Support
+
+Community links
+
+Additional legal information
+
+8. Page Hierarchy
+The public website should use five conceptual navigation levels:
+
+LV0  Home
+ ↓
+LV1  Class
+ ↓
+LV2  Subject
+ ↓
+LV3  Chapter
+ ↓
+LV4  Resource
+Content inside resources does not necessarily create another navigation level.
+
+For example:
+
+Resource
+ └── NCERT Solutions
+      ├── Exercise 1.1
+      ├── Exercise 1.2
+      └── Exercise 1.3
+Exercises can be sections within the resource page rather than separate pages.
+
+Likewise, questions should generally be anchors/sections within a page in V1.
+
+9. LV0 — Home Page
+Purpose
+The homepage is the entrance to Continua.
+
+Its job:
+
+Get students to their material quickly.
+
+Conceptual structure
+NAVY HEADER
+
+        Continua
+
+     School study material.
+ Well-structured. Exam-focused. ...
+
+           SEARCH
+
+──────────────────────────────
+
+           CLASSES
+
+12    Class 12
+
+      [Math] Mathematics →
+      [Atom] Physics →
+      [Chem] Chemistry →
+      [Bio] Biology →
+
+11    Class 11
+
+      [Math] Mathematics →
+      [Atom] Physics →
+      [Chem] Chemistry →
+      [Bio] Biology →
+
+10    Class 10
+
+      [Math] Mathematics →
+      [Science] Science →
+
+        View more classes
+
+──────────────────────────────
+
+LARGE NAVY FOOTER
+10. Home Hero / Masthead
+The homepage should have a restrained hero/masthead area.
+
+It should contain:
+
+Continua heading
+
+Short description
+
+Search
+
+Academic decorative illustration
+
+Chosen illustration
+The selected academic clip-art illustration consists of:
+
+Books
+
+Open textbook
+
+Globe
+
+Pencils
+
+It should appear as a subtle decorative illustration, preferably toward the right side of the hero on desktop.
+
+It communicates education without tying Continua to a particular subject.
+
+It should be visible enough to feel intentional, but subtle enough that the content remains the focus.
+
+11. Home Search
+Search should be one of the most prominent interactive elements on LV0.
+
+Concept:
+
+┌──────────────────────────────────────────────────────┐
+│  🔍  Search chapters, questions and resources...  / │
+└──────────────────────────────────────────────────────┘
+The / keyboard shortcut may be used to focus search.
+
+Search is expected to eventually index:
+
+Classes
+
+Subjects
+
+Chapters
+
+Resource titles
+
+Question text
+
+Solution text where practical
+
+The search index is generated by the Web Builder.
+
+12. Home Subject Visuals
+Subjects should have visual identifiers.
+
+This is an important part of the homepage design.
+
+Chosen icon family:
+
+Mathematics → Calculator + geometry/set-square icon
+
+Physics → Atom
+
+Chemistry → Laboratory flask
+
+Biology → Microscope
+
+Science → Rocket
+
+The first four are strongly semantically aligned.
+
+The rocket is retained for Class 10's combined Science subject despite not being a literal representation of all science.
+
+Design principle
+Icons are:
+
+visual navigation cues, not giant illustrations.
+
+They should remain relatively small and visually consistent.
+
+13. Subject Icon Architecture
+Subject icons belong to the frontend presentation layer, not the canonical content schema.
+
+For example:
+
+math → mathematics icon
+phy  → physics icon
+chem → chemistry icon
+bio  → biology icon
+The Publishing Studio should not need to know which icon is being used.
+
+Changing the Mathematics icon later should require changing only the frontend asset/configuration.
+
+14. LV1 — Class Page
+Purpose:
+
+Choose a subject within a class.
+
+Concept:
+
+Class 10
+
+Subjects
+────────────────────────
+
+Mathematics
+Science
+It should remain simple.
+
+The class page should not become a dashboard.
+
+Potential metadata:
+
+Subject name
+
+Chapter count
+
+Availability
+
+Only published subjects should appear.
+
+15. LV2 — Subject Page
+Purpose:
+
+Choose a chapter.
+
+Concept:
+
+Class 10 / Mathematics
+
+Mathematics
+
+01  Real Numbers
+02  Polynomials
+03  Pair of Linear Equations
+04  Quadratic Equations
+05  Arithmetic Progressions
+...
+The chapter list comes entirely from published manifests.
+
+Nothing should be manually hard-coded.
+
+The visual treatment should resemble an academic catalogue / table of contents.
+
+16. LV3 — Chapter Page
+Purpose:
+
+Show everything available for a chapter.
+
+Concept:
+
+Class 10 / Mathematics
+
+Chapter 01
+Real Numbers
+
+Resources
+────────────────────────────────
+
+NCERT Solutions
+Complete solutions to NCERT exercises
+
+Formulae Sheet
+Important formulae and identities
+
+References
+Additional chapter material
+
+Mock Tests
+Practice papers
+Only resources that actually exist should appear.
+
+The chapter page therefore acts as a resource table of contents.
+
+17. LV4 — Resource Pages
+Resource pages contain the actual educational material.
+
+Different resource types should use appropriate templates rather than one generic visual treatment.
+
+Primary templates:
+
+Solutions
+For:
+
+NCERT Solutions
+
+Question + solution collections
+
+Content
+For:
+
+Theory
+
+Notes
+
+Formulae
+
+Question Collection
+For:
+
+Examples
+
+PYQs
+
+Free Flow
+
+File Library
+For:
+
+References
+
+Mock tests
+
+Supplementary files
+
+18. NCERT Solutions Template
+This is one of the most important templates.
+
+It should resemble a well-edited digital solution book.
+
+Concept:
+
+Breadcrumbs
+
+Real Numbers
+NCERT Solutions
+
+On this page
+  Exercise 1.1
+  Exercise 1.2
+  Exercise 1.3
+
+────────────────────────────
+
+Exercise 1.1
+
+Question 1
+
+...
+
+Solution
+
+...
+
+Question 2
+
+...
+
+Solution
+
+...
+The content itself should dominate the interface.
+
+Avoid excessive cards, buttons and controls.
+
+19. Exercise Structure
+Exercises should normally be sections within the resource page.
+
+Example:
+
+NCERT Solutions
+
+Exercise 1.1
+  Q1
+  Q2
+  Q3
+
+Exercise 1.2
+  Q1
+  Q2
+  Q3
+A local table of contents may allow jumping directly to an exercise.
+
+This avoids forcing students through:
+
+Exercise → Page → Question → Page → Question
+20. Question Presentation
+Questions should be visually distinct from solutions.
+
+Concept:
+
+Question 1
+
+[Question content]
+
+Solution
+
+[Solution content]
+The design should provide:
+
+Clear question numbering
+
+Comfortable spacing
+
+Strong solution heading
+
+Excellent mathematical typography
+
+Clear diagrams
+
+Readable long-form content
+
+21. Question Addressability
+V1 does not require individual HTML pages for every question.
+
+Instead, question IDs should be usable as anchors.
+
+Example concept:
+
+/resource/#question-id
+This permits direct sharing/linking without exploding the number of generated pages.
+
+Individual question pages may be introduced later if useful.
+
+22. Markdown Rendering
+The frontend must support the controlled Continua Markdown subset.
+
+At minimum:
+
+Headings
+
+Bold
+
+Italic
+
+Lists
+
+Paragraphs
+
+Blockquotes
+
+Links
+
+Images
+
+Inline code
+
+The Web Builder should preferably convert Markdown to HTML at build time.
+
+Do not blindly permit arbitrary Markdown/HTML features.
+
+23. Mathematics
+Mathematics is a first-class frontend requirement.
+
+Support:
+
+Inline
+\(x^2 + y^2 = r^2\)
+Display
+\[
+\frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\]
+Aligned derivations
+\[
+\begin{aligned}
+225 &= 135 \times 1 + 90\\
+135 &= 90 \times 1 + 45\\
+90 &= 45 \times 2 + 0
+\end{aligned}
+\]
+KaTeX is preferred.
+
+KaTeX should primarily be executed during Web Builder generation rather than repeatedly at runtime.
+
+24. Images & Assets
+Published chapter assets are physically stored at:
+
+/c10/math/ch1/assets/
+Assets are logically associated with resources through resourceId.
+
+Supported primary image types:
+
+WebP
+
+SVG
+
+Content references use:
+
+![Diagram Description](assets/asset_example_1.webp)
+The Web Builder must resolve these references correctly when generating final HTML URLs.
+
+Images should have:
+
+Correct dimensions where possible
+
+Alt text
+
+Lazy loading below the fold
+
+No unnecessary duplication
+
+25. Responsive Design
+Mobile is a first-class target.
+
+Supported:
+
+Mobile
+
+Tablet
+
+Desktop
+
+Desktop may use multi-column subject/resource layouts.
+
+Mobile should collapse naturally into vertical lists.
+
+Mathematics must remain readable without unnecessary horizontal scrolling.
+
+Touch targets should be sufficiently large.
+
+26. Reading Experience
+The content area should prioritize:
+
+Comfortable line length
+
+Strong typography
+
+Clear hierarchy
+
+Generous but controlled spacing
+
+Question/solution distinction
+
+Proper mathematical sizing
+
+Clear diagrams
+
+Minimal distractions
+
+The resource pages should feel closer to:
+
+A digital textbook
+
+than:
+
+A web application.
+
+27. Breadcrumbs
+Content pages should provide contextual navigation.
+
+Example:
+
+Class 10
+/
+Mathematics
+/
+Real Numbers
+/
+NCERT Solutions
+Breadcrumbs should be compact and unobtrusive.
+
+They answer:
+
+"Where am I?"
+
+without consuming significant space.
+
+28. Navigation Philosophy
+Navigation should be:
+
+Predictable
+
+Shallow
+
+Reversible
+
+Obvious
+
+A student should always have an easy route back to:
+
+Chapter
+
+Subject
+
+Class
+
+Home
+
+Resource pages should optionally provide:
+
+Previous
+Next
+Back to chapter
+where meaningful.
+
+29. SEO
+Every indexable generated page must contain:
+
+<title>
+
+Meta description
+
+Canonical URL
+
+Semantic HTML
+
+One appropriate <h1>
+
+Internal links
+
+Meaningful textual content
+
+Static HTML must contain the educational content itself.
+
+A search engine must not need JavaScript to discover the primary content.
+
+The builder generates:
+
+sitemap.xml
+robots.txt
+30. URL System
+Human-readable URLs:
+
+/class-10/
+/class-10/mathematics/
+/class-10/mathematics/real-numbers/
+/class-10/mathematics/real-numbers/ncert-solutions/
+The URL is not the canonical identity.
+
+Publishing Studio IDs remain authoritative.
+
+Conceptually:
+
+Canonical ID
+      ↓
+Web Builder routing
+      ↓
+Human-readable URL
+31. Performance
+Performance is a core product requirement.
+
+Minimize:
+
+JavaScript
+
+CSS
+
+Third-party dependencies
+
+Network requests
+
+Runtime Markdown parsing
+
+Runtime KaTeX processing
+
+Large duplicated HTML/data
+
+Static pages should be useful with JavaScript disabled wherever practical.
+
+Common assets should be aggressively cacheable.
+
+32. Shared Frontend Assets
+The generated website should use a small shared runtime:
+
+continua-runtime.js
+continua.css
+These should be:
+
+Minified
+
+Versioned
+
+CDN-cacheable
+
+Shared between pages
+
+Do not embed large CSS/JS bundles into every HTML file.
+
+Production references should be immutable/versioned.
+
+33. Error Pages
+The frontend must have deliberate states for:
+
+404
+Page not found.
+
+Back to Continua
+Missing resource
+This resource is not currently available.
+Content failure
+Unable to load this resource.
+Try again.
+The user should never encounter a blank page.
+
+34. Data-Driven Frontend
+The frontend must not manually maintain:
+
+Classes
+
+Subjects
+
+Chapters
+
+Resource availability
+
+Question lists
+
+The Web Builder consumes the published JSON/manifests and generates the appropriate pages.
+
+Conceptually:
+
+Published Content
+      ↓
+Web Builder
+      ↓
+Templates
+      ↓
+Static HTML
+The templates determine presentation.
+
+The published data determines content.
+
+35. Content / Presentation Separation
+This separation should remain strict.
+
+Publishing Studio
+Owns:
+
+Canonical IDs
+
+Content
+
+Questions
+
+Solutions
+
+Resources
+
+Editorial metadata
+
+Publishing state
+
+Web Builder
+Owns:
+
+Routes
+
+HTML
+
+Templates
+
+CSS
+
+SEO
+
+Markdown rendering
+
+KaTeX rendering
+
+Search index
+
+Sitemap
+
+Web-specific asset handling
+
+GitHub Pages
+Owns:
+
+Static delivery
+
+36. Overall Visual Composition
+The final site should generally follow:
+
+                 NAVY
+┌─────────────────────────────────────┐
+│             HEADER                  │
+└─────────────────────────────────────┘
+
+                 LIGHT
+┌─────────────────────────────────────┐
+│                                     │
+│        PAGE-SPECIFIC CONTENT        │
+│                                     │
+└─────────────────────────────────────┘
+
+                 NAVY
+┌─────────────────────────────────────┐
+│                                     │
+│             FOOTER                  │
+│                                     │
+└─────────────────────────────────────┘
+The header and footer provide the brand frame.
+
+The middle is deliberately flexible because it contains the actual educational material.
+
+37. The Core Design Rule
+The frontend should never compete with the content.
+
+The interface exists to make Continua's content easier to find, understand and read.
+
+That means:
+
+Less application UI.
+More editorial hierarchy.
+Less decoration.
+More information.
+Less animation.
+More speed.
+Less marketing.
+More material.
+
+The intended final impression is:
+
+"This looks like a serious educational resource that has been here for years."
+
+while underneath it is a modern static publishing system capable of serving thousands of generated pages extremely quickly.
+
+
+Today 7:38 PM
+454ab3d4-96d4-4221-ae87-f1f3f9222a6b.png
+How do the icons looK? They are finalised, and copyright sorted
+
+Honestly? They work. And now that they're finalized and copyright is sorted, I'd stop fiddling with them. 😄
+
+Looking at the set:
+
+Biology — microscope: immediately readable, strong silhouette, good subject association.
+
+Chemistry — flask: unmistakable and nicely distinct from biology.
+
+Physics — atom: probably the strongest visual identifier of the four.
+
+Science — rocket: now that I see the actual icon, I like it more than I expected. It's clearly a science/technology visual and gives Class 10 a little personality.
+
+More importantly: they form a coherent family
+They all share roughly the same:
+
+illustrative/cartoon treatment
+
+bold outlines
+
+saturated accent colours
+
+transparent backgrounds
+
+similar visual complexity
+
+recognizable silhouettes
+
+That's what matters more than whether every icon is perfectly literal.
+
+And the colourfulness is actually useful against Continua's otherwise restrained navy/white interface. I wouldn't recolour them to match the brand. Let the icons provide the small bursts of colour.
+
+I'd imagine the hierarchy as:
+
+CONTINUA
+    ↓
+Navy / white interface
+    ↓
+Mostly restrained typography
+    ↓
+        [ colourful subject icon ]
+              Subject
+                  →
+So the icons become the visual punctuation of the otherwise very calm site.
+
+One thing to watch
+The icons appear fairly large in the Google Drive preview, but on the actual website I'd keep them at a controlled size. Something around 40–52px visual height is probably enough for the subject rows.
+
+We don't want the homepage becoming:
+
+WELCOME TO THE ICON COLLECTION™
+
+The icon should be noticed, recognized, and then get out of the way.
+
+And since these are now final, I'd formally treat them as frontend design assets, alongside the logo and hero illustration:
+
+/assets/
+├── logo.svg
+├── biology_icon-opt.webp
+├── chemistry_icon-opt.webp
+├── physics_icon-opt.webp
+├── science_icon.webp
+└── hero-education.webp
+Then the Web Builder's template/configuration maps subject abbreviations to these assets.
+
+I think the visual asset side of LV0 is now settled: logo ✓, colour palette ✓, hero illustration ✓, subject icon family ✓.
+
+Now we can concentrate on the actual page composition instead of endlessly hunting for prettier icons.
+
+
+I generated these , through some multiple itteration form ai , DO i own copyright?
+
+If you're asking about India, the answer is: possibly, but don't assume you automatically own exclusive copyright in the raw AI outputs.
+
+The situation is a bit unusual because Indian copyright law explicitly recognizes a "computer-generated work" and says the author is the person who causes the work to be created. 
+ That is more favorable to your position than simply saying "AI art has no copyright in India."
+
+However, there are two separate questions:
+
+1. Do you have the right to use the icons?
+This depends heavily on the AI service's terms of use.
+
+If you generated them with a service whose terms grant you rights to your outputs and don't prohibit commercial use, then you may be able to use them commercially.
+
+That's the first thing I'd verify for the particular AI tool you used.
+
+2. Do you have exclusive copyright over the resulting artwork?
+That's less certain.
+
+Copyright protects original expression, and the Indian Copyright Office says copyright arises automatically for an original work. 
+ But AI-generated artwork creates a difficult authorship question: how much of the final artistic expression came from you, versus the model?
+
+Your situation is better than:
+
+"I typed one prompt and accepted the first image."
+
+You said you went through multiple iterations and presumably selected/refined the results. If you also made meaningful human edits—composition changes, cleanup, removing artifacts, modifying shapes, combining elements, etc.—your claim to copyright in those human-created contributions becomes considerably stronger.
+
+The Indian Copyright Office itself recognizes that websites can contain copyrightable artistic works such as images, diagrams and illustrations, while also noting that things like common icons/familiar symbols may not themselves qualify. 
+
+For your Continua icons specifically
+I'd distinguish three things:
+
+The concept
+
+"Use a microscope to represent Biology."
+
+Probably not protectable by itself. Copyright doesn't protect ideas/concepts. 
+
+The particular icon artwork
+
+Your specific green microscope illustration.
+
+Potentially copyrightable as an artistic work, but the strength of your exclusive claim depends on its originality/authorship and the AI tool's terms.
+
+Your customized final asset
+
+If you've substantially edited the generated image yourself, the human-created modifications can give you a much stronger copyright position in those modifications.
+
+And there's an important practical point
+You don't necessarily need to register copyright before using them.
+
+The Indian Copyright Office says copyright generally arises automatically and registration isn't mandatory; registration provides evidentiary advantages in disputes. 
+
+So for Continua, I'd do this:
+
+Keep the original generation files/prompts/iterations.
+
+Keep records showing the iterations and your modifications.
+
+Keep the AI provider's Terms of Service applicable on the date you generated them.
+
+Keep your final edited/source files.
+
+Verify that the provider permits commercial use and doesn't impose special output restrictions.
+
+If Continua becomes commercially significant and these assets are important to the brand, consider formal copyright registration with the Indian Copyright Office.
+
+The Office currently lists registration for an artistic work at ₹500 per work, or ₹2,000 where the literary/artistic work is used or capable of being used in relation to goods or services. 
+
+So I wouldn't throw the icons away or worry that they're unusable. You can very likely use them if the generator's terms allow it. The question is whether you can confidently say "Continua owns exclusive copyright in this exact artwork"—and that requires looking at the AI tool's terms and the degree of human contribution.
+
+If you tell me which AI tool generated them (Gemini, ChatGPT, Midjourney, etc.), I can check its current commercial/output ownership terms specifically.
+
+
+
+Library
+/
+continua-index-v0.html
+More actions
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Continua — school study material.">
+  <meta name="theme-color" content="#1e293b">
+  <title>Continua — School Study Material</title>
+
+  <style>
+    :root {
+      --primary: #1e293b;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --surface: #f8fafc;
+      --page: #ffffff;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+

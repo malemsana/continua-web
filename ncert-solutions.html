@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Class 10 Mathematics Chapter 1 Real Numbers NCERT Solutions — Continua</title>
+  <meta name="title" content="Class 10 Mathematics Chapter 1 Real Numbers NCERT Solutions — Continua">
+  <meta name="description" content="Complete textbook solutions for Class 10 Mathematics Chapter 1 Real Numbers (Exercise 1.1 and Exercise 1.2) with clear step-by-step mathematical reasoning.">
+  <link rel="canonical" href="https://continua.edu/class-10/mathematics/real-numbers/ncert-solutions/">
+
+  <!-- KaTeX CSS for LaTeX Math Typesetting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+
+  <style>
+    /* ==========================================================================
+       1. Base Variables, Palette & Compact Editorial Typography
+       ========================================================================== */
+    :root {
+      /* Brand & Nav Colors */
+      --color-navy: #1e293b;
+      --color-navy-dark: #0f172a;
+      --color-navy-light: #334155;
+      
+      /* Surface & Neutrals */
+      --color-bg-page: #ffffff;
+      --color-bg-surface: #f8fafc;
+      --color-bg-card-hover: #f1f5f9;
+      --color-bg-hero: #eff2fa;
+      
+      /* Borders & Rules */
+      --color-border: #e2e8f0;
+      --color-border-subtle: #edf2f7;
+      --color-border-navy: rgba(255, 255, 255, 0.12);
+      
+      /* Text Hierarchy */
+      --color-text-main: #0f172a;
+      --color-text-body: #1e293b;
+      --color-text-subtle: #475569;
+      --color-text-muted: #64748b;
+      --color-text-light: #94a3b8;
+      --color-text-inverse: #ffffff;
+      --color-text-inverse-muted: #94a3b8;
+      
+      /* Fonts */
+      --font-serif: "Iowan Old Style", "Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", Georgia, serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      
+      /* Sizing & Reading Measures */
+      --max-width-header: 1200px;
+      --reading-width: 680px; /* Narrower width leaving ample space on right side */
+      --transition-standard: 0.15s ease-in-out;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-bg-page);
+      color: var(--color-text-main);
+      font-family: var(--font-sans);
+      font-size: 14px; /* Dense academic font size */
+      line-height: 1.5; /* Tightened line height */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-standard), opacity var(--transition-standard);
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width-header);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       2. Global Header
+       ========================================================================== */
+    .global-header {
+      background-color: var(--color-navy);
+      border-bottom: 1px solid var(--color-border-navy);
+      color: var(--color-text-inverse);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      padding: 0 2rem;
+      width: 100%;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: stretch;
+      height: 100%;
+      gap: 2rem;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      height: 100%;
+    }
+
+    .header-logo {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .header-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--color-text-inverse);
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: stretch;
+      height: 100%;
+    }
+
+    .header-nav-link {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 1.25rem;
+      color: #cbd5e1;
+      font-size: 0.92rem;
+      font-weight: 500;
+      border-radius: 0;
+      border-bottom: 3px solid transparent;
+      transition: color var(--transition-standard), background-color var(--transition-standard), border-color var(--transition-standard);
+    }
+
+    .header-nav-link:hover {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-bottom-color: #93c5fd;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-search {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 2px;
+      padding: 0.32rem 0.75rem;
+      width: 270px;
+      transition: background-color var(--transition-standard), border-color var(--transition-standard);
+    }
+
+    .header-search:focus-within {
+      background-color: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .header-search-icon {
+      width: 14px;
+      height: 14px;
+      color: var(--color-text-inverse-muted);
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .header-search-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--color-text-inverse);
+      font-size: 0.82rem;
+      width: 100%;
+      font-family: inherit;
+    }
+
+    .header-search-input::placeholder {
+      color: var(--color-text-inverse-muted);
+    }
+
+    /* Three Parallel Lines Hamburger Menu */
+    .header-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 2px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 6px;
+      transition: background-color var(--transition-standard), border-color var(--transition-standard);
+    }
+
+    .header-menu-btn:hover,
+    .header-menu-btn[aria-expanded="true"] {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .menu-bar {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background-color: #ffffff;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* Mobile Navigation Panel */
+    .mobile-nav-panel {
+      display: none;
+      background-color: var(--color-navy-dark);
+      border-top: 1px solid var(--color-border-navy);
+      padding: 1rem 1.5rem;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .mobile-nav-panel.open {
+      display: flex;
+    }
+
+    .mobile-nav-link {
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.5rem 0.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* ==========================================================================
+       3. Sticky Navigation Path (Breadcrumbs) with Dynamic Exercise Switcher
+       ========================================================================== */
+    .breadcrumb-section {
+      background-color: var(--color-bg-page);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.55rem 0;
+      position: sticky;
+      top: 60px;
+      z-index: 95;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .breadcrumb-link {
+      color: var(--color-text-subtle);
+      transition: color var(--transition-standard);
+    }
+
+    .breadcrumb-link:hover {
+      color: var(--color-navy);
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      color: var(--color-text-light);
+      user-select: none;
+    }
+
+    .breadcrumb-current {
+      color: var(--color-text-main);
+      font-weight: 500;
+    }
+
+    /* Top Exercise Picker (Shows current exercise on top, clickable to switch) */
+    .exercise-picker-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .exercise-picker-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background-color: var(--color-bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 2px;
+      padding: 0.2rem 0.55rem;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-navy-dark);
+      cursor: pointer;
+      transition: all var(--transition-standard);
+    }
+
+    .exercise-picker-btn:hover,
+    .exercise-picker-btn[aria-expanded="true"] {
+      background-color: var(--color-navy);
+      border-color: var(--color-navy);
+      color: #ffffff;
+    }
+
+    .picker-chevron {
+      width: 12px;
+      height: 12px;
+      transition: transform 0.15s ease;
+    }
+
+    .exercise-picker-btn[aria-expanded="true"] .picker-chevron {
+      transform: rotate(180deg);
+    }
+
+    .exercise-picker-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 0;
+      background-color: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+      min-width: 220px;
+      z-index: 160;
+      flex-direction: column;
+    }
+
+    .exercise-picker-dropdown.open {
+      display: flex;
+    }
+
+    .exercise-picker-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.85rem;
+      font-size: 0.82rem;
+      color: var(--color-text-main);
+      border-bottom: 1px solid var(--color-border-subtle);
+      transition: background-color var(--transition-standard);
+      text-decoration: none;
+    }
+
+    .exercise-picker-item:last-child {
+      border-bottom: none;
+    }
+
+    .exercise-picker-item:hover,
+    .exercise-picker-item.active {
+      background-color: var(--color-bg-hero);
+      color: var(--color-navy-dark);
+      font-weight: 600;
+    }
+
+    .exercise-picker-count {
+      font-size: 0.72rem;
+      color: var(--color-text-muted);
+      font-weight: normal;
+    }
+
+    /* Top Question Picker (Shows current question number in path, clickable to jump) */
+    .question-picker-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .question-picker-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 0;
+      background-color: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+      padding: 0.6rem;
+      min-width: 180px;
+      z-index: 160;
+      flex-direction: column;
+    }
+
+    .question-picker-dropdown.open {
+      display: flex;
+    }
+
+    .question-picker-header {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 0.45rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .question-picker-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.35rem;
+    }
+
+    .question-picker-tile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      font-family: var(--font-serif);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-navy);
+      background-color: var(--color-bg-surface);
+      border: 1px solid var(--color-border);
+      text-decoration: none;
+      transition: all var(--transition-standard);
+    }
+
+    .question-picker-tile:hover,
+    .question-picker-tile.active {
+      background-color: var(--color-navy);
+      border-color: var(--color-navy);
+      color: #ffffff;
+    }
+
+    /* ==========================================================================
+       4. Permanent Floating Controls (Sits Safely Below Navigation Path)
+       ========================================================================== */
+    .floating-control-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      background-color: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 0;
+      color: var(--color-navy);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+      transition: all var(--transition-standard);
+      position: fixed;
+      z-index: 120;
+    }
+
+    .floating-control-btn:hover {
+      background-color: var(--color-navy);
+      border-color: var(--color-navy);
+      color: #ffffff;
+    }
+
+    /* Desktop Left: Contents Button (Positioned safely below breadcrumb path) */
+    #openDrawerBtn {
+      top: 114px; /* Sits below the 60px header + 38px breadcrumb */
+      left: 24px;
+      padding: 0.42rem 0.75rem;
+    }
+
+    #openDrawerBtn.drawer-open {
+      display: none !important; /* Disappear during active drawer view */
+    }
+
+    /* Desktop Right: Three Dots Button & Wrapper (Positioned safely below breadcrumb path) */
+    #moreMenuWrapper {
+      position: fixed;
+      top: 114px; /* Sits below the 60px header + 38px breadcrumb */
+      right: 24px;
+      z-index: 120;
+    }
+
+    #moreMenuBtn {
+      position: static;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+    }
+
+    #moreMenuBtn[aria-expanded="true"] {
+      background-color: var(--color-navy);
+      border-color: var(--color-navy);
+      color: #ffffff;
+    }
+
+    .more-menu-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 5px);
+      right: 0;
+      background-color: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+      min-width: 230px;
+      z-index: 150;
+      flex-direction: column;
+    }
+
+    .more-menu-dropdown.open {
+      display: flex;
+    }
+
+    .more-menu-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--color-border-subtle);
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+      color: var(--color-text-main);
+      cursor: pointer;
+      transition: background-color var(--transition-standard);
+    }
+
+    .more-menu-item:last-child {
+      border-bottom: none;
+    }
+
+    .more-menu-item:hover {
+      background-color: var(--color-bg-card-hover);
+    }
+
+    .more-menu-item svg {
+      width: 15px;
+      height: 15px;
+      color: var(--color-navy);
+      flex-shrink: 0;
+    }
+
+    .more-menu-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .more-menu-title {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--color-navy-dark);
+      line-height: 1.2;
+    }
+
+    .more-menu-meta {
+      font-size: 0.7rem;
+      color: var(--color-text-muted);
+      margin-top: 1px;
+    }
+
+    /* ==========================================================================
+       5. Left Shoulder Navigation Drawer (Occupies Left Shoulder, No Dimming)
+       ========================================================================== */
+    .toc-drawer {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 260px;
+      height: calc(100vh - 60px);
+      background-color: #ffffff;
+      border-right: 1px solid var(--color-border);
+      box-shadow: 2px 0 16px rgba(15, 23, 42, 0.06);
+      z-index: 110;
+      transform: translateX(-100%);
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .toc-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 0.9rem 1.25rem;
+      background-color: var(--color-navy);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--color-border-navy);
+    }
+
+    .drawer-title-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .drawer-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #94a3b8;
+    }
+
+    .drawer-heading {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    .drawer-close-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background-color var(--transition-standard);
+    }
+
+    .drawer-close-btn:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .drawer-body {
+      padding: 1.25rem;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    .drawer-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .drawer-group-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-navy-dark);
+      margin-bottom: 0.65rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .drawer-q-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.35rem;
+    }
+
+    .drawer-q-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      font-family: var(--font-serif);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--color-navy);
+      background-color: var(--color-bg-surface);
+      border: 1px solid var(--color-border);
+      transition: all var(--transition-standard);
+    }
+
+    .drawer-q-link:hover {
+      background-color: var(--color-navy);
+      border-color: var(--color-navy);
+      color: #ffffff;
+    }
+
+    /* Mobile drawer backdrop */
+    .drawer-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(2px);
+      z-index: 105;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .drawer-backdrop.open {
+      display: block;
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       6. Solution Book Reading Canvas (Narrower 680px Width, Extra Right Space)
+       ========================================================================== */
+    .solution-book-section {
+      padding: 2.25rem 0 4rem;
+      flex-grow: 1;
+      display: flex;
+      width: 100%;
+    }
+
+    .solution-book-container {
+      width: 100%;
+      max-width: var(--reading-width); /* Narrow 680px measure */
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* On Large Desktop: Shift reading column to leave ample room on right side */
+    @media (min-width: 1200px) {
+      .solution-book-container {
+        margin-left: calc(50vw - 340px - 50px);
+        margin-right: auto;
+      }
+    }
+
+    /* Natural Document Masthead (Scrolls with page) */
+    .solution-book-masthead {
+      margin-bottom: 2.25rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .solution-book-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 500;
+      color: var(--color-navy-dark);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .solution-book-subtitle {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-top: 0.2rem;
+      font-style: italic;
+    }
+
+    /* Exercise Section */
+    .exercise-block {
+      margin-bottom: 2.75rem;
+      scroll-margin-top: 110px; /* Accounts for sticky header + breadcrumb */
+    }
+
+    .exercise-title-row {
+      margin-bottom: 1.35rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1.5px solid var(--color-navy);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .exercise-title {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: var(--color-navy-dark);
+      letter-spacing: -0.01em;
+    }
+
+    .exercise-meta {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      font-style: italic;
+    }
+
+    /* Editorial Question Item */
+    .question-entry {
+      margin-bottom: 1.85rem;
+      scroll-margin-top: 110px;
+      transition: background-color 0.25s ease;
+    }
+
+    .question-entry.highlight-pulse {
+      background-color: #eff6ff;
+      padding: 0.65rem 0.85rem;
+      margin-left: -0.85rem;
+      margin-right: -0.85rem;
+      border-left: 3px solid #3b82f6;
+    }
+
+    .question-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.35rem;
+    }
+
+    .question-heading {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-navy-dark);
+      letter-spacing: -0.01em;
+    }
+
+    .question-source {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      font-style: italic;
+    }
+
+    .question-body {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--color-text-main);
+      margin-bottom: 0.85rem;
+    }
+
+    /* Solution Block (Editorial Presentation) */
+    .solution-block {
+      margin-top: 0.65rem;
+    }
+
+    .solution-label {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-navy-dark);
+      margin-bottom: 0.45rem;
+      display: inline-block;
+      border-bottom: 1px solid var(--color-navy);
+      padding-bottom: 1px;
+    }
+
+    .solution-content {
+      font-size: 0.93rem;
+      line-height: 1.52;
+      color: var(--color-text-body);
+    }
+
+    .solution-content p {
+      margin-bottom: 0.5rem;
+    }
+
+    .solution-content h3, 
+    .solution-content h4 {
+      font-family: var(--font-serif);
+      color: var(--color-navy-dark);
+      margin: 0.75rem 0 0.25rem;
+      font-weight: 600;
+    }
+
+    .solution-content h3 {
+      font-size: 1rem;
+    }
+
+    .solution-content h4 {
+      font-size: 0.92rem;
+    }
+
+    .solution-content ul, 
+    .solution-content ol {
+      margin: 0.45rem 0 0.65rem 1.4rem;
+    }
+
+    .solution-content li {
+      margin-bottom: 0.25rem;
+    }
+
+    .solution-content hr {
+      border: none;
+      border-top: 1px dashed #cbd5e1;
+      margin: 0.85rem 0;
+    }
+
+    /* Subtle Editorial Question Separator */
+    .question-divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: 1.85rem 0;
+    }
+
+    /* KaTeX Display Math Spacing */
+    .katex-display {
+      margin: 0.65rem 0 !important;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.2rem 0;
+    }
+
+    /* ==========================================================================
+       7. Chapter Sibling / Resource Nav Bar
+       ========================================================================== */
+    .resource-pager-section {
+      background-color: var(--color-bg-surface);
+      border-top: 1px solid var(--color-border);
+      padding: 1.5rem 0;
+    }
+
+    .resource-pager-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .pager-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-text-main);
+      padding: 0.45rem 0.8rem;
+      background-color: var(--color-bg-page);
+      border: 1px solid var(--color-border);
+      transition: all var(--transition-standard);
+    }
+
+    .pager-link:hover {
+      background-color: var(--color-navy);
+      border-color: var(--color-navy);
+      color: var(--color-text-inverse);
+    }
+
+    /* ==========================================================================
+       8. Global Footer
+       ========================================================================== */
+    .global-footer {
+      background-color: var(--color-navy);
+      color: var(--color-text-inverse);
+      padding: 3.5rem 0 2rem;
+      border-top: 1px solid var(--color-border-navy);
+      margin-top: auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 2rem 1.25rem;
+      padding-bottom: 2.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      padding-right: 1.5rem;
+    }
+
+    .footer-brand-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand-logo {
+      width: 30px;
+      height: 30px;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--color-text-inverse);
+    }
+
+    .footer-tagline {
+      font-size: 0.9rem;
+      color: var(--color-text-inverse-muted);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-description {
+      font-size: 0.82rem;
+      color: var(--color-text-inverse-muted);
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-social-link {
+      color: var(--color-text-inverse-muted);
+      transition: color var(--transition-standard);
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-social-link:hover {
+      color: var(--color-text-inverse);
+    }
+
+    .footer-social-icon {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
+    }
+
+    .footer-col-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-inverse-muted);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer-link {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      transition: color var(--transition-standard);
+    }
+
+    .footer-link:hover {
+      color: var(--color-text-inverse);
+    }
+
+    .footer-bottom {
+      padding-top: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--color-text-inverse-muted);
+    }
+
+    /* ==========================================================================
+       9. Responsive Breakpoints & Mobile Controls
+          • On small screen, contents box disappears as a floating element
+          • Contents option is placed inside the Three Dots menu
+       ========================================================================== */
+    @media (max-width: 900px) {
+      /* Disappear contents box as a floating element */
+      #openDrawerBtn {
+        display: none !important;
+      }
+
+      /* Clean single Three Dots button on right */
+      #moreMenuWrapper {
+        top: 104px;
+        right: 14px;
+      }
+
+      .toc-drawer {
+        width: 290px;
+        max-width: 85vw;
+        z-index: 200;
+        box-shadow: 4px 0 24px rgba(15, 23, 42, 0.2);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        padding: 0 1.25rem;
+      }
+      .header-nav {
+        display: none;
+      }
+      .header-search {
+        display: none;
+      }
+      .header-menu-btn {
+        display: flex;
+      }
+      .solution-book-section {
+        padding: 1.75rem 0 2.5rem;
+      }
+      .exercise-title {
+        font-size: 1.4rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.75rem;
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
+        padding-right: 0;
+      }
+
+      /* Mobile Compact Navigation Path on Scroll */
+      .breadcrumb-section {
+        transition: padding 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .breadcrumb-section.is-compact {
+        padding: 0.35rem 0;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+      }
+
+      .breadcrumb-section.is-compact .breadcrumbs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+
+      .breadcrumb-section.is-compact .breadcrumbs::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Disappear the long full path on scroll, show just Real Numbers / Exercise / Question */
+      .breadcrumb-section.is-compact .breadcrumb-ancestor,
+      .breadcrumb-section.is-compact .breadcrumb-resource-name,
+      .breadcrumb-section.is-compact .breadcrumb-resource-sep {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Global Header
+       ========================================================================== -->
+  <header class="global-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="/" class="header-brand" aria-label="Continua Home">
+          <img src="assets/logo.svg" alt="Continua Logo" class="header-logo">
+          <span class="header-title">Continua</span>
+        </a>
+
+        <nav class="header-nav" aria-label="Main Navigation">
+          <a href="/resources/pyq-library/" class="header-nav-link">PYQ Library</a>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <div class="header-search" role="search">
+          <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="header-search-input" id="headerSearchInput" placeholder="Search chapters, questions and resources..." aria-label="Quick search">
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="header-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-panel" id="mobileNav" aria-hidden="true">
+      <nav class="mobile-nav-links">
+        <a href="/resources/pyq-library/" class="mobile-nav-link">PYQ Library</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ==========================================================================
+         Sticky Navigation Path (Breadcrumbs) with Dynamic Exercise Selector
+         ========================================================================== -->
+    <nav class="breadcrumb-section" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" class="breadcrumb-link" itemprop="item">
+              <span itemprop="name">Continua</span>
+            </a>
+            <meta itemprop="position" content="1">
+            <span class="breadcrumb-separator">/</span>
+          </li>
+          <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/class-10/" class="breadcrumb-link" itemprop="item">
+              <span itemprop="name">Class 10</span>
+            </a>
+            <meta itemprop="position" content="2">
+            <span class="breadcrumb-separator">/</span>
+          </li>
+          <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/class-10/mathematics/" class="breadcrumb-link" itemprop="item">
+              <span itemprop="name">Mathematics</span>
+            </a>
+            <meta itemprop="position" content="3">
+            <span class="breadcrumb-separator">/</span>
+          </li>
+          <li class="breadcrumb-item breadcrumb-chapter" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/class-10/mathematics/real-numbers/" class="breadcrumb-link" itemprop="item">
+              <span itemprop="name">Real Numbers</span>
+            </a>
+            <meta itemprop="position" content="4">
+            <span class="breadcrumb-separator">/</span>
+          </li>
+          <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span class="breadcrumb-current breadcrumb-resource-name" itemprop="name">NCERT Solutions</span>
+            <meta itemprop="position" content="5">
+            <span class="breadcrumb-separator breadcrumb-resource-sep">/</span>
+            
+            <!-- Current Exercise Indicator on Top (Clickable to switch exercises) -->
+            <div class="exercise-picker-wrapper" id="exercisePickerWrapper">
+              <button class="exercise-picker-btn" id="currentExerciseBtn" aria-label="Current exercise selector" aria-expanded="false" aria-haspopup="true">
+                <span id="currentExerciseLabel">Exercise 1.1</span>
+                <svg class="picker-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="exercise-picker-dropdown" id="exercisePickerDropdown" role="menu" aria-hidden="true">
+                <!-- Dynamically populated with exercises from JSON -->
+              </div>
+            </div>
+
+            <span class="breadcrumb-separator">/</span>
+
+            <!-- Current Question Indicator on Top (Clickable to jump to question) -->
+            <div class="question-picker-wrapper" id="questionPickerWrapper">
+              <button class="exercise-picker-btn" id="currentQuestionBtn" aria-label="Current question selector" aria-expanded="false" aria-haspopup="true">
+                <span id="currentQuestionLabel">Question 1</span>
+                <svg class="picker-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="question-picker-dropdown" id="questionPickerDropdown" role="menu" aria-hidden="true">
+                <div class="question-picker-header" id="questionPickerHeader">Exercise 1.1 Questions</div>
+                <div class="question-picker-grid" id="questionPickerGrid">
+                  <!-- Dynamically populated question tiles (01, 02, 03...) -->
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- ==========================================================================
+         Permanent Floating Controls (Sits Safely Below Navigation Path)
+         • Desktop: Contents on Left, Three Dots on Right
+         • Small Screen: Contents disappears as floating element, sits inside Three Dots
+         ========================================================================== -->
+    <!-- Desktop Floating Contents Trigger Button -->
+    <button class="floating-control-btn" id="openDrawerBtn" aria-label="Toggle Table of Contents" aria-controls="tocDrawer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;">
+        <line x1="8" y1="6" x2="21" y2="6"></line>
+        <line x1="8" y1="12" x2="21" y2="12"></line>
+        <line x1="8" y1="18" x2="21" y2="18"></line>
+        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+      </svg>
+      <span>Contents</span>
+    </button>
+
+    <!-- Three Dots Action Wrapper -->
+    <div id="moreMenuWrapper">
+      <button class="floating-control-btn" 
+              id="moreMenuBtn" 
+              aria-label="More resource options" 
+              aria-expanded="false" 
+              aria-haspopup="true">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:15px;height:15px;">
+          <circle cx="12" cy="5" r="2"></circle>
+          <circle cx="12" cy="12" r="2"></circle>
+          <circle cx="12" cy="19" r="2"></circle>
+        </svg>
+      </button>
+
+      <!-- Dropdown Popover -->
+      <div class="more-menu-dropdown" id="moreMenuDropdown" role="menu" aria-hidden="true">
+        
+        <!-- Table of Contents Option inside Three Dots (Primary access on mobile) -->
+        <button type="button" class="more-menu-item" id="menuContentsBtn" role="menuitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          <div class="more-menu-text">
+            <span class="more-menu-title">Table of Contents</span>
+            <span class="more-menu-meta">Question index &amp; jumper</span>
+          </div>
+        </button>
+
+        <a href="assets/c10_mathemat_ch1_sol.json" 
+           download="c10_mathematics_ch1_real_numbers_solutions.json" 
+           class="more-menu-item" 
+           role="menuitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <div class="more-menu-text">
+            <span class="more-menu-title">Download Solutions JSON</span>
+            <span class="more-menu-meta">Raw exercise payload</span>
+          </div>
+        </a>
+
+        <button type="button" class="more-menu-item" id="menuCopyLinkBtn" role="menuitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <div class="more-menu-text">
+            <span class="more-menu-title" id="copyLinkTitle">Copy Solutions Link</span>
+            <span class="more-menu-meta">Shareable permalink</span>
+          </div>
+        </button>
+
+        <button type="button" class="more-menu-item" id="menuPrintBtn" role="menuitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <div class="more-menu-text">
+            <span class="more-menu-title">Print Solutions</span>
+            <span class="more-menu-meta">Browser print dialog</span>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Backdrop (Mobile only) -->
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <!-- ==========================================================================
+         Left Shoulder Navigation Drawer (Occupies Left Shoulder, No Dimming on Desktop)
+         ========================================================================== -->
+    <aside class="toc-drawer" id="tocDrawer" aria-label="Table of Contents Drawer" aria-hidden="true">
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <span class="drawer-label">On This Page</span>
+          <h2 class="drawer-heading">Exercise Index</h2>
+        </div>
+        <button class="drawer-close-btn" id="closeDrawerBtn" aria-label="Close Table of Contents">&times;</button>
+      </div>
+      <div class="drawer-body" id="drawerBody">
+        <!-- Dynamic Exercise Groups and 01, 02 Question Buttons rendered via JS -->
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         Solution Book Reading Canvas (Narrower 680px Width, Extra Right Space)
+         ========================================================================== -->
+    <section class="solution-book-section">
+      <div class="solution-book-container">
+        
+        <!-- Natural Document Masthead (Scrolls with page) -->
+        <header class="solution-book-masthead">
+          <h1 class="solution-book-title">Chapter 1: Real Numbers</h1>
+          <p class="solution-book-subtitle">NCERT Exercise Solutions &bull; Class 10 Mathematics</p>
+        </header>
+
+        <!-- Dynamic Exercises, Questions & Solutions rendered via JS -->
+        <div id="solutionBookContent"></div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Next Resource Quick Jump
+         ========================================================================== -->
+    <nav class="resource-pager-section" aria-label="Related Resources">
+      <div class="container resource-pager-inner">
+        <a href="/class-10/mathematics/real-numbers/ncert/" class="pager-link">
+          <span>&larr;</span>
+          <span>Previous: <strong>NCERT Textbook Reader</strong></span>
+        </a>
+        <a href="/class-10/mathematics/real-numbers/formulae/" class="pager-link">
+          <span>Continue to: <strong>Formulae Sheet</strong></span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </nav>
+  </main>
+
+  <!-- ==========================================================================
+       Global Footer
+       ========================================================================== -->
+  <footer class="global-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand & Description Column -->
+        <div class="footer-brand">
+          <div class="footer-brand-header">
+            <img src="assets/logo.svg" alt="Continua" class="footer-brand-logo">
+            <span class="footer-brand-title">Continua</span>
+          </div>
+          <p class="footer-tagline">School study material.</p>
+          <p class="footer-description">
+            NCERT solutions, reference materials, formulae, notes and practice papers for Classes 8–12.
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com" class="footer-social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <svg class="footer-social-icon" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://youtube.com" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg class="footer-social-icon" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+            <a href="mailto:contact@continua.edu" class="footer-social-link" aria-label="Email Us">
+              <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Classes -->
+        <div>
+          <div class="footer-col-title">Classes</div>
+          <ul class="footer-links">
+            <li><a href="/class-12/" class="footer-link">Class 12</a></li>
+            <li><a href="/class-11/" class="footer-link">Class 11</a></li>
+            <li><a href="/class-10/" class="footer-link">Class 10</a></li>
+            <li><a href="/class-9/" class="footer-link">Class 9</a></li>
+            <li><a href="/class-8/" class="footer-link">Class 8</a></li>
+          </ul>
+        </div>
+
+        <!-- Subjects -->
+        <div>
+          <div class="footer-col-title">Subjects</div>
+          <ul class="footer-links">
+            <li><a href="/subjects/mathematics/" class="footer-link">Mathematics</a></li>
+            <li><a href="/subjects/physics/" class="footer-link">Physics</a></li>
+            <li><a href="/subjects/chemistry/" class="footer-link">Chemistry</a></li>
+            <li><a href="/subjects/biology/" class="footer-link">Biology</a></li>
+            <li><a href="/subjects/science/" class="footer-link">Science</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <div class="footer-col-title">Resources</div>
+          <ul class="footer-links">
+            <li><a href="/resources/ncert-solutions/" class="footer-link">NCERT Solutions</a></li>
+            <li><a href="/resources/pyq-library/" class="footer-link">PYQ Library</a></li>
+            <li><a href="/resources/formulae/" class="footer-link">Formulae</a></li>
+            <li><a href="/resources/reference-materials/" class="footer-link">Reference Materials</a></li>
+            <li><a href="/resources/notes/" class="footer-link">Notes</a></li>
+            <li><a href="/resources/practice-papers/" class="footer-link">Practice Papers</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <div class="footer-col-title">Support</div>
+          <ul class="footer-links">
+            <li><a href="/about/" class="footer-link">About Us</a></li>
+            <li><a href="/contact/" class="footer-link">Contact Us</a></li>
+            <li><a href="/faq/" class="footer-link">FAQ</a></li>
+            <li><a href="/sitemap.xml" class="footer-link">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <ul class="footer-links">
+            <li><a href="/privacy/" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/terms/" class="footer-link">Terms of Use</a></li>
+            <li><a href="/disclaimer/" class="footer-link">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Continua. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Scripts: KaTeX Auto-Render, Dynamic Drawer, Exercise Picker & Scrollspy
+       ========================================================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <!-- Shared Continua Markdown+KaTeX Renderer (canonical) -->
+  <script src="assets/continua-renderer.js"></script>
+
+  <script>
+    // Fallback JSON data for offline / file:// local protocol
+    const FALLBACK_SOLUTIONS_DATA = {
+      "id": "c10_mathemat_ch1_sol",
+      "chapterId": "c10_mathemat_ch1",
+      "friendlyName": "NCERT Solutions",
+      "groups": [
+        {
+          "id": "cz",
+          "friendlyName": "Exercise 1.1",
+          "displayOrder": 1,
+          "questions": [
+            {
+              "id": "c10_mathemat_ch1_sol_cz_q1",
+              "displayOrder": 1,
+              "questionText": "Express each number as a product of its prime factors: (i) $140$ (ii) $156$ (iii) $3825$ (iv) $5005$ (v) $7429$",
+              "solutionText": "**(i) \\(140\\)**\n\nUsing the prime factorisation method:\n\\[\n\\begin{aligned}\n140 &= 2 \\times 70 \\\\\n&= 2 \\times 2 \\times 35 \\\\\n&= 2 \\times 2 \\times 5 \\times 7 \\\\\n&= 2^2 \\times 5 \\times 7\n\\end{aligned}\n\\]\n\nHence, \\(140 = 2^2 \\times 5 \\times 7\\).\n\n---\n\n**(ii) \\(156\\)**\n\nUsing the prime factorisation method:\n\\[\n\\begin{aligned}\n156 &= 2 \\times 78 \\\\\n&= 2 \\times 2 \\times 39 \\\\\n&= 2 \\times 2 \\times 3 \\times 13 \\\\\n&= 2^2 \\times 3 \\times 13\n\\end{aligned}\n\\]\n\nHence, \\(156 = 2^2 \\times 3 \\times 13\\).\n\n---\n\n**(iii) \\(3825\\)**\n\nUsing the prime factorisation method:\n\\[\n\\begin{aligned}\n3825 &= 3 \\times 1275 \\\\\n&= 3 \\times 3 \\times 425 \\\\\n&= 3 \\times 3 \\times 5 \\times 85 \\\\\n&= 3 \\times 3 \\times 5 \\times 5 \\times 17 \\\\\n&= 3^2 \\times 5^2 \\times 17\n\\end{aligned}\n\\]\n\nHence, \\(3825 = 3^2 \\times 5^2 \\times 17\\).\n\n---\n\n**(iv) \\(5005\\)**\n\nUsing the prime factorisation method:\n\\[\n\\begin{aligned}\n5005 &= 5 \\times 1001 \\\\\n&= 5 \\times 7 \\times 143 \\\\\n&= 5 \\times 7 \\times 11 \\times 13\n\\end{aligned}\n\\]\n\nHence, \\(5005 = 5 \\times 7 \\times 11 \\times 13\\).\n\n---\n\n**(v) \\(7429\\)**\n\nUsing the prime factorisation method:\n\\[\n\\begin{aligned}\n7429 &= 17 \\times 437 \\\\\n&= 17 \\times 19 \\times 23\n\\end{aligned}\n\\]\n\nHence, \\(7429 = 17 \\times 19 \\times 23\\).",
+              "sourceInfo": "Exercise 1.1 Q1"
+            },
+            {
+              "id": "c10_mathemat_ch1_sol_cz_q2",
+              "displayOrder": 2,
+              "questionText": "Find the LCM and HCF of the following pairs of integers and verify that LCM × HCF = product of the two numbers. (i) 26 and 91 (ii) 510 and 92 (iii) 336 and 54",
+              "solutionText": "#### **(i) 26 and 91**\n\nTo find the HCF and LCM, we first express the given numbers as the product of their prime factors:\n\\[\n26 = 2 \\times 13\n\\]\n\\[\n91 = 7 \\times 13\n\\]\n\n* **HCF (Highest Common Factor):** Product of the smallest power of each common prime factor.\n  \\[\n  \\text{HCF}(26, 91) = 13\n  \\]\n\n* **LCM (Lowest Common Multiple):** Product of the greatest power of each prime factor involved.\n  \\[\n  \\text{LCM}(26, 91) = 2 \\times 7 \\times 13 = 182\n  \\]\n\n**Verification:**\n\n* **Product of LCM and HCF:**\n  \\[\n  \\text{LCM} \\times \\text{HCF} = 182 \\times 13 = 2366\n  \\]\n\n* **Product of the two numbers:**\n  \\[\n  26 \\times 91 = 2366\n  \\]\n\nSince \\(\\text{LCM} \\times \\text{HCF} = \\text{Product of the two numbers}\\), the relationship is verified.\n\n---\n\n#### **(ii) 510 and 92**\n\n\\[\n510 = 2 \\times 3 \\times 5 \\times 17\n\\]\n\\[\n92 = 2^2 \\times 23\n\\]\n\n* **HCF:** \\(\\text{HCF}(510, 92) = 2\\)\n* **LCM:** \\(\\text{LCM}(510, 92) = 2^2 \\times 3 \\times 5 \\times 17 \\times 23 = 23460\\)\n\n**Verification:**\n\\[\n\\text{LCM} \\times \\text{HCF} = 23460 \\times 2 = 46920\n\\]\n\\[\n510 \\times 92 = 46920\n\\]\nVerified.\n\n---\n\n#### **(iii) 336 and 54**\n\n\\[\n336 = 2^4 \\times 3 \\times 7\n\\]\n\\[\n54 = 2 \\times 3^3\n\\]\n\n* **HCF:** \\(\\text{HCF}(336, 54) = 2 \\times 3 = 6\\)\n* **LCM:** \\(\\text{LCM}(336, 54) = 2^4 \\times 3^3 \\times 7 = 3024\\)\n\n**Verification:**\n\\[\n\\text{LCM} \\times \\text{HCF} = 3024 \\times 6 = 18144\n\\]\n\\[\n336 \\times 54 = 18144\n\\]\nVerified.",
+              "sourceInfo": "Exercise 1.1 Q2"
+            },
+            {
+              "id": "c10_mathemat_ch1_sol_cz_q3",
+              "displayOrder": 3,
+              "questionText": "Find the LCM and HCF of the following integers by applying the prime factorisation method: (i) 12, 15 and 21 (ii) 17, 23 and 29 (iii) 8, 9 and 25",
+              "solutionText": "### (i) 12, 15 and 21\n\nFirst, express each number as a product of its prime factors:\n\\[\n\\begin{aligned}\n12 &= 2^2 \\times 3^1 \\\\\n15 &= 3^1 \\times 5^1 \\\\\n21 &= 3^1 \\times 7^1\n\\end{aligned}\n\\]\n\n* **HCF:** The only common prime factor is \\(3\\), so \\(\\text{HCF}(12, 15, 21) = 3\\).\n* **LCM:** Taking the highest power of each prime factor:\n\\[\n\\text{LCM}(12, 15, 21) = 2^2 \\times 3^1 \\times 5^1 \\times 7^1 = 420\n\\]\n\n---\n\n### (ii) 17, 23 and 29\n\nAll three numbers are prime.\n* **HCF:** \\(\\text{HCF}(17, 23, 29) = 1\\)\n* **LCM:** \\(\\text{LCM}(17, 23, 29) = 17 \\times 23 \\times 29 = 11339\\)\n\n---\n\n### (iii) 8, 9 and 25\n\n\\[\n8 = 2^3, \\quad 9 = 3^2, \\quad 25 = 5^2\n\\]\n* **HCF:** \\(\\text{HCF}(8, 9, 25) = 1\\)\n* **LCM:** \\(\\text{LCM}(8, 9, 25) = 2^3 \\times 3^2 \\times 5^2 = 1800\\)",
+              "sourceInfo": "Exercise 1.1 Q3"
+            },
+            {
+              "id": "c10_mathemat_ch1_sol_cz_q4",
+              "displayOrder": 4,
+              "questionText": "Given that $\\operatorname{HCF}(306, 657) = 9$, find $\\operatorname{LCM}(306, 657)$.",
+              "solutionText": "**Formula**\nFor any two positive integers \\(a\\) and \\(b\\):\n\\[\n\\text{HCF}(a, b) \\times \\text{LCM}(a, b) = a \\times b\n\\]\n\nSubstituting the given values:\n\\[\n9 \\times \\text{LCM}(306, 657) = 306 \\times 657\n\\]\n\\[\n\\text{LCM}(306, 657) = \\frac{306 \\times 657}{9} = 34 \\times 657 = 22338\n\\]\n\n**Therefore,** \\(\\text{LCM}(306, 657) = 22338\\).",
+              "sourceInfo": "Exercise 1.1 Q4"
+            },
+            {
+              "id": "c10_mathemat_ch1_sol_cz_q5",
+              "displayOrder": 5,
+              "questionText": "Check whether \\(6^n\\) can end with the digit 0 for any natural number \\(n\\).",
+              "solutionText": "If any number ends with the digit \\(0\\), it must be divisible by \\(10\\), which means its prime factorization must contain both \\(2\\) and \\(5\\) as prime factors.\n\nThe prime factorization of \\(6\\) is \\(6 = 2 \\times 3\\).\nTherefore, the prime factorization of \\(6^n\\) is:\n\\[\n6^n = (2 \\times 3)^n = 2^n \\times 3^n\n\\]\n\nThe only prime factors in \\(6^n\\) are \\(2\\) and \\(3\\). By the Fundamental Theorem of Arithmetic, the prime factorization of any number is unique. \n\nSince \\(5\\) is not a prime factor of \\(6^n\\), the number cannot be divisible by \\(10\\).\n\nThus, \\(6^n\\) cannot end with the digit \\(0\\) for any natural number \\(n\\).",
+              "sourceInfo": "Exercise 1.1 Q5"
+            },
+            {
+              "id": "c10_mathemat_ch1_sol_cz_q6",
+              "displayOrder": 6,
+              "questionText": "Explain why \\(7 \\times 11 \\times 13 + 13\\) and \\(7 \\times 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1 + 5\\) are composite numbers.",
+              "solutionText": "A composite number is a positive integer that has factors other than \\(1\\) and itself.\n\n**Case 1: For \\(7 \\times 11 \\times 13 + 13\\)**\n\\[\n7 \\times 11 \\times 13 + 13 = 13 \\times (77 + 1) = 13 \\times 78 = 2 \\times 3 \\times 13^2\n\\]\nSince it can be expressed as a product of prime factors (\\(2, 3, 13\\)), it is a composite number.\n\n---\n\n**Case 2: For \\(7 \\times 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1 + 5\\)**\n\\[\n7 \\times 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1 + 5 = 5 \\times (1008 + 1) = 5 \\times 1009\n\\]\nSince it can be expressed as a product of prime factors (\\(5\\) and \\(1009\\)), it is a composite number.",
+              "sourceInfo": "Exercise 1.1 Q6"
+            },
+            {
+              "id": "c10_mathemat_ch1_sol_cz_q7",
+              "displayOrder": 7,
+              "questionText": "There is a circular path around a sports field. Sonia takes 18 minutes to drive one round of the field, while Ravi takes 12 minutes for the same. Suppose they both start at the same point and at the same time, and go in the same direction. After how many minutes will they meet again at the starting point?",
+              "solutionText": "To find the time after which they will meet again at the starting point, we calculate the Least Common Multiple of the times taken by Sonia and Ravi, \\(\\text{LCM}(18, 12)\\).\n\nUsing prime factorization:\n\\[\n18 = 2 \\times 3^2\n\\]\n\\[\n12 = 2^2 \\times 3\n\\]\n\nTaking the highest power of each prime factor:\n\\[\n\\text{LCM}(18, 12) = 2^2 \\times 3^2 = 4 \\times 9 = 36\n\\]\n\nThus, Sonia and Ravi will meet again at the starting point after **36 minutes**.",
+              "sourceInfo": "Exercise 1.1 Q7"
+            }
+          ]
+        },
+        {
+          "id": "qu",
+          "friendlyName": "Exercise 1.2",
+          "displayOrder": 2,
+          "questions": [
+            {
+              "id": "c10_mathemat_ch1_sol_qu_q1",
+              "displayOrder": 1,
+              "questionText": "Prove that \\(\\sqrt{5}\\) is irrational.",
+              "solutionText": "Let us assume, on the contrary, that \\(\\sqrt{5}\\) is rational.\n\nTherefore, we can find integers \\(a\\) and \\(b\\) (\\(b \\neq 0\\)) such that:\n\\[\n\\sqrt{5} = \\frac{a}{b}\n\\]\nwhere \\(a\\) and \\(b\\) are co-prime (they have no common factor other than \\(1\\)).\n\nSquaring both sides:\n\\[\na^2 = 5b^2 \\quad \\text{--- (1)}\n\\]\n\nSince \\(5\\) divides \\(5b^2\\), \\(5\\) divides \\(a^2\\). Therefore, \\(5\\) divides \\(a\\).\n\nSo, we can write \\(a = 5c\\) for some integer \\(c\\). Substituting into (1):\n\\[\n(5c)^2 = 5b^2 \\implies 25c^2 = 5b^2 \\implies b^2 = 5c^2\n\\]\n\nThis means \\(5\\) divides \\(b^2\\), and therefore \\(5\\) divides \\(b\\).\n\nThus, \\(a\\) and \\(b\\) have at least \\(5\\) as a common factor. This contradicts the fact that \\(a\\) and \\(b\\) are co-prime.\n\nThis contradiction has arisen because of our incorrect assumption that \\(\\sqrt{5}\\) is rational.\n\n**Therefore, we conclude that \\(\\sqrt{5}\\) is irrational.**",
+              "sourceInfo": "Exercise 1.2 Q1"
+            },
+            {
+              "id": "c10_mathemat_ch1_sol_qu_q2",
+              "displayOrder": 2,
+              "questionText": "Prove that \\(3 + 2\\sqrt{5}\\) is irrational.",
+              "solutionText": "Let us assume, to the contrary, that \\(3 + 2\\sqrt{5}\\) is rational.\n\nTherefore, there exist co-prime integers \\(a\\) and \\(b\\) (\\(b \\neq 0\\)) such that:\n\\[\n3 + 2\\sqrt{5} = \\frac{a}{b}\n\\]\n\\[\n2\\sqrt{5} = \\frac{a}{b} - 3 = \\frac{a - 3b}{b}\n\\]\n\\[\n\\sqrt{5} = \\frac{a - 3b}{2b}\n\\]\n\nSince \\(a\\) and \\(b\\) are integers, \\(a - 3b\\) and \\(2b\\) are integers with \\(2b \\neq 0\\). Therefore, \\(\\frac{a - 3b}{2b}\\) is a rational number.\n\nThis implies that \\(\\sqrt{5}\\) is a rational number.\n\nBut this contradicts the established fact that \\(\\sqrt{5}\\) is irrational. This contradiction has arisen because of our incorrect assumption that \\(3 + 2\\sqrt{5}\\) is rational.\n\n**Hence, \\(3 + 2\\sqrt{5}\\) is irrational.**",
+              "sourceInfo": "Exercise 1.2 Q2"
+            },
+            {
+              "id": "c10_mathemat_ch1_sol_qu_q3",
+              "displayOrder": 3,
+              "questionText": "Prove that the following are irrationals: (i) \\(\\frac{1}{\\sqrt{2}}\\) (ii) \\(7\\sqrt{5}\\) (iii) \\(6 + \\sqrt{2}\\)",
+              "solutionText": "### (i) \\(\\frac{1}{\\sqrt{2}}\\)\nLet us assume \\(\\frac{1}{\\sqrt{2}}\\) is rational. Then \\(\\frac{1}{\\sqrt{2}} = \\frac{a}{b}\\) (where \\(a, b\\) are co-prime integers, \\(a, b \\neq 0\\)).\n\\[\n\\sqrt{2} = \\frac{b}{a}\n\\]\nSince \\(a\\) and \\(b\\) are integers, \\(\\frac{b}{a}\\) is rational, which implies \\(\\sqrt{2}\\) is rational. This contradicts the fact that \\(\\sqrt{2}\\) is irrational.\nHence, \\(\\frac{1}{\\sqrt{2}}\\) is irrational.\n\n---\n\n### (ii) \\(7\\sqrt{5}\\)\nLet us assume \\(7\\sqrt{5}\\) is rational. Then \\(7\\sqrt{5} = \\frac{a}{b}\\) (\\(b \\neq 0\\)).\n\\[\n\\sqrt{5} = \\frac{a}{7b}\n\\]\nSince \\(a\\) and \\(b\\) are integers, \\(\\frac{a}{7b}\\) is rational, which implies \\(\\sqrt{5}\\) is rational. This contradicts the fact that \\(\\sqrt{5}\\) is irrational.\nHence, \\(7\\sqrt{5}\\) is irrational.\n\n---\n\n### (iii) \\(6 + \\sqrt{2}\\)\nLet us assume \\(6 + \\sqrt{2}\\) is rational. Then \\(6 + \\sqrt{2} = \\frac{a}{b}\\) (\\(b \\neq 0\\)).\n\\[\n\\sqrt{2} = \\frac{a}{b} - 6 = \\frac{a - 6b}{b}\n\\]\nSince \\(a\\) and \\(b\\) are integers, \\(\\frac{a - 6b}{b}\\) is rational, which implies \\(\\sqrt{2}\\) is rational. This contradicts the fact that \\(\\sqrt{2}\\) is irrational.\nHence, \\(6 + \\sqrt{2}\\) is irrational.",
+              "sourceInfo": "Exercise 1.2 Q3"
+            }
+          ]
+        }
+      ]
+    };
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      // 1. Mobile Global Header Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      if (mobileMenuBtn && mobileNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isOpen = mobileNav.classList.toggle('open');
+          mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+          mobileNav.setAttribute('aria-hidden', !isOpen);
+        });
+      }
+
+      // 2. Three-Dots Menu Toggle
+      const moreMenuBtn = document.getElementById('moreMenuBtn');
+      const moreMenuDropdown = document.getElementById('moreMenuDropdown');
+      const menuContentsBtn = document.getElementById('menuContentsBtn');
+      const menuCopyLinkBtn = document.getElementById('menuCopyLinkBtn');
+      const copyLinkTitle = document.getElementById('copyLinkTitle');
+      const menuPrintBtn = document.getElementById('menuPrintBtn');
+
+      if (moreMenuBtn && moreMenuDropdown) {
+        moreMenuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = moreMenuDropdown.classList.toggle('open');
+          moreMenuBtn.setAttribute('aria-expanded', isOpen);
+          moreMenuDropdown.setAttribute('aria-hidden', !isOpen);
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!moreMenuBtn.contains(e.target) && !moreMenuDropdown.contains(e.target)) {
+            moreMenuDropdown.classList.remove('open');
+            moreMenuBtn.setAttribute('aria-expanded', 'false');
+            moreMenuDropdown.setAttribute('aria-hidden', 'true');
+          }
+        });
+
+        // Contents inside Three Dots menu (primarily for mobile)
+        if (menuContentsBtn) {
+          menuContentsBtn.addEventListener('click', () => {
+            moreMenuDropdown.classList.remove('open');
+            moreMenuBtn.setAttribute('aria-expanded', 'false');
+            moreMenuDropdown.setAttribute('aria-hidden', 'true');
+            openDrawer();
+          });
+        }
+
+        if (menuCopyLinkBtn && copyLinkTitle) {
+          menuCopyLinkBtn.addEventListener('click', async () => {
+            try {
+              await navigator.clipboard.writeText(window.location.href);
+              copyLinkTitle.textContent = 'Link Copied!';
+              setTimeout(() => {
+                copyLinkTitle.textContent = 'Copy Solutions Link';
+                moreMenuDropdown.classList.remove('open');
+              }, 1200);
+            } catch(e) {}
+          });
+        }
+
+        if (menuPrintBtn) {
+          menuPrintBtn.addEventListener('click', () => {
+            moreMenuDropdown.classList.remove('open');
+            window.print();
+          });
+        }
+      }
+
+      // 3. Left Shoulder Navigation Drawer Toggle
+      const openDrawerBtn = document.getElementById('openDrawerBtn');
+      const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+      const tocDrawer = document.getElementById('tocDrawer');
+      const drawerBackdrop = document.getElementById('drawerBackdrop');
+
+      function openDrawer() {
+        if (!tocDrawer) return;
+        tocDrawer.classList.add('open');
+        tocDrawer.setAttribute('aria-hidden', 'false');
+        if (openDrawerBtn) openDrawerBtn.classList.add('drawer-open');
+        if (drawerBackdrop && window.innerWidth <= 900) {
+          drawerBackdrop.classList.add('open');
+        }
+      }
+
+      function closeDrawer() {
+        if (!tocDrawer) return;
+        tocDrawer.classList.remove('open');
+        tocDrawer.setAttribute('aria-hidden', 'true');
+        if (openDrawerBtn) openDrawerBtn.classList.remove('drawer-open');
+        if (drawerBackdrop) drawerBackdrop.classList.remove('open');
+      }
+
+      function toggleDrawer() {
+        if (tocDrawer && tocDrawer.classList.contains('open')) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      }
+
+      if (openDrawerBtn) openDrawerBtn.addEventListener('click', toggleDrawer);
+      if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+      if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeDrawer();
+          closeExercisePicker();
+          closeQuestionPicker();
+          if (moreMenuDropdown) moreMenuDropdown.classList.remove('open');
+        }
+      });
+
+      // 4. Exercise Picker Dropdown Toggle (Current exercise on top)
+      const currentExerciseBtn = document.getElementById('currentExerciseBtn');
+      const exercisePickerDropdown = document.getElementById('exercisePickerDropdown');
+
+      function closeExercisePicker() {
+        if (exercisePickerDropdown && currentExerciseBtn) {
+          exercisePickerDropdown.classList.remove('open');
+          currentExerciseBtn.setAttribute('aria-expanded', 'false');
+          exercisePickerDropdown.setAttribute('aria-hidden', 'true');
+        }
+      }
+
+      if (currentExerciseBtn && exercisePickerDropdown) {
+        currentExerciseBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          closeQuestionPicker();
+          const isOpen = exercisePickerDropdown.classList.toggle('open');
+          currentExerciseBtn.setAttribute('aria-expanded', isOpen);
+          exercisePickerDropdown.setAttribute('aria-hidden', !isOpen);
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!currentExerciseBtn.contains(e.target) && !exercisePickerDropdown.contains(e.target)) {
+            closeExercisePicker();
+          }
+        });
+      }
+
+      // 5. Question Picker Dropdown Toggle (Current question on top)
+      const currentQuestionBtn = document.getElementById('currentQuestionBtn');
+      const questionPickerDropdown = document.getElementById('questionPickerDropdown');
+
+      function closeQuestionPicker() {
+        if (questionPickerDropdown && currentQuestionBtn) {
+          questionPickerDropdown.classList.remove('open');
+          currentQuestionBtn.setAttribute('aria-expanded', 'false');
+          questionPickerDropdown.setAttribute('aria-hidden', 'true');
+        }
+      }
+
+      if (currentQuestionBtn && questionPickerDropdown) {
+        currentQuestionBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          closeExercisePicker();
+          const isOpen = questionPickerDropdown.classList.toggle('open');
+          currentQuestionBtn.setAttribute('aria-expanded', isOpen);
+          questionPickerDropdown.setAttribute('aria-hidden', !isOpen);
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!currentQuestionBtn.contains(e.target) && !questionPickerDropdown.contains(e.target)) {
+            closeQuestionPicker();
+          }
+        });
+      }
+
+      // 6. Load Data & Render Digital Solution Book
+      let data = FALLBACK_SOLUTIONS_DATA;
+      try {
+        const res = await fetch('assets/c10_mathemat_ch1_sol.json');
+        if (res.ok) {
+          data = await res.json();
+        }
+      } catch (err) {
+        console.warn('Using local fallback solutions payload');
+      }
+
+      renderDigitalSolutionBook(data, closeDrawer, closeExercisePicker, closeQuestionPicker);
+    });
+
+    let currentDataset = null;
+    let activeExerciseId = null;
+
+    function renderDigitalSolutionBook(data, closeDrawerFn, closePickerFn, closeQuestionPickerFn) {
+      currentDataset = data;
+      const drawerContainer = document.getElementById('drawerBody');
+      const bookContainer = document.getElementById('solutionBookContent');
+      const pickerDropdown = document.getElementById('exercisePickerDropdown');
+
+      if (!drawerContainer || !bookContainer) return;
+
+      let drawerHtml = '';
+      let bookHtml = '';
+      let pickerHtml = '';
+
+      data.groups.forEach((group, idx) => {
+        const exName = group.friendlyName || `Exercise ${group.displayOrder}`;
+        const exClean = exName.toLowerCase().replace(/exercise\s*/i, '').replace(/\./g, '-').trim();
+        const exSectionId = `ex${exClean}`;
+        if (idx === 0) activeExerciseId = exSectionId;
+
+        // Exercise Picker Item in Top Breadcrumb Dropdown (defaults to q1)
+        pickerHtml += `
+          <a href="#${exSectionId}-q1" class="exercise-picker-item ${idx === 0 ? 'active' : ''}" data-target="${exSectionId}" data-exname="${exName}">
+            <span>${exName}</span>
+            <span class="exercise-picker-count">${group.questions.length} Qs</span>
+          </a>
+        `;
+
+        // Drawer Group Item (defaults to q1)
+        drawerHtml += `
+          <div class="drawer-group">
+            <div class="drawer-group-title">
+              <a href="#${exSectionId}-q1" class="drawer-group-link" data-target="${exSectionId}" data-exname="${exName}">${exName}</a>
+              <span style="font-size:0.72rem; color:#64748b; font-weight:normal;">${group.questions.length} Qs</span>
+            </div>
+            <div class="drawer-q-grid">
+        `;
+
+        // Editorial Exercise Block in Main Canvas
+        bookHtml += `
+          <section class="exercise-block" id="${exSectionId}">
+            <div class="exercise-title-row">
+              <h2 class="exercise-title">${exName}</h2>
+              <span class="exercise-meta">${group.questions.length} Questions</span>
+            </div>
+        `;
+
+        group.questions.forEach((q, qIdx) => {
+          const qNum = q.displayOrder;
+          const qFormattedNum = String(qNum).padStart(2, '0'); // e.g. "01", "02"
+          const qAnchorId = `ex${exClean}-q${qNum}`; // e.          // Drawer question button
+          drawerHtml += `
+            <a href="#${qAnchorId}" class="drawer-q-link" data-target="${qAnchorId}" data-ex="${exSectionId}" data-qnum="${qNum}">
+              ${qFormattedNum}
+            </a>
+          `;
+
+          // Format solution text via shared Continua renderer (canonical pipeline)
+          // Preserves original Solutions inline-style heading behaviour for exact visual parity,
+          // but routes through shared renderer when available for extended Markdown support.
+          let formattedSolution;
+          if (window.ContinuaRenderer && window.ContinuaRenderer.renderMarkdown) {
+            // Use shared renderer, then normalize headings to retain original inline-style parity if needed
+            formattedSolution = window.ContinuaRenderer.renderMarkdown(q.solutionText);
+            // Normalize shared <h3>/<h4> to original inline style for zero visual diff, while allowing lists/blockquotes etc
+            // Shared renderer emits <h3> without inline style; CSS already styles .solution-content h3/h4 identically.
+            // Keep as-is to leverage shared CSS (visually identical) and gain list/blockquote/italic support.
+          } else {
+            formattedSolution = q.solutionText
+              .replace(/### (.*)/g, '<h3 style="font-family:var(--font-serif); font-size:1rem; color:var(--color-navy-dark); margin:0.75rem 0 0.25rem;">$1</h3>')
+              .replace(/#### (.*)/g, '<h4 style="font-family:var(--font-serif); font-size:0.92rem; color:var(--color-navy-dark); margin:0.6rem 0 0.2rem;">$1</h4>')
+              .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+              .replace(/---\n/g, '<hr>')
+              .replace(/\n\n/g, '<br><br>');
+          }
+
+          // Editorial Question Entry (Dense academic spacing)
+          bookHtml += `
+            <article class="question-entry" id="${qAnchorId}" data-qnum="${qNum}" data-ex="${exSectionId}">
+              <div class="question-header">
+                <h3 class="question-heading">Question ${qNum}</h3>
+                <span class="question-source">${q.sourceInfo || exName + ' Q' + qNum}</span>
+              </div>
+              
+              <div class="question-body">
+                ${q.questionText}
+              </div>
+
+              <div class="solution-block">
+                <span class="solution-label">Solution</span>
+                <div class="solution-content">
+                  ${formattedSolution}
+                </div>
+              </div>
+            </article>
+          `;
+
+          // Subtle divider between questions within the same exercise
+          if (qIdx < group.questions.length - 1) {
+            bookHtml += `<hr class="question-divider">`;
+          }
+        });
+
+        drawerHtml += `</div></div>`;
+        bookHtml += `</section>`;
+      });
+
+      drawerContainer.innerHTML = drawerHtml;
+      bookContainer.innerHTML = bookHtml;
+      if (pickerDropdown) pickerDropdown.innerHTML = pickerHtml;
+
+      // Populate initial question picker tiles for first exercise
+      updateQuestionPickerGrid(activeExerciseId, 1, closeQuestionPickerFn);
+
+      // Click on exercise picker item: updates path, defaults to Q1, and closes picker
+      if (pickerDropdown) {
+        pickerDropdown.querySelectorAll('.exercise-picker-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const targetExId = item.getAttribute('data-target');
+            activeExerciseId = targetExId;
+            updatePathForQuestion(targetExId, 1, closeQuestionPickerFn);
+            if (closePickerFn) closePickerFn();
+          });
+        });
+      }
+
+      // Click on drawer links
+      drawerContainer.querySelectorAll('.drawer-group-link').forEach(link => {
+        link.addEventListener('click', () => {
+          const targetExId = link.getAttribute('data-target');
+          activeExerciseId = targetExId;
+          updatePathForQuestion(targetExId, 1, closeQuestionPickerFn);
+
+          if (window.innerWidth <= 900 && closeDrawerFn) {
+            closeDrawerFn();
+          }
+        });
+      });
+
+      drawerContainer.querySelectorAll('.drawer-q-link').forEach(link => {
+        link.addEventListener('click', () => {
+          const exId = link.getAttribute('data-ex');
+          const qNum = link.getAttribute('data-qnum');
+          if (exId && qNum) {
+            updatePathForQuestion(exId, qNum, closeQuestionPickerFn);
+          }
+          if (window.innerWidth <= 900 && closeDrawerFn) {
+            closeDrawerFn();
+          }
+        });
+      });
+
+      // Render KaTeX Math via shared pipeline (same delimiters as Formulae Sheet)
+      if (window.ContinuaRenderer && window.ContinuaRenderer.renderMath) {
+        window.ContinuaRenderer.renderMath(bookContainer);
+      } else if (window.renderMathInElement) {
+        renderMathInElement(bookContainer, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '\\[', right: '\\]', display: true},
+            {left: '\\(', right: '\\)', display: false},
+            {left: '$', right: '$', display: false}
+          ],
+          throwOnError: false
+        });
+      }
+
+      // Dynamic Exercise & Question Scrollspy
+      setupScrollspy(closeQuestionPickerFn);
+
+      // Handle Hash Resolution (#ex1.1, #ex1.1q3, #ex1-1-q3)
+      handleHashNavigation();
+      window.addEventListener('hashchange', handleHashNavigation);
+    }
+
+    function updatePathForQuestion(exSectionId, qNum, closeQuestionPickerFn) {
+      const currentExerciseLabel = document.getElementById('currentExerciseLabel');
+      const currentQuestionLabel = document.getElementById('currentQuestionLabel');
+      const pickerItems = document.querySelectorAll('.exercise-picker-item');
+
+      if (currentQuestionLabel && qNum) {
+        currentQuestionLabel.textContent = `Question ${qNum}`;
+      }
+
+      if (exSectionId && currentDataset) {
+        const group = currentDataset.groups.find(g => {
+          const exName = g.friendlyName || `Exercise ${g.displayOrder}`;
+          const exClean = exName.toLowerCase().replace(/exercise\s*/i, '').replace(/\./g, '-').trim();
+          return `ex${exClean}` === exSectionId;
+        });
+
+        if (group && currentExerciseLabel) {
+          currentExerciseLabel.textContent = group.friendlyName;
+          activeExerciseId = exSectionId;
+          pickerItems.forEach(item => {
+            item.classList.toggle('active', item.getAttribute('data-target') === exSectionId);
+          });
+        }
+
+        updateQuestionPickerGrid(exSectionId, qNum, closeQuestionPickerFn);
+      }
+    }
+
+    function updateQuestionPickerGrid(exSectionId, activeQNum, closeQuestionPickerFn) {
+      const questionPickerGrid = document.getElementById('questionPickerGrid');
+      const questionPickerHeader = document.getElementById('questionPickerHeader');
+      if (!questionPickerGrid || !currentDataset) return;
+
+      const group = currentDataset.groups.find(g => {
+        const exName = g.friendlyName || `Exercise ${g.displayOrder}`;
+        const exClean = exName.toLowerCase().replace(/exercise\s*/i, '').replace(/\./g, '-').trim();
+        return `ex${exClean}` === exSectionId;
+      }) || currentDataset.groups[0];
+
+      const exName = group.friendlyName || `Exercise ${group.displayOrder}`;
+      const exClean = exName.toLowerCase().replace(/exercise\s*/i, '').replace(/\./g, '-').trim();
+
+      if (questionPickerHeader) {
+        questionPickerHeader.textContent = `${exName} Questions`;
+      }
+
+      let tilesHtml = '';
+      group.questions.forEach(q => {
+        const qNum = q.displayOrder;
+        const qFormatted = String(qNum).padStart(2, '0');
+        const qAnchorId = `ex${exClean}-q${qNum}`;
+        const isActive = Number(activeQNum) === Number(qNum);
+        tilesHtml += `
+          <a href="#${qAnchorId}" class="question-picker-tile ${isActive ? 'active' : ''}" data-target="${qAnchorId}" data-ex="${exSectionId}" data-qnum="${qNum}">
+            ${qFormatted}
+          </a>
+        `;
+      });
+
+      questionPickerGrid.innerHTML = tilesHtml;
+
+      questionPickerGrid.querySelectorAll('.question-picker-tile').forEach(tile => {
+        tile.addEventListener('click', () => {
+          const exId = tile.getAttribute('data-ex');
+          const qNum = tile.getAttribute('data-qnum');
+          if (exId && qNum) {
+            updatePathForQuestion(exId, qNum, closeQuestionPickerFn);
+          }
+          if (closeQuestionPickerFn) {
+            closeQuestionPickerFn();
+          } else {
+            const dropdown = document.getElementById('questionPickerDropdown');
+            const btn = document.getElementById('currentQuestionBtn');
+            if (dropdown && btn) {
+              dropdown.classList.remove('open');
+              btn.setAttribute('aria-expanded', 'false');
+              dropdown.setAttribute('aria-hidden', 'true');
+            }
+          }
+        });
+      });
+    }
+
+    function setupScrollspy(closeQuestionPickerFn) {
+      const questionEntries = document.querySelectorAll('.question-entry');
+      if (!questionEntries.length) return;
+
+      // Observe questions using entry.target (Updates both question number and exercise in path live)
+      const qObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const qNum = entry.target.getAttribute('data-qnum');
+            const exId = entry.target.getAttribute('data-ex');
+
+            if (qNum && exId) {
+              updatePathForQuestion(exId, qNum, closeQuestionPickerFn);
+            }
+          }
+        });
+      }, {
+        rootMargin: '-90px 0px -55% 0px'
+      });
+
+      questionEntries.forEach(qEl => qObserver.observe(qEl));
+
+      // Compact mobile navigation path on scroll
+      setupMobileCompactPath();
+    }
+
+    function setupMobileCompactPath() {
+      const breadcrumbSection = document.querySelector('.breadcrumb-section');
+      if (!breadcrumbSection) return;
+
+      function onScroll() {
+        if (window.innerWidth <= 768) {
+          if (window.scrollY > 45) {
+            breadcrumbSection.classList.add('is-compact');
+          } else {
+            breadcrumbSection.classList.remove('is-compact');
+          }
+        } else {
+          breadcrumbSection.classList.remove('is-compact');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      onScroll();
+    }
+
+    function handleHashNavigation() {
+      const hash = window.location.hash.toLowerCase().trim();
+      if (!hash) return;
+
+      const raw = hash.replace('#', '');
+      let targetEl = document.getElementById(raw);
+
+      if (!targetEl) {
+        // Match ex1.1q3, ex1.1-q3, ex1.1, ex2.2q1, etc.
+        const qMatch = raw.match(/^ex\s*(\d+)[\.-](\d+)(?:q(\d+))?$/i);
+        if (qMatch) {
+          const chEx = `ex${qMatch[1]}-${qMatch[2]}`;
+          if (qMatch[3]) {
+            targetEl = document.getElementById(`${chEx}-q${qMatch[3]}`);
+          } else {
+            targetEl = document.getElementById(chEx);
+          }
+        }
+      }
+
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (targetEl.classList.contains('question-entry')) {
+          const qNum = targetEl.getAttribute('data-qnum');
+          const exId = targetEl.getAttribute('data-ex');
+          if (qNum && exId) {
+            updatePathForQuestion(exId, qNum);
+          }
+          targetEl.classList.add('highlight-pulse');
+          setTimeout(() => {
+            targetEl.classList.remove('highlight-pulse');
+          }, 2000);
+        }
+      }
+    }
+  </script>
+</body>
+</html>

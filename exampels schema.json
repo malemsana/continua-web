@@ -1,0 +1,29 @@
+{
+  "id": "c10_mathemat_ch1_example",
+  "chapterId": "c10_mathemat_ch1",
+  "friendlyName": "Examples",
+  "questions": [
+    {
+      "id": "c10_mathemat_ch1_example_main_q21",
+      "displayOrder": 21,
+      "questionText": "Two numbers are in the ratio $5 : 7$ and their LCM is $420$. Find the HCF and the two numbers.",
+      "solutionText": "Let the two numbers be $a = 5k$ and $b = 7k$, where $k$ is a positive integer.\n\nSince $5$ and $7$ are prime to each other ($\\gcd(5, 7) = 1$):\n\n$$\n\\text{LCM}(5k, 7k) = 5 \\times 7 \\times k = 35k\n$$\n\nWe are given that $\\text{LCM} = 420$:\n\n$$\n35k = 420 \\implies k = \\frac{420}{35} = 12\n$$\n\nSince $\\text{HCF}(5k, 7k) = k$, we have:\n\n$$\n\\text{HCF} = 12\n$$\n\nThe two numbers are:\n\n$$\na = 5 \\times 12 = 60\n$$\n\n$$\nb = 7 \\times 12 = 84\n$$\n\n**Answer:** $\\text{HCF} = 12$; the numbers are $60$ and $84$.",
+      "options": []
+    },
+    {
+      "id": "c10_mathemat_ch1_example_main_q1",
+      "displayOrder": 1,
+      "questionText": "Express the number $420$ as a product of its prime factors in ascending order of primes.",
+      "solutionText": "To express $420$ as a product of prime factors, we divide successively by the smallest possible prime numbers:\n\n$$\n\\begin{aligned}\n420 \\div 2 &= 210 \\\\\n210 \\div 2 &= 105 \\\\\n105 \\div 3 &= 35 \\\\\n35 \\div 5 &= 7 \\\\\n7 \\div 7 &= 1\n\\end{aligned}\n$$\n\nWriting these prime factors in ascending order:\n\n$$\n420 = 2 \\times 2 \\times 3 \\times 5 \\times 7 = 2^2 \\times 3 \\times 5 \\times 7\n$$\n\n**Answer:** $420 = 2^2 \\times 3 \\times 5 \\times 7$",
+      "options": []
+    },
+    {
+      "id": "c10_mathemat_ch1_example_main_q2",
+      "displayOrder": 2,
+      "questionText": "Express $7560$ as a product of powers of its prime factors.",
+      "solutionText": "We perform prime factorisation on $7560$:\n\n$$\n\\begin{aligned}\n7560 \\div 2 &= 3780 \\\\\n3780 \\div 2 &= 1890 \\\\\n1890 \\div 2 &= 945 \\\\\n945 \\div 3 &= 315 \\\\\n315 \\div 3 &= 105 \\\\\n105 \\div 3 &= 35 \\\\\n35 \\div 5 &= 7 \\\\\n7 \\div 7 &= 1\n\\end{aligned}\n$$\n\nGrouping the identical prime factors into powers:\n\n$$\n7560 = 2^3 \\times 3^3 \\times 5 \\times 7\n$$\n\n**Answer:** $7560 = 2^3 \\times 3^3 \\times 5 \\times 7$",
+      "options": []
+    }
+    
+  ]
+}
