@@ -130,6 +130,65 @@
     .options-list{margin:0.6rem 0 0.8rem 1.2rem;list-style:none}
     .options-list li{display:flex;gap:0.5rem;font-size:0.92rem;margin-bottom:0.35rem}
     .options-label{font-weight:600;color:var(--color-navy-dark);min-width:1.2rem}
+    /* Try First mode — minimal toggle, dropdown-like reveal */
+    .try-first-bar{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-top:0.9rem;padding:0.55rem 0.75rem;background:var(--color-bg-surface);border:1px solid var(--color-border);font-size:0.85rem;color:var(--color-text-subtle)}
+    .try-first-toggle{display:inline-flex;align-items:center;gap:0.5rem;cursor:pointer;user-select:none}
+    .try-first-toggle input{position:absolute;opacity:0;width:0;height:0}
+    .toggle-track{width:36px;height:20px;background:#cbd5e1;border-radius:999px;position:relative;transition:background 0.15s;flex-shrink:0}
+    .toggle-thumb{position:absolute;top:2px;left:2px;width:16px;height:16px;background:#fff;border-radius:999px;box-shadow:0 1px 2px rgba(0,0,0,0.15);transition:transform 0.15s}
+    .try-first-toggle input:checked + .toggle-track{background:var(--color-navy)}
+    .try-first-toggle input:checked + .toggle-track .toggle-thumb{transform:translateX(16px)}
+    .try-first-toggle input:focus-visible + .toggle-track{outline:2px solid var(--color-navy);outline-offset:2px}
+    .toggle-label{font-size:0.85rem;font-weight:600;color:var(--color-navy-dark)}
+    .try-first-hint{font-size:0.78rem;color:var(--color-text-muted)}
+    .try-first-controls{margin-top:0.85rem;display:none}
+    .show-solution-btn,.hide-solution-btn{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;width:100%;font-family:inherit;font-size:0.85rem;font-weight:600;padding:0.6rem 0.75rem;background:var(--color-bg-surface);border:1px solid var(--color-border);color:var(--color-navy-dark);cursor:pointer;transition:background 0.15s,border-color 0.15s}
+    .show-solution-btn:hover,.hide-solution-btn:hover{background:var(--color-bg-card-hover);border-color:#cbd5e1}
+    .show-solution-btn:focus-visible,.hide-solution-btn:focus-visible{outline:2px solid var(--color-navy);outline-offset:2px}
+    .solution-chevron{width:14px;height:14px;flex-shrink:0;transition:transform 0.18s ease;color:var(--color-text-muted)}
+    .show-solution-btn[aria-expanded="true"] .solution-chevron{transform:rotate(180deg)}
+    .hide-solution-btn .solution-chevron{transform:rotate(180deg)}
+    .try-first-enabled .solution-block{display:none}
+    .try-first-enabled .solution-block.revealed{display:block}
+    .try-first-enabled .try-first-controls{display:block}
+    .example-options{margin:0.6rem 0 0.5rem;display:flex;flex-direction:column;gap:0.35rem}
+    .option-choice{display:flex;gap:0.5rem;align-items:baseline;width:100%;text-align:left;padding:0.15rem 0;background:transparent;border:none;font-family:inherit;font-size:0.92rem;line-height:1.4;color:var(--color-text-main);cursor:default;transition:background 0.15s,border-color 0.15s}
+    .try-first-enabled .option-choice{padding:0.5rem 0.65rem;background:#ffffff;border:1px solid var(--color-border);cursor:pointer}
+    .try-first-enabled .option-choice:hover{background:var(--color-bg-card-hover);border-color:#cbd5e1}
+    .try-first-enabled .option-choice[aria-checked="true"]{background:#eff6ff;border-color:var(--color-navy)}
+    .try-first-enabled .option-choice[aria-checked="true"] .options-label{color:var(--color-navy)}
+    .try-first-enabled .option-choice:focus-visible{outline:2px solid var(--color-navy);outline-offset:-2px}
+    .option-choice:disabled{opacity:1}
+    .option-choice .options-label{font-weight:600;color:var(--color-navy-dark);min-width:1.2rem}
+    /* Current example picker in breadcrumb — reuse exercise-picker language */
+    .example-picker-wrapper{position:relative;display:inline-flex;align-items:center}
+    .example-picker-btn{display:inline-flex;align-items:center;gap:0.35rem;background-color:var(--color-bg-surface);border:1px solid var(--color-border);border-radius:2px;padding:0.2rem 0.55rem;font-family:inherit;font-size:0.82rem;font-weight:600;color:var(--color-navy-dark);cursor:pointer;transition:all var(--transition-standard)}
+    .example-picker-btn:hover,.example-picker-btn[aria-expanded="true"]{background-color:var(--color-navy);border-color:var(--color-navy);color:#ffffff}
+    .example-picker-btn .picker-chevron{width:12px;height:12px;transition:transform 0.15s ease}
+    .example-picker-btn[aria-expanded="true"] .picker-chevron{transform:rotate(180deg)}
+    .example-picker-dropdown{display:none;position:absolute;top:calc(100% + 5px);left:0;background-color:#ffffff;border:1px solid #cbd5e1;box-shadow:0 6px 20px rgba(15,23,42,0.12);padding:0.6rem;min-width:180px;z-index:160;flex-direction:column}
+    .example-picker-dropdown.open{display:flex}
+    .example-picker-header{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.45rem;padding-bottom:0.25rem;border-bottom:1px solid var(--color-border)}
+    .example-picker-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.35rem}
+    .example-picker-tile{display:flex;align-items:center;justify-content:center;height:30px;font-family:var(--font-serif);font-size:0.85rem;font-weight:500;color:var(--color-navy);background-color:var(--color-bg-surface);border:1px solid var(--color-border);text-decoration:none;transition:all var(--transition-standard)}
+    .example-picker-tile:hover,.example-picker-tile.active{background-color:var(--color-navy);border-color:var(--color-navy);color:#ffffff}
+    /* Breadcrumb right Try First (mobile) */
+    .breadcrumb-try-first{display:none;align-items:center;gap:0.4rem;margin-left:auto;font-size:0.78rem;color:var(--color-text-muted)}
+    .breadcrumb-try-first .try-first-toggle{gap:0.35rem}
+    .breadcrumb-try-first .toggle-track{width:32px;height:18px}
+    .breadcrumb-try-first .toggle-thumb{width:14px;height:14px;top:2px;left:2px}
+    .breadcrumb-try-first .try-first-toggle input:checked + .toggle-track .toggle-thumb{transform:translateX(14px)}
+    @media (max-width:768px){.breadcrumb-section.is-compact .breadcrumb-try-first{display:inline-flex}}
+    /* Desktop floating Try First below Contents — permanently visible on desktop */
+    .floating-try-first{display:inline-flex;position:fixed;left:24px;top:158px;z-index:120;background:#ffffff;border:1px solid #cbd5e1;box-shadow:0 2px 10px rgba(15,23,42,0.08);padding:0.4rem 0.6rem;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--color-text-muted);transition:opacity 0.2s ease,transform 0.2s ease}
+    .floating-try-first.floater-hidden{opacity:0;pointer-events:none;transform:translateY(12px)}
+    @media (max-width:900px){.floating-try-first{display:none!important}}
+    @media (min-width:901px){.try-first-bar{display:none!important}}
+    .floating-try-first .try-first-toggle{gap:0.4rem}
+    .floating-try-first .toggle-track{width:32px;height:18px}
+    .floating-try-first .toggle-thumb{width:14px;height:14px}
+    .floating-try-first .try-first-toggle input:checked + .toggle-track .toggle-thumb{transform:translateX(14px)}
+    .floating-control-btn.floater-hidden, #moreMenuWrapper.floater-hidden{opacity:0;pointer-events:none;transform:translateY(12px)}
     .empty-state{border:1px dashed var(--color-border);background:var(--color-bg-surface);padding:2rem 1.25rem;text-align:center;color:var(--color-text-muted);font-size:0.92rem}
     .empty-state strong{color:var(--color-text-main)}
     .resource-pager-section{background-color:var(--color-bg-surface);border-top:1px solid var(--color-border);padding:1.5rem 0}
@@ -191,7 +250,25 @@
           <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/class-10/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Class 10</span></a><meta itemprop="position" content="2"><span class="breadcrumb-separator">/</span></li>
           <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/class-10/mathematics/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Mathematics</span></a><meta itemprop="position" content="3"><span class="breadcrumb-separator">/</span></li>
           <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/class-10/mathematics/real-numbers/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Real Numbers</span></a><meta itemprop="position" content="4"><span class="breadcrumb-separator">/</span></li>
-          <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span class="breadcrumb-current" itemprop="name">Examples</span><meta itemprop="position" content="5"></li>
+          <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span class="breadcrumb-current" itemprop="name">Examples</span><meta itemprop="position" content="5"><span class="breadcrumb-separator">/</span>
+            <div class="example-picker-wrapper" id="examplePickerWrapper">
+              <button class="example-picker-btn" id="currentExampleBtn" aria-label="Current example" aria-expanded="false" aria-haspopup="true">
+                <span id="currentExampleLabel">Example 1</span>
+                <svg class="picker-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="example-picker-dropdown" id="examplePickerDropdown" role="menu" aria-hidden="true">
+                <div class="example-picker-header">Examples</div>
+                <div class="example-picker-grid" id="examplePickerGrid"></div>
+              </div>
+            </div>
+          </li>
+          <li class="breadcrumb-try-first" aria-label="Try First">
+            <span>Try First</span>
+            <label class="try-first-toggle" for="tryFirstToggleMobile">
+              <input type="checkbox" id="tryFirstToggleMobile" aria-label="Try First">
+              <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            </label>
+          </li>
         </ol>
       </div>
     </nav>
@@ -200,6 +277,13 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
       <span>Contents</span>
     </button>
+    <div class="floating-try-first" id="floatingTryFirst" aria-label="Try First">
+      <span>Try First</span>
+      <label class="try-first-toggle" for="tryFirstToggleFloating">
+        <input type="checkbox" id="tryFirstToggleFloating" aria-label="Try First">
+        <span class="toggle-track"><span class="toggle-thumb"></span></span>
+      </label>
+    </div>
 
     <div id="moreMenuWrapper">
       <button class="floating-control-btn" id="moreMenuBtn" aria-label="More resource options" aria-expanded="false" aria-haspopup="true">
@@ -237,6 +321,13 @@
           <p class="solution-book-subtitle">Class 10 Mathematics · Real Numbers</p>
           <p class="solution-book-intro">Worked examples from this chapter.</p>
         </header>
+        <div class="try-first-bar" role="group" aria-label="Try First mode">
+          <label class="try-first-toggle" for="tryFirstToggle">
+            <input type="checkbox" id="tryFirstToggle" aria-label="Try First — hide solutions until revealed">
+            <span class="toggle-track" aria-hidden="true"><span class="toggle-thumb"></span></span>
+          </label>
+          <span class="try-first-hint">Hide solutions until you choose to reveal them.</span>
+        </div>
         <div id="examplesBookContent"></div>
       </div>
     </section>
@@ -376,6 +467,147 @@
         }
       } catch(err){ console.warn('Using fallback examples payload'); }
       renderExamples(data, closeDrawer);
+
+      // Example picker in breadcrumb (current example)
+      const currentExampleBtn = document.getElementById('currentExampleBtn');
+      const examplePickerDropdown = document.getElementById('examplePickerDropdown');
+      const currentExampleLabel = document.getElementById('currentExampleLabel');
+      function closeExamplePicker(){
+        if(examplePickerDropdown && currentExampleBtn){
+          examplePickerDropdown.classList.remove('open');
+          currentExampleBtn.setAttribute('aria-expanded','false');
+          examplePickerDropdown.setAttribute('aria-hidden','true');
+        }
+      }
+      if(currentExampleBtn && examplePickerDropdown){
+        currentExampleBtn.addEventListener('click', (e)=>{
+          e.stopPropagation();
+          const isOpen = examplePickerDropdown.classList.toggle('open');
+          currentExampleBtn.setAttribute('aria-expanded', isOpen);
+          examplePickerDropdown.setAttribute('aria-hidden', !isOpen);
+        });
+        document.addEventListener('click', (e)=>{
+          if(!currentExampleBtn.contains(e.target) && !examplePickerDropdown.contains(e.target)){
+            closeExamplePicker();
+          }
+        });
+        document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeExamplePicker(); });
+      }
+      function updateCurrentExample(num){
+        if(currentExampleLabel) currentExampleLabel.textContent = 'Example ' + num;
+        document.querySelectorAll('.example-picker-tile').forEach(t=>{
+          const isActive = t.getAttribute('data-target') === 'example-'+num;
+          t.classList.toggle('active', isActive);
+        });
+      }
+
+      // Try First mode — subtle reading-mode preference, default OFF, synced across 3 toggles
+      const tryFirstToggle = document.getElementById('tryFirstToggle');
+      const tryFirstToggleMobile = document.getElementById('tryFirstToggleMobile');
+      const tryFirstToggleFloating = document.getElementById('tryFirstToggleFloating');
+      const bookContentEl = document.getElementById('examplesBookContent');
+      const floatingTryFirst = document.getElementById('floatingTryFirst');
+      const chevronSvg = '<svg class="solution-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+      function syncToggles(checked){
+        [tryFirstToggle, tryFirstToggleMobile, tryFirstToggleFloating].forEach(t=>{ if(t) t.checked = checked; });
+      }
+      function applyTryFirst(enabled){
+        if(!bookContentEl) return;
+        syncToggles(enabled);
+        if(enabled){
+          bookContentEl.classList.add('try-first-enabled');
+          bookContentEl.querySelectorAll('.solution-block').forEach(el=>el.classList.remove('revealed'));
+          bookContentEl.querySelectorAll('.show-solution-btn, .hide-solution-btn').forEach(btn=>{
+            btn.innerHTML='<span>Show Solution</span>'+chevronSvg;
+            btn.classList.remove('hide-solution-btn');
+            btn.classList.add('show-solution-btn');
+            btn.setAttribute('aria-expanded','false');
+          });
+          bookContentEl.querySelectorAll('.option-choice').forEach(o=>{
+            o.removeAttribute('disabled');
+            o.setAttribute('tabindex','0');
+          });
+        } else {
+          bookContentEl.classList.remove('try-first-enabled');
+          bookContentEl.querySelectorAll('.option-choice').forEach(o=>{
+            o.setAttribute('aria-checked','false');
+            o.setAttribute('tabindex','-1');
+            o.setAttribute('disabled','');
+          });
+          bookContentEl.querySelectorAll('.solution-block').forEach(el=>el.classList.remove('revealed'));
+          // reset buttons to Show state for next enable
+          bookContentEl.querySelectorAll('.show-solution-btn, .hide-solution-btn').forEach(btn=>{
+            btn.innerHTML='<span>Show Solution</span>'+chevronSvg;
+            btn.classList.remove('hide-solution-btn');
+            btn.classList.add('show-solution-btn');
+            btn.setAttribute('aria-expanded','false');
+          });
+        }
+      }
+      function handleTryFirstChange(e){
+        applyTryFirst(e.target.checked);
+      }
+      [tryFirstToggle, tryFirstToggleMobile, tryFirstToggleFloating].forEach(t=>{
+        if(t) t.addEventListener('change', handleTryFirstChange);
+      });
+      if(bookContentEl){
+        // delegation for per-example Show/Hide and MCQ selection
+        bookContentEl.addEventListener('click', (e)=>{
+          const btn = e.target.closest('.show-solution-btn, .hide-solution-btn');
+          if(btn){
+            const article = btn.closest('.question-entry');
+            const solution = article ? article.querySelector('.solution-block') : null;
+            if(!solution) return;
+            const isRevealed = solution.classList.contains('revealed');
+            if(isRevealed){
+              solution.classList.remove('revealed');
+              btn.innerHTML='<span>Show Solution</span>'+chevronSvg;
+              btn.classList.remove('hide-solution-btn');
+              btn.classList.add('show-solution-btn');
+              btn.setAttribute('aria-expanded','false');
+            } else {
+              solution.classList.add('revealed');
+              btn.innerHTML='<span>Hide Solution</span>'+chevronSvg;
+              btn.classList.remove('show-solution-btn');
+              btn.classList.add('hide-solution-btn');
+              btn.setAttribute('aria-expanded','true');
+              if(window.ContinuaRenderer && window.ContinuaRenderer.renderMath){
+                window.ContinuaRenderer.renderMath(solution);
+              }
+            }
+            return;
+          }
+          const optBtn = e.target.closest('.option-choice');
+          if(optBtn && bookContentEl.classList.contains('try-first-enabled')){
+            const group = optBtn.closest('.example-options');
+            if(group){
+              group.querySelectorAll('.option-choice').forEach(o=>o.setAttribute('aria-checked','false'));
+              optBtn.setAttribute('aria-checked','true');
+            }
+          }
+        });
+        applyTryFirst(false);
+      }
+      // Floaters must not overlay footer — hide/slide away when footer enters viewport
+      const floaterEls = [document.getElementById('openDrawerBtn'), document.getElementById('moreMenuWrapper'), document.getElementById('floatingTryFirst')].filter(Boolean);
+      const footerEl = document.querySelector('.global-footer');
+      function updateFloaterFooter(){
+        if(!footerEl || !floaterEls.length) return;
+        const footerTop = footerEl.getBoundingClientRect().top;
+        const shouldHide = footerTop < window.innerHeight + 24;
+        floaterEls.forEach(el=>{
+          if(shouldHide) el.classList.add('floater-hidden');
+          else el.classList.remove('floater-hidden');
+        });
+      }
+      window.addEventListener('scroll', updateFloaterFooter, {passive:true});
+      window.addEventListener('resize', updateFloaterFooter, {passive:true});
+      // initial check and after drawer animations
+      updateFloaterFooter();
+      // also re-check after images/KaTeX load may shift footer
+      window.addEventListener('load', updateFloaterFooter);
+      // Expose updateCurrentExample for scrollspy
+      window._updateCurrentExample = updateCurrentExample;
     });
 
     function renderExamples(data, closeDrawerFn){
@@ -407,32 +639,57 @@
         } else {
           solHtml = (q.solutionText||'').replace(/\n\n/g,'<br><br>');
         }
-        // Options rendering
+        // Options rendering - supports Try First selectable state
         let optionsHtml = '';
         if (q.options && Array.isArray(q.options) && q.options.length>0) {
-          optionsHtml = '<ol class=\"options-list\">';
+          optionsHtml = '<div class=\"example-options\" role=\"radiogroup\" aria-label=\"Answer choices for Example ' + n + '\">';
           q.options.forEach((opt, oi)=>{
             const label = String.fromCharCode(65+oi);
             let optText = typeof opt === 'string' ? opt : (opt.text || opt.label || JSON.stringify(opt));
             if (window.ContinuaRenderer && window.ContinuaRenderer.renderMarkdown) {
-              // Render option inline without wrapping <p>
               optText = window.ContinuaRenderer.renderMarkdown(optText).replace(/^<p>/,'').replace(/<\/p>$/,'');
             }
-            optionsHtml += '<li><span class=\"options-label\">' + label + '.</span><span>' + optText + '</span></li>';
+            optionsHtml += '<button type=\"button\" class=\"option-choice\" role=\"radio\" aria-checked=\"false\" data-opt=\"' + oi + '\" aria-label=\"Option ' + label + '\"><span class=\"options-label\">' + label + '.</span><span class=\"option-text\">' + optText + '</span></button>';
           });
-          optionsHtml += '</ol>';
+          optionsHtml += '</div>';
         }
+        const solutionId = 'solution-' + n;
         html += '<article class=\"question-entry\" id=\"' + anchorId + '\" data-num=\"' + n + '\">'
               + '<div class=\"question-header\"><h3 class=\"question-heading\">Example ' + n + '</h3></div>'
               + '<div class=\"question-body\">' + qHtml + '</div>'
               + optionsHtml
-              + '<div class=\"solution-block\"><span class=\"solution-label\">Solution</span><div class=\"solution-content\">' + solHtml + '</div></div>'
+              + '<div class=\"try-first-controls\"><button type=\"button\" class=\"show-solution-btn\" aria-expanded=\"false\" aria-controls=\"' + solutionId + '\"><span>Show Solution</span><svg class=\"solution-chevron\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg></button></div>'
+              + '<div class=\"solution-block\" id=\"' + solutionId + '\"><span class=\"solution-label\">Solution</span><div class=\"solution-content\">' + solHtml + '</div></div>'
               + '</article>';
         if(idx < questions.length-1) html += '<hr class=\"question-divider\">';
       });
       drawerHtml += '</div></div>';
       container.innerHTML = html;
       if(drawerBody) drawerBody.innerHTML = drawerHtml;
+      // Populate breadcrumb example picker
+      const pickerGrid = document.getElementById('examplePickerGrid');
+      const currentExampleLabelEl = document.getElementById('currentExampleLabel');
+      if(pickerGrid){
+        let pickerHtml='';
+        questions.forEach(q=>{
+          const n=q.displayOrder;
+          const anchorId='example-'+n;
+          const formatted=String(n).padStart(2,'0');
+          const isActive = n===questions[0].displayOrder;
+          pickerHtml+='<a href="#'+anchorId+'" class="example-picker-tile'+(isActive?' active':'')+'" data-target="'+anchorId+'">'+formatted+'</a>';
+        });
+        pickerGrid.innerHTML=pickerHtml;
+        pickerGrid.querySelectorAll('.example-picker-tile').forEach(tile=>{
+          tile.addEventListener('click', ()=>{
+            const dd=document.getElementById('examplePickerDropdown');
+            const btn=document.getElementById('currentExampleBtn');
+            if(dd) dd.classList.remove('open');
+            if(btn) btn.setAttribute('aria-expanded','false');
+            if(dd) dd.setAttribute('aria-hidden','true');
+          });
+        });
+      }
+      if(currentExampleLabelEl) currentExampleLabelEl.textContent='Example '+questions[0].displayOrder;
       // Attach drawer link handlers
       if(drawerBody){
         drawerBody.querySelectorAll('.drawer-q-link').forEach(link=>{
@@ -466,6 +723,7 @@
               if(target === 'example-'+num) l.classList.add('active');
               else l.classList.remove('active');
             });
+            if(window._updateCurrentExample) window._updateCurrentExample(num);
           }
         });
       }, {rootMargin:'-90px 0px -55% 0px'});
