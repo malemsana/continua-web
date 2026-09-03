@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCERT E-Content Arrangement — Continua</title>
+  <meta name="title" content="NCERT E-Content Arrangement — Continua">
+  <meta name="description" content="How Continua provides NCERT E-content under NCERT's own copyright licence. Read the full NCERT Copyright License for Use of NCERT E-content as it applies on Continua.">
+  <link rel="canonical" href="https://continua.edu/ncert-licence/">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+
+  <style>
+    /* ==========================================================================
+       1. Base Variables — Continua Design Authority (shared with CFEL template)
+       ========================================================================== */
+    :root {
+      --color-navy: #1e293b;
+      --color-navy-dark: #0f172a;
+      --color-navy-light: #334155;
+      --color-bg-page: #ffffff;
+      --color-bg-surface: #f8fafc;
+      --color-bg-hero: #eff2fa;
+      --color-bg-muted: #f1f5f9;
+      --color-border: #e2e8f0;
+      --color-border-subtle: #edf2f7;
+      --color-border-navy: rgba(255,255,255,0.12);
+      --color-text-main: #0f172a;
+      --color-text-body: #334155;
+      --color-text-subtle: #475569;
+      --color-text-muted: #64748b;
+      --color-text-light: #94a3b8;
+      --color-text-inverse: #ffffff;
+      --color-text-inverse-muted: #94a3b8;
+      --font-serif: "Iowan Old Style","Apple Garamond","Baskerville","Times New Roman","Droid Serif",Georgia,serif;
+      --font-sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      --max-width: 1140px;
+      --legal-width: 780px;
+      --transition-standard: 0.15s ease-in-out;
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background-color:var(--color-bg-page);color:var(--color-text-main);font-family:var(--font-sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;min-height:100vh;display:flex;flex-direction:column}
+    a{color:inherit;text-decoration:none;transition:color var(--transition-standard),opacity var(--transition-standard)}
+    img,svg{display:block;max-width:100%}
+    .container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 1.5rem}
+
+    /* ==========================================================================
+       2. Global Header
+       ========================================================================== */
+    .global-header{background-color:var(--color-navy);border-bottom:1px solid var(--color-border-navy);color:var(--color-text-inverse);position:sticky;top:0;z-index:100}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 2rem;width:100%}
+    .header-left{display:flex;align-items:stretch;height:100%;gap:2rem}
+    .header-brand{display:flex;align-items:center;gap:0.85rem;height:100%}
+    .header-logo{width:38px;height:38px;flex-shrink:0}
+    .header-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;letter-spacing:0.01em;color:var(--color-text-inverse)}
+    .header-nav{display:flex;align-items:stretch;height:100%}
+    .header-nav-link{display:flex;align-items:center;height:100%;padding:0 1.25rem;color:#cbd5e1;font-size:0.95rem;font-weight:500;border-bottom:3px solid transparent;transition:color var(--transition-standard),background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-nav-link:hover{color:#ffffff;background-color:rgba(255,255,255,0.08);border-bottom-color:#93c5fd}
+    .header-right{display:flex;align-items:center;gap:1rem}
+    .header-search{display:flex;align-items:center;background-color:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:2px;padding:0.38rem 0.75rem;width:280px;transition:background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-search:focus-within{background-color:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.35)}
+    .header-search-icon{width:15px;height:15px;color:var(--color-text-inverse-muted);margin-right:0.5rem;flex-shrink:0}
+    .header-search-input{background:transparent;border:none;outline:none;color:var(--color-text-inverse);font-size:0.85rem;width:100%;font-family:inherit}
+    .header-search-input::placeholder{color:var(--color-text-inverse-muted)}
+    .header-menu-btn{display:none;background:transparent;border:1px solid rgba(255,255,255,0.18);border-radius:2px;width:38px;height:38px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:7px;transition:background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-menu-btn:hover,.header-menu-btn[aria-expanded="true"]{background-color:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.35)}
+    .menu-bar{display:block;width:20px;height:2px;background-color:#ffffff;transition:transform 0.2s ease,opacity 0.2s ease}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(2){opacity:0}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-nav-panel{display:none;background-color:var(--color-navy-dark);border-top:1px solid var(--color-border-navy);padding:1.25rem 1.5rem 1.5rem;flex-direction:column;gap:1rem}
+    .mobile-nav-panel.open{display:flex}
+    .mobile-nav-links{display:flex;flex-direction:column;gap:0.5rem}
+    .mobile-nav-link{color:#ffffff;font-size:1.05rem;font-weight:500;padding:0.65rem 0.5rem;border-bottom:1px solid rgba(255,255,255,0.08);transition:color var(--transition-standard)}
+    .mobile-nav-link:hover{color:#93c5fd}
+    .mobile-search-wrapper{margin-top:0.5rem}
+    .mobile-search-input{width:100%;background-color:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:0.65rem 0.85rem;color:#ffffff;font-size:0.92rem;font-family:inherit;outline:none}
+    .mobile-search-input::placeholder{color:#94a3b8}
+    .mobile-search-input:focus{border-color:rgba(255,255,255,0.5);background-color:rgba(255,255,255,0.14)}
+
+    /* ==========================================================================
+       3. Breadcrumbs
+       ========================================================================== */
+    .breadcrumb-section{background-color:var(--color-bg-page);border-bottom:1px solid var(--color-border-subtle);padding:0.75rem 0}
+    .breadcrumbs{display:flex;align-items:center;gap:0.5rem;font-size:0.84rem;color:var(--color-text-muted);flex-wrap:wrap;list-style:none}
+    .breadcrumb-item{display:inline-flex;align-items:center;gap:0.5rem}
+    .breadcrumb-link{color:var(--color-text-subtle);transition:color var(--transition-standard)}
+    .breadcrumb-link:hover{color:var(--color-navy);text-decoration:underline}
+    .breadcrumb-separator{color:var(--color-text-light);user-select:none}
+    .breadcrumb-current{color:var(--color-text-main);font-weight:500}
+
+    /* ==========================================================================
+       4. Legal Document Template — shared with CFEL (kept identical for reuse)
+       ========================================================================== */
+    .legal-main{flex-grow:1;display:flex;flex-direction:column}
+    .legal-shell{width:100%;max-width:var(--legal-width);margin:0 auto;padding:0 1.5rem}
+
+    .legal-intro-band{padding:2.75rem 0 2rem;border-bottom:1px solid var(--color-border)}
+    .legal-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.85rem}
+    .legal-title{font-family:var(--font-serif);font-size:2.15rem;font-weight:500;letter-spacing:-0.02em;line-height:1.15;color:var(--color-navy-dark);margin-bottom:0.45rem}
+    .legal-title-sub{font-family:var(--font-serif);font-size:1.05rem;font-style:italic;color:var(--color-text-subtle);margin-bottom:1.25rem;line-height:1.4}
+    .legal-summary{font-size:0.95rem;color:var(--color-text-body);line-height:1.7}
+    .legal-summary p{margin-bottom:0.85rem}
+    .legal-summary p:last-child{margin-bottom:0}
+    .legal-summary a{color:var(--color-navy);text-decoration:underline;text-decoration-color:#cbd5e1;text-underline-offset:3px}
+    .legal-summary a:hover{text-decoration-color:var(--color-navy)}
+
+    /* Key-facts box — restrained, not promotional */
+    .legal-facts{margin-top:1.5rem;border:1px solid var(--color-border);background:var(--color-bg-surface);padding:1.15rem 1.2rem}
+    .legal-facts-label{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.75rem}
+    .legal-facts-list{list-style:none;display:flex;flex-direction:column;gap:0.65rem;margin:0;padding:0}
+    .legal-facts-item{display:flex;gap:0.75rem;align-items:flex-start;font-size:0.9rem;color:var(--color-text-body);line-height:1.6}
+    .legal-facts-bullet{flex-shrink:0;width:6px;height:6px;margin-top:0.55rem;background:var(--color-navy);border-radius:50%}
+    .legal-facts-item strong{color:var(--color-navy-dark);font-weight:600}
+
+    /* In-band callout */
+    .legal-note{margin-top:1.25rem;font-size:0.86rem;color:var(--color-text-subtle);line-height:1.6;border-left:3px solid #cbd5e1;background:#ffffff;border-top:1px solid var(--color-border-subtle);border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle);padding:0.75rem 0.9rem}
+    .legal-note strong{color:var(--color-navy-dark)}
+
+    /* Transition */
+    .legal-divider{margin:2rem 0 0;border:none;border-top:1px solid var(--color-border);padding-top:1.75rem}
+    .legal-divider-label{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.6rem}
+    .legal-divider-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.35rem}
+    .legal-divider-meta{font-size:0.84rem;color:var(--color-text-muted);margin-bottom:0.25rem}
+    .legal-divider-meta strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-jump-hint{font-size:0.82rem;color:var(--color-text-muted);margin-top:0.75rem;padding:0.6rem 0.85rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);line-height:1.5}
+
+    /* Full licence typography */
+    .legal-document{padding:2rem 0 4rem}
+    .legal-doc-header{padding-bottom:1.25rem;border-bottom:1px solid var(--color-border);margin-bottom:2rem}
+    .legal-doc-title{font-family:var(--font-serif);font-size:1.65rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.25rem}
+    .legal-doc-subtitle{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5}
+    .legal-doc-preamble{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:1.75rem}
+    .legal-doc-preamble p{margin-bottom:0.85rem}
+    .legal-doc-preamble p:last-child{margin-bottom:0}
+
+    .legal-section{margin-bottom:2rem}
+    .legal-section + .legal-section{border-top:1px solid var(--color-border-subtle);padding-top:1.75rem}
+    .legal-section-title{font-family:var(--font-serif);font-size:1.08rem;font-weight:600;color:var(--color-navy-dark);line-height:1.3;margin-bottom:0.65rem;letter-spacing:-0.01em}
+    .legal-section-title span{color:var(--color-text-muted);font-weight:500;margin-right:0.35rem}
+    .legal-section p{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:0.7rem}
+    .legal-section p:last-child{margin-bottom:0}
+    .legal-external{font-size:0.84rem;color:var(--color-text-muted);line-height:1.6;margin-top:1.5rem;padding:0.75rem 0.9rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle)}
+    .legal-external a{color:var(--color-navy);text-decoration:underline;text-decoration-color:#cbd5e1;text-underline-offset:3px}
+    .legal-external a:hover{text-decoration-color:var(--color-navy)}
+
+    /* ==========================================================================
+       5. Global Footer
+       ========================================================================== */
+    .global-footer{background-color:var(--color-navy);color:var(--color-text-inverse);padding:4rem 0 2.5rem;border-top:1px solid var(--color-border-navy);margin-top:auto}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1fr;gap:2.5rem 1.5rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+    .footer-brand{display:flex;flex-direction:column;padding-right:1.5rem}
+    .footer-brand-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem}
+    .footer-brand-logo{width:32px;height:32px}
+    .footer-brand-title{font-family:var(--font-serif);font-size:1.4rem;font-weight:500;color:var(--color-text-inverse)}
+    .footer-tagline{font-size:0.95rem;color:var(--color-text-inverse-muted);font-weight:500;margin-bottom:0.65rem}
+    .footer-description{font-size:0.85rem;color:var(--color-text-inverse-muted);line-height:1.6;margin-bottom:1.5rem}
+    .footer-socials{display:flex;align-items:center;gap:1.15rem}
+    .footer-social-link{color:var(--color-text-inverse-muted);transition:color var(--transition-standard);display:flex;align-items:center}
+    .footer-social-link:hover{color:var(--color-text-inverse)}
+    .footer-social-icon{width:18px;height:18px;fill:currentColor}
+    .footer-col-title{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-inverse-muted);margin-bottom:1.15rem}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:0.75rem}
+    .footer-link{font-size:0.88rem;color:#cbd5e1;transition:color var(--transition-standard)}
+    .footer-link:hover{color:var(--color-text-inverse)}
+    .footer-bottom{padding-top:2rem;display:flex;justify-content:space-between;align-items:center;font-size:0.82rem;color:var(--color-text-inverse-muted)}
+
+    /* ==========================================================================
+       6. Responsive
+       ========================================================================== */
+    @media (max-width: 992px){
+      .footer-grid{grid-template-columns:2fr 1fr 1fr}
+    }
+    @media (max-width: 768px){
+      .header-inner{padding:0 1.25rem}
+      .header-nav{display:none}
+      .header-search{display:none}
+      .header-menu-btn{display:flex}
+      .legal-intro-band{padding:2rem 0 1.75rem}
+      .legal-title{font-size:1.85rem}
+      .legal-document{padding:1.5rem 0 3rem}
+      .legal-doc-title{font-size:1.45rem}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+      .footer-brand{grid-column:1/-1;padding-right:0}
+    }
+    @media (max-width: 480px){
+      .legal-shell{padding:0 1.25rem}
+      .container{padding:0 1.25rem}
+      .legal-title{font-size:1.65rem}
+      .legal-section-title{font-size:1rem}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-bottom{flex-direction:column;gap:0.75rem;text-align:center}
+    }
+    @media print{
+      .global-header,.breadcrumb-section,.footer-socials{display:none}
+      .legal-intro-band{padding-top:1rem}
+      .legal-document{padding-bottom:1rem}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="global-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="/" class="header-brand" aria-label="Continua Home">
+          <img src="assets/logo.svg" alt="Continua Logo" class="header-logo">
+          <span class="header-title">Continua</span>
+        </a>
+        <nav class="header-nav" aria-label="Main Navigation">
+          <a href="/resources/pyq-library/" class="header-nav-link">PYQ Library</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <div class="header-search" role="search">
+          <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" class="header-search-input" placeholder="Search chapters, questions and resources..." aria-label="Quick search">
+        </div>
+        <button class="header-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav"><span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span></button>
+      </div>
+    </div>
+    <div class="mobile-nav-panel" id="mobileNav" aria-hidden="true">
+      <nav class="mobile-nav-links"><a href="/resources/pyq-library/" class="mobile-nav-link">PYQ Library</a></nav>
+      <div class="mobile-search-wrapper"><input type="text" class="mobile-search-input" placeholder="Search chapters, questions and resources..." aria-label="Mobile quick search"></div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-section" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Continua</span></a>
+          <meta itemprop="position" content="1">
+          <span class="breadcrumb-separator">/</span>
+        </li>
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/legal/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Legal</span></a>
+          <meta itemprop="position" content="2">
+          <span class="breadcrumb-separator">/</span>
+        </li>
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span class="breadcrumb-current" itemprop="name">NCERT E-Content Arrangement</span>
+          <meta itemprop="position" content="3">
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main-content" class="legal-main">
+
+    <!-- Explainer — relationship before licence -->
+    <section class="legal-intro-band" aria-labelledby="ncert-page-title">
+      <div class="legal-shell">
+        <div class="legal-kicker">Legal Document</div>
+        <h1 id="ncert-page-title" class="legal-title">NCERT E-Content Arrangement</h1>
+        <p class="legal-title-sub">How NCERT material is made available through Continua</p>
+
+        <div class="legal-summary">
+          <p>
+            Continua provides access to selected NCERT E-content — such as textbook chapters made available by the National Council of Educational Research and Training — so that students can read and study permitted material directly on the platform alongside Continua's own resources.
+          </p>
+          <p>
+            NCERT E-content is not owned by Continua and is not covered by the <a href="cfel.html">Continua Free Educational License (CFEL)</a>. It remains the property of NCERT and is governed solely by the NCERT Copyright License reproduced below. Continua's role is limited to making permitted NCERT material accessible in accordance with that licence, without claiming ownership or granting additional rights over it.
+          </p>
+        </div>
+
+        <div class="legal-facts" role="region" aria-label="Key facts about NCERT E-content on Continua">
+          <div class="legal-facts-label">At a glance</div>
+          <ul class="legal-facts-list">
+            <li class="legal-facts-item"><span class="legal-facts-bullet" aria-hidden="true"></span><span><strong>Owner:</strong> NCERT is the corporate author and sole owner of NCERT E-content and is entitled to enforce its rights.</span></li>
+            <li class="legal-facts-item"><span class="legal-facts-bullet" aria-hidden="true"></span><span><strong>Not Continua-owned:</strong> Continua does not claim ownership of NCERT E-content.</span></li>
+            <li class="legal-facts-item"><span class="legal-facts-bullet" aria-hidden="true"></span><span><strong>Governing licence:</strong> NCERT E-content is governed by NCERT's own licence, not by CFEL.</span></li>
+            <li class="legal-facts-item"><span class="legal-facts-bullet" aria-hidden="true"></span><span><strong>Not covered by CFEL:</strong> Nothing in CFEL transfers ownership of NCERT material or modifies rights granted by NCERT.</span></li>
+            <li class="legal-facts-item"><span class="legal-facts-bullet" aria-hidden="true"></span><span><strong>Continua's role:</strong> To make permitted NCERT material accessible through the platform under the terms NCERT allows.</span></li>
+          </ul>
+        </div>
+
+        <div class="legal-note">
+          <strong>Using NCERT material:</strong> Before downloading, sharing, or distributing any NCERT E-content, please read the NCERT licence below. It explains what you may do — including reading online, downloading freely, and non-commercial distribution with attribution — and what is not permitted.
+        </div>
+
+        <div class="legal-divider" aria-hidden="true"></div>
+        <div class="legal-divider-label">Full Licence — NCERT</div>
+        <h2 class="legal-divider-title">Copyright License for Use of National Council of Educational Research and Training E-content</h2>
+        <p class="legal-divider-meta">Reproduced verbatim as published by NCERT. Source: <strong>www.ncert.nic.in/license-text/</strong></p>
+        <p class="legal-jump-hint">The document below contains 10 numbered terms. NCERT may update these terms from time to time on its website; the version below is reproduced for reference.</p>
+      </div>
+    </section>
+
+    <!-- Full NCERT Licence — reproduced exactly as provided -->
+    <article class="legal-document" aria-labelledby="ncert-doc-title">
+      <div class="legal-shell">
+        <header class="legal-doc-header">
+          <h2 id="ncert-doc-title" class="legal-doc-title">Copyright License for Use of National Council of Educational Research and Training E-content</h2>
+          <p class="legal-doc-subtitle">National Council of Educational Research and Training — Corporate author and sole owner of NCERT E-content</p>
+        </header>
+
+        <div class="legal-doc-preamble">
+          <p>National Council of Educational Research and Training, hereafter referred as NCERT is the corporate author and first/sole owner of the NCERT E-content and entitled to enforce its rights.</p>
+          <p>All content accessible on NCERT website www.ncert.nic.in, epathshala.gov.in, epathshala.nic.in shall be E-content within the meaning of this License, unless specified otherwise on such content.</p>
+          <p>Access or use in any manner of NCERT E-content signifies that the person so accessing the NCERT E-content has read, understood and agrees to be bound by the terms and conditions of this License at www.ncert.nic.in/license-text/. No person is authorised to access and/or use any NCERT E-content except under the terms of this License.</p>
+          <p>Any reproduction, distribution or other use of NCERT E-content otherwise than in accordance with the terms of this license may render the person doing so liable to legal remedies for infringement of copyright and/or moral rights.</p>
+          <p>The use of NCERT E-content made available on its website www.ncert.nic.in, epathshala.gov.in, epathshala.nic.in or through any other platform, in the form of e-books or other material in digital format, is subject to copyright of which the NCERT is the corporate author and first/sole owner of copyright and all other rights.</p>
+          <p>NCERT E-content can be used and/or distributed subject to the following terms and conditions:</p>
+        </div>
+
+        <section class="legal-section" id="ncert-s1" aria-labelledby="ncert-s1-title">
+          <h3 id="ncert-s1-title" class="legal-section-title"><span>1.</span> Agreement:</h3>
+          <p>All persons availing of this License shall display or provide a link to this License on their websites on the terms and conditions of this License and NCERT shall be deemed to be the licensor.</p>
+        </section>
+
+        <section class="legal-section" id="ncert-s2" aria-labelledby="ncert-s2-title">
+          <h3 id="ncert-s2-title" class="legal-section-title"><span>2.</span> Reproduction:</h3>
+          <p>All persons are entitled to read NCERT E-Contents online and are licensed to download the NCERT E-contents freely and without the payment of license fees to NCERT, subject to the terms of this agreement.</p>
+        </section>
+
+        <section class="legal-section" id="ncert-s3" aria-labelledby="ncert-s3-title">
+          <h3 id="ncert-s3-title" class="legal-section-title"><span>3.</span> Distribution:</h3>
+          <p>All persons are, further, entitled to distribute the NCERT E-content in digital format by electronic means to third parties or communicate the same to the public in any medium or format subject to the condition that no monetary or other consideration for such distribution or communication to the public is accepted, either for content or for carriage, nor any kind of commercial use of such NCERT E-content made, including but not limited to, placing advertisements in conjunction with NCERT E-content, or otherwise monetizing any activity undertaken pursuant to or in relation to the distribution or use of NCERT E-content, or obtaining any financial benefit whether for profit or otherwise, directly or indirectly, from distribution or communication to the public or other use of NCERT E-content.</p>
+        </section>
+
+        <section class="legal-section" id="ncert-s4" aria-labelledby="ncert-s4-title">
+          <h3 id="ncert-s4-title" class="legal-section-title"><span>4.</span> Sales or Hire:</h3>
+          <p>No person except the NCERT is permitted to sell or give on rental NCERT E-content in full or in part.</p>
+        </section>
+
+        <section class="legal-section" id="ncert-s5" aria-labelledby="ncert-s5-title">
+          <h3 id="ncert-s5-title" class="legal-section-title"><span>5.</span> Attribution:</h3>
+          <p>Any person distributing or communicating to the public NCERT E-content, either in whole or in part, shall make a clear, conspicuous and unambiguous attribution, both of authorship and of copyright ownership, in favour of NCERT. No person is permitted to remove or alter the logo, watermark or any other identification material or Rights Management Information that has been applied to the NCERT E-content by NCERT.</p>
+        </section>
+
+        <section class="legal-section" id="ncert-s6" aria-labelledby="ncert-s6-title">
+          <h3 id="ncert-s6-title" class="legal-section-title"><span>6.</span> Adaptation:</h3>
+          <p>NCERT E-content can only be distributed in its 'as is' form. No person is permitted to adapt, translate, alter, summarize, or make any derivation of NCERT E-content. Any such act without the specific, written permission of NCERT will amount to infringement of copyright.</p>
+        </section>
+
+        <section class="legal-section" id="ncert-s7" aria-labelledby="ncert-s7-title">
+          <h3 id="ncert-s7-title" class="legal-section-title"><span>7.</span> Technological Measures:</h3>
+          <p>While distributing NCERT E-content, no person is permitted to apply any technological measures that may restrict others from doing anything that this License permits.</p>
+        </section>
+
+        <section class="legal-section" id="ncert-s8" aria-labelledby="ncert-s8-title">
+          <h3 id="ncert-s8-title" class="legal-section-title"><span>8.</span> Exceptions and Limitations:</h3>
+          <p>The terms of this License are not in derogation of any applicable exception or limitation permitting any use of NCERT E-content without permission, under the Copyright Act, 1957.</p>
+        </section>
+
+        <section class="legal-section" id="ncert-s9" aria-labelledby="ncert-s9-title">
+          <h3 id="ncert-s9-title" class="legal-section-title"><span>9.</span> Changes to the Terms:</h3>
+          <p>From time to time, NCERT may change, remove, add to or otherwise modify these license terms, and reserves the right to do so at its discretion. In such case, the updated terms will be posted on NCERT's website; all such new and/or amended terms shall take effect immediately upon posting on NCERT's website and all persons distributing or communicating NCERT E-content shall be bound by the same.</p>
+        </section>
+
+        <section class="legal-section" id="ncert-s10" aria-labelledby="ncert-s10-title">
+          <h3 id="ncert-s10-title" class="legal-section-title"><span>10.</span> Applicable Law and Jurisdiction:</h3>
+          <p>This License shall be governed by the laws of India. All disputes arising shall be decided by the Courts located in Delhi which shall have exclusive jurisdiction. Unless repugnant to the context, all terms used in this license shall have the meaning assigned to them under the Copyright Act, 1957.</p>
+        </section>
+
+        <div class="legal-external">
+          Original licence source: <a href="https://www.ncert.nic.in/license-text/" target="_blank" rel="noopener noreferrer">www.ncert.nic.in/license-text/</a> · For the binding, up-to-date terms, refer to NCERT's official website at <a href="https://www.ncert.nic.in" target="_blank" rel="noopener noreferrer">www.ncert.nic.in</a>, <a href="https://epathshala.gov.in" target="_blank" rel="noopener noreferrer">epathshala.gov.in</a>, and <a href="https://epathshala.nic.in" target="_blank" rel="noopener noreferrer">epathshala.nic.in</a>. This page reproduces the licence for informational convenience as provided to Continua.
+        </div>
+
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="global-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-header"><img src="assets/logo.svg" alt="Continua" class="footer-brand-logo"><span class="footer-brand-title">Continua</span></div>
+          <p class="footer-tagline">School study material.</p>
+          <p class="footer-description">NCERT solutions, reference materials, formulae, notes and Mock Tests &amp; Sample Papers for Classes 8–12.</p>
+          <div class="footer-socials">
+            <a href="https://github.com" class="footer-social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+            <a href="https://youtube.com" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="mailto:contact@continua.edu" class="footer-social-link" aria-label="Email Us"><svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+          </div>
+        </div>
+        <div><div class="footer-col-title">Classes</div><ul class="footer-links"><li><a href="/class-12/" class="footer-link">Class 12</a></li><li><a href="/class-11/" class="footer-link">Class 11</a></li><li><a href="/class-10/" class="footer-link">Class 10</a></li><li><a href="/class-9/" class="footer-link">Class 9</a></li><li><a href="/class-8/" class="footer-link">Class 8</a></li></ul></div>
+        <div><div class="footer-col-title">Subjects</div><ul class="footer-links"><li><a href="/subjects/mathematics/" class="footer-link">Mathematics</a></li><li><a href="/subjects/physics/" class="footer-link">Physics</a></li><li><a href="/subjects/chemistry/" class="footer-link">Chemistry</a></li><li><a href="/subjects/biology/" class="footer-link">Biology</a></li><li><a href="/subjects/science/" class="footer-link">Science</a></li></ul></div>
+        <div><div class="footer-col-title">Resources</div><ul class="footer-links"><li><a href="/resources/ncert-solutions/" class="footer-link">NCERT Solutions</a></li><li><a href="/resources/pyq-library/" class="footer-link">PYQ Library</a></li><li><a href="/resources/formulae/" class="footer-link">Formulae</a></li><li><a href="/resources/reference-materials/" class="footer-link">Reference Materials</a></li><li><a href="/resources/notes/" class="footer-link">Notes</a></li><li><a href="/resources/practice-papers/" class="footer-link">Mock Tests &amp; Sample Papers</a></li></ul></div>
+        <div><div class="footer-col-title">Support</div><ul class="footer-links"><li><a href="/about/" class="footer-link">About Us</a></li><li><a href="/contact/" class="footer-link">Contact Us</a></li><li><a href="/faq/" class="footer-link">FAQ</a></li><li><a href="/sitemap.xml" class="footer-link">Sitemap</a></li></ul></div>
+        <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a href="cfel.html" class="footer-link">CFEL 1.0</a></li><li><a href="ncert-licence.html" class="footer-link">NCERT E-Content</a></li><li><a href="terms.html" class="footer-link">Terms of Service</a></li><li><a href="privacy.html" class="footer-link">Privacy Policy</a></li><li><a href="disclaimer.html" class="footer-link">Disclaimer</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><div>&copy; 2026 Continua. All rights reserved.</div></div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      const btn=document.getElementById('mobileMenuBtn');
+      const nav=document.getElementById('mobileNav');
+      if(btn&&nav){
+        btn.addEventListener('click',()=>{
+          const o=nav.classList.toggle('open');
+          btn.setAttribute('aria-expanded',o);
+          nav.setAttribute('aria-hidden',!o);
+        });
+        document.addEventListener('keydown',e=>{
+          if(e.key==='Escape'&&nav.classList.contains('open')){
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded','false');
+            nav.setAttribute('aria-hidden','true');
+            btn.focus();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

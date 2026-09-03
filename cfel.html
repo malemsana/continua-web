@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Continua Free Educational License (CFEL) 1.0 — Continua</title>
+  <meta name="title" content="Continua Free Educational License (CFEL) 1.0 — Continua">
+  <meta name="description" content="Read the Continua Free Educational License (CFEL) 1.0 governing the use, copying, downloading and sharing of original Continua content for personal and non-commercial educational purposes.">
+  <link rel="canonical" href="https://continua.edu/cfel/">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+
+  <style>
+    /* ==========================================================================
+       1. Base Variables — Continua Design Authority
+       ========================================================================== */
+    :root {
+      --color-navy: #1e293b;
+      --color-navy-dark: #0f172a;
+      --color-navy-light: #334155;
+      --color-bg-page: #ffffff;
+      --color-bg-surface: #f8fafc;
+      --color-bg-hero: #eff2fa;
+      --color-bg-muted: #f1f5f9;
+      --color-border: #e2e8f0;
+      --color-border-subtle: #edf2f7;
+      --color-border-navy: rgba(255,255,255,0.12);
+      --color-text-main: #0f172a;
+      --color-text-body: #334155;
+      --color-text-subtle: #475569;
+      --color-text-muted: #64748b;
+      --color-text-light: #94a3b8;
+      --color-text-inverse: #ffffff;
+      --color-text-inverse-muted: #94a3b8;
+      --font-serif: "Iowan Old Style","Apple Garamond","Baskerville","Times New Roman","Droid Serif",Georgia,serif;
+      --font-sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      --font-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      --max-width: 1140px;
+      --legal-width: 780px;
+      --transition-standard: 0.15s ease-in-out;
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background-color:var(--color-bg-page);color:var(--color-text-main);font-family:var(--font-sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;min-height:100vh;display:flex;flex-direction:column}
+    a{color:inherit;text-decoration:none;transition:color var(--transition-standard),opacity var(--transition-standard)}
+    img,svg{display:block;max-width:100%}
+    .container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 1.5rem}
+
+    /* ==========================================================================
+       2. Global Header — Reused verbatim from Continua shell
+       ========================================================================== */
+    .global-header{background-color:var(--color-navy);border-bottom:1px solid var(--color-border-navy);color:var(--color-text-inverse);position:sticky;top:0;z-index:100}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 2rem;width:100%}
+    .header-left{display:flex;align-items:stretch;height:100%;gap:2rem}
+    .header-brand{display:flex;align-items:center;gap:0.85rem;height:100%}
+    .header-logo{width:38px;height:38px;flex-shrink:0}
+    .header-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;letter-spacing:0.01em;color:var(--color-text-inverse)}
+    .header-nav{display:flex;align-items:stretch;height:100%}
+    .header-nav-link{display:flex;align-items:center;height:100%;padding:0 1.25rem;color:#cbd5e1;font-size:0.95rem;font-weight:500;border-bottom:3px solid transparent;transition:color var(--transition-standard),background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-nav-link:hover{color:#ffffff;background-color:rgba(255,255,255,0.08);border-bottom-color:#93c5fd}
+    .header-right{display:flex;align-items:center;gap:1rem}
+    .header-search{display:flex;align-items:center;background-color:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:2px;padding:0.38rem 0.75rem;width:280px;transition:background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-search:focus-within{background-color:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.35)}
+    .header-search-icon{width:15px;height:15px;color:var(--color-text-inverse-muted);margin-right:0.5rem;flex-shrink:0}
+    .header-search-input{background:transparent;border:none;outline:none;color:var(--color-text-inverse);font-size:0.85rem;width:100%;font-family:inherit}
+    .header-search-input::placeholder{color:var(--color-text-inverse-muted)}
+    .header-menu-btn{display:none;background:transparent;border:1px solid rgba(255,255,255,0.18);border-radius:2px;width:38px;height:38px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:7px;transition:background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-menu-btn:hover,.header-menu-btn[aria-expanded="true"]{background-color:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.35)}
+    .menu-bar{display:block;width:20px;height:2px;background-color:#ffffff;transition:transform 0.2s ease,opacity 0.2s ease}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(2){opacity:0}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-nav-panel{display:none;background-color:var(--color-navy-dark);border-top:1px solid var(--color-border-navy);padding:1.25rem 1.5rem 1.5rem;flex-direction:column;gap:1rem}
+    .mobile-nav-panel.open{display:flex}
+    .mobile-nav-links{display:flex;flex-direction:column;gap:0.5rem}
+    .mobile-nav-link{color:#ffffff;font-size:1.05rem;font-weight:500;padding:0.65rem 0.5rem;border-bottom:1px solid rgba(255,255,255,0.08);transition:color var(--transition-standard)}
+    .mobile-nav-link:hover{color:#93c5fd}
+    .mobile-search-wrapper{margin-top:0.5rem}
+    .mobile-search-input{width:100%;background-color:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:0.65rem 0.85rem;color:#ffffff;font-size:0.92rem;font-family:inherit;outline:none}
+    .mobile-search-input::placeholder{color:#94a3b8}
+    .mobile-search-input:focus{border-color:rgba(255,255,255,0.5);background-color:rgba(255,255,255,0.14)}
+
+    /* ==========================================================================
+       3. Breadcrumbs
+       ========================================================================== */
+    .breadcrumb-section{background-color:var(--color-bg-page);border-bottom:1px solid var(--color-border-subtle);padding:0.75rem 0}
+    .breadcrumbs{display:flex;align-items:center;gap:0.5rem;font-size:0.84rem;color:var(--color-text-muted);flex-wrap:wrap;list-style:none}
+    .breadcrumb-item{display:inline-flex;align-items:center;gap:0.5rem}
+    .breadcrumb-link{color:var(--color-text-subtle);transition:color var(--transition-standard)}
+    .breadcrumb-link:hover{color:var(--color-navy);text-decoration:underline}
+    .breadcrumb-separator{color:var(--color-text-light);user-select:none}
+    .breadcrumb-current{color:var(--color-text-main);font-weight:500}
+
+    /* ==========================================================================
+       4. Legal Document Template — Shared, reusable, restrained
+       ========================================================================== */
+    .legal-main{flex-grow:1;display:flex;flex-direction:column}
+    .legal-shell{width:100%;max-width:var(--legal-width);margin:0 auto;padding:0 1.5rem}
+
+    /* Intro / explainer band — no marketing hero */
+    .legal-intro-band{padding:2.75rem 0 2rem;border-bottom:1px solid var(--color-border)}
+    .legal-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.85rem}
+    .legal-title{font-family:var(--font-serif);font-size:2.15rem;font-weight:500;letter-spacing:-0.02em;line-height:1.15;color:var(--color-navy-dark);margin-bottom:0.45rem}
+    .legal-meta-line{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5;margin-bottom:1.5rem}
+    .legal-meta-line strong{font-weight:600;color:var(--color-text-subtle)}
+    .legal-meta-sep{color:var(--color-text-light);margin:0 0.4rem}
+
+    .legal-summary{font-size:0.95rem;color:var(--color-text-body);line-height:1.7}
+    .legal-summary p{margin-bottom:0.85rem}
+    .legal-summary p:last-child{margin-bottom:0}
+    .legal-summary a{color:var(--color-navy);text-decoration:underline;text-decoration-color:#cbd5e1;text-underline-offset:3px}
+    .legal-summary a:hover{text-decoration-color:var(--color-navy)}
+
+    /* Scope distinction — muted, document-oriented */
+    .legal-scope-grid{margin-top:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .legal-scope-card{border:1px solid var(--color-border);background:var(--color-bg-surface);padding:1rem 1.1rem}
+    .legal-scope-card--accent{border-left:3px solid var(--color-navy);background:#ffffff}
+    .legal-scope-label{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.45rem}
+    .legal-scope-title{font-size:0.92rem;font-weight:600;color:var(--color-navy-dark);margin-bottom:0.35rem;line-height:1.3}
+    .legal-scope-body{font-size:0.88rem;color:var(--color-text-subtle);line-height:1.55}
+    .legal-scope-body ul{margin:0.35rem 0 0 1.1rem;padding:0}
+    .legal-scope-body li{margin-bottom:0.2rem}
+    .legal-scope-body a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .legal-scope-body a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+    .legal-scope-note{margin-top:0.85rem;font-size:0.84rem;color:var(--color-text-muted);line-height:1.55;border-left:2px solid #e2e8f0;padding-left:0.75rem}
+    .legal-scope-note a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .legal-scope-note a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+
+    /* Transition into full licence */
+    .legal-divider{margin:2rem 0 0;border:none;border-top:1px solid var(--color-border);padding-top:1.75rem}
+    .legal-divider-label{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.6rem}
+    .legal-divider-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.35rem}
+    .legal-divider-meta{font-size:0.84rem;color:var(--color-text-muted);margin-bottom:0.25rem}
+    .legal-divider-meta strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-jump-hint{font-size:0.82rem;color:var(--color-text-muted);margin-top:0.75rem;padding:0.6rem 0.85rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);line-height:1.5}
+
+    /* Full legal document typography */
+    .legal-document{padding:2rem 0 4rem}
+    .legal-doc-header{padding-bottom:1.25rem;border-bottom:1px solid var(--color-border);margin-bottom:2rem}
+    .legal-doc-title{font-family:var(--font-serif);font-size:1.65rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.25rem}
+    .legal-doc-subtitle{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5}
+    .legal-doc-subtitle strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-doc-preamble{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:1.75rem}
+    .legal-doc-preamble p{margin-bottom:0.75rem}
+    .legal-doc-preamble p:last-child{margin-bottom:0}
+
+    .legal-section{margin-bottom:2rem;padding-bottom:0}
+    .legal-section + .legal-section{border-top:1px solid var(--color-border-subtle);padding-top:1.75rem}
+    .legal-section-title{font-family:var(--font-serif);font-size:1.08rem;font-weight:600;color:var(--color-navy-dark);line-height:1.3;margin-bottom:0.65rem;letter-spacing:-0.01em}
+    .legal-section-title span{color:var(--color-text-muted);font-weight:500;margin-right:0.35rem}
+    .legal-section p{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:0.7rem}
+    .legal-section p:last-child{margin-bottom:0}
+    .legal-list{margin:0.5rem 0 0.75rem 1.25rem;padding:0}
+    .legal-list li{font-size:0.92rem;color:var(--color-text-body);line-height:1.65;margin-bottom:0.4rem}
+    .legal-list li:last-child{margin-bottom:0}
+    .legal-list--alpha{list-style-type:lower-alpha}
+    .legal-list--disc{list-style-type:disc}
+    .legal-subsection{margin-top:0.9rem}
+    .legal-subsection-title{font-size:0.92rem;font-weight:600;color:var(--color-navy-dark);margin-bottom:0.35rem;line-height:1.4}
+    .legal-contact{margin-top:0.5rem;font-size:0.92rem;color:var(--color-text-body);line-height:1.7}
+    .legal-contact a{color:var(--color-navy);text-decoration:underline;text-decoration-color:#cbd5e1;text-underline-offset:3px}
+    .legal-contact a:hover{text-decoration-color:var(--color-navy)}
+    .legal-placeholder{font-family:var(--font-mono);font-size:0.86rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);padding:0.15rem 0.4rem;color:var(--color-text-subtle)}
+
+    /* Inline muted callout inside document */
+    .legal-callout{margin:1rem 0;padding:0.75rem 0.9rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);border-left:3px solid #cbd5e1;font-size:0.86rem;color:var(--color-text-subtle);line-height:1.6}
+
+    /* ==========================================================================
+       5. Global Footer — Reused verbatim
+       ========================================================================== */
+    .global-footer{background-color:var(--color-navy);color:var(--color-text-inverse);padding:4rem 0 2.5rem;border-top:1px solid var(--color-border-navy);margin-top:auto}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1fr;gap:2.5rem 1.5rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+    .footer-brand{display:flex;flex-direction:column;padding-right:1.5rem}
+    .footer-brand-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem}
+    .footer-brand-logo{width:32px;height:32px}
+    .footer-brand-title{font-family:var(--font-serif);font-size:1.4rem;font-weight:500;color:var(--color-text-inverse)}
+    .footer-tagline{font-size:0.95rem;color:var(--color-text-inverse-muted);font-weight:500;margin-bottom:0.65rem}
+    .footer-description{font-size:0.85rem;color:var(--color-text-inverse-muted);line-height:1.6;margin-bottom:1.5rem}
+    .footer-socials{display:flex;align-items:center;gap:1.15rem}
+    .footer-social-link{color:var(--color-text-inverse-muted);transition:color var(--transition-standard);display:flex;align-items:center}
+    .footer-social-link:hover{color:var(--color-text-inverse)}
+    .footer-social-icon{width:18px;height:18px;fill:currentColor}
+    .footer-col-title{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-inverse-muted);margin-bottom:1.15rem}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:0.75rem}
+    .footer-link{font-size:0.88rem;color:#cbd5e1;transition:color var(--transition-standard)}
+    .footer-link:hover{color:var(--color-text-inverse)}
+    .footer-bottom{padding-top:2rem;display:flex;justify-content:space-between;align-items:center;font-size:0.82rem;color:var(--color-text-inverse-muted)}
+
+    /* ==========================================================================
+       6. Responsive
+       ========================================================================== */
+    @media (max-width: 992px){
+      .footer-grid{grid-template-columns:2fr 1fr 1fr}
+    }
+    @media (max-width: 768px){
+      .header-inner{padding:0 1.25rem}
+      .header-nav{display:none}
+      .header-search{display:none}
+      .header-menu-btn{display:flex}
+      .legal-intro-band{padding:2rem 0 1.75rem}
+      .legal-title{font-size:1.85rem}
+      .legal-scope-grid{grid-template-columns:1fr}
+      .legal-document{padding:1.5rem 0 3rem}
+      .legal-doc-title{font-size:1.45rem}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+      .footer-brand{grid-column:1/-1;padding-right:0}
+    }
+    @media (max-width: 480px){
+      .legal-shell{padding:0 1.25rem}
+      .container{padding:0 1.25rem}
+      .legal-title{font-size:1.65rem}
+      .legal-section-title{font-size:1rem}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-bottom{flex-direction:column;gap:0.75rem;text-align:center}
+    }
+    @media print{
+      .global-header,.breadcrumb-section,.footer-socials{display:none}
+      .legal-intro-band{padding-top:1rem}
+      .legal-document{padding-bottom:1rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Global Header -->
+  <header class="global-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="/" class="header-brand" aria-label="Continua Home">
+          <img src="assets/logo.svg" alt="Continua Logo" class="header-logo">
+          <span class="header-title">Continua</span>
+        </a>
+        <nav class="header-nav" aria-label="Main Navigation">
+          <a href="/resources/pyq-library/" class="header-nav-link">PYQ Library</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <div class="header-search" role="search">
+          <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" class="header-search-input" id="headerSearchInput" placeholder="Search chapters, questions and resources..." aria-label="Quick search">
+        </div>
+        <button class="header-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav"><span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span></button>
+      </div>
+    </div>
+    <div class="mobile-nav-panel" id="mobileNav" aria-hidden="true">
+      <nav class="mobile-nav-links"><a href="/resources/pyq-library/" class="mobile-nav-link">PYQ Library</a></nav>
+      <div class="mobile-search-wrapper"><input type="text" class="mobile-search-input" placeholder="Search chapters, questions and resources..." aria-label="Mobile quick search"></div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-section" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Continua</span></a>
+          <meta itemprop="position" content="1">
+          <span class="breadcrumb-separator">/</span>
+        </li>
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/legal/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Legal</span></a>
+          <meta itemprop="position" content="2">
+          <span class="breadcrumb-separator">/</span>
+        </li>
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span class="breadcrumb-current" itemprop="name">Continua Free Educational License</span>
+          <meta itemprop="position" content="3">
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main-content" class="legal-main">
+
+    <!-- Plain-English explainer — before the legal document -->
+    <section class="legal-intro-band" aria-labelledby="cfel-page-title">
+      <div class="legal-shell">
+        <div class="legal-kicker">Legal Document</div>
+        <h1 id="cfel-page-title" class="legal-title">Continua Free Educational License (CFEL)</h1>
+        <div class="legal-meta-line">
+          <strong>Version 1.0</strong><span class="legal-meta-sep">·</span>Effective Date: <strong>10/9/2026</strong>
+        </div>
+
+        <div class="legal-summary">
+          <p>
+            The Continua Free Educational License — CFEL 1.0 — is a free, non-commercial licence for original material created by Continua. It lets you download, keep, print, and share our own explanations, solutions, questions, and other study materials for personal study and other non-commercial educational purposes, without paying or asking for individual permission.
+          </p>
+          <p>
+            This plain-English summary is only an introduction. The full licence text below is the authoritative document. If there is any difference between this introduction and the licence itself, the licence governs.
+          </p>
+        </div>
+
+        <div class="legal-scope-grid" role="region" aria-label="What CFEL covers and does not cover">
+          <div class="legal-scope-card legal-scope-card--accent">
+            <div class="legal-scope-label">Covered by CFEL</div>
+            <div class="legal-scope-title">Continua-owned content</div>
+            <div class="legal-scope-body">
+              Material identified as created by Continua and released under CFEL 1.0, for example:
+              <ul>
+                <li>Educational explanations and notes</li>
+                <li>Original solutions, worked examples, and questions</li>
+                <li>Study, practice, and revision materials including flashcards</li>
+                <li>Original illustrations, diagrams, and organisational metadata</li>
+              </ul>
+            </div>
+          </div>
+          <div class="legal-scope-card">
+            <div class="legal-scope-label">Not covered by CFEL</div>
+            <div class="legal-scope-title">Third-party content</div>
+            <div class="legal-scope-body">
+              Material owned by others and made available through Continua, such as:
+              <ul>
+                <li>NCERT E-content and other publisher or institutional works</li>
+                <li>Government publications, textbooks, articles, images, and videos</li>
+              </ul>
+              Such material remains subject to its own copyright and licence terms — for NCERT E-content, the <a href="ncert-licence.html">NCERT Copyright License</a>.
+            </div>
+          </div>
+        </div>
+
+        <p class="legal-scope-note">
+          If you are looking for NCERT textbook material on Continua, it is not licensed under CFEL. See the <a href="ncert-licence.html">NCERT E-Content Arrangement</a> for how that content is provided under NCERT's own licence.
+        </p>
+
+        <div class="legal-divider" aria-hidden="true"></div>
+        <div class="legal-divider-label">Full Licence</div>
+        <h2 class="legal-divider-title">Continua Free Educational License (CFEL) 1.0 — Complete Text</h2>
+        <p class="legal-divider-meta">Reproduced verbatim. Effective Date: <strong>10/9/2026</strong> · Version <strong>1.0</strong></p>
+        <p class="legal-jump-hint">The document below contains 20 numbered sections. Use your browser's find function (Ctrl + F / ⌘ + F) to locate a specific section.</p>
+      </div>
+    </section>
+
+    <!-- Full License — reproduced exactly as provided -->
+    <article class="legal-document" aria-labelledby="cfel-doc-title">
+      <div class="legal-shell">
+        <header class="legal-doc-header">
+          <h2 id="cfel-doc-title" class="legal-doc-title">Continua Free Educational License (CFEL) 1.0</h2>
+          <p class="legal-doc-subtitle">Copyright © Continua. All rights reserved except as expressly granted below.<br>Effective Date: <strong>10/9/2026</strong></p>
+        </header>
+
+        <div class="legal-doc-preamble">
+          <p>This Continua Free Educational License (“License”) governs the use, copying, downloading, and sharing of original content owned by Continua (“Continua Content”).</p>
+          <p>By accessing, downloading, copying, or sharing Continua Content, you agree to comply with the terms of this License.</p>
+        </div>
+
+        <section class="legal-section" id="cfel-s1" aria-labelledby="cfel-s1-title">
+          <h3 id="cfel-s1-title" class="legal-section-title"><span>1.</span> Scope</h3>
+          <p>This License applies only to content that is identified as being owned by or licensed under the Continua Free Educational License (CFEL) 1.0.</p>
+          <p>Continua Content may include, but is not limited to:</p>
+          <ul class="legal-list legal-list--disc">
+            <li>Educational explanations and notes;</li>
+            <li>Original solutions and worked examples;</li>
+            <li>Original questions and exercises;</li>
+            <li>Study materials;</li>
+            <li>Practice materials;</li>
+            <li>Flashcards and revision materials;</li>
+            <li>Original illustrations and diagrams;</li>
+            <li>Metadata and organizational information created by Continua;</li>
+            <li>Other original educational content created by Continua.</li>
+          </ul>
+          <p>This License does not apply to content owned by third parties, including NCERT or other publishers, authors, institutions, or organizations. Such content remains subject to its respective copyright and licence terms.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s2" aria-labelledby="cfel-s2-title">
+          <h3 id="cfel-s2-title" class="legal-section-title"><span>2.</span> Grant of Permission</h3>
+          <p>Subject to the terms of this License, Continua grants you a free, non-exclusive, non-transferable, worldwide licence to use Continua Content for personal, educational, and other non-commercial purposes.</p>
+          <p>No payment, subscription, or individual permission from Continua is required for uses expressly permitted by this License.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s3" aria-labelledby="cfel-s3-title">
+          <h3 id="cfel-s3-title" class="legal-section-title"><span>3.</span> Permitted Uses</h3>
+          <p>You may freely:</p>
+          <div class="legal-subsection">
+            <h4 class="legal-subsection-title">3.1 Download</h4>
+            <p>Download Continua Content for personal use, study, educational use, or other non-commercial purposes.</p>
+          </div>
+          <div class="legal-subsection">
+            <h4 class="legal-subsection-title">3.2 Personal Storage</h4>
+            <p>Store copies of Continua Content on your computer, phone, tablet, external storage, or other personal storage systems for permitted purposes.</p>
+          </div>
+          <div class="legal-subsection">
+            <h4 class="legal-subsection-title">3.3 Offline Use</h4>
+            <p>Use downloaded copies for offline studying, revision, reference, or other non-commercial educational purposes.</p>
+          </div>
+          <div class="legal-subsection">
+            <h4 class="legal-subsection-title">3.4 Personal Printing</h4>
+            <p>Print Continua Content for personal study or non-commercial educational use.</p>
+          </div>
+          <div class="legal-subsection">
+            <h4 class="legal-subsection-title">3.5 Non-Commercial Sharing</h4>
+            <p>Share Continua Content freely with other individuals for personal or educational purposes, provided that the sharing itself is not commercial.</p>
+            <p>Permitted methods include, but are not limited to:</p>
+            <ul class="legal-list legal-list--disc">
+              <li>WhatsApp;</li>
+              <li>Telegram;</li>
+              <li>Email;</li>
+              <li>Bluetooth;</li>
+              <li>Direct file transfer;</li>
+              <li>Cloud storage;</li>
+              <li>USB or other physical storage;</li>
+              <li>Local networks; and</li>
+              <li>Other comparable means of non-commercial sharing.</li>
+            </ul>
+            <p>You do not need to obtain permission from Continua before sharing permitted copies.</p>
+          </div>
+        </section>
+
+        <section class="legal-section" id="cfel-s4" aria-labelledby="cfel-s4-title">
+          <h3 id="cfel-s4-title" class="legal-section-title"><span>4.</span> Attribution</h3>
+          <p>When sharing substantial portions of Continua Content outside the Continua platform, you should retain any existing copyright notices and attribution identifying Continua as the creator or copyright holder.</p>
+          <p>Where reasonably practicable, you should identify Continua as the source and provide a reference to the original Continua resource.</p>
+          <p>You must not falsely claim that Continua Content was created by you or by another person or organization.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s5" aria-labelledby="cfel-s5-title">
+          <h3 id="cfel-s5-title" class="legal-section-title"><span>5.</span> Commercial Use</h3>
+          <p>Continua Content may not be used for commercial purposes under this License.</p>
+          <p>Without written permission from Continua, you may not:</p>
+          <ul class="legal-list legal-list--disc">
+            <li>Sell Continua Content;</li>
+            <li>Charge money for access to Continua Content;</li>
+            <li>Rent or license Continua Content for payment;</li>
+            <li>Include Continua Content in a paid course, subscription, membership, or educational package;</li>
+            <li>Use Continua Content as a paid component of another product or service;</li>
+            <li>Place Continua Content behind a paywall for commercial purposes;</li>
+            <li>Use Continua Content to generate advertising revenue where the Continua Content itself is being commercially distributed;</li>
+            <li>Sell printed copies of Continua Content;</li>
+            <li>Charge users merely for obtaining, downloading, or accessing Continua Content; or</li>
+            <li>Otherwise obtain direct or indirect commercial benefit from redistributing Continua Content.</li>
+          </ul>
+          <p>A person may freely share Continua Content with another person without payment, but may not charge that person for the Continua Content itself.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s6" aria-labelledby="cfel-s6-title">
+          <h3 id="cfel-s6-title" class="legal-section-title"><span>6.</span> Redistribution and Mirroring</h3>
+          <p>This License permits ordinary, individual sharing but does not grant permission to create a competing repository or redistribution service based substantially on Continua Content.</p>
+          <p>Without written permission from Continua, you may not:</p>
+          <ul class="legal-list legal-list--disc">
+            <li>Systematically download and mirror substantial portions of Continua Content;</li>
+            <li>Republish substantial portions of Continua Content on another website or application;</li>
+            <li>Create a competing educational service primarily using Continua Content;</li>
+            <li>Operate a repository intended to substitute for the Continua platform;</li>
+            <li>Bulk-distribute Continua Content through an automated system; or</li>
+            <li>Make Continua Content available as a substantial component of another educational platform or service.</li>
+          </ul>
+          <p>This restriction does not prohibit ordinary personal sharing between individuals, including sharing files with classmates, friends, study groups, or other learners.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s7" aria-labelledby="cfel-s7-title">
+          <h3 id="cfel-s7-title" class="legal-section-title"><span>7.</span> Modification</h3>
+          <p>You may make minor technical changes necessary for your own personal use, such as changing file names, organizing files, or converting files for compatibility with your personal device.</p>
+          <p>You may not publicly distribute modified versions of substantial Continua Content while representing them as Continua Content without written permission from Continua.</p>
+          <p>You may create your own educational work that discusses, references, explains, or builds upon ideas contained in Continua Content, provided that such work does not reproduce substantial portions of Continua Content without permission.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s8" aria-labelledby="cfel-s8-title">
+          <h3 id="cfel-s8-title" class="legal-section-title"><span>8.</span> No Transfer of Ownership</h3>
+          <p>This License does not transfer ownership of Continua Content.</p>
+          <p>All copyright and other intellectual-property rights in Continua Content remain with Continua except where expressly stated otherwise.</p>
+          <p>Permission to use or share Continua Content under this License does not constitute a sale, assignment, or transfer of copyright.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s9" aria-labelledby="cfel-s9-title">
+          <h3 id="cfel-s9-title" class="legal-section-title"><span>9.</span> No Trademark Rights</h3>
+          <p>This License does not grant permission to use the Continua name, logo, trademarks, branding, or other distinctive identifiers to imply endorsement, sponsorship, partnership, or affiliation with Continua.</p>
+          <p>You may identify Continua as the source of permitted content.</p>
+          <p>You may not represent yourself or your organization as Continua or as an authorized representative of Continua without written authorization.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s10" aria-labelledby="cfel-s10-title">
+          <h3 id="cfel-s10-title" class="legal-section-title"><span>10.</span> Third-Party Content</h3>
+          <p>Continua may provide or link to content created or owned by third parties.</p>
+          <p>Such content is not automatically covered by this License.</p>
+          <p>Examples may include:</p>
+          <ul class="legal-list legal-list--disc">
+            <li>NCERT publications;</li>
+            <li>Government publications;</li>
+            <li>Textbooks;</li>
+            <li>Articles;</li>
+            <li>Images;</li>
+            <li>Videos;</li>
+            <li>Questions or examination papers;</li>
+            <li>Open educational resources; and</li>
+            <li>Other third-party material.</li>
+          </ul>
+          <p>The copyright holder's applicable licence or terms govern such material.</p>
+          <p>Users are responsible for complying with the applicable licence when using third-party content.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s11" aria-labelledby="cfel-s11-title">
+          <h3 id="cfel-s11-title" class="legal-section-title"><span>11.</span> NCERT E-Content</h3>
+          <p>Where Continua provides NCERT E-content, such material is not owned by Continua.</p>
+          <p>NCERT E-content remains subject to the NCERT Copyright License for Use of NCERT E-content and any subsequent terms established by NCERT.</p>
+          <p>Continua does not grant rights over NCERT E-content under this License.</p>
+          <p>Nothing in this License should be interpreted as claiming ownership of NCERT material or as modifying the rights granted by NCERT.</p>
+          <p>The applicable NCERT licence must be consulted when using, copying, downloading, distributing, or otherwise using NCERT E-content.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s12" aria-labelledby="cfel-s12-title">
+          <h3 id="cfel-s12-title" class="legal-section-title"><span>12.</span> No Endorsement</h3>
+          <p>Unless explicitly stated otherwise, the availability of content through Continua does not imply that Continua is affiliated with, endorsed by, sponsored by, or officially associated with the copyright holder of third-party material.</p>
+          <p>Likewise, the inclusion of third-party material on Continua does not imply endorsement of Continua by that third party.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s13" aria-labelledby="cfel-s13-title">
+          <h3 id="cfel-s13-title" class="legal-section-title"><span>13.</span> No Technological Restriction</h3>
+          <p>Continua will not use this License to prohibit technical measures necessary for ordinary personal use of permitted content.</p>
+          <p>However, nothing in this section requires Continua to provide unrestricted access to its website, servers, databases, APIs, or infrastructure.</p>
+          <p>This License grants rights to content, not rights to Continua's underlying infrastructure.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s14" aria-labelledby="cfel-s14-title">
+          <h3 id="cfel-s14-title" class="legal-section-title"><span>14.</span> Respect for Copyright</h3>
+          <p>Nothing in this License is intended to restrict rights that you may independently have under applicable copyright law.</p>
+          <p>This License grants additional permissions where expressly stated.</p>
+          <p>Where applicable law provides an exception or limitation to copyright, that exception or limitation remains unaffected by this License.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s15" aria-labelledby="cfel-s15-title">
+          <h3 id="cfel-s15-title" class="legal-section-title"><span>15.</span> Individual Restriction of Distribution Rights</h3>
+          <p>Continua reserves the right, at its sole discretion, to restrict or revoke the permission granted to a specific identified individual or entity to distribute Continua Content under this License where circumstances arise that, in Continua's reasonable judgment, warrant such restriction.</p>
+          <p>Such circumstances may include, but are not limited to:</p>
+          <ul class="legal-list legal-list--disc">
+            <li>Repeated or deliberate violation of this License;</li>
+            <li>Abuse of the permission to distribute Continua Content;</li>
+            <li>Systematic redistribution that negatively affects the operation or sustainability of Continua;</li>
+            <li>Attempts to circumvent technical, legal, or access restrictions;</li>
+            <li>Use of Continua Content in a manner that creates significant legal, security, or operational risks for Continua; or</li>
+            <li>Other conduct that Continua reasonably determines to be inconsistent with the purposes of this License.</li>
+          </ul>
+          <p>Where Continua restricts an individual's distribution rights, the restriction may apply specifically to that individual or entity and does not automatically affect the permissions granted to other users under this License.</p>
+          <p>Continua may communicate such a restriction directly to the affected individual or entity and may specify the scope and duration of the restriction.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s16" aria-labelledby="cfel-s16-title">
+          <h3 id="cfel-s16-title" class="legal-section-title"><span>16.</span> Changes to the License</h3>
+          <p>Continua may publish updated versions of the Continua Free Educational License.</p>
+          <p>Each version will be identified by a version number.</p>
+          <p>Content released under CFEL 1.0 remains governed by CFEL 1.0 unless Continua explicitly states otherwise or you separately agree to a later licence.</p>
+          <p>Continua may release future content under a newer version of this License.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s17" aria-labelledby="cfel-s17-title">
+          <h3 id="cfel-s17-title" class="legal-section-title"><span>17.</span> Disclaimer</h3>
+          <p>Continua Content is provided “as is” to the maximum extent permitted by applicable law.</p>
+          <p>Continua does not guarantee that the content is complete, error-free, suitable for every purpose, or appropriate for any particular examination, curriculum, institution, or educational requirement.</p>
+          <p>Users should exercise their own judgment when relying upon educational content.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s18" aria-labelledby="cfel-s18-title">
+          <h3 id="cfel-s18-title" class="legal-section-title"><span>18.</span> Limitation of Liability</h3>
+          <p>To the maximum extent permitted by applicable law, Continua shall not be liable for any indirect, incidental, consequential, special, or other damages arising from the use of Continua Content.</p>
+          <p>Nothing in this License excludes or limits liability that cannot legally be excluded or limited under applicable law.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s19" aria-labelledby="cfel-s19-title">
+          <h3 id="cfel-s19-title" class="legal-section-title"><span>19.</span> Governing Law</h3>
+          <p>This License shall be governed by and interpreted in accordance with the laws applicable in India, unless applicable law requires otherwise.</p>
+          <p>Any dispute concerning this License shall be subject to the jurisdiction of the courts having appropriate jurisdiction over the matter.</p>
+        </section>
+
+        <section class="legal-section" id="cfel-s20" aria-labelledby="cfel-s20-title">
+          <h3 id="cfel-s20-title" class="legal-section-title"><span>20.</span> Contact</h3>
+          <p>For permissions not granted by this License, copyright concerns, licensing questions, or requests for commercial use, contact:</p>
+          <div class="legal-contact">
+            <p>Continua<br>
+            Email: <a href="mailto:continua.resource@gmail.com">continua.resource@gmail.com</a><br>
+            Website: <span class="legal-placeholder">[WEBSITE]</span></p>
+          </div>
+        </section>
+
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="global-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-header"><img src="assets/logo.svg" alt="Continua" class="footer-brand-logo"><span class="footer-brand-title">Continua</span></div>
+          <p class="footer-tagline">School study material.</p>
+          <p class="footer-description">NCERT solutions, reference materials, formulae, notes and Mock Tests &amp; Sample Papers for Classes 8–12.</p>
+          <div class="footer-socials">
+            <a href="https://github.com" class="footer-social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+            <a href="https://youtube.com" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="mailto:contact@continua.edu" class="footer-social-link" aria-label="Email Us"><svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+          </div>
+        </div>
+        <div><div class="footer-col-title">Classes</div><ul class="footer-links"><li><a href="/class-12/" class="footer-link">Class 12</a></li><li><a href="/class-11/" class="footer-link">Class 11</a></li><li><a href="/class-10/" class="footer-link">Class 10</a></li><li><a href="/class-9/" class="footer-link">Class 9</a></li><li><a href="/class-8/" class="footer-link">Class 8</a></li></ul></div>
+        <div><div class="footer-col-title">Subjects</div><ul class="footer-links"><li><a href="/subjects/mathematics/" class="footer-link">Mathematics</a></li><li><a href="/subjects/physics/" class="footer-link">Physics</a></li><li><a href="/subjects/chemistry/" class="footer-link">Chemistry</a></li><li><a href="/subjects/biology/" class="footer-link">Biology</a></li><li><a href="/subjects/science/" class="footer-link">Science</a></li></ul></div>
+        <div><div class="footer-col-title">Resources</div><ul class="footer-links"><li><a href="/resources/ncert-solutions/" class="footer-link">NCERT Solutions</a></li><li><a href="/resources/pyq-library/" class="footer-link">PYQ Library</a></li><li><a href="/resources/formulae/" class="footer-link">Formulae</a></li><li><a href="/resources/reference-materials/" class="footer-link">Reference Materials</a></li><li><a href="/resources/notes/" class="footer-link">Notes</a></li><li><a href="/resources/practice-papers/" class="footer-link">Mock Tests &amp; Sample Papers</a></li></ul></div>
+        <div><div class="footer-col-title">Support</div><ul class="footer-links"><li><a href="/about/" class="footer-link">About Us</a></li><li><a href="/contact/" class="footer-link">Contact Us</a></li><li><a href="/faq/" class="footer-link">FAQ</a></li><li><a href="/sitemap.xml" class="footer-link">Sitemap</a></li></ul></div>
+        <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a href="cfel.html" class="footer-link">CFEL 1.0</a></li><li><a href="ncert-licence.html" class="footer-link">NCERT E-Content</a></li><li><a href="terms.html" class="footer-link">Terms of Service</a></li><li><a href="privacy.html" class="footer-link">Privacy Policy</a></li><li><a href="disclaimer.html" class="footer-link">Disclaimer</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><div>&copy; 2026 Continua. All rights reserved.</div></div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      const btn=document.getElementById('mobileMenuBtn');
+      const nav=document.getElementById('mobileNav');
+      if(btn&&nav){
+        btn.addEventListener('click',()=>{
+          const o=nav.classList.toggle('open');
+          btn.setAttribute('aria-expanded',o);
+          nav.setAttribute('aria-hidden',!o);
+        });
+        document.addEventListener('keydown',e=>{
+          if(e.key==='Escape'&&nav.classList.contains('open')){
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded','false');
+            nav.setAttribute('aria-hidden','true');
+            btn.focus();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

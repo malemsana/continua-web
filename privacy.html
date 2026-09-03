@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Continua</title>
+  <meta name="title" content="Privacy Policy — Continua">
+  <meta name="description" content="Read the Continua Privacy Policy explaining how information is collected, used, and stored — including analytics, download counting, and locally stored practice data in V1.">
+  <link rel="canonical" href="https://continua.edu/privacy/">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+
+  <style>
+    /* ==========================================================================
+       1. Base Variables — Continua Design Authority
+       ========================================================================== */
+    :root {
+      --color-navy: #1e293b;
+      --color-navy-dark: #0f172a;
+      --color-navy-light: #334155;
+      --color-bg-page: #ffffff;
+      --color-bg-surface: #f8fafc;
+      --color-bg-hero: #eff2fa;
+      --color-bg-muted: #f1f5f9;
+      --color-border: #e2e8f0;
+      --color-border-subtle: #edf2f7;
+      --color-border-navy: rgba(255,255,255,0.12);
+      --color-text-main: #0f172a;
+      --color-text-body: #334155;
+      --color-text-subtle: #475569;
+      --color-text-muted: #64748b;
+      --color-text-light: #94a3b8;
+      --color-text-inverse: #ffffff;
+      --color-text-inverse-muted: #94a3b8;
+      --font-serif: "Iowan Old Style","Apple Garamond","Baskerville","Times New Roman","Droid Serif",Georgia,serif;
+      --font-sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      --font-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      --max-width: 1140px;
+      --legal-width: 780px;
+      --transition-standard: 0.15s ease-in-out;
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background-color:var(--color-bg-page);color:var(--color-text-main);font-family:var(--font-sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;min-height:100vh;display:flex;flex-direction:column}
+    a{color:inherit;text-decoration:none;transition:color var(--transition-standard),opacity var(--transition-standard)}
+    img,svg{display:block;max-width:100%}
+    .container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 1.5rem}
+
+    /* ==========================================================================
+       2. Global Header — Reused verbatim from Continua shell
+       ========================================================================== */
+    .global-header{background-color:var(--color-navy);border-bottom:1px solid var(--color-border-navy);color:var(--color-text-inverse);position:sticky;top:0;z-index:100}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 2rem;width:100%}
+    .header-left{display:flex;align-items:stretch;height:100%;gap:2rem}
+    .header-brand{display:flex;align-items:center;gap:0.85rem;height:100%}
+    .header-logo{width:38px;height:38px;flex-shrink:0}
+    .header-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;letter-spacing:0.01em;color:var(--color-text-inverse)}
+    .header-nav{display:flex;align-items:stretch;height:100%}
+    .header-nav-link{display:flex;align-items:center;height:100%;padding:0 1.25rem;color:#cbd5e1;font-size:0.95rem;font-weight:500;border-bottom:3px solid transparent;transition:color var(--transition-standard),background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-nav-link:hover{color:#ffffff;background-color:rgba(255,255,255,0.08);border-bottom-color:#93c5fd}
+    .header-right{display:flex;align-items:center;gap:1rem}
+    .header-search{display:flex;align-items:center;background-color:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:2px;padding:0.38rem 0.75rem;width:280px;transition:background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-search:focus-within{background-color:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.35)}
+    .header-search-icon{width:15px;height:15px;color:var(--color-text-inverse-muted);margin-right:0.5rem;flex-shrink:0}
+    .header-search-input{background:transparent;border:none;outline:none;color:var(--color-text-inverse);font-size:0.85rem;width:100%;font-family:inherit}
+    .header-search-input::placeholder{color:var(--color-text-inverse-muted)}
+    .header-menu-btn{display:none;background:transparent;border:1px solid rgba(255,255,255,0.18);border-radius:2px;width:38px;height:38px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:7px;transition:background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-menu-btn:hover,.header-menu-btn[aria-expanded="true"]{background-color:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.35)}
+    .menu-bar{display:block;width:20px;height:2px;background-color:#ffffff;transition:transform 0.2s ease,opacity 0.2s ease}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(2){opacity:0}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-nav-panel{display:none;background-color:var(--color-navy-dark);border-top:1px solid var(--color-border-navy);padding:1.25rem 1.5rem 1.5rem;flex-direction:column;gap:1rem}
+    .mobile-nav-panel.open{display:flex}
+    .mobile-nav-links{display:flex;flex-direction:column;gap:0.5rem}
+    .mobile-nav-link{color:#ffffff;font-size:1.05rem;font-weight:500;padding:0.65rem 0.5rem;border-bottom:1px solid rgba(255,255,255,0.08);transition:color var(--transition-standard)}
+    .mobile-nav-link:hover{color:#93c5fd}
+    .mobile-search-wrapper{margin-top:0.5rem}
+    .mobile-search-input{width:100%;background-color:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:0.65rem 0.85rem;color:#ffffff;font-size:0.92rem;font-family:inherit;outline:none}
+    .mobile-search-input::placeholder{color:#94a3b8}
+    .mobile-search-input:focus{border-color:rgba(255,255,255,0.5);background-color:rgba(255,255,255,0.14)}
+
+    /* ==========================================================================
+       3. Breadcrumbs
+       ========================================================================== */
+    .breadcrumb-section{background-color:var(--color-bg-page);border-bottom:1px solid var(--color-border-subtle);padding:0.75rem 0}
+    .breadcrumbs{display:flex;align-items:center;gap:0.5rem;font-size:0.84rem;color:var(--color-text-muted);flex-wrap:wrap;list-style:none}
+    .breadcrumb-item{display:inline-flex;align-items:center;gap:0.5rem}
+    .breadcrumb-link{color:var(--color-text-subtle);transition:color var(--transition-standard)}
+    .breadcrumb-link:hover{color:var(--color-navy);text-decoration:underline}
+    .breadcrumb-separator{color:var(--color-text-light);user-select:none}
+    .breadcrumb-current{color:var(--color-text-main);font-weight:500}
+
+    /* ==========================================================================
+       4. Legal Document Template — Shared, restrained, professional
+       ========================================================================== */
+    .legal-main{flex-grow:1;display:flex;flex-direction:column}
+    .legal-shell{width:100%;max-width:var(--legal-width);margin:0 auto;padding:0 1.5rem}
+
+    .legal-intro-band{padding:2.75rem 0 2rem;border-bottom:1px solid var(--color-border)}
+    .legal-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.85rem}
+    .legal-title{font-family:var(--font-serif);font-size:2.15rem;font-weight:500;letter-spacing:-0.02em;line-height:1.15;color:var(--color-navy-dark);margin-bottom:0.45rem}
+    .legal-meta-line{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5;margin-bottom:1.5rem}
+    .legal-meta-line strong{font-weight:600;color:var(--color-text-subtle)}
+
+    .legal-summary{font-size:0.95rem;color:var(--color-text-body);line-height:1.7}
+    .legal-summary p{margin-bottom:0.85rem}
+    .legal-summary p:last-child{margin-bottom:0}
+    .legal-summary a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .legal-summary a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+
+    .legal-divider{margin:2rem 0 0;border:none;border-top:1px solid var(--color-border);padding-top:1.75rem}
+    .legal-divider-label{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.6rem}
+    .legal-divider-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.35rem}
+    .legal-divider-meta{font-size:0.84rem;color:var(--color-text-muted);margin-bottom:0.25rem}
+    .legal-divider-meta strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-jump-hint{font-size:0.82rem;color:var(--color-text-muted);margin-top:0.75rem;padding:0.6rem 0.85rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);line-height:1.5}
+
+    .legal-document{padding:2rem 0 4rem}
+    .legal-doc-header{padding-bottom:1.25rem;border-bottom:1px solid var(--color-border);margin-bottom:2rem}
+    .legal-doc-title{font-family:var(--font-serif);font-size:1.65rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.25rem}
+    .legal-doc-subtitle{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5}
+    .legal-doc-subtitle strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-doc-preamble{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:1.75rem}
+    .legal-doc-preamble p{margin-bottom:0.75rem}
+    .legal-doc-preamble p:last-child{margin-bottom:0}
+    .legal-doc-preamble a,.legal-section a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .legal-doc-preamble a:hover,.legal-section a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+
+    .legal-section{margin-bottom:2rem;padding-bottom:0}
+    .legal-section + .legal-section{border-top:1px solid var(--color-border-subtle);padding-top:1.75rem}
+    .legal-section-title{font-family:var(--font-serif);font-size:1.08rem;font-weight:600;color:var(--color-navy-dark);line-height:1.3;margin-bottom:0.65rem;letter-spacing:-0.01em}
+    .legal-section-title span{color:var(--color-text-muted);font-weight:500;margin-right:0.35rem}
+    .legal-section p{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:0.7rem}
+    .legal-section p:last-child{margin-bottom:0}
+    .legal-subsection{margin-top:0.9rem}
+    .legal-subsection-title{font-size:0.92rem;font-weight:600;color:var(--color-navy-dark);margin-bottom:0.35rem;line-height:1.4}
+    .legal-list{margin:0.5rem 0 0.75rem 1.25rem;padding:0}
+    .legal-list li{font-size:0.92rem;color:var(--color-text-body);line-height:1.65;margin-bottom:0.4rem}
+    .legal-list li:last-child{margin-bottom:0}
+    .legal-list--disc{list-style-type:disc}
+    .legal-list--decimal{list-style-type:decimal}
+    .legal-note{margin:0.85rem 0;padding:0.75rem 0.9rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);border-left:3px solid #cbd5e1;font-size:0.86rem;color:var(--color-text-subtle);line-height:1.6}
+    .legal-contact{margin-top:0.5rem;font-size:0.92rem;color:var(--color-text-body);line-height:1.7}
+    .legal-placeholder{font-family:var(--font-mono);font-size:0.86rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);padding:0.15rem 0.4rem;color:var(--color-text-subtle)}
+    .legal-callout{margin:1rem 0;padding:0.75rem 0.9rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);border-left:3px solid #cbd5e1;font-size:0.86rem;color:var(--color-text-subtle);line-height:1.6}
+
+    /* ==========================================================================
+       5. Global Footer — dense, reused verbatim
+       ========================================================================== */
+    .global-footer{background-color:var(--color-navy);color:var(--color-text-inverse);padding:4rem 0 2.5rem;border-top:1px solid var(--color-border-navy);margin-top:auto}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1fr;gap:2.5rem 1.5rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+    .footer-brand{display:flex;flex-direction:column;padding-right:1.5rem}
+    .footer-brand-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem}
+    .footer-brand-logo{width:32px;height:32px}
+    .footer-brand-title{font-family:var(--font-serif);font-size:1.4rem;font-weight:500;color:var(--color-text-inverse)}
+    .footer-tagline{font-size:0.95rem;color:var(--color-text-inverse-muted);font-weight:500;margin-bottom:0.65rem}
+    .footer-description{font-size:0.85rem;color:var(--color-text-inverse-muted);line-height:1.6;margin-bottom:1.5rem}
+    .footer-socials{display:flex;align-items:center;gap:1.15rem}
+    .footer-social-link{color:var(--color-text-inverse-muted);transition:color var(--transition-standard);display:flex;align-items:center}
+    .footer-social-link:hover{color:var(--color-text-inverse)}
+    .footer-social-icon{width:18px;height:18px;fill:currentColor}
+    .footer-col-title{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-inverse-muted);margin-bottom:1.15rem}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:0.75rem}
+    .footer-link{font-size:0.88rem;color:#cbd5e1;transition:color var(--transition-standard)}
+    .footer-link:hover{color:var(--color-text-inverse)}
+    .footer-bottom{padding-top:2rem;display:flex;justify-content:space-between;align-items:center;font-size:0.82rem;color:var(--color-text-inverse-muted)}
+
+    /* ==========================================================================
+       6. Responsive
+       ========================================================================== */
+    @media (max-width: 992px){
+      .footer-grid{grid-template-columns:2fr 1fr 1fr}
+    }
+    @media (max-width: 768px){
+      .header-inner{padding:0 1.25rem}
+      .header-nav{display:none}
+      .header-search{display:none}
+      .header-menu-btn{display:flex}
+      .legal-intro-band{padding:2rem 0 1.75rem}
+      .legal-title{font-size:1.85rem}
+      .legal-document{padding:1.5rem 0 3rem}
+      .legal-doc-title{font-size:1.45rem}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+      .footer-brand{grid-column:1/-1;padding-right:0}
+    }
+    @media (max-width: 480px){
+      .legal-shell{padding:0 1.25rem}
+      .container{padding:0 1.25rem}
+      .legal-title{font-size:1.65rem}
+      .legal-section-title{font-size:1rem}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-bottom{flex-direction:column;gap:0.75rem;text-align:center}
+    }
+    @media print{
+      .global-header,.breadcrumb-section,.footer-socials{display:none}
+      .legal-intro-band{padding-top:1rem}
+      .legal-document{padding-bottom:1rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Global Header -->
+  <header class="global-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="/" class="header-brand" aria-label="Continua Home">
+          <img src="assets/logo.svg" alt="Continua Logo" class="header-logo">
+          <span class="header-title">Continua</span>
+        </a>
+        <nav class="header-nav" aria-label="Main Navigation">
+          <a href="/resources/pyq-library/" class="header-nav-link">PYQ Library</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <div class="header-search" role="search">
+          <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" class="header-search-input" id="headerSearchInput" placeholder="Search chapters, questions and resources..." aria-label="Quick search">
+        </div>
+        <button class="header-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav"><span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span></button>
+      </div>
+    </div>
+    <div class="mobile-nav-panel" id="mobileNav" aria-hidden="true">
+      <nav class="mobile-nav-links"><a href="/resources/pyq-library/" class="mobile-nav-link">PYQ Library</a></nav>
+      <div class="mobile-search-wrapper"><input type="text" class="mobile-search-input" placeholder="Search chapters, questions and resources..." aria-label="Mobile quick search"></div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-section" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Continua</span></a>
+          <meta itemprop="position" content="1">
+          <span class="breadcrumb-separator">/</span>
+        </li>
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span class="breadcrumb-current" itemprop="name">Privacy Policy</span>
+          <meta itemprop="position" content="2">
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main-content" class="legal-main">
+
+    <!-- Plain-English introduction -->
+    <section class="legal-intro-band" aria-labelledby="privacy-page-title">
+      <div class="legal-shell">
+        <div class="legal-kicker">Legal Document</div>
+        <h1 id="privacy-page-title" class="legal-title">Privacy Policy</h1>
+        <div class="legal-meta-line">
+          Last updated: <strong>[DATE]</strong>
+        </div>
+
+        <div class="legal-summary">
+          <p>
+            This Privacy Policy explains how Continua handles information when you use our website and educational services. It covers what we collect, what stays on your device, and how we use analytics and usage information to operate and improve the platform.
+          </p>
+          <p>
+            Continua in V1 is designed to work without user accounts and to keep advanced practice data on your device rather than in a cloud profile. This policy describes that model honestly — including our use of Google Analytics and download counting — and explains your practical controls. Use of Continua is also governed by our <a href="terms.html">Terms of Service</a>.
+          </p>
+        </div>
+
+        <div class="legal-divider" aria-hidden="true"></div>
+        <div class="legal-divider-label">Full Document</div>
+        <h2 class="legal-divider-title">Continua Privacy Policy — Complete Text</h2>
+        <p class="legal-divider-meta">Applies to Continua V1 · Last updated: <strong>[DATE]</strong></p>
+        <p class="legal-jump-hint">The document below contains 14 numbered sections. Use your browser's find function (Ctrl + F / ⌘ + F) to locate a specific section.</p>
+      </div>
+    </section>
+
+    <!-- Full Privacy Policy -->
+    <article class="legal-document" aria-labelledby="privacy-doc-title">
+      <div class="legal-shell">
+        <header class="legal-doc-header">
+          <h2 id="privacy-doc-title" class="legal-doc-title">Privacy Policy</h2>
+          <p class="legal-doc-subtitle">Last updated: <strong>[DATE]</strong></p>
+        </header>
+
+        <section class="legal-section" id="privacy-s1" aria-labelledby="privacy-s1-title">
+          <h3 id="privacy-s1-title" class="legal-section-title"><span>1.</span> About This Privacy Policy</h3>
+          <p>This Privacy Policy describes how Continua (“Continua”, “we”, “us”, or “our”) handles information in connection with the Continua website, services, and educational resources. It applies to visitors who access or use Continua.</p>
+          <p>Continua provides original educational content, third-party educational resources, NCERT E-content, and related tools and features for studying and learning. Our privacy approach in V1 is intentionally restrained: we do not require user accounts, we do not maintain cloud-based student profiles, and we keep advanced practice information local to your device as described below.</p>
+          <p>This policy should be read together with our <a href="terms.html">Terms of Service</a>. Where this policy refers to content licences, see also the <a href="cfel.html">Continua Free Educational License (CFEL)</a> and the <a href="ncert-licence.html">NCERT E-Content arrangement</a> for the terms that govern specific content.</p>
+        </section>
+
+        <section class="legal-section" id="privacy-s2" aria-labelledby="privacy-s2-title">
+          <h3 id="privacy-s2-title" class="legal-section-title"><span>2.</span> Information We Collect</h3>
+          <p>We collect information in the limited ways described in this section. We do not invent categories of data that we do not actually collect.</p>
+
+          <div class="legal-subsection">
+            <h4 class="legal-subsection-title">2.1 Analytics and usage information</h4>
+            <p>Continua may use <strong>Google Analytics</strong> to collect analytics and usage information about how visitors use the website, to the extent actually collected by the configured Google Analytics service.</p>
+            <p>Depending on configuration and visitor interaction, this analytics information may include:</p>
+            <ul class="legal-list legal-list--disc">
+              <li>Pages visited, time spent, and navigation paths;</li>
+              <li>Interactions such as clicks, searches, downloads, and feature usage;</li>
+              <li>Device and browser information, such as browser type, operating system, and screen properties;</li>
+              <li>Approximate location information derived from IP address or device settings, as made available by the analytics service;</li>
+              <li>Referral and source information, such as the website or link that brought you to Continua; and</li>
+              <li>Similar usage information that the configured analytics service is set to collect.</li>
+            </ul>
+            <p>We do not claim to collect a specific category of analytics information if it is not actually configured or made available by the service. See <a href="#privacy-s6">Section 6</a> for how Google Analytics processes this information.</p>
+          </div>
+
+          <div class="legal-subsection">
+            <h4 class="legal-subsection-title">2.2 Download and resource usage information</h4>
+            <p>Continua may internally count downloads and resource usage. This counting is used for purposes such as understanding which resources are popular, producing aggregate usage statistics, planning infrastructure and caching, and identifying unusual or abusive activity that may affect availability or performance.</p>
+            <p>This is <strong>aggregate and resource-oriented counting</strong> — for example, how many times a particular PDF, solution set, or reference file was requested. It is distinct from maintaining a personal download library tied to an individual’s account or profile. In V1 we do not maintain a cloud-based record of your personal download history as a student profile.</p>
+          </div>
+
+          <div class="legal-subsection">
+            <h4 class="legal-subsection-title">2.3 Information you voluntarily provide</h4>
+            <p>If you choose to contact Continua — for example by email or through a contact form where available — we receive the information you choose to provide, such as your contact details and the contents of your message. We use this information only to respond to your request, communicate with you, and as reasonably necessary to operate the service.</p>
+            <p>We do not require you to provide personal information to browse resources, read content, or download permitted materials in V1.</p>
+          </div>
+        </section>
+
+        <section class="legal-section" id="privacy-s3" aria-labelledby="privacy-s3-title">
+          <h3 id="privacy-s3-title" class="legal-section-title"><span>3.</span> Information Stored Locally on Your Device</h3>
+          <p>Some information remains <strong>only on your device</strong> and is not sent to or maintained by Continua as a cloud-based profile. It is important to distinguish this locally stored practice information from analytics or usage information that is processed by Continua or its service providers.</p>
+
+          <div class="legal-subsection">
+            <h4 class="legal-subsection-title">3.1 Free Flow and advanced practice</h4>
+            <p>Advanced question-practice functionality, including features such as <strong>Free Flow</strong>, may store a local copy of recent questions, attempts, answers, preferences, and related practice metadata on the user's device using browser or site storage (such as local storage, session storage, or similar technologies).</p>
+            <p>This allows practice to work quickly, resume where you left off, and function offline or with reduced network use.</p>
+          </div>
+
+          <div class="legal-subsection">
+            <h4 class="legal-subsection-title">3.2 Recent questions, attempts, answers, and related metadata</h4>
+            <p>Locally stored practice information may include the set of questions recently shown, your selected or entered answers, whether an attempt was marked correct or incorrect, time spent, ordering or filtering preferences, and other metadata that supports the practice experience.</p>
+            <p>In V1, this information is intended to remain <strong>local to the user's device</strong>. It is not maintained as a cloud-based student profile on Continua's servers, and we do not use it to build a persistent, account-linked history of your study activity in V1.</p>
+          </div>
+
+          <div class="legal-subsection">
+            <h4 class="legal-subsection-title">3.3 Your control over local data</h4>
+            <p>Clearing browser or site storage, deleting site data, or using equivalent browser controls may remove locally stored practice information, including recent attempts and preferences stored by Free Flow. After you clear this data, practice features will typically start from a fresh state on that device and browser.</p>
+            <p>Because this information lives on your device, its availability and persistence depend on your device, browser settings, and whether you clear site data. Private or incognito modes may also limit how long locally stored information is retained.</p>
+          </div>
+          <div class="legal-note">In short: <strong>data sent to or processed by Continua or its providers</strong> (such as analytics and download counts) is separate from <strong>practice information kept only on your device</strong> in V1.</div>
+        </section>
+
+        <section class="legal-section" id="privacy-s4" aria-labelledby="privacy-s4-title">
+          <h3 id="privacy-s4-title" class="legal-section-title"><span>4.</span> Accounts</h3>
+          <p><strong>Current V1 status.</strong> Continua currently does not require or maintain user accounts for the core website. You can browse resources, read content, and download permitted materials without creating an account or logging in. We do not operate V1 as an account-based service with server-side student profiles.</p>
+          <p><strong>Possible future functionality.</strong> Continua may introduce accounts or other features in the future that involve additional personal information — for example, to support saved progress, personalization, or other optional features. If such functionality is introduced, we may update this Privacy Policy to describe what is collected, why it is collected, and how it is handled, and we will provide appropriate notice where required.</p>
+        </section>
+
+        <section class="legal-section" id="privacy-s5" aria-labelledby="privacy-s5-title">
+          <h3 id="privacy-s5-title" class="legal-section-title"><span>5.</span> How We Use Information</h3>
+          <p>We use information as described in this policy for purposes including:</p>
+          <ul class="legal-list legal-list--disc">
+            <li>Operating, maintaining, and making the website and its resources available;</li>
+            <li>Understanding how visitors use the service and improving educational content, navigation, and features;</li>
+            <li>Measuring aggregate popularity and usage of resources and pages;</li>
+            <li>Planning infrastructure, performance, and caching;</li>
+            <li>Detecting, preventing, and addressing unusual, abusive, or harmful activity that may affect availability, security, or integrity;</li>
+            <li>Responding to messages you send us and communicating where appropriate; and</li>
+            <li>Complying with applicable legal requirements where relevant.</li>
+          </ul>
+          <p>We do not claim that locally stored practice information is routinely transmitted to or used by Continua in V1. That information is intended to remain on your device as described in <a href="#privacy-s3">Section 3</a>.</p>
+        </section>
+
+        <section class="legal-section" id="privacy-s6" aria-labelledby="privacy-s6-title">
+          <h3 id="privacy-s6-title" class="legal-section-title"><span>6.</span> Google Analytics and Third-Party Services</h3>
+          <p>Continua may use <strong>Google Analytics</strong> and may rely on other third-party infrastructure and service providers — such as hosting providers, content-delivery networks, and related operational services — to deliver and support the website.</p>
+          <p>These providers may process information according to their own privacy policies and terms. For Google Analytics, processing and retention are governed by Google's policies and by the settings configured for the service. Continua does not control how Google or other independent providers handle information subject to their own policies, except to the extent of the configuration and controls made available to us.</p>
+          <p>It is important to distinguish <strong>information controlled by Continua</strong> — such as aggregate usage counts and messages you send us directly — from <strong>processing performed by third-party providers</strong> using their own systems. Where a provider acts independently, its policy, not this one, describes its handling of that information.</p>
+          <p>For more information about how Google handles data from sites that use its services, refer to Google's documentation and privacy policy as published by Google.</p>
+        </section>
+
+        <section class="legal-section" id="privacy-s7" aria-labelledby="privacy-s7-title">
+          <h3 id="privacy-s7-title" class="legal-section-title"><span>7.</span> Cookies and Similar Technologies</h3>
+          <p>Google Analytics and similar services may use cookies and related technologies — such as local storage and pixel tags — to collect and distinguish usage information, remember preferences where applicable, and measure how the website is used over time.</p>
+          <p>Your browser or device may allow you to control cookies through its settings, including blocking or deleting cookies and configuring site data. Limiting cookies may affect how certain features function, including analytics measurement. Local practice data described in <a href="#privacy-s3">Section 3</a> is stored using site storage on your device and can be removed by clearing browser or site data as described there.</p>
+          <p>For choices specific to Google Analytics, you may also refer to the controls and opt-out mechanisms provided by Google, where available.</p>
+        </section>
+
+        <section class="legal-section" id="privacy-s8" aria-labelledby="privacy-s8-title">
+          <h3 id="privacy-s8-title" class="legal-section-title"><span>8.</span> Data Retention</h3>
+          <p>We retain information only as long as it is relevant for the purposes described in this policy, unless a longer period is required or permitted by applicable law or operational necessity.</p>
+          <ul class="legal-list legal-list--disc">
+            <li><strong>Analytics information</strong> is retained according to the settings configured for Google Analytics and the provider's retention practices.</li>
+            <li><strong>Aggregate download and usage counts</strong> may be retained as statistical records to understand popularity and to plan and protect the service.</li>
+            <li><strong>Information you voluntarily provide</strong>, such as correspondence, may be retained as reasonably necessary to respond to and maintain a record of the communication.</li>
+            <li><strong>Locally stored practice information</strong> remains on your device until you clear it, your browser removes it, or it is otherwise overwritten; it is not retained as a cloud profile by Continua in V1.</li>
+          </ul>
+        </section>
+
+        <section class="legal-section" id="privacy-s9" aria-labelledby="privacy-s9-title">
+          <h3 id="privacy-s9-title" class="legal-section-title"><span>9.</span> Data Security</h3>
+          <p>We take reasonable measures designed to protect the website and the limited information we handle from unauthorized access, alteration, or loss. These measures are appropriate to the nature of the service in V1, which does not maintain account-based student profiles or store practice data as a cloud profile.</p>
+          <p>No method of transmission or storage is completely secure, and we cannot guarantee absolute security. Protecting your own device, browser, and network remains important, particularly for practice information that lives only on your device as described in <a href="#privacy-s3">Section 3</a>.</p>
+        </section>
+
+        <section class="legal-section" id="privacy-s10" aria-labelledby="privacy-s10-title">
+          <h3 id="privacy-s10-title" class="legal-section-title"><span>10.</span> Students and Younger Users</h3>
+          <p>Continua is an educational platform intended to help students discover and use study resources. People of various ages may visit the website.</p>
+          <p>This policy describes our current V1 practices as set out throughout this document, including our limited collection of analytics and usage information (<a href="#privacy-s2">Section 2</a>), the use of Google Analytics and other providers (<a href="#privacy-s6">Section 6</a>), and the local-device nature of advanced practice data (<a href="#privacy-s3">Section 3</a>).</p>
+          <p>We have not written this policy to make unsupported claims about age thresholds, parental consent mechanisms, or specific children's privacy regimes. If additional protections or processes become applicable — for example, because of the introduction of accounts or new legal requirements — we will update this policy and provide appropriate notice where required. Students and parents or guardians with questions are encouraged to contact us as described in <a href="#privacy-s14">Section 14</a>.</p>
+        </section>
+
+        <section class="legal-section" id="privacy-s11" aria-labelledby="privacy-s11-title">
+          <h3 id="privacy-s11-title" class="legal-section-title"><span>11.</span> Your Choices and Controls</h3>
+          <p>You have practical controls for how information described in this policy is handled:</p>
+          <ul class="legal-list legal-list--disc">
+            <li><strong>Browser and device settings</strong> — you can configure your browser to block, limit, or delete cookies and site data, and to control how sites are permitted to store information on your device.</li>
+            <li><strong>Clearing local practice data</strong> — you can remove locally stored practice information, including Free Flow data, by clearing site storage or site data for Continua in your browser settings.</li>
+            <li><strong>Analytics controls</strong> — where available, you can use browser settings or provider-provided mechanisms, such as Google's opt-out tools, to limit analytics collection.</li>
+            <li><strong>Contact</strong> — if you contact us, you can choose what information to include in your message.</li>
+          </ul>
+          <p>We do not claim that you can request deletion, correction, access, or portability of specific categories of personal data in V1 beyond these practical controls and any rights that apply under applicable law. If we introduce accounts or other features that change what controls are available, we will describe them in an updated policy.</p>
+        </section>
+
+        <section class="legal-section" id="privacy-s12" aria-labelledby="privacy-s12-title">
+          <h3 id="privacy-s12-title" class="legal-section-title"><span>12.</span> Third-Party Links</h3>
+          <p>Continua may contain links to websites, services, or resources operated by third parties. Those third-party services are not controlled by Continua and their information practices are governed by their own privacy policies and terms.</p>
+          <p>Your use of third-party services, and any information you provide to them, is subject to their own policies. We encourage you to review the policies of any external service you choose to use.</p>
+        </section>
+
+        <section class="legal-section" id="privacy-s13" aria-labelledby="privacy-s13-title">
+          <h3 id="privacy-s13-title" class="legal-section-title"><span>13.</span> Changes to This Privacy Policy</h3>
+          <p>We may update this Privacy Policy from time to time, particularly if we change how information is handled or if we introduce new features such as accounts. When we make changes, we will publish the updated policy on this page and update the “Last updated” date above.</p>
+          <p>Continued use of Continua after the updated policy becomes effective means you have been given the opportunity to review the changes. Where appropriate, we may provide additional notice of material changes.</p>
+        </section>
+
+        <section class="legal-section" id="privacy-s14" aria-labelledby="privacy-s14-title">
+          <h3 id="privacy-s14-title" class="legal-section-title"><span>14.</span> Contact</h3>
+          <p>If you have questions about this Privacy Policy, how information is handled on Continua, or how to exercise available controls, contact:</p>
+          <div class="legal-contact">
+            <p><strong>Continua</strong><br>
+            Email: <a href="mailto:continua.resource@gmail.com">continua.resource@gmail.com</a><br>
+            Website: <span class="legal-placeholder">[WEBSITE]</span></p>
+          </div>
+        </section>
+
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="global-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-header"><img src="assets/logo.svg" alt="Continua" class="footer-brand-logo"><span class="footer-brand-title">Continua</span></div>
+          <p class="footer-tagline">School study material.</p>
+          <p class="footer-description">NCERT solutions, reference materials, formulae, notes and Mock Tests &amp; Sample Papers for Classes 8–12.</p>
+          <div class="footer-socials">
+            <a href="https://github.com" class="footer-social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+            <a href="https://youtube.com" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="mailto:contact@continua.edu" class="footer-social-link" aria-label="Email Us"><svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+          </div>
+        </div>
+        <div><div class="footer-col-title">Classes</div><ul class="footer-links"><li><a href="/class-12/" class="footer-link">Class 12</a></li><li><a href="/class-11/" class="footer-link">Class 11</a></li><li><a href="/class-10/" class="footer-link">Class 10</a></li><li><a href="/class-9/" class="footer-link">Class 9</a></li><li><a href="/class-8/" class="footer-link">Class 8</a></li></ul></div>
+        <div><div class="footer-col-title">Subjects</div><ul class="footer-links"><li><a href="/subjects/mathematics/" class="footer-link">Mathematics</a></li><li><a href="/subjects/physics/" class="footer-link">Physics</a></li><li><a href="/subjects/chemistry/" class="footer-link">Chemistry</a></li><li><a href="/subjects/biology/" class="footer-link">Biology</a></li><li><a href="/subjects/science/" class="footer-link">Science</a></li></ul></div>
+        <div><div class="footer-col-title">Resources</div><ul class="footer-links"><li><a href="/resources/ncert-solutions/" class="footer-link">NCERT Solutions</a></li><li><a href="/resources/pyq-library/" class="footer-link">PYQ Library</a></li><li><a href="/resources/formulae/" class="footer-link">Formulae</a></li><li><a href="/resources/reference-materials/" class="footer-link">Reference Materials</a></li><li><a href="/resources/notes/" class="footer-link">Notes</a></li><li><a href="/resources/practice-papers/" class="footer-link">Mock Tests &amp; Sample Papers</a></li></ul></div>
+        <div><div class="footer-col-title">Support</div><ul class="footer-links"><li><a href="/about/" class="footer-link">About Us</a></li><li><a href="/contact/" class="footer-link">Contact Us</a></li><li><a href="/faq/" class="footer-link">FAQ</a></li><li><a href="/sitemap.xml" class="footer-link">Sitemap</a></li></ul></div>
+        <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a href="cfel.html" class="footer-link">CFEL 1.0</a></li><li><a href="ncert-licence.html" class="footer-link">NCERT E-Content</a></li><li><a href="terms.html" class="footer-link">Terms of Service</a></li><li><a href="privacy.html" class="footer-link">Privacy Policy</a></li><li><a href="disclaimer.html" class="footer-link">Disclaimer</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><div>&copy; 2026 Continua. All rights reserved.</div></div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      const btn=document.getElementById('mobileMenuBtn');
+      const nav=document.getElementById('mobileNav');
+      if(btn&&nav){
+        btn.addEventListener('click',()=>{
+          const o=nav.classList.toggle('open');
+          btn.setAttribute('aria-expanded',o);
+          nav.setAttribute('aria-hidden',!o);
+        });
+        document.addEventListener('keydown',e=>{
+          if(e.key==='Escape'&&nav.classList.contains('open')){
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded','false');
+            nav.setAttribute('aria-hidden','true');
+            btn.focus();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
