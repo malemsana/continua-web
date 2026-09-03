@@ -69,6 +69,28 @@
     .breadcrumb-link:hover {color:var(--color-navy);text-decoration:underline}
     .breadcrumb-separator {color:var(--color-text-light);user-select:none}
     .breadcrumb-current {color:var(--color-text-main);font-weight:500}
+    /* Breadcrumb Group Picker (Year/Set) */
+    .pyq-group-picker-wrapper{position:relative;display:inline-flex;align-items:center}
+    .pyq-group-picker-btn{display:inline-flex;align-items:center;gap:0.35rem;background-color:var(--color-bg-surface);border:1px solid var(--color-border);border-radius:2px;padding:0.2rem 0.55rem;font-family:inherit;font-size:0.82rem;font-weight:600;color:var(--color-navy-dark);cursor:pointer;transition:all var(--transition-standard)}
+    .pyq-group-picker-btn:hover,.pyq-group-picker-btn[aria-expanded="true"]{background-color:var(--color-navy);border-color:var(--color-navy);color:#ffffff}
+    .pyq-group-picker-btn .picker-chevron{width:12px;height:12px;transition:transform 0.15s ease}
+    .pyq-group-picker-btn[aria-expanded="true"] .picker-chevron{transform:rotate(180deg)}
+    .pyq-group-picker-dropdown{display:none;position:absolute;top:calc(100% + 5px);left:0;background-color:#ffffff;border:1px solid #cbd5e1;border-radius:0;box-shadow:0 6px 20px rgba(15,23,42,0.12);padding:0.6rem;min-width:220px;z-index:160;flex-direction:column}
+    .pyq-group-picker-dropdown.open{display:flex}
+    .pyq-group-picker-header{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.45rem;padding-bottom:0.25rem;border-bottom:1px solid var(--color-border)}
+    .pyq-group-picker-item{display:flex;align-items:center;justify-content:space-between;padding:0.55rem 0.65rem;font-size:0.82rem;color:var(--color-text-main);border:1px solid transparent;border-bottom:1px solid var(--color-border-subtle);transition:background-color var(--transition-standard);cursor:pointer;text-decoration:none;background:transparent;width:100%;font-family:inherit;text-align:left}
+    .pyq-group-picker-item:last-child{border-bottom:none}
+    .pyq-group-picker-item:hover,.pyq-group-picker-item.active{background-color:var(--color-bg-hero);color:var(--color-navy-dark);font-weight:600}
+    .pyq-group-picker-count{font-size:0.72rem;color:var(--color-text-muted);font-weight:normal}
+    /* Breadcrumb Question Picker */
+    .pyq-q-picker-wrapper{position:relative;display:inline-flex;align-items:center}
+    .pyq-q-picker-dropdown{display:none;position:absolute;top:calc(100% + 5px);left:0;background-color:#ffffff;border:1px solid #cbd5e1;border-radius:0;box-shadow:0 6px 20px rgba(15,23,42,0.12);padding:0.6rem;min-width:180px;z-index:160;flex-direction:column}
+    .pyq-q-picker-dropdown.open{display:flex}
+    .pyq-q-picker-header{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.45rem;padding-bottom:0.25rem;border-bottom:1px solid var(--color-border)}
+    .pyq-q-picker-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.35rem}
+    .pyq-q-picker-tile{display:flex;align-items:center;justify-content:center;height:30px;font-family:var(--font-serif);font-size:0.85rem;font-weight:500;color:var(--color-navy);background-color:var(--color-bg-surface);border:1px solid var(--color-border);text-decoration:none;transition:all var(--transition-standard)}
+    .pyq-q-picker-tile:hover,.pyq-q-picker-tile.active{background-color:var(--color-navy);border-color:var(--color-navy);color:#ffffff}
+    @media (max-width:768px){.breadcrumb-section.is-compact .pyq-group-picker-wrapper,.breadcrumb-section.is-compact .pyq-q-picker-wrapper{display:none!important}}
     .floating-control-btn {display:inline-flex;align-items:center;justify-content:center;gap:0.45rem;background-color:#ffffff;border:1px solid #cbd5e1;border-radius:0;color:var(--color-navy);font-size:0.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 10px rgba(15,23,42,0.08);transition:all var(--transition-standard);position:fixed;z-index:120}
     .floating-control-btn:hover {background-color:var(--color-navy);border-color:var(--color-navy);color:#ffffff}
     #openDrawerBtn {top:114px;left:24px;padding:0.42rem 0.75rem}
@@ -254,7 +276,36 @@
           <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/class-10/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Class 10</span></a><meta itemprop="position" content="2"><span class="breadcrumb-separator">/</span></li>
           <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/class-10/mathematics/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Mathematics</span></a><meta itemprop="position" content="3"><span class="breadcrumb-separator">/</span></li>
           <li class="breadcrumb-item breadcrumb-ancestor" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/class-10/mathematics/real-numbers/" class="breadcrumb-link" itemprop="item"><span itemprop="name">Real Numbers</span></a><meta itemprop="position" content="4"><span class="breadcrumb-separator">/</span></li>
-          <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span class="breadcrumb-current" itemprop="name">Past Years Questions</span><meta itemprop="position" content="5"></li>
+          <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span class="breadcrumb-current breadcrumb-resource-name" itemprop="name">Past Years Questions</span>
+            <meta itemprop="position" content="5">
+            <span class="breadcrumb-separator breadcrumb-resource-sep">/</span>
+
+            <div class="pyq-group-picker-wrapper" id="groupPickerWrapper">
+              <button class="pyq-group-picker-btn" id="currentGroupBtn" aria-label="Current year/set selector" aria-expanded="false" aria-haspopup="true">
+                <span id="currentGroupLabel"></span>
+                <svg class="picker-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="pyq-group-picker-dropdown" id="groupPickerDropdown" role="menu" aria-hidden="true">
+                <!-- populated by JS -->
+              </div>
+            </div>
+
+            <span class="breadcrumb-separator">/</span>
+
+            <div class="pyq-q-picker-wrapper" id="questionPickerWrapper">
+              <button class="pyq-group-picker-btn" id="currentQuestionBtn" aria-label="Current question selector" aria-expanded="false" aria-haspopup="true">
+                <span id="currentQuestionLabel">Question 1</span>
+                <svg class="picker-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="pyq-q-picker-dropdown" id="questionPickerDropdown" role="menu" aria-hidden="true">
+                <div class="pyq-q-picker-header" id="questionPickerHeader">Questions</div>
+                <div class="pyq-q-picker-grid" id="questionPickerGrid">
+                  <!-- populated by JS -->
+                </div>
+              </div>
+            </div>
+          </li>
           <li class="breadcrumb-try-first" aria-label="Try First">
             <span>Try First</span>
             <label class="try-first-toggle" for="tryFirstToggleMobile">
@@ -681,6 +732,8 @@
           });
         });
       }
+      // Populate breadcrumb pickers
+      populatePickers(groups);
       if(window.ContinuaRenderer && window.ContinuaRenderer.renderMath){
         window.ContinuaRenderer.renderMath(container);
       } else if(window.renderMathInElement){
@@ -689,6 +742,138 @@
       setupScrollSpy(groups);
       handleHash();
       window.addEventListener('hashchange', handleHash);
+    }
+
+    // ── Breadcrumb Pickers ──
+    function populatePickers(groups){
+      const groupPickerDropdown = document.getElementById('groupPickerDropdown');
+      const currentGroupLabel = document.getElementById('currentGroupLabel');
+      const questionPickerGrid = document.getElementById('questionPickerGrid');
+      const currentQuestionLabel = document.getElementById('currentQuestionLabel');
+      const questionPickerHeader = document.getElementById('questionPickerHeader');
+      if(!groupPickerDropdown || !questionPickerGrid) return;
+
+      // Group picker items
+      let groupHtml = '<div class="pyq-group-picker-header">Examination Year / Set</div>';
+      groups.forEach((g, gIdx)=>{
+        const title = g.friendlyName || g.id;
+        const questions = (g.questions||[]).slice().sort((a,b)=>(a.displayOrder||0)-(b.displayOrder||0));
+        const isActive = gIdx === 0;
+        groupHtml += '<button type="button" class="pyq-group-picker-item'+(isActive?' active':'')+'" data-group-id="'+escapeAttr(g.id)+'" data-group-idx="'+gIdx+'">'
+                   + '<span>'+escapeHtml(title)+'</span>'
+                   + '<span class="pyq-group-picker-count">'+questions.length+' Qs</span>'
+                   + '</button>';
+      });
+      groupPickerDropdown.innerHTML = groupHtml;
+      if(currentGroupLabel) currentGroupLabel.textContent = groups[0] ? (groups[0].friendlyName||groups[0].id) : '';
+
+      // Question picker tiles for the first group
+      updateQuestionPicker(groups, 0);
+
+      // Wire group picker interactions
+      const currentGroupBtn = document.getElementById('currentGroupBtn');
+      const currentQuestionBtn = document.getElementById('currentQuestionBtn');
+      const questionPickerDropdown = document.getElementById('questionPickerDropdown');
+
+      function closeGroupPicker(){
+        if(groupPickerDropdown && currentGroupBtn){
+          groupPickerDropdown.classList.remove('open');
+          currentGroupBtn.setAttribute('aria-expanded','false');
+          groupPickerDropdown.setAttribute('aria-hidden','true');
+        }
+      }
+      function closeQuestionPicker(){
+        if(questionPickerDropdown && currentQuestionBtn){
+          questionPickerDropdown.classList.remove('open');
+          currentQuestionBtn.setAttribute('aria-expanded','false');
+          questionPickerDropdown.setAttribute('aria-hidden','true');
+        }
+      }
+      if(currentGroupBtn){
+        currentGroupBtn.addEventListener('click', (e)=>{
+          e.stopPropagation();
+          closeQuestionPicker();
+          const isOpen = groupPickerDropdown.classList.toggle('open');
+          currentGroupBtn.setAttribute('aria-expanded', isOpen);
+          groupPickerDropdown.setAttribute('aria-hidden', !isOpen);
+        });
+      }
+      if(currentQuestionBtn){
+        currentQuestionBtn.addEventListener('click', (e)=>{
+          e.stopPropagation();
+          closeGroupPicker();
+          const isOpen = questionPickerDropdown.classList.toggle('open');
+          currentQuestionBtn.setAttribute('aria-expanded', isOpen);
+          questionPickerDropdown.setAttribute('aria-hidden', !isOpen);
+        });
+      }
+      // Close pickers on outside click
+      document.addEventListener('click', (e)=>{
+        const gWrapper = document.getElementById('groupPickerWrapper');
+        const qWrapper = document.getElementById('questionPickerWrapper');
+        if(gWrapper && !gWrapper.contains(e.target)) closeGroupPicker();
+        if(qWrapper && !qWrapper.contains(e.target)) closeQuestionPicker();
+      });
+      document.addEventListener('keydown', (e)=>{
+        if(e.key==='Escape'){ closeGroupPicker(); closeQuestionPicker(); }
+      });
+
+      // Group picker item click — scroll to that group and update question picker
+      groupPickerDropdown.addEventListener('click', (e)=>{
+        const item = e.target.closest('.pyq-group-picker-item');
+        if(!item) return;
+        const gid = item.getAttribute('data-group-id');
+        const gIdx = parseInt(item.getAttribute('data-group-idx'),10);
+        // Update active state
+        groupPickerDropdown.querySelectorAll('.pyq-group-picker-item').forEach(el=>el.classList.remove('active'));
+        item.classList.add('active');
+        // Update label
+        if(currentGroupLabel) currentGroupLabel.textContent = item.querySelector('span').textContent;
+        closeGroupPicker();
+        // Update question picker for this group
+        updateQuestionPicker(groups, gIdx);
+        // Scroll to group
+        const groupEl = document.getElementById('pyq-group-' + gid);
+        if(groupEl){
+          groupEl.scrollIntoView({behavior:'smooth', block:'start'});
+          groupEl.classList.add('highlight-pulse');
+          setTimeout(()=> groupEl.classList.remove('highlight-pulse'), 2000);
+        }
+      });
+
+      // Question picker tile click
+      questionPickerDropdown.addEventListener('click', (e)=>{
+        const tile = e.target.closest('.pyq-q-picker-tile');
+        if(!tile) return;
+        const targetId = tile.getAttribute('data-target');
+        closeQuestionPicker();
+        const el = document.getElementById(targetId);
+        if(el){
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+          el.classList.add('highlight-pulse');
+          setTimeout(()=> el.classList.remove('highlight-pulse'), 2000);
+        }
+      });
+    }
+
+    function updateQuestionPicker(groups, groupIdx){
+      const questionPickerGrid = document.getElementById('questionPickerGrid');
+      const currentQuestionLabel = document.getElementById('currentQuestionLabel');
+      const questionPickerHeader = document.getElementById('questionPickerHeader');
+      if(!questionPickerGrid) return;
+      const group = groups[groupIdx];
+      if(!group){ questionPickerGrid.innerHTML = ''; return; }
+      const title = group.friendlyName || group.id;
+      const questions = (group.questions||[]).slice().sort((a,b)=>(a.displayOrder||0)-(b.displayOrder||0));
+      if(questionPickerHeader) questionPickerHeader.textContent = title + ' Questions';
+      let gridHtml = '';
+      questions.forEach((q)=>{
+        const n = q.displayOrder;
+        const qId = q.id || ('pyq-' + group.id + '-q' + n);
+        gridHtml += '<a href="#'+qId+'" class="pyq-q-picker-tile" data-target="'+qId+'">'+n+'</a>';
+      });
+      questionPickerGrid.innerHTML = gridHtml;
+      if(currentQuestionLabel) currentQuestionLabel.textContent = 'Question ' + (questions[0] ? questions[0].displayOrder : 1);
     }
 
     function escapeHtml(s){
@@ -707,10 +892,26 @@
         ents.forEach(e=>{
           if(e.isIntersecting){
             const id = e.target.getAttribute('id');
+            const qNum = e.target.getAttribute('data-num');
+            const grpId = e.target.getAttribute('data-group');
+            // Update drawer
             document.querySelectorAll('.drawer-q-link').forEach(l=>{
               const target = l.getAttribute('data-target');
               if(target === id) l.classList.add('active');
               else l.classList.remove('active');
+            });
+            // Update question picker tile active state
+            document.querySelectorAll('.pyq-q-picker-tile').forEach(t=>{
+              if(t.getAttribute('data-target') === id) t.classList.add('active');
+              else t.classList.remove('active');
+            });
+            // Update question picker label
+            const qLabel = document.getElementById('currentQuestionLabel');
+            if(qLabel && qNum) qLabel.textContent = 'Question ' + qNum;
+            // Update group picker active state
+            document.querySelectorAll('.pyq-group-picker-item').forEach(item=>{
+              if(item.getAttribute('data-group-id') === grpId) item.classList.add('active');
+              else item.classList.remove('active');
             });
           }
         });
