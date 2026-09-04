@@ -1,0 +1,352 @@
+/* Brand & Nav Colors */
+--color-navy: #1e293b;
+      --color-navy-dark: #0f172a;
+      --color-navy-light: #334155;
+
+/* Surface & Neutrals */
+--color-bg-page: #ffffff;
+      --color-bg-surface: #f8fafc;
+      --color-bg-card-hover: #f1f5f9;
+      --color-bg-hero: #eff2fa;
+
+/* Borders */
+--color-border: #e2e8f0;
+      --color-border-subtle: #edf2f7;
+      --color-border-navy: rgba(255, 255, 255, 0.12);
+
+/* Text Hierarchy */
+--color-text-main: #0f172a;
+      --color-text-subtle: #475569;
+      --color-text-muted: #64748b;
+      --color-text-light: #94a3b8;
+      --color-text-numeral: #94a3b8;
+      --color-text-inverse: #ffffff;
+      --color-text-inverse-muted: #94a3b8;
+
+/* Fonts */
+--font-serif: "Iowan Old Style", "Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", Georgia, serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+/* Sizing & Container */
+--max-width: 1140px;
+      --transition-standard: 0.15s ease-in-out;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+/* Three Parallel Lines Hamburger Menu */
+.header-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 2px;
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 7px;
+      transition: background-color var(--transition-standard), border-color var(--transition-standard);
+    }
+
+/* Mobile Navigation Panel */
+.mobile-nav-panel {
+      display: none;
+      background-color: var(--color-navy-dark);
+      border-top: 1px solid var(--color-border-navy);
+      padding: 1.25rem 1.5rem 1.5rem;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+/* Chapter Masthead (Restrained Pale Blue) */
+.chapter-masthead {
+      background-color: var(--color-bg-hero);
+      border-bottom: 1px solid var(--color-border);
+      padding: 2.75rem 0 2.5rem;
+    }
+
+    .chapter-masthead-inner {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+    }
+
+    .chapter-masthead-numeral {
+      font-family: var(--font-serif);
+      font-size: 3.75rem;
+      font-weight: 400;
+      line-height: 0.85;
+      color: var(--color-text-numeral);
+      letter-spacing: -0.03em;
+      user-select: none;
+    }
+
+    .chapter-masthead-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .chapter-page-title {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--color-navy-dark);
+      letter-spacing: -0.015em;
+    }
+
+    .chapter-page-subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--color-text-subtle);
+    }
+
+    .chapter-page-desc {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      margin-top: 0.35rem;
+      line-height: 1.45;
+    }
+
+/* ==========================================================================
+       4. Resource Catalogue (Unified Unboxed List)
+       ========================================================================== */
+.resources-section {
+      padding: 3rem 0 4.5rem;
+      flex-grow: 1;
+    }
+
+    .section-header {
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    .section-meta {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+
+    .resource-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-entry {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding: 1.25rem 1.25rem;
+      background-color: transparent;
+      border: 1px solid transparent;
+      border-bottom: 1px solid var(--color-border-subtle);
+      border-radius: 0;
+
+/* Sharp institutional styling */
+transition: background-color var(--transition-standard), border-color var(--transition-standard);
+      cursor: pointer;
+    }
+
+    .resource-entry:hover {
+      background-color: var(--color-bg-card-hover);
+      border-color: #cbd5e1;
+    }
+
+    .resource-icon-wrap {
+      width: 44px;
+      height: 44px;
+      background-color: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-navy);
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    .resource-icon-wrap svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .resource-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .resource-title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.25rem;
+      flex-wrap: wrap;
+    }
+
+    .resource-title {
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: var(--color-navy-dark);
+      line-height: 1.2;
+    }
+
+    .resource-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-navy-light);
+      background-color: #eff2fa;
+      border: 1px solid #cbd5e1;
+      padding: 1px 7px;
+      border-radius: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .resource-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.45;
+      margin-bottom: 0.5rem;
+    }
+
+    .resource-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 0.75rem;
+      font-size: 0.82rem;
+      color: var(--color-text-subtle);
+    }
+
+    .resource-meta-pill {
+      font-weight: 500;
+    }
+
+    .resource-quick-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .resource-quick-link {
+      color: var(--color-navy);
+      font-weight: 500;
+      padding: 1px 6px;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      transition: all var(--transition-standard);
+    }
+
+    .resource-quick-link:hover {
+      background-color: var(--color-navy);
+      color: #ffffff;
+      border-color: var(--color-navy);
+    }
+
+    .resource-action {
+      display: flex;
+      align-items: center;
+      padding-left: 0.75rem;
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    .resource-arrow {
+      font-size: 1.25rem;
+      color: var(--color-text-light);
+      transition: transform var(--transition-standard), color var(--transition-standard);
+    }
+
+    .resource-entry:hover .resource-arrow {
+      color: var(--color-navy);
+      transform: translateX(4px);
+    }
+
+/* ==========================================================================
+       5. Chapter Pager (Sequential Navigation)
+       ========================================================================== */
+.chapter-pager-section {
+      background-color: var(--color-bg-surface);
+      border-top: 1px solid var(--color-border);
+      padding: 2rem 0;
+    }
+
+    .chapter-pager-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .pager-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--color-text-main);
+      padding: 0.6rem 1rem;
+      background-color: var(--color-bg-page);
+      border: 1px solid var(--color-border);
+      transition: all var(--transition-standard);
+    }
+
+    .pager-link:hover {
+      background-color: var(--color-navy);
+      border-color: var(--color-navy);
+      color: var(--color-text-inverse);
+    }
+
+    .pager-link.disabled {
+      color: var(--color-text-light);
+      background-color: transparent;
+      border-color: transparent;
+      cursor: default;
+      pointer-events: none;
+    }
+
+/* ==========================================================================
+       7. Responsive Breakpoints
+       ========================================================================== */
+
+    @media (max-width: 768px) {
+      .chapter-masthead {
+        padding: 2.25rem 0 2rem;
+      }
+      .chapter-masthead-numeral {
+        font-size: 3rem;
+      }
+      .chapter-page-title {
+        font-size: 2.15rem;
+      }
+      .resource-entry {
+        padding: 1.1rem 0.75rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .resource-action {
+        display: none;
+      }
+    }

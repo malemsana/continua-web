@@ -10,775 +10,8 @@
   <meta name="description" content="Study Class 10 Mathematics Chapter 1 Real Numbers: NCERT textbook reader, exercise solutions, formulae sheet, reference materials, PYQs, and mock test papers.">
   <link rel="canonical" href="https://continua.edu/class-10/mathematics/real-numbers/">
 
-  <style>
-    /* ==========================================================================
-       1. Base Variables, Palette & Typography
-       ========================================================================== */
-    :root {
-      /* Brand & Nav Colors */
-      --color-navy: #1e293b;
-      --color-navy-dark: #0f172a;
-      --color-navy-light: #334155;
-      
-      /* Surface & Neutrals */
-      --color-bg-page: #ffffff;
-      --color-bg-surface: #f8fafc;
-      --color-bg-card-hover: #f1f5f9;
-      --color-bg-hero: #eff2fa;
-      
-      /* Borders */
-      --color-border: #e2e8f0;
-      --color-border-subtle: #edf2f7;
-      --color-border-navy: rgba(255, 255, 255, 0.12);
-      
-      /* Text Hierarchy */
-      --color-text-main: #0f172a;
-      --color-text-subtle: #475569;
-      --color-text-muted: #64748b;
-      --color-text-light: #94a3b8;
-      --color-text-numeral: #94a3b8;
-      --color-text-inverse: #ffffff;
-      --color-text-inverse-muted: #94a3b8;
-      
-      /* Fonts */
-      --font-serif: "Iowan Old Style", "Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", Georgia, serif;
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      
-      /* Sizing & Container */
-      --max-width: 1140px;
-      --transition-standard: 0.15s ease-in-out;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--color-bg-page);
-      color: var(--color-text-main);
-      font-family: var(--font-sans);
-      font-size: 15px;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: color var(--transition-standard), opacity var(--transition-standard);
-    }
-
-    img, svg {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* ==========================================================================
-       2. Global Header
-       ========================================================================== */
-    .global-header {
-      background-color: var(--color-navy);
-      border-bottom: 1px solid var(--color-border-navy);
-      color: var(--color-text-inverse);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-      padding: 0 2rem;
-      width: 100%;
-    }
-
-    .header-left {
-      display: flex;
-      align-items: stretch;
-      height: 100%;
-      gap: 2rem;
-    }
-
-    .header-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      height: 100%;
-    }
-
-    .header-logo {
-      width: 38px;
-      height: 38px;
-      flex-shrink: 0;
-    }
-
-    .header-title {
-      font-family: var(--font-serif);
-      font-size: 1.45rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      color: var(--color-text-inverse);
-    }
-
-    .header-nav {
-      display: flex;
-      align-items: stretch;
-      height: 100%;
-    }
-
-    .header-nav-link {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      padding: 0 1.25rem;
-      color: #cbd5e1;
-      font-size: 0.95rem;
-      font-weight: 500;
-      border-radius: 0;
-      border-bottom: 3px solid transparent;
-      transition: color var(--transition-standard), background-color var(--transition-standard), border-color var(--transition-standard);
-    }
-
-    .header-nav-link:hover {
-      color: #ffffff;
-      background-color: rgba(255, 255, 255, 0.08);
-      border-bottom-color: #93c5fd;
-    }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .header-search {
-      display: flex;
-      align-items: center;
-      background-color: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 2px;
-      padding: 0.38rem 0.75rem;
-      width: 280px;
-      transition: background-color var(--transition-standard), border-color var(--transition-standard);
-    }
-
-    .header-search:focus-within {
-      background-color: rgba(255, 255, 255, 0.14);
-      border-color: rgba(255, 255, 255, 0.35);
-    }
-
-    .header-search-icon {
-      width: 15px;
-      height: 15px;
-      color: var(--color-text-inverse-muted);
-      margin-right: 0.5rem;
-      flex-shrink: 0;
-    }
-
-    .header-search-input {
-      background: transparent;
-      border: none;
-      outline: none;
-      color: var(--color-text-inverse);
-      font-size: 0.85rem;
-      width: 100%;
-      font-family: inherit;
-    }
-
-    .header-search-input::placeholder {
-      color: var(--color-text-inverse-muted);
-    }
-
-    /* Three Parallel Lines Hamburger Menu */
-    .header-menu-btn {
-      display: none;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 2px;
-      width: 38px;
-      height: 38px;
-      cursor: pointer;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      padding: 7px;
-      transition: background-color var(--transition-standard), border-color var(--transition-standard);
-    }
-
-    .header-menu-btn:hover,
-    .header-menu-btn[aria-expanded="true"] {
-      background-color: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.35);
-    }
-
-    .menu-bar {
-      display: block;
-      width: 20px;
-      height: 2px;
-      background-color: #ffffff;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(2) {
-      opacity: 0;
-    }
-
-    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    /* Mobile Navigation Panel */
-    .mobile-nav-panel {
-      display: none;
-      background-color: var(--color-navy-dark);
-      border-top: 1px solid var(--color-border-navy);
-      padding: 1.25rem 1.5rem 1.5rem;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .mobile-nav-panel.open {
-      display: flex;
-    }
-
-    .mobile-nav-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .mobile-nav-link {
-      color: #ffffff;
-      font-size: 1.05rem;
-      font-weight: 500;
-      padding: 0.65rem 0.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      transition: color var(--transition-standard);
-    }
-
-    .mobile-nav-link:hover {
-      color: #93c5fd;
-    }
-
-    .mobile-search-wrapper {
-      margin-top: 0.5rem;
-    }
-
-    .mobile-search-input {
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 2px;
-      padding: 0.65rem 0.85rem;
-      color: #ffffff;
-      font-size: 0.92rem;
-      font-family: inherit;
-      outline: none;
-    }
-
-    .mobile-search-input::placeholder {
-      color: #94a3b8;
-    }
-
-    /* ==========================================================================
-       3. Breadcrumbs & Chapter Masthead
-       ========================================================================== */
-    .breadcrumb-section {
-      background-color: var(--color-bg-page);
-      border-bottom: 1px solid var(--color-border-subtle);
-      padding: 0.85rem 0;
-    }
-
-    .breadcrumbs {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      color: var(--color-text-muted);
-    }
-
-    .breadcrumb-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .breadcrumb-link {
-      color: var(--color-text-subtle);
-      transition: color var(--transition-standard);
-    }
-
-    .breadcrumb-link:hover {
-      color: var(--color-navy);
-      text-decoration: underline;
-    }
-
-    .breadcrumb-separator {
-      color: var(--color-text-light);
-      user-select: none;
-    }
-
-    .breadcrumb-current {
-      color: var(--color-text-main);
-      font-weight: 500;
-    }
-
-    /* Chapter Masthead (Restrained Pale Blue) */
-    .chapter-masthead {
-      background-color: var(--color-bg-hero);
-      border-bottom: 1px solid var(--color-border);
-      padding: 2.75rem 0 2.5rem;
-    }
-
-    .chapter-masthead-inner {
-      display: flex;
-      align-items: baseline;
-      gap: 1.5rem;
-    }
-
-    .chapter-masthead-numeral {
-      font-family: var(--font-serif);
-      font-size: 3.75rem;
-      font-weight: 400;
-      line-height: 0.85;
-      color: var(--color-text-numeral);
-      letter-spacing: -0.03em;
-      user-select: none;
-    }
-
-    .chapter-masthead-content {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .chapter-page-title {
-      font-family: var(--font-serif);
-      font-size: 2.5rem;
-      font-weight: 500;
-      line-height: 1.1;
-      color: var(--color-navy-dark);
-      letter-spacing: -0.015em;
-    }
-
-    .chapter-page-subtitle {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      font-style: italic;
-      color: var(--color-text-subtle);
-    }
-
-    .chapter-page-desc {
-      font-size: 0.92rem;
-      color: var(--color-text-muted);
-      margin-top: 0.35rem;
-      line-height: 1.45;
-    }
-
-    /* ==========================================================================
-       4. Resource Catalogue (Unified Unboxed List)
-       ========================================================================== */
-    .resources-section {
-      padding: 3rem 0 4.5rem;
-      flex-grow: 1;
-    }
-
-    .section-header {
-      border-bottom: 1px solid var(--color-border);
-      padding-bottom: 0.75rem;
-      margin-bottom: 0.75rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    .section-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-    }
-
-    .section-meta {
-      font-size: 0.85rem;
-      color: var(--color-text-muted);
-    }
-
-    .resource-list {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .resource-entry {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.25rem;
-      padding: 1.25rem 1.25rem;
-      background-color: transparent;
-      border: 1px solid transparent;
-      border-bottom: 1px solid var(--color-border-subtle);
-      border-radius: 0; /* Sharp institutional styling */
-      transition: background-color var(--transition-standard), border-color var(--transition-standard);
-      cursor: pointer;
-    }
-
-    .resource-entry:hover {
-      background-color: var(--color-bg-card-hover);
-      border-color: #cbd5e1;
-    }
-
-    .resource-icon-wrap {
-      width: 44px;
-      height: 44px;
-      background-color: #f1f5f9;
-      border: 1px solid #e2e8f0;
-      border-radius: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-navy);
-      flex-shrink: 0;
-      margin-top: 0.15rem;
-    }
-
-    .resource-icon-wrap svg {
-      width: 22px;
-      height: 22px;
-    }
-
-    .resource-body {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .resource-title-row {
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
-      margin-bottom: 0.25rem;
-      flex-wrap: wrap;
-    }
-
-    .resource-title {
-      font-size: 1.18rem;
-      font-weight: 600;
-      color: var(--color-navy-dark);
-      line-height: 1.2;
-    }
-
-    .resource-badge {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--color-navy-light);
-      background-color: #eff2fa;
-      border: 1px solid #cbd5e1;
-      padding: 1px 7px;
-      border-radius: 0;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .resource-desc {
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
-      line-height: 1.45;
-      margin-bottom: 0.5rem;
-    }
-
-    .resource-meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.5rem 0.75rem;
-      font-size: 0.82rem;
-      color: var(--color-text-subtle);
-    }
-
-    .resource-meta-pill {
-      font-weight: 500;
-    }
-
-    .resource-quick-links {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .resource-quick-link {
-      color: var(--color-navy);
-      font-weight: 500;
-      padding: 1px 6px;
-      background-color: #ffffff;
-      border: 1px solid #e2e8f0;
-      transition: all var(--transition-standard);
-    }
-
-    .resource-quick-link:hover {
-      background-color: var(--color-navy);
-      color: #ffffff;
-      border-color: var(--color-navy);
-    }
-
-    .resource-action {
-      display: flex;
-      align-items: center;
-      padding-left: 0.75rem;
-      flex-shrink: 0;
-      align-self: center;
-    }
-
-    .resource-arrow {
-      font-size: 1.25rem;
-      color: var(--color-text-light);
-      transition: transform var(--transition-standard), color var(--transition-standard);
-    }
-
-    .resource-entry:hover .resource-arrow {
-      color: var(--color-navy);
-      transform: translateX(4px);
-    }
-
-    /* ==========================================================================
-       5. Chapter Pager (Sequential Navigation)
-       ========================================================================== */
-    .chapter-pager-section {
-      background-color: var(--color-bg-surface);
-      border-top: 1px solid var(--color-border);
-      padding: 2rem 0;
-    }
-
-    .chapter-pager-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .pager-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--color-text-main);
-      padding: 0.6rem 1rem;
-      background-color: var(--color-bg-page);
-      border: 1px solid var(--color-border);
-      transition: all var(--transition-standard);
-    }
-
-    .pager-link:hover {
-      background-color: var(--color-navy);
-      border-color: var(--color-navy);
-      color: var(--color-text-inverse);
-    }
-
-    .pager-link.disabled {
-      color: var(--color-text-light);
-      background-color: transparent;
-      border-color: transparent;
-      cursor: default;
-      pointer-events: none;
-    }
-
-    /* ==========================================================================
-       6. Global Footer
-       ========================================================================== */
-    .global-footer {
-      background-color: var(--color-navy);
-      color: var(--color-text-inverse);
-      padding: 4rem 0 2.5rem;
-      border-top: 1px solid var(--color-border-navy);
-      margin-top: auto;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr;
-      gap: 2.5rem 1.5rem;
-      padding-bottom: 3.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-brand {
-      display: flex;
-      flex-direction: column;
-      padding-right: 1.5rem;
-    }
-
-    .footer-brand-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-brand-logo {
-      width: 32px;
-      height: 32px;
-    }
-
-    .footer-brand-title {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: var(--color-text-inverse);
-    }
-
-    .footer-tagline {
-      font-size: 0.95rem;
-      color: var(--color-text-inverse-muted);
-      font-weight: 500;
-      margin-bottom: 0.65rem;
-    }
-
-    .footer-description {
-      font-size: 0.85rem;
-      color: var(--color-text-inverse-muted);
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .footer-socials {
-      display: flex;
-      align-items: center;
-      gap: 1.15rem;
-    }
-
-    .footer-social-link {
-      color: var(--color-text-inverse-muted);
-      transition: color var(--transition-standard);
-      display: flex;
-      align-items: center;
-    }
-
-    .footer-social-link:hover {
-      color: var(--color-text-inverse);
-    }
-
-    .footer-social-icon {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-
-    .footer-col-title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text-inverse-muted);
-      margin-bottom: 1.15rem;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .footer-link {
-      font-size: 0.88rem;
-      color: #cbd5e1;
-      transition: color var(--transition-standard);
-    }
-
-    .footer-link:hover {
-      color: var(--color-text-inverse);
-    }
-
-    .footer-bottom {
-      padding-top: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.82rem;
-      color: var(--color-text-inverse-muted);
-    }
-
-    /* ==========================================================================
-       7. Responsive Breakpoints
-       ========================================================================== */
-    @media (max-width: 992px) {
-      .footer-grid {
-        grid-template-columns: 2fr 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .header-inner {
-        padding: 0 1.25rem;
-      }
-      .header-nav {
-        display: none;
-      }
-      .header-search {
-        display: none;
-      }
-      .header-menu-btn {
-        display: flex;
-      }
-      .chapter-masthead {
-        padding: 2.25rem 0 2rem;
-      }
-      .chapter-masthead-numeral {
-        font-size: 3rem;
-      }
-      .chapter-page-title {
-        font-size: 2.15rem;
-      }
-      .resource-entry {
-        padding: 1.1rem 0.75rem;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-      .resource-action {
-        display: none;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      }
-      .footer-brand {
-        grid-column: 1 / -1;
-        padding-right: 0;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-bottom {
-        flex-direction: column;
-        gap: 0.75rem;
-        text-align: center;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/chapter.css">
 </head>
 <body>
 
@@ -788,13 +21,13 @@
   <header class="global-header" role="banner">
     <div class="header-inner">
       <div class="header-left">
-        <a href="/" class="header-brand" aria-label="Continua Home">
-          <img src="assets/logo.svg" alt="Continua Logo" class="header-logo">
+        <a href="/index.html" class="header-brand" aria-label="Continua Home">
+          <img src="/assets/logo.svg" alt="Continua Logo" class="header-logo">
           <span class="header-title">Continua</span>
         </a>
 
         <nav class="header-nav" aria-label="Main Navigation">
-          <a href="/resources/pyq-library/" class="header-nav-link">PYQ Library</a>
+          <a href="/pyq.html" class="header-nav-link">PYQ Library</a>
         </nav>
       </div>
 
@@ -819,7 +52,7 @@
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-nav-panel" id="mobileNav" aria-hidden="true">
       <nav class="mobile-nav-links">
-        <a href="/resources/pyq-library/" class="mobile-nav-link">PYQ Library</a>
+        <a href="/pyq.html" class="mobile-nav-link">PYQ Library</a>
       </nav>
       <div class="mobile-search-wrapper">
         <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="Search chapters, questions and resources..." aria-label="Mobile quick search">
@@ -835,21 +68,21 @@
       <div class="container">
         <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
           <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/" class="breadcrumb-link" itemprop="item">
+            <a href="/index.html" class="breadcrumb-link" itemprop="item">
               <span itemprop="name">Continua</span>
             </a>
             <meta itemprop="position" content="1">
             <span class="breadcrumb-separator">/</span>
           </li>
           <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/class-10/" class="breadcrumb-link" itemprop="item">
+            <a href="/class.html" class="breadcrumb-link" itemprop="item">
               <span itemprop="name">Class 10</span>
             </a>
             <meta itemprop="position" content="2">
             <span class="breadcrumb-separator">/</span>
           </li>
           <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/class-10/mathematics/" class="breadcrumb-link" itemprop="item">
+            <a href="/subject.html" class="breadcrumb-link" itemprop="item">
               <span itemprop="name">Mathematics</span>
             </a>
             <meta itemprop="position" content="3">
@@ -890,7 +123,7 @@
 
         <div class="resource-list">
           <!-- 1. NCERT (Textbook Reader) -->
-          <a href="/class-10/mathematics/real-numbers/ncert/" class="resource-entry">
+          <a href="/ncert-reader.html" class="resource-entry">
             <div class="resource-icon-wrap" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
@@ -913,7 +146,7 @@
           </a>
 
           <!-- 2. NCERT Solutions -->
-          <a href="/class-10/mathematics/real-numbers/ncert-solutions/" class="resource-entry">
+          <a href="/ncert-solutions.html" class="resource-entry">
             <div class="resource-icon-wrap" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -941,7 +174,7 @@
           </a>
 
           <!-- 3. Formulae Sheet -->
-          <a href="/class-10/mathematics/real-numbers/formulae/" class="resource-entry">
+          <a href="/ncert-formulae.html" class="resource-entry">
             <div class="resource-icon-wrap" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="4" y1="9" x2="20" y2="9"></line>
@@ -966,7 +199,7 @@
           </a>
 
           <!-- 4. Reference -->
-          <a href="/class-10/mathematics/real-numbers/reference/" class="resource-entry">
+          <a href="/reference.html" class="resource-entry">
             <div class="resource-icon-wrap" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
@@ -988,7 +221,7 @@
           </a>
 
           <!-- 5. PYQs (Chapter specific) -->
-          <a href="/class-10/mathematics/real-numbers/pyq/" class="resource-entry">
+          <a href="/pyq.html" class="resource-entry">
             <div class="resource-icon-wrap" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -1011,7 +244,7 @@
           </a>
 
           <!-- 6. Mock test and Sample papers -->
-          <a href="/class-10/mathematics/real-numbers/mock-tests/" class="resource-entry">
+          <a href="/mock-tests.html" class="resource-entry">
             <div class="resource-icon-wrap" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 11l3 3L22 4"></path>
@@ -1042,11 +275,11 @@
          ========================================================================== -->
     <nav class="chapter-pager-section" aria-label="Chapter Navigation">
       <div class="container chapter-pager-inner">
-        <a href="/class-10/mathematics/" class="pager-link">
+        <a href="/subject.html" class="pager-link">
           <span>&larr;</span>
           <span>Table of Contents</span>
         </a>
-        <a href="/class-10/mathematics/polynomials/" class="pager-link">
+        <a href="/chapter.html" class="pager-link">
           <span>Next Chapter: <strong>02 Polynomials</strong></span>
           <span>&rarr;</span>
         </a>
@@ -1063,7 +296,7 @@
         <!-- Brand & Description Column -->
         <div class="footer-brand">
           <div class="footer-brand-header">
-            <img src="assets/logo.svg" alt="Continua" class="footer-brand-logo">
+            <img src="/assets/logo.svg" alt="Continua" class="footer-brand-logo">
             <span class="footer-brand-title">Continua</span>
           </div>
           <p class="footer-tagline">School study material.</p>
@@ -1094,11 +327,11 @@
         <div>
           <div class="footer-col-title">Classes</div>
           <ul class="footer-links">
-            <li><a href="/class-12/" class="footer-link">Class 12</a></li>
-            <li><a href="/class-11/" class="footer-link">Class 11</a></li>
-            <li><a href="/class-10/" class="footer-link">Class 10</a></li>
-            <li><a href="/class-9/" class="footer-link">Class 9</a></li>
-            <li><a href="/class-8/" class="footer-link">Class 8</a></li>
+            <li><a href="/class.html" class="footer-link">Class 12</a></li>
+            <li><a href="/class.html" class="footer-link">Class 11</a></li>
+            <li><a href="/class.html" class="footer-link">Class 10</a></li>
+            <li><a href="/class.html" class="footer-link">Class 9</a></li>
+            <li><a href="/class.html" class="footer-link">Class 8</a></li>
           </ul>
         </div>
 
@@ -1106,11 +339,11 @@
         <div>
           <div class="footer-col-title">Subjects</div>
           <ul class="footer-links">
-            <li><a href="/subjects/mathematics/" class="footer-link">Mathematics</a></li>
-            <li><a href="/subjects/physics/" class="footer-link">Physics</a></li>
-            <li><a href="/subjects/chemistry/" class="footer-link">Chemistry</a></li>
-            <li><a href="/subjects/biology/" class="footer-link">Biology</a></li>
-            <li><a href="/subjects/science/" class="footer-link">Science</a></li>
+            <li><a href="/subject.html" class="footer-link">Mathematics</a></li>
+            <li><a href="/subject.html" class="footer-link">Physics</a></li>
+            <li><a href="/subject.html" class="footer-link">Chemistry</a></li>
+            <li><a href="/subject.html" class="footer-link">Biology</a></li>
+            <li><a href="/subject.html" class="footer-link">Science</a></li>
           </ul>
         </div>
 
@@ -1118,12 +351,12 @@
         <div>
           <div class="footer-col-title">Resources</div>
           <ul class="footer-links">
-            <li><a href="/resources/ncert-solutions/" class="footer-link">NCERT Solutions</a></li>
-            <li><a href="/resources/pyq-library/" class="footer-link">PYQ Library</a></li>
-            <li><a href="/resources/formulae/" class="footer-link">Formulae</a></li>
-            <li><a href="/resources/reference-materials/" class="footer-link">Reference Materials</a></li>
-            <li><a href="/resources/notes/" class="footer-link">Notes</a></li>
-            <li><a href="/resources/practice-papers/" class="footer-link">Mock Tests &amp; Sample Papers</a></li>
+            <li><a href="/resources/navigate.html?resource=ncert-solutions" class="footer-link">NCERT Solutions</a></li>
+            <li><a href="/pyq.html" class="footer-link">PYQ Library</a></li>
+            <li><a href="/resources/navigate.html?resource=formulae" class="footer-link">Formulae</a></li>
+            <li><a href="/resources/navigate.html?resource=reference" class="footer-link">Reference Materials</a></li>
+            <li><a href="/resources/navigate.html?resource=reference" class="footer-link">Notes</a></li>
+            <li><a href="/resources/navigate.html?resource=mock-tests" class="footer-link">Mock Tests &amp; Sample Papers</a></li>
           </ul>
         </div>
 
@@ -1131,10 +364,10 @@
         <div>
           <div class="footer-col-title">Support</div>
           <ul class="footer-links">
-            <li><a href="/about/" class="footer-link">About Us</a></li>
-            <li><a href="/contact/" class="footer-link">Contact Us</a></li>
-            <li><a href="/faq/" class="footer-link">FAQ</a></li>
-            <li><a href="/sitemap.xml" class="footer-link">Sitemap</a></li>
+            <li><a href="/about.html" class="footer-link">About Us</a></li>
+            <li><a href="/about.html" class="footer-link">Contact Us</a></li>
+            <li><a href="/about.html" class="footer-link">FAQ</a></li>
+            <li><a href="/index.html" class="footer-link">Sitemap</a></li>
           </ul>
         </div>
 
@@ -1142,9 +375,9 @@
         <div>
           <div class="footer-col-title">Legal</div>
           <ul class="footer-links">
-            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
-            <li><a href="terms.html" class="footer-link">Terms of Use</a></li>
-            <li><a href="disclaimer.html" class="footer-link">Disclaimer</a></li>
+            <li><a href="/privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/terms.html" class="footer-link">Terms of Use</a></li>
+            <li><a href="/disclaimer.html" class="footer-link">Disclaimer</a></li>
           </ul>
         </div>
       </div>
@@ -1158,30 +391,7 @@
   <!-- ==========================================================================
        Lightweight Vanilla Interaction Scripts
        ========================================================================== -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Mobile Hamburger Menu Toggle
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      const mobileNav = document.getElementById('mobileNav');
-
-      if (mobileMenuBtn && mobileNav) {
-        mobileMenuBtn.addEventListener('click', () => {
-          const isOpen = mobileNav.classList.toggle('open');
-          mobileMenuBtn.setAttribute('aria-expanded', isOpen);
-          mobileNav.setAttribute('aria-hidden', !isOpen);
-        });
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
-            mobileNav.classList.remove('open');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            mobileNav.setAttribute('aria-hidden', 'true');
-            mobileMenuBtn.focus();
-          }
-        });
-      }
-    });
-  </script>
+  
+  <script src="/js/global.js" defer></script>
 </body>
 </html>

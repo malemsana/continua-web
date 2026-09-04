@@ -1,0 +1,482 @@
+/* ==========================================================================
+       4. Legal Document Template — Shared, reusable, restrained
+       ========================================================================== */
+.legal-main{flex-grow:1;display:flex;flex-direction:column}
+    .legal-shell{width:100%;max-width:var(--legal-width);margin:0 auto;padding:0 1.5rem}
+
+/* Intro / explainer band — no marketing hero */
+.legal-intro-band{padding:2.75rem 0 2rem;border-bottom:1px solid var(--color-border)}
+    .legal-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.85rem}
+    .legal-title{font-family:var(--font-serif);font-size:2.15rem;font-weight:500;letter-spacing:-0.02em;line-height:1.15;color:var(--color-navy-dark);margin-bottom:0.45rem}
+    .legal-meta-line{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5;margin-bottom:1.5rem}
+    .legal-meta-line strong{font-weight:600;color:var(--color-text-subtle)}
+    .legal-meta-sep{color:var(--color-text-light);margin:0 0.4rem}
+
+    .legal-summary{font-size:0.95rem;color:var(--color-text-body);line-height:1.7}
+    .legal-summary p{margin-bottom:0.85rem}
+    .legal-summary p:last-child{margin-bottom:0}
+    .legal-summary a{color:var(--color-navy);text-decoration:underline;text-decoration-color:#cbd5e1;text-underline-offset:3px}
+    .legal-summary a:hover{text-decoration-color:var(--color-navy)}
+
+/* Scope distinction — muted, document-oriented */
+.legal-scope-grid{margin-top:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .legal-scope-card{border:1px solid var(--color-border);background:var(--color-bg-surface);padding:1rem 1.1rem}
+    .legal-scope-card--accent{border-left:3px solid var(--color-navy);background:#ffffff}
+    .legal-scope-label{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.45rem}
+    .legal-scope-title{font-size:0.92rem;font-weight:600;color:var(--color-navy-dark);margin-bottom:0.35rem;line-height:1.3}
+    .legal-scope-body{font-size:0.88rem;color:var(--color-text-subtle);line-height:1.55}
+    .legal-scope-body ul{margin:0.35rem 0 0 1.1rem;padding:0}
+    .legal-scope-body li{margin-bottom:0.2rem}
+    .legal-scope-body a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .legal-scope-body a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+    .legal-scope-note{margin-top:0.85rem;font-size:0.84rem;color:var(--color-text-muted);line-height:1.55;border-left:2px solid #e2e8f0;padding-left:0.75rem}
+    .legal-scope-note a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .legal-scope-note a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+
+/* Transition into full licence */
+.legal-divider{margin:2rem 0 0;border:none;border-top:1px solid var(--color-border);padding-top:1.75rem}
+    .legal-divider-label{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.6rem}
+    .legal-divider-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.35rem}
+    .legal-divider-meta{font-size:0.84rem;color:var(--color-text-muted);margin-bottom:0.25rem}
+    .legal-divider-meta strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-jump-hint{font-size:0.82rem;color:var(--color-text-muted);margin-top:0.75rem;padding:0.6rem 0.85rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);line-height:1.5}
+
+/* Full legal document typography */
+.legal-document{padding:2rem 0 4rem}
+    .legal-doc-header{padding-bottom:1.25rem;border-bottom:1px solid var(--color-border);margin-bottom:2rem}
+    .legal-doc-title{font-family:var(--font-serif);font-size:1.65rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.25rem}
+    .legal-doc-subtitle{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5}
+    .legal-doc-subtitle strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-doc-preamble{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:1.75rem}
+    .legal-doc-preamble p{margin-bottom:0.75rem}
+    .legal-doc-preamble p:last-child{margin-bottom:0}
+
+    .legal-section{margin-bottom:2rem;padding-bottom:0}
+    .legal-section + .legal-section{border-top:1px solid var(--color-border-subtle);padding-top:1.75rem}
+    .legal-section-title{font-family:var(--font-serif);font-size:1.08rem;font-weight:600;color:var(--color-navy-dark);line-height:1.3;margin-bottom:0.65rem;letter-spacing:-0.01em}
+    .legal-section-title span{color:var(--color-text-muted);font-weight:500;margin-right:0.35rem}
+    .legal-section p{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:0.7rem}
+    .legal-section p:last-child{margin-bottom:0}
+    .legal-list{margin:0.5rem 0 0.75rem 1.25rem;padding:0}
+    .legal-list li{font-size:0.92rem;color:var(--color-text-body);line-height:1.65;margin-bottom:0.4rem}
+    .legal-list li:last-child{margin-bottom:0}
+    .legal-list--alpha{list-style-type:lower-alpha}
+    .legal-list--disc{list-style-type:disc}
+    .legal-subsection{margin-top:0.9rem}
+    .legal-subsection-title{font-size:0.92rem;font-weight:600;color:var(--color-navy-dark);margin-bottom:0.35rem;line-height:1.4}
+    .legal-contact{margin-top:0.5rem;font-size:0.92rem;color:var(--color-text-body);line-height:1.7}
+    .legal-contact a{color:var(--color-navy);text-decoration:underline;text-decoration-color:#cbd5e1;text-underline-offset:3px}
+    .legal-contact a:hover{text-decoration-color:var(--color-navy)}
+    .legal-placeholder{font-family:var(--font-mono);font-size:0.86rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);padding:0.15rem 0.4rem;color:var(--color-text-subtle)}
+
+/* Inline muted callout inside document */
+.legal-callout{margin:1rem 0;padding:0.75rem 0.9rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);border-left:3px solid #cbd5e1;font-size:0.86rem;color:var(--color-text-subtle);line-height:1.6}
+
+/* ==========================================================================
+       6. Responsive
+       ========================================================================== */
+
+    @media (max-width: 768px){
+      .legal-intro-band{padding:2rem 0 1.75rem}
+      .legal-title{font-size:1.85rem}
+      .legal-scope-grid{grid-template-columns:1fr}
+      .legal-document{padding:1.5rem 0 3rem}
+      .legal-doc-title{font-size:1.45rem}
+    }
+    @media (max-width: 480px){
+      .legal-shell{padding:0 1.25rem}
+      .legal-title{font-size:1.65rem}
+      .legal-section-title{font-size:1rem}
+    }
+    @media print{
+      .legal-intro-band{padding-top:1rem}
+      .legal-document{padding-bottom:1rem}
+    }
+
+/* ==========================================================================
+       4. Legal Document Template — shared with CFEL (kept identical for reuse)
+       ========================================================================== */
+.legal-main{flex-grow:1;display:flex;flex-direction:column}
+    .legal-shell{width:100%;max-width:var(--legal-width);margin:0 auto;padding:0 1.5rem}
+
+    .legal-intro-band{padding:2.75rem 0 2rem;border-bottom:1px solid var(--color-border)}
+    .legal-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.85rem}
+    .legal-title{font-family:var(--font-serif);font-size:2.15rem;font-weight:500;letter-spacing:-0.02em;line-height:1.15;color:var(--color-navy-dark);margin-bottom:0.45rem}
+    .legal-title-sub{font-family:var(--font-serif);font-size:1.05rem;font-style:italic;color:var(--color-text-subtle);margin-bottom:1.25rem;line-height:1.4}
+    .legal-summary{font-size:0.95rem;color:var(--color-text-body);line-height:1.7}
+    .legal-summary p{margin-bottom:0.85rem}
+    .legal-summary p:last-child{margin-bottom:0}
+    .legal-summary a{color:var(--color-navy);text-decoration:underline;text-decoration-color:#cbd5e1;text-underline-offset:3px}
+    .legal-summary a:hover{text-decoration-color:var(--color-navy)}
+
+/* Key-facts box — restrained, not promotional */
+.legal-facts{margin-top:1.5rem;border:1px solid var(--color-border);background:var(--color-bg-surface);padding:1.15rem 1.2rem}
+    .legal-facts-label{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.75rem}
+    .legal-facts-list{list-style:none;display:flex;flex-direction:column;gap:0.65rem;margin:0;padding:0}
+    .legal-facts-item{display:flex;gap:0.75rem;align-items:flex-start;font-size:0.9rem;color:var(--color-text-body);line-height:1.6}
+    .legal-facts-bullet{flex-shrink:0;width:6px;height:6px;margin-top:0.55rem;background:var(--color-navy);border-radius:50%}
+    .legal-facts-item strong{color:var(--color-navy-dark);font-weight:600}
+
+/* In-band callout */
+.legal-note{margin-top:1.25rem;font-size:0.86rem;color:var(--color-text-subtle);line-height:1.6;border-left:3px solid #cbd5e1;background:#ffffff;border-top:1px solid var(--color-border-subtle);border-right:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle);padding:0.75rem 0.9rem}
+    .legal-note strong{color:var(--color-navy-dark)}
+
+/* Transition */
+.legal-divider{margin:2rem 0 0;border:none;border-top:1px solid var(--color-border);padding-top:1.75rem}
+    .legal-divider-label{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.6rem}
+    .legal-divider-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.35rem}
+    .legal-divider-meta{font-size:0.84rem;color:var(--color-text-muted);margin-bottom:0.25rem}
+    .legal-divider-meta strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-jump-hint{font-size:0.82rem;color:var(--color-text-muted);margin-top:0.75rem;padding:0.6rem 0.85rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);line-height:1.5}
+
+/* Full licence typography */
+.legal-document{padding:2rem 0 4rem}
+    .legal-doc-header{padding-bottom:1.25rem;border-bottom:1px solid var(--color-border);margin-bottom:2rem}
+    .legal-doc-title{font-family:var(--font-serif);font-size:1.65rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.25rem}
+    .legal-doc-subtitle{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5}
+    .legal-doc-preamble{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:1.75rem}
+    .legal-doc-preamble p{margin-bottom:0.85rem}
+    .legal-doc-preamble p:last-child{margin-bottom:0}
+
+    .legal-section{margin-bottom:2rem}
+    .legal-section + .legal-section{border-top:1px solid var(--color-border-subtle);padding-top:1.75rem}
+    .legal-section-title{font-family:var(--font-serif);font-size:1.08rem;font-weight:600;color:var(--color-navy-dark);line-height:1.3;margin-bottom:0.65rem;letter-spacing:-0.01em}
+    .legal-section-title span{color:var(--color-text-muted);font-weight:500;margin-right:0.35rem}
+    .legal-section p{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:0.7rem}
+    .legal-section p:last-child{margin-bottom:0}
+    .legal-external{font-size:0.84rem;color:var(--color-text-muted);line-height:1.6;margin-top:1.5rem;padding:0.75rem 0.9rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle)}
+    .legal-external a{color:var(--color-navy);text-decoration:underline;text-decoration-color:#cbd5e1;text-underline-offset:3px}
+    .legal-external a:hover{text-decoration-color:var(--color-navy)}
+
+/* ==========================================================================
+       6. Responsive
+       ========================================================================== */
+
+    @media (max-width: 768px){
+      .legal-intro-band{padding:2rem 0 1.75rem}
+      .legal-title{font-size:1.85rem}
+      .legal-document{padding:1.5rem 0 3rem}
+      .legal-doc-title{font-size:1.45rem}
+    }
+    @media (max-width: 480px){
+      .legal-shell{padding:0 1.25rem}
+      .legal-title{font-size:1.65rem}
+      .legal-section-title{font-size:1rem}
+    }
+    @media print{
+      .legal-intro-band{padding-top:1rem}
+      .legal-document{padding-bottom:1rem}
+    }
+
+/* ==========================================================================
+       4. Legal Document Template — Shared, restrained, professional
+       ========================================================================== */
+.legal-main{flex-grow:1;display:flex;flex-direction:column}
+    .legal-shell{width:100%;max-width:var(--legal-width);margin:0 auto;padding:0 1.5rem}
+
+    .legal-intro-band{padding:2.75rem 0 2rem;border-bottom:1px solid var(--color-border)}
+    .legal-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.85rem}
+    .legal-title{font-family:var(--font-serif);font-size:2.15rem;font-weight:500;letter-spacing:-0.02em;line-height:1.15;color:var(--color-navy-dark);margin-bottom:0.45rem}
+    .legal-meta-line{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5;margin-bottom:1.5rem}
+    .legal-meta-line strong{font-weight:600;color:var(--color-text-subtle)}
+    .legal-meta-sep{color:var(--color-text-light);margin:0 0.4rem}
+
+    .legal-summary{font-size:0.95rem;color:var(--color-text-body);line-height:1.7}
+    .legal-summary p{margin-bottom:0.85rem}
+    .legal-summary p:last-child{margin-bottom:0}
+    .legal-summary a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .legal-summary a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+
+/* Transition into full document */
+.legal-divider{margin:2rem 0 0;border:none;border-top:1px solid var(--color-border);padding-top:1.75rem}
+    .legal-divider-label{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.6rem}
+    .legal-divider-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.35rem}
+    .legal-divider-meta{font-size:0.84rem;color:var(--color-text-muted);margin-bottom:0.25rem}
+    .legal-divider-meta strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-jump-hint{font-size:0.82rem;color:var(--color-text-muted);margin-top:0.75rem;padding:0.6rem 0.85rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);line-height:1.5}
+
+/* Full legal document typography */
+.legal-document{padding:2rem 0 4rem}
+    .legal-doc-header{padding-bottom:1.25rem;border-bottom:1px solid var(--color-border);margin-bottom:2rem}
+    .legal-doc-title{font-family:var(--font-serif);font-size:1.65rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.25rem}
+    .legal-doc-subtitle{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5}
+    .legal-doc-subtitle strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-doc-preamble{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:1.75rem}
+    .legal-doc-preamble p{margin-bottom:0.75rem}
+    .legal-doc-preamble p:last-child{margin-bottom:0}
+    .legal-doc-preamble a,.legal-section a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .legal-doc-preamble a:hover,.legal-section a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+
+    .legal-section{margin-bottom:2rem;padding-bottom:0}
+    .legal-section + .legal-section{border-top:1px solid var(--color-border-subtle);padding-top:1.75rem}
+    .legal-section-title{font-family:var(--font-serif);font-size:1.08rem;font-weight:600;color:var(--color-navy-dark);line-height:1.3;margin-bottom:0.65rem;letter-spacing:-0.01em}
+    .legal-section-title span{color:var(--color-text-muted);font-weight:500;margin-right:0.35rem}
+    .legal-section p{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:0.7rem}
+    .legal-section p:last-child{margin-bottom:0}
+    .legal-subsection{margin-top:0.9rem}
+    .legal-subsection-title{font-size:0.92rem;font-weight:600;color:var(--color-navy-dark);margin-bottom:0.35rem;line-height:1.4}
+    .legal-list{margin:0.5rem 0 0.75rem 1.25rem;padding:0}
+    .legal-list li{font-size:0.92rem;color:var(--color-text-body);line-height:1.65;margin-bottom:0.4rem}
+    .legal-list li:last-child{margin-bottom:0}
+    .legal-list--alpha{list-style-type:lower-alpha}
+    .legal-list--disc{list-style-type:disc}
+    .legal-list--decimal{list-style-type:decimal}
+    .legal-contact{margin-top:0.5rem;font-size:0.92rem;color:var(--color-text-body);line-height:1.7}
+    .legal-contact a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px}
+    .legal-contact a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+    .legal-placeholder{font-family:var(--font-mono);font-size:0.86rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);padding:0.15rem 0.4rem;color:var(--color-text-subtle)}
+    .legal-emphasis{font-weight:700;color:var(--color-navy-dark)}
+    .legal-callout{margin:1rem 0;padding:0.75rem 0.9rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);border-left:3px solid #cbd5e1;font-size:0.86rem;color:var(--color-text-subtle);line-height:1.6}
+
+/* Short Version — distinct but still restrained */
+.legal-short-version{margin-top:2rem;padding:1.5rem 1.25rem;background:var(--color-bg-surface);border:1px solid var(--color-border);border-left:3px solid var(--color-navy)}
+    .legal-short-version-title{font-family:var(--font-serif);font-size:1.15rem;font-weight:600;color:var(--color-navy-dark);margin-bottom:0.75rem;letter-spacing:-0.01em}
+    .legal-short-version p{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:0.65rem}
+    .legal-short-version p:last-child{margin-bottom:0}
+    .legal-short-version strong{color:var(--color-navy-dark)}
+
+/* ==========================================================================
+       6. Responsive
+       ========================================================================== */
+
+    @media (max-width: 768px){
+      .legal-intro-band{padding:2rem 0 1.75rem}
+      .legal-title{font-size:1.85rem}
+      .legal-document{padding:1.5rem 0 3rem}
+      .legal-doc-title{font-size:1.45rem}
+      .legal-short-version{padding:1.25rem 1rem}
+    }
+    @media (max-width: 480px){
+      .legal-shell{padding:0 1.25rem}
+      .legal-title{font-size:1.65rem}
+      .legal-section-title{font-size:1rem}
+    }
+    @media print{
+      .legal-intro-band{padding-top:1rem}
+      .legal-document{padding-bottom:1rem}
+    }
+
+/* ==========================================================================
+       4. Legal Document Template — Shared, restrained, professional
+       ========================================================================== */
+.legal-main{flex-grow:1;display:flex;flex-direction:column}
+    .legal-shell{width:100%;max-width:var(--legal-width);margin:0 auto;padding:0 1.5rem}
+
+    .legal-intro-band{padding:2.75rem 0 2rem;border-bottom:1px solid var(--color-border)}
+    .legal-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.85rem}
+    .legal-title{font-family:var(--font-serif);font-size:2.15rem;font-weight:500;letter-spacing:-0.02em;line-height:1.15;color:var(--color-navy-dark);margin-bottom:0.45rem}
+    .legal-meta-line{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5;margin-bottom:1.5rem}
+    .legal-meta-line strong{font-weight:600;color:var(--color-text-subtle)}
+
+    .legal-summary{font-size:0.95rem;color:var(--color-text-body);line-height:1.7}
+    .legal-summary p{margin-bottom:0.85rem}
+    .legal-summary p:last-child{margin-bottom:0}
+    .legal-summary a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .legal-summary a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+
+    .legal-divider{margin:2rem 0 0;border:none;border-top:1px solid var(--color-border);padding-top:1.75rem}
+    .legal-divider-label{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.6rem}
+    .legal-divider-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.35rem}
+    .legal-divider-meta{font-size:0.84rem;color:var(--color-text-muted);margin-bottom:0.25rem}
+    .legal-divider-meta strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-jump-hint{font-size:0.82rem;color:var(--color-text-muted);margin-top:0.75rem;padding:0.6rem 0.85rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);line-height:1.5}
+
+    .legal-document{padding:2rem 0 4rem}
+    .legal-doc-header{padding-bottom:1.25rem;border-bottom:1px solid var(--color-border);margin-bottom:2rem}
+    .legal-doc-title{font-family:var(--font-serif);font-size:1.65rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.25rem}
+    .legal-doc-subtitle{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5}
+    .legal-doc-subtitle strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-doc-preamble{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:1.75rem}
+    .legal-doc-preamble p{margin-bottom:0.75rem}
+    .legal-doc-preamble p:last-child{margin-bottom:0}
+    .legal-doc-preamble a,.legal-section a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .legal-doc-preamble a:hover,.legal-section a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+
+    .legal-section{margin-bottom:2rem;padding-bottom:0}
+    .legal-section + .legal-section{border-top:1px solid var(--color-border-subtle);padding-top:1.75rem}
+    .legal-section-title{font-family:var(--font-serif);font-size:1.08rem;font-weight:600;color:var(--color-navy-dark);line-height:1.3;margin-bottom:0.65rem;letter-spacing:-0.01em}
+    .legal-section-title span{color:var(--color-text-muted);font-weight:500;margin-right:0.35rem}
+    .legal-section p{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:0.7rem}
+    .legal-section p:last-child{margin-bottom:0}
+    .legal-subsection{margin-top:0.9rem}
+    .legal-subsection-title{font-size:0.92rem;font-weight:600;color:var(--color-navy-dark);margin-bottom:0.35rem;line-height:1.4}
+    .legal-list{margin:0.5rem 0 0.75rem 1.25rem;padding:0}
+    .legal-list li{font-size:0.92rem;color:var(--color-text-body);line-height:1.65;margin-bottom:0.4rem}
+    .legal-list li:last-child{margin-bottom:0}
+    .legal-list--disc{list-style-type:disc}
+    .legal-list--decimal{list-style-type:decimal}
+    .legal-note{margin:0.85rem 0;padding:0.75rem 0.9rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);border-left:3px solid #cbd5e1;font-size:0.86rem;color:var(--color-text-subtle);line-height:1.6}
+    .legal-contact{margin-top:0.5rem;font-size:0.92rem;color:var(--color-text-body);line-height:1.7}
+    .legal-placeholder{font-family:var(--font-mono);font-size:0.86rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);padding:0.15rem 0.4rem;color:var(--color-text-subtle)}
+    .legal-callout{margin:1rem 0;padding:0.75rem 0.9rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);border-left:3px solid #cbd5e1;font-size:0.86rem;color:var(--color-text-subtle);line-height:1.6}
+
+__full__
+:root {
+      --color-navy: #1e293b;
+      --color-navy-dark: #0f172a;
+      --color-navy-light: #334155;
+      --color-bg-page: #ffffff;
+      --color-bg-surface: #f8fafc;
+      --color-bg-hero: #eff2fa;
+      --color-bg-muted: #f1f5f9;
+      --color-border: #e2e8f0;
+      --color-border-subtle: #edf2f7;
+      --color-border-navy: rgba(255,255,255,0.12);
+      --color-text-main: #0f172a;
+      --color-text-body: #334155;
+      --color-text-subtle: #475569;
+      --color-text-muted: #64748b;
+      --color-text-light: #94a3b8;
+      --color-text-inverse: #ffffff;
+      --color-text-inverse-muted: #94a3b8;
+      --font-serif: "Iowan Old Style","Apple Garamond","Baskerville","Times New Roman","Droid Serif",Georgia,serif;
+      --font-sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      --font-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      --max-width: 1140px;
+      --legal-width: 780px;
+      --transition-standard: 0.15s ease-in-out;
+    }
+
+    .legal-main{flex-grow:1;display:flex;flex-direction:column}
+    .legal-shell{width:100%;max-width:var(--legal-width);margin:0 auto;padding:0 1.5rem}
+
+    .legal-intro-band{padding:2.75rem 0 2rem;border-bottom:1px solid var(--color-border)}
+    .legal-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.85rem}
+    .legal-title{font-family:var(--font-serif);font-size:2.15rem;font-weight:500;letter-spacing:-0.02em;line-height:1.15;color:var(--color-navy-dark);margin-bottom:0.45rem}
+    .legal-meta-line{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5;margin-bottom:1.5rem}
+    .legal-meta-line strong{font-weight:600;color:var(--color-text-subtle)}
+    .legal-summary{font-size:0.95rem;color:var(--color-text-body);line-height:1.7}
+    .legal-summary p{margin-bottom:0.85rem}
+    .legal-summary p:last-child{margin-bottom:0}
+    .legal-summary a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .legal-summary a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+
+    .legal-divider{margin:2rem 0 0;border:none;border-top:1px solid var(--color-border);padding-top:1.75rem}
+    .legal-divider-label{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.6rem}
+    .legal-divider-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.35rem}
+    .legal-divider-meta{font-size:0.84rem;color:var(--color-text-muted);margin-bottom:0.25rem}
+    .legal-divider-meta strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-jump-hint{font-size:0.82rem;color:var(--color-text-muted);margin-top:0.75rem;padding:0.6rem 0.85rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);line-height:1.5}
+
+    .legal-document{padding:2rem 0 4rem}
+    .legal-doc-header{padding-bottom:1.25rem;border-bottom:1px solid var(--color-border);margin-bottom:2rem}
+    .legal-doc-title{font-family:var(--font-serif);font-size:1.65rem;font-weight:500;color:var(--color-navy-dark);line-height:1.25;letter-spacing:-0.01em;margin-bottom:0.25rem}
+    .legal-doc-subtitle{font-size:0.88rem;color:var(--color-text-muted);line-height:1.5}
+    .legal-doc-subtitle strong{color:var(--color-text-subtle);font-weight:600}
+    .legal-doc-preamble{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:1.75rem}
+    .legal-doc-preamble p{margin-bottom:0.75rem}
+    .legal-doc-preamble p:last-child{margin-bottom:0}
+    .legal-doc-preamble a,.legal-section a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .legal-doc-preamble a:hover,.legal-section a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+
+    .legal-section{margin-bottom:2rem;padding-bottom:0}
+    .legal-section + .legal-section{border-top:1px solid var(--color-border-subtle);padding-top:1.75rem}
+    .legal-section-title{font-family:var(--font-serif);font-size:1.08rem;font-weight:600;color:var(--color-navy-dark);line-height:1.3;margin-bottom:0.65rem;letter-spacing:-0.01em}
+    .legal-section-title span{color:var(--color-text-muted);font-weight:500;margin-right:0.35rem}
+    .legal-section p{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:0.7rem}
+    .legal-section p:last-child{margin-bottom:0}
+    .legal-list{margin:0.5rem 0 0.75rem 1.25rem;padding:0}
+    .legal-list li{font-size:0.92rem;color:var(--color-text-body);line-height:1.65;margin-bottom:0.4rem}
+    .legal-list li:last-child{margin-bottom:0}
+    .legal-list--disc{list-style-type:disc}
+    .legal-contact{margin-top:0.5rem;font-size:0.92rem;color:var(--color-text-body);line-height:1.7}
+    .legal-placeholder{font-family:var(--font-mono);font-size:0.86rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);padding:0.15rem 0.4rem;color:var(--color-text-subtle)}
+
+    @media (max-width: 768px){
+      .legal-intro-band{padding:2rem 0 1.75rem}
+      .legal-title{font-size:1.85rem}
+      .legal-document{padding:1.5rem 0 3rem}
+      .legal-doc-title{font-size:1.45rem}
+    }
+    @media (max-width: 480px){
+      .legal-shell{padding:0 1.25rem}
+      .legal-title{font-size:1.65rem}
+      .legal-section-title{font-size:1rem}
+    }
+    @media print{
+      .legal-intro-band{padding-top:1rem}
+      .legal-document{padding-bottom:1rem}
+    }
+
+/* ==========================================================================
+       4. Page Template — editorial, restrained (shared with legal family)
+       ========================================================================== */
+.page-main{flex-grow:1;display:flex;flex-direction:column}
+    .page-shell{width:100%;max-width:var(--legal-width);margin:0 auto;padding:0 1.5rem}
+
+    .page-intro{padding:2.75rem 0 2rem;border-bottom:1px solid var(--color-border)}
+    .page-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.85rem}
+    .page-title{font-family:var(--font-serif);font-size:2.15rem;font-weight:500;letter-spacing:-0.02em;line-height:1.15;color:var(--color-navy-dark);margin-bottom:0.85rem}
+    .page-lead{font-size:0.98rem;color:var(--color-text-body);line-height:1.7;max-width:68ch}
+    .page-lead a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .page-lead a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+
+    .content-body{padding:2rem 0 3.5rem}
+    .content-section{margin-bottom:2.25rem}
+    .content-section + .content-section{border-top:1px solid var(--color-border-subtle);padding-top:2rem}
+    .content-section-title{font-family:var(--font-serif);font-size:1.18rem;font-weight:600;color:var(--color-navy-dark);line-height:1.3;margin-bottom:0.7rem;letter-spacing:-0.01em}
+    .content-section p{font-size:0.92rem;color:var(--color-text-body);line-height:1.7;margin-bottom:0.7rem}
+    .content-section p:last-child{margin-bottom:0}
+    .content-section a{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;font-weight:500}
+    .content-section a:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+    .content-list{margin:0.5rem 0 0.75rem 1.25rem;padding:0}
+    .content-list li{font-size:0.92rem;color:var(--color-text-body);line-height:1.65;margin-bottom:0.35rem}
+    .content-list li:last-child{margin-bottom:0}
+    .content-list--disc{list-style-type:disc}
+    .content-note{margin-top:0.9rem;padding:0.75rem 0.9rem;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);border-left:3px solid #cbd5e1;font-size:0.86rem;color:var(--color-text-subtle);line-height:1.6}
+
+/* Founder — visually subordinate, modest */
+.founder-section .content-section-title{font-size:1rem;font-weight:600;color:var(--color-text-subtle);letter-spacing:0.02em}
+    .founder-card{margin-top:0.65rem;border:1px solid var(--color-border-subtle);border-left:3px solid var(--color-border);background:var(--color-bg-surface);padding:1rem 1.1rem}
+    .founder-name{font-family:var(--font-serif);font-size:1.02rem;font-weight:600;color:var(--color-navy-dark);line-height:1.3}
+    .founder-role{font-size:0.84rem;color:var(--color-text-muted);margin-top:0.15rem}
+    .founder-location{font-size:0.84rem;color:var(--color-text-muted);margin-top:0.1rem}
+    .founder-statement{font-size:0.88rem;color:var(--color-text-subtle);line-height:1.6;margin-top:0.75rem;border-top:1px solid var(--color-border-subtle);padding-top:0.75rem}
+    .founder-footnote{font-size:0.8rem;color:var(--color-text-muted);line-height:1.5;margin-top:0.7rem}
+
+/* Contact — visually findable but still editorial */
+.contact-card{margin-top:1rem;border:1px solid var(--color-border);background:var(--color-bg-surface);padding:1.25rem 1.25rem 1.15rem}
+    .contact-card-label{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.75rem}
+    .contact-lines{list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin:0;padding:0}
+    .contact-line{display:flex;flex-wrap:wrap;gap:0.45rem;align-items:baseline;font-size:0.92rem;line-height:1.6}
+    .contact-line dt{font-weight:600;color:var(--color-navy-dark);flex-shrink:0}
+    .contact-line dd{color:var(--color-text-body);margin:0}
+    .contact-placeholder{font-family:var(--font-mono);font-size:0.86rem;background:#ffffff;border:1px solid var(--color-border);padding:0.15rem 0.4rem;color:var(--color-text-subtle)}
+    .contact-hint{margin-top:0.85rem;font-size:0.84rem;color:var(--color-text-muted);line-height:1.6}
+
+/* Prototype form — extremely simple, clearly inactive */
+.contact-form{margin-top:1.1rem;border-top:1px solid var(--color-border-subtle);padding-top:1.1rem}
+    .contact-form-title{font-size:0.82rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.9rem}
+    .form-grid{display:grid;gap:0.85rem}
+    .form-field{display:flex;flex-direction:column;gap:0.3rem}
+    .form-label{font-size:0.82rem;font-weight:600;color:var(--color-navy-dark)}
+    .form-label span{font-weight:400;color:var(--color-text-muted);font-size:0.8rem}
+    .form-input,.form-textarea{width:100%;font-family:inherit;font-size:0.92rem;color:var(--color-text-main);background:#ffffff;border:1px solid var(--color-border);padding:0.6rem 0.75rem;line-height:1.5;transition:border-color var(--transition-standard),box-shadow var(--transition-standard)}
+    .form-input:focus,.form-textarea:focus{outline:none;border-color:#93c5fd;box-shadow:0 0 0 3px rgba(147,197,253,0.35)}
+    .form-input::placeholder,.form-textarea::placeholder{color:var(--color-text-light)}
+    .form-textarea{min-height:110px;resize:vertical}
+    .form-actions{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-top:0.15rem}
+    .form-btn{display:inline-flex;align-items:center;justify-content:center;padding:0.6rem 1.1rem;font-family:inherit;font-size:0.88rem;font-weight:600;letter-spacing:0.01em;color:#ffffff;background:var(--color-navy);border:1px solid var(--color-navy);cursor:pointer;transition:background var(--transition-standard),border-color var(--transition-standard)}
+    .form-btn:hover{background:var(--color-navy-dark);border-color:var(--color-navy-dark)}
+    .form-btn:disabled{opacity:0.65;cursor:default}
+    .form-footnote{font-size:0.8rem;color:var(--color-text-muted);line-height:1.5}
+
+/* ==========================================================================
+       6. Responsive
+       ========================================================================== */
+
+    @media (max-width: 768px){
+      .page-intro{padding:2rem 0 1.75rem}
+      .page-title{font-size:1.85rem}
+      .content-body{padding:1.5rem 0 2.75rem}
+      .contact-card{padding:1.1rem 1rem}
+    }
+    @media (max-width: 480px){
+      .page-shell{padding:0 1.25rem}
+      .page-title{font-size:1.65rem}
+      .form-actions{flex-direction:column;align-items:stretch}
+      .form-btn{width:100%}
+    }
+    @media print{
+      .page-intro{padding-top:1rem}
+    }

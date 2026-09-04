@@ -26,790 +26,8 @@
 <!-- theme -->
 <meta name="theme-color" content="#000000">
 
-  <style>
-    /* ==========================================================================
-       1. Base Variables, Palette & Typography
-       ========================================================================== */
-    :root {
-      /* Brand & Nav Colors */
-      --color-navy: #1e293b;
-      --color-navy-dark: #0f172a;
-      --color-navy-light: #334155;
-      
-      /* Surface & Neutrals */
-      --color-bg-page: #ffffff;
-      --color-bg-hero: #f8fafc;
-      --color-bg-card: #ffffff;
-      --color-bg-card-hover: #f1f5f9;
-      --color-bg-pill: #e2e8f0;
-      
-      /* Borders */
-      --color-border: #e2e8f0;
-      --color-border-subtle: #edf2f7;
-      --color-border-navy: rgba(255, 255, 255, 0.12);
-      
-      /* Text Hierarchy */
-      --color-text-main: #0f172a;
-      --color-text-subtle: #475569;
-      --color-text-muted: #64748b;
-      --color-text-light: #94a3b8;
-      --color-text-numeral: #cbd5e1;
-      --color-text-inverse: #ffffff;
-      --color-text-inverse-muted: #94a3b8;
-      
-      /* Fonts */
-      --font-serif: "Iowan Old Style", "Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", Georgia, serif;
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      
-      /* Sizing & Container */
-      --max-width: 1140px;
-      --border-radius-sm: 6px;
-      --border-radius-md: 8px;
-      --border-radius-lg: 12px;
-      --transition-standard: 0.15s ease-in-out;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--color-bg-page);
-      color: var(--color-text-main);
-      font-family: var(--font-sans);
-      font-size: 15px;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: color var(--transition-standard), opacity var(--transition-standard);
-    }
-
-    img, svg {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* ==========================================================================
-       2. Global Header
-       ========================================================================== */
-    .global-header {
-      background-color: var(--color-navy);
-      border-bottom: 1px solid var(--color-border-navy);
-      color: var(--color-text-inverse);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-      padding: 0 2rem;
-      width: 100%;
-    }
-
-    .header-left {
-      display: flex;
-      align-items: stretch;
-      height: 100%;
-      gap: 2rem;
-    }
-
-    .header-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      height: 100%;
-    }
-
-    .header-logo {
-      width: 38px;
-      height: 38px;
-      flex-shrink: 0;
-    }
-
-    .header-title {
-      font-family: var(--font-serif);
-      font-size: 1.45rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      color: var(--color-text-inverse);
-    }
-
-    .header-nav {
-      display: flex;
-      align-items: stretch;
-      height: 100%;
-    }
-
-    .header-nav-link {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      padding: 0 1.25rem;
-      color: #cbd5e1;
-      font-size: 0.95rem;
-      font-weight: 500;
-      border-radius: 0;
-      border-bottom: 3px solid transparent;
-      transition: color var(--transition-standard), background-color var(--transition-standard), border-color var(--transition-standard);
-    }
-
-    .header-nav-link:hover {
-      color: #ffffff;
-      background-color: rgba(255, 255, 255, 0.08);
-      border-bottom-color: #93c5fd;
-    }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .header-search {
-      display: flex;
-      align-items: center;
-      background-color: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 2px;
-      padding: 0.38rem 0.75rem;
-      width: 280px;
-      transition: background-color var(--transition-standard), border-color var(--transition-standard);
-    }
-
-    .header-search:focus-within {
-      background-color: rgba(255, 255, 255, 0.14);
-      border-color: rgba(255, 255, 255, 0.35);
-    }
-
-    .header-search-icon {
-      width: 15px;
-      height: 15px;
-      color: var(--color-text-inverse-muted);
-      margin-right: 0.5rem;
-      flex-shrink: 0;
-    }
-
-    .header-search-input {
-      background: transparent;
-      border: none;
-      outline: none;
-      color: var(--color-text-inverse);
-      font-size: 0.85rem;
-      width: 100%;
-      font-family: inherit;
-    }
-
-    .header-search-input::placeholder {
-      color: var(--color-text-inverse-muted);
-    }
-
-    /* Three Parallel Lines Hamburger Menu */
-    .header-menu-btn {
-      display: none;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 2px;
-      width: 38px;
-      height: 38px;
-      cursor: pointer;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      padding: 7px;
-      transition: background-color var(--transition-standard), border-color var(--transition-standard);
-    }
-
-    .header-menu-btn:hover,
-    .header-menu-btn[aria-expanded="true"] {
-      background-color: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.35);
-    }
-
-    .menu-bar {
-      display: block;
-      width: 20px;
-      height: 2px;
-      background-color: #ffffff;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(2) {
-      opacity: 0;
-    }
-
-    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    /* Mobile Navigation Panel */
-    .mobile-nav-panel {
-      display: none;
-      background-color: var(--color-navy-dark);
-      border-top: 1px solid var(--color-border-navy);
-      padding: 1.25rem 1.5rem 1.5rem;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .mobile-nav-panel.open {
-      display: flex;
-    }
-
-    .mobile-nav-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .mobile-nav-link {
-      color: #ffffff;
-      font-size: 1.05rem;
-      font-weight: 500;
-      padding: 0.65rem 0.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      transition: color var(--transition-standard);
-    }
-
-    .mobile-nav-link:hover {
-      color: #93c5fd;
-    }
-
-    .mobile-search-wrapper {
-      margin-top: 0.5rem;
-    }
-
-    .mobile-search-input {
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 2px;
-      padding: 0.65rem 0.85rem;
-      color: #ffffff;
-      font-size: 0.92rem;
-      font-family: inherit;
-      outline: none;
-    }
-
-    .mobile-search-input::placeholder {
-      color: #94a3b8;
-    }
-
-    .mobile-search-input:focus {
-      border-color: rgba(255, 255, 255, 0.5);
-      background-color: rgba(255, 255, 255, 0.14);
-    }
-
-    /* ==========================================================================
-       3. Hero / Masthead Section
-       ========================================================================== */
-    .hero-section {
-      background-color: #eff2fa;
-      border-bottom: 1px solid var(--color-border);
-      padding: 3.75rem 0 3.25rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-inner {
-      position: relative;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 100%;
-    }
-
-    .hero-title {
-      font-family: var(--font-serif);
-      font-size: 3.5rem;
-      font-weight: 500;
-      letter-spacing: -0.015em;
-      line-height: 1.1;
-      color: var(--color-navy-dark);
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.25rem;
-      color: var(--color-text-subtle);
-      font-weight: 500;
-      margin-bottom: 0.35rem;
-    }
-
-    .hero-tagline {
-      font-size: 0.95rem;
-      color: var(--color-text-muted);
-      margin-bottom: 2rem;
-    }
-
-    .hero-search-wrapper {
-      position: relative;
-      max-width: 820px;
-      width: 100%;
-    }
-
-    .hero-search-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--color-text-subtle);
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-search-form {
-      display: flex;
-      width: 100%;
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
-    }
-
-    .hero-search-input {
-      flex: 1;
-      background-color: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-right: none;
-      border-radius: 2px 0 0 2px;
-      padding: 0.75rem 1rem;
-      font-size: 0.95rem;
-      color: var(--color-text-main);
-      font-family: inherit;
-      outline: none;
-      transition: border-color var(--transition-standard);
-    }
-
-    .hero-search-input::placeholder {
-      color: #64748b;
-    }
-
-    .hero-search-input:focus {
-      border-color: var(--color-navy);
-      box-shadow: inset 0 0 0 1px var(--color-navy);
-    }
-
-    .hero-search-btn {
-      background-color: var(--color-navy);
-      color: #ffffff;
-      border: 1px solid var(--color-navy);
-      border-radius: 0 2px 2px 0;
-      padding: 0.75rem 1.85rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      font-family: inherit;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color var(--transition-standard), border-color var(--transition-standard);
-      letter-spacing: 0.01em;
-    }
-
-    .hero-search-btn:hover {
-      background-color: var(--color-navy-dark);
-      border-color: var(--color-navy-dark);
-    }
-
-    .hero-bg-art {
-      position: absolute;
-      right: 0;
-      top: -20px;
-      width: 520px;
-      max-width: 50%;
-      pointer-events: none;
-      user-select: none;
-      z-index: 1;
-      opacity: 0.65;
-      mix-blend-mode: multiply;
-    }
-
-    .hero-bg-art img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* ==========================================================================
-       4. Classes Catalogue Section
-       ========================================================================== */
-    .classes-section {
-      padding: 3.5rem 0 4.5rem;
-      flex-grow: 1;
-    }
-
-    .section-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      margin-bottom: 1.5rem;
-    }
-
-    .classes-list {
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid var(--color-border-subtle);
-    }
-
-    .class-block {
-      padding: 2.25rem 0;
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .class-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1.25rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .class-numeral {
-      font-family: var(--font-serif);
-      font-size: 2.75rem;
-      font-weight: 400;
-      line-height: 1;
-      color: var(--color-text-numeral);
-      letter-spacing: -0.03em;
-      user-select: none;
-    }
-
-    .class-name {
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--color-navy-dark);
-      letter-spacing: -0.01em;
-    }
-
-    .class-subjects-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.65rem;
-    }
-
-    .subject-cell {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      padding: 0.75rem 0.95rem;
-      background-color: transparent;
-      border: 1px solid transparent;
-      border-radius: 0; /* Sharp border, not rounded */
-      transition: background-color var(--transition-standard), border-color var(--transition-standard);
-      cursor: pointer;
-    }
-
-    .subject-cell:hover {
-      background-color: #f1f5f9;
-      border-color: #cbd5e1;
-    }
-
-    .subject-icon-wrap {
-      width: 52px;
-      height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .subject-icon-img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-    }
-
-    .subject-title {
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--color-text-main);
-    }
-
-    .subject-arrow {
-      font-size: 0.95rem;
-      color: var(--color-text-light);
-      margin-left: auto;
-      transition: transform var(--transition-standard), color var(--transition-standard);
-    }
-
-    .subject-cell:hover .subject-arrow {
-      color: var(--color-navy);
-      transform: translateX(3px);
-    }
-
-    /* Expandable Classes (Class 9 & 8) */
-    .expandable-classes {
-      display: none;
-      flex-direction: column;
-    }
-
-    .expandable-classes.expanded {
-      display: flex;
-    }
-
-    .view-more-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 2.5rem;
-    }
-
-    .view-more-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background-color: var(--color-bg-page);
-      border: 1px solid var(--color-border);
-      border-radius: 2px;
-      padding: 0.6rem 1.5rem;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--color-text-subtle);
-      cursor: pointer;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-      transition: all var(--transition-standard);
-      font-family: inherit;
-    }
-
-    .view-more-btn:hover {
-      background-color: #f1f5f9;
-      border-color: #cbd5e1;
-      color: var(--color-text-main);
-    }
-
-    .view-more-chevron {
-      font-size: 0.75rem;
-      transition: transform var(--transition-standard);
-    }
-
-    .view-more-btn.expanded .view-more-chevron {
-      transform: rotate(180deg);
-    }
-
-    /* ==========================================================================
-       5. Global Footer
-       ========================================================================== */
-    .global-footer {
-      background-color: var(--color-navy);
-      color: var(--color-text-inverse);
-      padding: 4rem 0 2.5rem;
-      border-top: 1px solid var(--color-border-navy);
-      margin-top: auto;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr;
-      gap: 2.5rem 1.5rem;
-      padding-bottom: 3.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-brand {
-      display: flex;
-      flex-direction: column;
-      padding-right: 1.5rem;
-    }
-
-    .footer-brand-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-brand-logo {
-      width: 32px;
-      height: 32px;
-    }
-
-    .footer-brand-title {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: var(--color-text-inverse);
-    }
-
-    .footer-tagline {
-      font-size: 0.95rem;
-      color: var(--color-text-inverse-muted);
-      font-weight: 500;
-      margin-bottom: 0.65rem;
-    }
-
-    .footer-description {
-      font-size: 0.85rem;
-      color: var(--color-text-inverse-muted);
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .footer-socials {
-      display: flex;
-      align-items: center;
-      gap: 1.15rem;
-    }
-
-    .footer-social-link {
-      color: var(--color-text-inverse-muted);
-      transition: color var(--transition-standard);
-      display: flex;
-      align-items: center;
-    }
-
-    .footer-social-link:hover {
-      color: var(--color-text-inverse);
-    }
-
-    .footer-social-icon {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-
-    .footer-col-title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text-inverse-muted);
-      margin-bottom: 1.15rem;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .footer-link {
-      font-size: 0.88rem;
-      color: #cbd5e1;
-      transition: color var(--transition-standard);
-    }
-
-    .footer-link:hover {
-      color: var(--color-text-inverse);
-    }
-
-    .footer-bottom {
-      padding-top: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.82rem;
-      color: var(--color-text-inverse-muted);
-    }
-
-    /* ==========================================================================
-       6. Responsive Breakpoints
-       ========================================================================== */
-    @media (max-width: 992px) {
-      .footer-grid {
-        grid-template-columns: 2fr 1fr 1fr;
-      }
-      .hero-bg-art {
-        width: 400px;
-        opacity: 0.45;
-      }
-      .class-subjects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.85rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .header-inner {
-        padding: 0 1.25rem;
-      }
-      .header-nav {
-        display: none;
-      }
-      .header-search {
-        display: none;
-      }
-      .header-menu-btn {
-        display: flex;
-      }
-      .hero-section {
-        padding: 2.75rem 0 2.25rem;
-      }
-      .hero-bg-art {
-        width: 260px;
-        right: -30px;
-        top: -10px;
-        opacity: 0.3;
-      }
-      .hero-title {
-        font-size: 2.5rem;
-      }
-      .class-block {
-        padding: 1.75rem 0;
-      }
-      .class-header {
-        gap: 0.85rem;
-        margin-bottom: 1rem;
-      }
-      .class-numeral {
-        font-size: 2.25rem;
-      }
-      .class-name {
-        font-size: 1.2rem;
-      }
-      .class-subjects-grid {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-      }
-      .subject-cell {
-        background-color: #f8fafc;
-        border-color: var(--color-border);
-      }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      }
-      .footer-brand {
-        grid-column: 1 / -1;
-        padding-right: 0;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-bottom {
-        flex-direction: column;
-        gap: 0.75rem;
-        text-align: center;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
 
@@ -819,13 +37,13 @@
   <header class="global-header" role="banner">
     <div class="header-inner">
       <div class="header-left">
-        <a href="/" class="header-brand" aria-label="Continua Home">
-          <img src="assets/logo.svg" alt="Continua Logo" class="header-logo">
+        <a href="/index.html" class="header-brand" aria-label="Continua Home">
+          <img src="/assets/logo.svg" alt="Continua Logo" class="header-logo">
           <span class="header-title">Continua</span>
         </a>
 
         <nav class="header-nav" aria-label="Main Navigation">
-          <a href="/resources/pyq-library/" class="header-nav-link">PYQ Library</a>
+          <a href="/pyq.html" class="header-nav-link">PYQ Library</a>
         </nav>
       </div>
 
@@ -850,7 +68,7 @@
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-nav-panel" id="mobileNav" aria-hidden="true">
       <nav class="mobile-nav-links">
-        <a href="/resources/pyq-library/" class="mobile-nav-link">PYQ Library</a>
+        <a href="/pyq.html" class="mobile-nav-link">PYQ Library</a>
       </nav>
       <div class="mobile-search-wrapper">
         <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="Search chapters, questions and resources..." aria-label="Mobile quick search">
@@ -865,7 +83,7 @@
     <section class="hero-section">
       <div class="container hero-inner">
         <div class="hero-bg-art" aria-hidden="true">
-          <img src="assets/HomePageBackgroundArt-opt.webp" alt="">
+          <img src="/assets/HomePageBackgroundArt-opt.webp" alt="">
         </div>
 
         <div class="hero-content">
@@ -875,7 +93,7 @@
 
           <div class="hero-search-wrapper" role="search">
             <div class="hero-search-label">SEARCH</div>
-            <form class="hero-search-form" action="/search" method="get" onsubmit="event.preventDefault();">
+            <form class="hero-search-form" action="/search.html" method="get" onsubmit="event.preventDefault();">
               <input type="text" class="hero-search-input" id="heroSearchInput" placeholder="Search chapters, questions and resources" aria-label="Search study material">
               <button type="submit" class="hero-search-btn">Search</button>
             </form>
@@ -899,33 +117,33 @@
               <h2 class="class-name">Class 12</h2>
             </div>
             <div class="class-subjects-grid">
-              <a href="/class-12/mathematics/" class="subject-cell">
+              <a href="/subject.html" class="subject-cell">
                 <div class="subject-icon-wrap">
-                  <img src="assets/maths_icon-opt.webp" alt="Mathematics icon" class="subject-icon-img">
+                  <img src="/assets/maths_icon-opt.webp" alt="Mathematics icon" class="subject-icon-img">
                 </div>
                 <span class="subject-title">Mathematics</span>
                 <span class="subject-arrow">&rsaquo;</span>
               </a>
 
-              <a href="/class-12/physics/" class="subject-cell">
+              <a href="/subject.html" class="subject-cell">
                 <div class="subject-icon-wrap">
-                  <img src="assets/physics_icon-opt.webp" alt="Physics icon" class="subject-icon-img">
+                  <img src="/assets/physics_icon-opt.webp" alt="Physics icon" class="subject-icon-img">
                 </div>
                 <span class="subject-title">Physics</span>
                 <span class="subject-arrow">&rsaquo;</span>
               </a>
 
-              <a href="/class-12/chemistry/" class="subject-cell">
+              <a href="/subject.html" class="subject-cell">
                 <div class="subject-icon-wrap">
-                  <img src="assets/chemistry_icon-opt.webp" alt="Chemistry icon" class="subject-icon-img">
+                  <img src="/assets/chemistry_icon-opt.webp" alt="Chemistry icon" class="subject-icon-img">
                 </div>
                 <span class="subject-title">Chemistry</span>
                 <span class="subject-arrow">&rsaquo;</span>
               </a>
 
-              <a href="/class-12/biology/" class="subject-cell">
+              <a href="/subject.html" class="subject-cell">
                 <div class="subject-icon-wrap">
-                  <img src="assets/biology_icon-opt.webp" alt="Biology icon" class="subject-icon-img">
+                  <img src="/assets/biology_icon-opt.webp" alt="Biology icon" class="subject-icon-img">
                 </div>
                 <span class="subject-title">Biology</span>
                 <span class="subject-arrow">&rsaquo;</span>
@@ -940,33 +158,33 @@
               <h2 class="class-name">Class 11</h2>
             </div>
             <div class="class-subjects-grid">
-              <a href="/class-11/mathematics/" class="subject-cell">
+              <a href="/subject.html" class="subject-cell">
                 <div class="subject-icon-wrap">
-                  <img src="assets/maths_icon-opt.webp" alt="Mathematics icon" class="subject-icon-img">
+                  <img src="/assets/maths_icon-opt.webp" alt="Mathematics icon" class="subject-icon-img">
                 </div>
                 <span class="subject-title">Mathematics</span>
                 <span class="subject-arrow">&rsaquo;</span>
               </a>
 
-              <a href="/class-11/physics/" class="subject-cell">
+              <a href="/subject.html" class="subject-cell">
                 <div class="subject-icon-wrap">
-                  <img src="assets/physics_icon-opt.webp" alt="Physics icon" class="subject-icon-img">
+                  <img src="/assets/physics_icon-opt.webp" alt="Physics icon" class="subject-icon-img">
                 </div>
                 <span class="subject-title">Physics</span>
                 <span class="subject-arrow">&rsaquo;</span>
               </a>
 
-              <a href="/class-11/chemistry/" class="subject-cell">
+              <a href="/subject.html" class="subject-cell">
                 <div class="subject-icon-wrap">
-                  <img src="assets/chemistry_icon-opt.webp" alt="Chemistry icon" class="subject-icon-img">
+                  <img src="/assets/chemistry_icon-opt.webp" alt="Chemistry icon" class="subject-icon-img">
                 </div>
                 <span class="subject-title">Chemistry</span>
                 <span class="subject-arrow">&rsaquo;</span>
               </a>
 
-              <a href="/class-11/biology/" class="subject-cell">
+              <a href="/subject.html" class="subject-cell">
                 <div class="subject-icon-wrap">
-                  <img src="assets/biology_icon-opt.webp" alt="Biology icon" class="subject-icon-img">
+                  <img src="/assets/biology_icon-opt.webp" alt="Biology icon" class="subject-icon-img">
                 </div>
                 <span class="subject-title">Biology</span>
                 <span class="subject-arrow">&rsaquo;</span>
@@ -981,17 +199,17 @@
               <h2 class="class-name">Class 10</h2>
             </div>
             <div class="class-subjects-grid">
-              <a href="/class-10/mathematics/" class="subject-cell">
+              <a href="/subject.html" class="subject-cell">
                 <div class="subject-icon-wrap">
-                  <img src="assets/maths_icon-opt.webp" alt="Mathematics icon" class="subject-icon-img">
+                  <img src="/assets/maths_icon-opt.webp" alt="Mathematics icon" class="subject-icon-img">
                 </div>
                 <span class="subject-title">Mathematics</span>
                 <span class="subject-arrow">&rsaquo;</span>
               </a>
 
-              <a href="/class-10/science/" class="subject-cell">
+              <a href="/subject.html" class="subject-cell">
                 <div class="subject-icon-wrap">
-                  <img src="assets/science_icon-opt.webp" alt="Science rocket icon" class="subject-icon-img">
+                  <img src="/assets/science_icon-opt.webp" alt="Science rocket icon" class="subject-icon-img">
                 </div>
                 <span class="subject-title">Science</span>
                 <span class="subject-arrow">&rsaquo;</span>
@@ -1008,17 +226,17 @@
                 <h2 class="class-name">Class 9</h2>
               </div>
               <div class="class-subjects-grid">
-                <a href="/class-9/mathematics/" class="subject-cell">
+                <a href="/subject.html" class="subject-cell">
                   <div class="subject-icon-wrap">
-                    <img src="assets/maths_icon-opt.webp" alt="Mathematics icon" class="subject-icon-img">
+                    <img src="/assets/maths_icon-opt.webp" alt="Mathematics icon" class="subject-icon-img">
                   </div>
                   <span class="subject-title">Mathematics</span>
                   <span class="subject-arrow">&rsaquo;</span>
                 </a>
 
-                <a href="/class-9/science/" class="subject-cell">
+                <a href="/subject.html" class="subject-cell">
                   <div class="subject-icon-wrap">
-                    <img src="assets/science_icon-opt.webp" alt="Science rocket icon" class="subject-icon-img">
+                    <img src="/assets/science_icon-opt.webp" alt="Science rocket icon" class="subject-icon-img">
                   </div>
                   <span class="subject-title">Science</span>
                   <span class="subject-arrow">&rsaquo;</span>
@@ -1033,17 +251,17 @@
                 <h2 class="class-name">Class 8</h2>
               </div>
               <div class="class-subjects-grid">
-                <a href="/class-8/mathematics/" class="subject-cell">
+                <a href="/subject.html" class="subject-cell">
                   <div class="subject-icon-wrap">
-                    <img src="assets/maths_icon-opt.webp" alt="Mathematics icon" class="subject-icon-img">
+                    <img src="/assets/maths_icon-opt.webp" alt="Mathematics icon" class="subject-icon-img">
                   </div>
                   <span class="subject-title">Mathematics</span>
                   <span class="subject-arrow">&rsaquo;</span>
                 </a>
 
-                <a href="/class-8/science/" class="subject-cell">
+                <a href="/subject.html" class="subject-cell">
                   <div class="subject-icon-wrap">
-                    <img src="assets/science_icon-opt.webp" alt="Science rocket icon" class="subject-icon-img">
+                    <img src="/assets/science_icon-opt.webp" alt="Science rocket icon" class="subject-icon-img">
                   </div>
                   <span class="subject-title">Science</span>
                   <span class="subject-arrow">&rsaquo;</span>
@@ -1073,7 +291,7 @@
         <!-- Brand & Description Column -->
         <div class="footer-brand">
           <div class="footer-brand-header">
-            <img src="assets/logo.svg" alt="Continua" class="footer-brand-logo">
+            <img src="/assets/logo.svg" alt="Continua" class="footer-brand-logo">
             <span class="footer-brand-title">Continua</span>
           </div>
           <p class="footer-tagline">School study material.</p>
@@ -1104,11 +322,11 @@
         <div>
           <div class="footer-col-title">Classes</div>
           <ul class="footer-links">
-            <li><a href="/class-12/" class="footer-link">Class 12</a></li>
-            <li><a href="/class-11/" class="footer-link">Class 11</a></li>
-            <li><a href="/class-10/" class="footer-link">Class 10</a></li>
-            <li><a href="/class-9/" class="footer-link">Class 9</a></li>
-            <li><a href="/class-8/" class="footer-link">Class 8</a></li>
+            <li><a href="/class.html" class="footer-link">Class 12</a></li>
+            <li><a href="/class.html" class="footer-link">Class 11</a></li>
+            <li><a href="/class.html" class="footer-link">Class 10</a></li>
+            <li><a href="/class.html" class="footer-link">Class 9</a></li>
+            <li><a href="/class.html" class="footer-link">Class 8</a></li>
           </ul>
         </div>
 
@@ -1116,11 +334,11 @@
         <div>
           <div class="footer-col-title">Subjects</div>
           <ul class="footer-links">
-            <li><a href="/subjects/mathematics/" class="footer-link">Mathematics</a></li>
-            <li><a href="/subjects/physics/" class="footer-link">Physics</a></li>
-            <li><a href="/subjects/chemistry/" class="footer-link">Chemistry</a></li>
-            <li><a href="/subjects/biology/" class="footer-link">Biology</a></li>
-            <li><a href="/subjects/science/" class="footer-link">Science</a></li>
+            <li><a href="/subject.html" class="footer-link">Mathematics</a></li>
+            <li><a href="/subject.html" class="footer-link">Physics</a></li>
+            <li><a href="/subject.html" class="footer-link">Chemistry</a></li>
+            <li><a href="/subject.html" class="footer-link">Biology</a></li>
+            <li><a href="/subject.html" class="footer-link">Science</a></li>
           </ul>
         </div>
 
@@ -1128,12 +346,12 @@
         <div>
           <div class="footer-col-title">Resources</div>
           <ul class="footer-links">
-            <li><a href="/resources/ncert-solutions/" class="footer-link">NCERT Solutions</a></li>
-            <li><a href="/resources/pyq-library/" class="footer-link">PYQ Library</a></li>
-            <li><a href="/resources/formulae/" class="footer-link">Formulae</a></li>
-            <li><a href="/resources/reference-materials/" class="footer-link">Reference Materials</a></li>
-            <li><a href="/resources/notes/" class="footer-link">Notes</a></li>
-            <li><a href="/resources/practice-papers/" class="footer-link">Mock Tests &amp; Sample Papers</a></li>
+            <li><a href="/resources/navigate.html?resource=ncert-solutions" class="footer-link">NCERT Solutions</a></li>
+            <li><a href="/pyq.html" class="footer-link">PYQ Library</a></li>
+            <li><a href="/resources/navigate.html?resource=formulae" class="footer-link">Formulae</a></li>
+            <li><a href="/resources/navigate.html?resource=reference" class="footer-link">Reference Materials</a></li>
+            <li><a href="/resources/navigate.html?resource=reference" class="footer-link">Notes</a></li>
+            <li><a href="/resources/navigate.html?resource=mock-tests" class="footer-link">Mock Tests &amp; Sample Papers</a></li>
           </ul>
         </div>
 
@@ -1141,10 +359,10 @@
         <div>
           <div class="footer-col-title">Support</div>
           <ul class="footer-links">
-            <li><a href="/about/" class="footer-link">About Us</a></li>
-            <li><a href="/contact/" class="footer-link">Contact Us</a></li>
-            <li><a href="/faq/" class="footer-link">FAQ</a></li>
-            <li><a href="/sitemap.xml" class="footer-link">Sitemap</a></li>
+            <li><a href="/about.html" class="footer-link">About Us</a></li>
+            <li><a href="/about.html" class="footer-link">Contact Us</a></li>
+            <li><a href="/about.html" class="footer-link">FAQ</a></li>
+            <li><a href="/index.html" class="footer-link">Sitemap</a></li>
           </ul>
         </div>
 
@@ -1152,9 +370,9 @@
         <div>
           <div class="footer-col-title">Legal</div>
           <ul class="footer-links">
-            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
-            <li><a href="terms.html" class="footer-link">Terms of Use</a></li>
-            <li><a href="disclaimer.html" class="footer-link">Disclaimer</a></li>
+            <li><a href="/privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/terms.html" class="footer-link">Terms of Use</a></li>
+            <li><a href="/disclaimer.html" class="footer-link">Disclaimer</a></li>
           </ul>
         </div>
       </div>
@@ -1168,89 +386,8 @@
   <!-- ==========================================================================
        Lightweight Vanilla Interaction Scripts
        ========================================================================== -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Keyboard shortcut '/' to focus search input
-      const heroSearchInput = document.getElementById('heroSearchInput');
-      const headerSearchInput = document.getElementById('headerSearchInput');
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
-          e.preventDefault();
-          if (heroSearchInput && window.getComputedStyle(heroSearchInput.closest('.hero-section')).display !== 'none') {
-            heroSearchInput.focus();
-          } else if (headerSearchInput) {
-            headerSearchInput.focus();
-          }
-        }
-      });
-
-      // 2. Expand/Collapse "View more classes"
-      const toggleBtn = document.getElementById('toggleClassesBtn');
-      const toggleText = document.getElementById('toggleClassesText');
-      const moreClasses = document.getElementById('moreClasses');
-
-      if (toggleBtn && moreClasses) {
-        toggleBtn.addEventListener('click', () => {
-          const isExpanded = moreClasses.classList.toggle('expanded');
-          toggleBtn.classList.toggle('expanded', isExpanded);
-          toggleBtn.setAttribute('aria-expanded', isExpanded);
-          toggleText.textContent = isExpanded ? 'View fewer classes' : 'View more classes';
-        });
-      }
-
-        // 3. Global search -> Search Results Page (authoritative)
-      function navigateToSearch(q){
-        const trimmed = (q||'').trim();
-        location.href = 'search.html?q=' + encodeURIComponent(trimmed);
-      }
-      const heroForm = document.querySelector('.hero-search-form');
-      if(heroForm && heroSearchInput){
-        heroForm.addEventListener('submit', e=>{
-          e.preventDefault();
-          navigateToSearch(heroSearchInput.value);
-        });
-      }
-      if(headerSearchInput){
-        headerSearchInput.addEventListener('keydown', e=>{
-          if(e.key==='Enter'){
-            e.preventDefault();
-            navigateToSearch(headerSearchInput.value);
-          }
-        });
-      }
-      const mobileSearchInput = document.getElementById('mobileSearchInput');
-      if(mobileSearchInput){
-        mobileSearchInput.addEventListener('keydown', e=>{
-          if(e.key==='Enter'){
-            e.preventDefault();
-            navigateToSearch(mobileSearchInput.value);
-          }
-        });
-      }
-
-        // 4. Mobile Hamburger Menu Toggle
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      const mobileNav = document.getElementById('mobileNav');
-
-      if (mobileMenuBtn && mobileNav) {
-        mobileMenuBtn.addEventListener('click', () => {
-          const isOpen = mobileNav.classList.toggle('open');
-          mobileMenuBtn.setAttribute('aria-expanded', isOpen);
-          mobileNav.setAttribute('aria-hidden', !isOpen);
-        });
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
-            mobileNav.classList.remove('open');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            mobileNav.setAttribute('aria-hidden', 'true');
-            mobileMenuBtn.focus();
-          }
-        });
-      }
-    });
-  </script>
+  
+  <script src="/js/global.js" defer></script>
+  <script src="/js/home.js" defer></script>
 </body>
 </html>
