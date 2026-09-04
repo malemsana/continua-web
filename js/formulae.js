@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const subtitleEl = document.getElementById('formulaSubtitle');
 
       let data = null;
-      const candidates = ['assets/c10_mathemat_ch1_formula.json', 'c10_mathemat_ch1_formula.json', '/c10_mathemat_ch1_formula.json'];
+      const candidates = ['assets/c10_mathemat_ch1_formula.json', 'c10_mathemat_ch1_formula.json', '/continua-web/c10_mathemat_ch1_formula.json'];
       for (const url of candidates) {
         try {
           const res = await fetch(url);

@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3. Global search -> Search Results Page (authoritative)
       function navigateToSearch(q){
         const trimmed = (q||'').trim();
-        location.href = '/search.html?q=' + encodeURIComponent(trimmed);
+        location.href = '/continua-web/search.html?q=' + encodeURIComponent(trimmed);
       }
       const heroForm = document.querySelector('.hero-search-form');
       if(heroForm && heroSearchInput){

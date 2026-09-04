@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const SUBJECT_META = {
-      'mathematics': { label: 'Mathematics', icon: '/assets/maths_icon-opt.webp' },
-      'physics': { label: 'Physics', icon: '/assets/physics_icon-opt.webp' },
-      'chemistry': { label: 'Chemistry', icon: '/assets/chemistry_icon-opt.webp' },
-      'biology': { label: 'Biology', icon: '/assets/biology_icon-opt.webp' },
-      'science': { label: 'Science', icon: '/assets/science_icon-opt.webp' }
+      'mathematics': { label: 'Mathematics', icon: '/continua-web/assets/maths_icon-opt.webp' },
+      'physics': { label: 'Physics', icon: '/continua-web/assets/physics_icon-opt.webp' },
+      'chemistry': { label: 'Chemistry', icon: '/continua-web/assets/chemistry_icon-opt.webp' },
+      'biology': { label: 'Biology', icon: '/continua-web/assets/biology_icon-opt.webp' },
+      'science': { label: 'Science', icon: '/continua-web/assets/science_icon-opt.webp' }
     };
 
     // Sample availability — prototype only. Builder will later populate from manifests.
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function buildUrl(resource, cls, subject) {
-      const base = '/resources/navigate.html?resource=' + encodeURIComponent(resource);
+      const base = '/continua-web/resources/navigate.html?resource=' + encodeURIComponent(resource);
       if (!cls) return base;
       if (!subject) return base + '&class=' + encodeURIComponent(cls);
       return base + '&class=' + encodeURIComponent(cls) + '&subject=' + encodeURIComponent(subject);
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function canonicalChapterUrl(cls, subject, chapterSlug, suffix) {
-      return '/class-' + cls + '/' + subject + '/' + chapterSlug + '/' + suffix;
+      return '/continua-web/class-' + cls + '/' + subject + '/' + chapterSlug + '/' + suffix;
     }
 
     function updateHeader(resourceKey, params) {
@@ -137,8 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
         path.innerHTML = '';
         bcCurrent.textContent = 'Browse';
         document.title = 'Browse by Resource — Continua';
-        trail.innerHTML = '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/index.html" class="breadcrumb-link" itemprop="item"><span itemprop="name">Continua</span></a><meta itemprop="position" content="1"><span class="breadcrumb-separator">/</span></li>' +
-          '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/resources/navigate.html" class="breadcrumb-link" itemprop="item"><span itemprop="name">Resources</span></a><meta itemprop="position" content="2"><span class="breadcrumb-separator">/</span></li>' +
+        trail.innerHTML = '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/continua-web/index.html" class="breadcrumb-link" itemprop="item"><span itemprop="name">Continua</span></a><meta itemprop="position" content="1"><span class="breadcrumb-separator">/</span></li>' +
+          '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/continua-web/resources/navigate.html" class="breadcrumb-link" itemprop="item"><span itemprop="name">Resources</span></a><meta itemprop="position" content="2"><span class="breadcrumb-separator">/</span></li>' +
           '<li class="breadcrumb-item"><span class="breadcrumb-current">Browse</span></li>';
         return;
       }
@@ -150,8 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
         path.innerHTML = '';
         bcCurrent.textContent = 'Not Found';
         document.title = 'Resource Not Found — Continua';
-        trail.innerHTML = '<li class="breadcrumb-item"><a href="/index.html" class="breadcrumb-link">Continua</a><span class="breadcrumb-separator">/</span></li>' +
-          '<li class="breadcrumb-item"><a href="/resources/navigate.html" class="breadcrumb-link">Resources</a><span class="breadcrumb-separator">/</span></li>' +
+        trail.innerHTML = '<li class="breadcrumb-item"><a href="/continua-web/index.html" class="breadcrumb-link">Continua</a><span class="breadcrumb-separator">/</span></li>' +
+          '<li class="breadcrumb-item"><a href="/continua-web/resources/navigate.html" class="breadcrumb-link">Resources</a><span class="breadcrumb-separator">/</span></li>' +
           '<li class="breadcrumb-item"><span class="breadcrumb-current">Not Found</span></li>';
         return;
       }
@@ -160,9 +160,9 @@ document.addEventListener('DOMContentLoaded', () => {
       desc.textContent = cfg.description;
       document.title = cfg.name + ' — Browse — Continua';
 
-      let bcHtml = '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/index.html" class="breadcrumb-link" itemprop="item"><span itemprop="name">Continua</span></a><meta itemprop="position" content="1"><span class="breadcrumb-separator">/</span></li>' +
-        '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/resources/navigate.html" class="breadcrumb-link" itemprop="item"><span itemprop="name">Resources</span></a><meta itemprop="position" content="2"><span class="breadcrumb-separator">/</span></li>' +
-        '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/resources/navigate.html?resource=' + encodeURIComponent(resourceKey) + '" class="breadcrumb-link" itemprop="item"><span itemprop="name">' + cfg.name + '</span></a><meta itemprop="position" content="3">';
+      let bcHtml = '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/continua-web/index.html" class="breadcrumb-link" itemprop="item"><span itemprop="name">Continua</span></a><meta itemprop="position" content="1"><span class="breadcrumb-separator">/</span></li>' +
+        '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/continua-web/resources/navigate.html" class="breadcrumb-link" itemprop="item"><span itemprop="name">Resources</span></a><meta itemprop="position" content="2"><span class="breadcrumb-separator">/</span></li>' +
+        '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/continua-web/resources/navigate.html?resource=' + encodeURIComponent(resourceKey) + '" class="breadcrumb-link" itemprop="item"><span itemprop="name">' + cfg.name + '</span></a><meta itemprop="position" content="3">';
       let pathHtml = '';
       if (params.cls) {
         bcHtml += '<span class="breadcrumb-separator">/</span></li><li class="breadcrumb-item"><a href="' + buildUrl(resourceKey, params.cls) + '" class="breadcrumb-link">Class ' + params.cls + '</a>';
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const root = document.getElementById('navigatorRoot');
       const items = Object.keys(RESOURCE_CONFIG).map(key => {
         const cfg = RESOURCE_CONFIG[key];
-        return '<a href="/resources/navigate.html?resource=' + encodeURIComponent(key) + '" class="resource-card">' +
+        return '<a href="/continua-web/resources/navigate.html?resource=' + encodeURIComponent(key) + '" class="resource-card">' +
           '<span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></span>' +
           '<span class="resource-card-body"><span class="resource-card-title">' + cfg.name + '</span><span class="resource-card-desc">' + cfg.description + '</span></span>' +
           '<span class="resource-card-arrow">›</span></a>';
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderInvalid() {
       const root = document.getElementById('navigatorRoot');
-      root.innerHTML = '<div class="quiet-box"><div class="quiet-title">Resource Not Found</div><p class="quiet-desc">The resource you\'re looking for could not be found.</p><div class="quiet-actions"><a href="/resources/navigate.html" class="quiet-btn quiet-btn--primary">Back to Resources</a><a href="/index.html" class="quiet-btn">Browse Classes</a></div></div>';
+      root.innerHTML = '<div class="quiet-box"><div class="quiet-title">Resource Not Found</div><p class="quiet-desc">The resource you\'re looking for could not be found.</p><div class="quiet-actions"><a href="/continua-web/resources/navigate.html" class="quiet-btn quiet-btn--primary">Back to Resources</a><a href="/continua-web/index.html" class="quiet-btn">Browse Classes</a></div></div>';
     }
 
     function renderClasses(resourceKey) {
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const avail = AVAILABILITY[resourceKey] || {};
       const classes = CLASS_ORDER.filter(c => avail[c] && Object.keys(avail[c]).length > 0);
       if (classes.length === 0) {
-        root.innerHTML = '<div class="quiet-box"><div class="quiet-title">No classes available</div><p class="quiet-desc">This resource is not yet available for any class.</p><div class="quiet-actions"><a href="/resources/navigate.html" class="quiet-btn">Back to Resources</a></div></div>';
+        root.innerHTML = '<div class="quiet-box"><div class="quiet-title">No classes available</div><p class="quiet-desc">This resource is not yet available for any class.</p><div class="quiet-actions"><a href="/continua-web/resources/navigate.html" class="quiet-btn">Back to Resources</a></div></div>';
         return;
       }
       let html = '<div class="section-label">Classes</div><p class="section-sub">Select a class to see subjects that have <strong>' + RESOURCE_CONFIG[resourceKey].name + '</strong>. Only combinations that actually have this resource are shown.</p><div class="classes-list">';
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const subjects = Object.keys(avail[cls]);
         html += '<div class="class-block"><div class="class-header"><span class="class-numeral">' + cls + '</span><h2 class="class-name">Class ' + cls + '</h2></div><div class="class-subjects-grid">';
         subjects.forEach(sub => {
-          const meta = SUBJECT_META[sub] || {label: sub, icon: '/assets/science_icon-opt.webp'};
+          const meta = SUBJECT_META[sub] || {label: sub, icon: '/continua-web/assets/science_icon-opt.webp'};
           html += '<a href="' + buildUrl(resourceKey, cls, sub) + '" class="subject-cell" data-nav="subject" data-cls="' + cls + '" data-sub="' + sub + '"><span class="subject-icon-wrap"><img src="' + meta.icon + '" alt="" class="subject-icon-img"></span><span class="subject-title">' + meta.label + '</span><span class="subject-arrow">›</span></a>';
           // For class-level: we want click on any subject to go to chapters, but spec says State 1 shows classes with subjects, clicking subject goes to chapters. We also support clicking class to see subjects (State 2). To keep single template simple, we interpret subject click as going to chapters directly; but we also provide class click alternative via dedicated subject view.
         });
@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
       html += '<div class="section-label">Subjects</div><p class="section-sub">Class ' + cls + ' — choose a subject to see chapters with <strong>' + RESOURCE_CONFIG[resourceKey].name + '</strong>.</p>';
       html += '<div class="subjects-row">';
       subjects.forEach(sub => {
-        const meta = SUBJECT_META[sub] || {label: sub, icon: '/assets/science_icon-opt.webp'};
+        const meta = SUBJECT_META[sub] || {label: sub, icon: '/continua-web/assets/science_icon-opt.webp'};
         html += '<a href="' + buildUrl(resourceKey, cls, sub) + '" class="subject-cell" data-nav="subj" data-cls="' + cls + '" data-sub="' + sub + '"><span class="subject-icon-wrap"><img src="' + meta.icon + '" alt="" class="subject-icon-img"></span><span class="subject-title">' + meta.label + '</span><span class="subject-arrow">›</span></a>';
       });
       html += '</div>';

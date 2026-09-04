@@ -26,7 +26,7 @@
     function go(q){
       const trimmed = (q||'').trim();
       // Even empty query goes to search page (shows empty state) — do not open resource directly
-      const url = '/search.html?q=' + encodeURIComponent(trimmed);
+      const url = '/continua-web/search.html?q=' + encodeURIComponent(trimmed);
       location.href = url;
     }
     if(headerInput){
@@ -60,9 +60,9 @@
     if(state.cls) p.set('class', state.cls);
     if(state.subject) p.set('subject', state.subject);
     const qs = p.toString();
-    const url = '/search.html' + (qs ? '?' + qs : '');
+    const url = '/continua-web/search.html' + (qs ? '?' + qs : '');
     // keep path as /search when served via routing; search.html works for file protocol
-    const displayUrl = qs ? '/search.html?' + qs : '/search.html';
+    const displayUrl = qs ? '/continua-web/search.html?' + qs : '/continua-web/search.html';
     // Also support /search? when history API is available — use search.html for now
     if(replace) history.replaceState(null,'', displayUrl);
     else history.pushState(null,'', displayUrl);
