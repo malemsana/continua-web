@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search — Continua</title>
+  <meta name="title" content="Search — Continua">
+  <meta name="description" content="Search Continua's educational resources — chapters, notes, solutions, formulae, PYQs, mock tests and more.">
+  <link rel="canonical" href="https://continua.edu/search">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+  <style>
+    :root {
+      --color-navy: #1e293b;
+      --color-navy-dark: #0f172a;
+      --color-navy-light: #334155;
+      --color-bg-page: #ffffff;
+      --color-bg-hero: #f8fafc;
+      --color-bg-card: #ffffff;
+      --color-bg-card-hover: #f1f5f9;
+      --color-bg-surface: #f8fafc;
+      --color-bg-pill: #e2e8f0;
+      --color-border: #e2e8f0;
+      --color-border-subtle: #edf2f7;
+      --color-border-navy: rgba(255,255,255,0.12);
+      --color-text-main: #0f172a;
+      --color-text-subtle: #475569;
+      --color-text-muted: #64748b;
+      --color-text-light: #94a3b8;
+      --color-text-numeral: #cbd5e1;
+      --color-text-inverse: #ffffff;
+      --color-text-inverse-muted: #94a3b8;
+      --font-serif: "Iowan Old Style","Apple Garamond","Baskerville","Times New Roman","Droid Serif",Georgia,serif;
+      --font-sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      --max-width: 1140px;
+      --transition-standard: 0.15s ease-in-out;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background-color:var(--color-bg-page);color:var(--color-text-main);font-family:var(--font-sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;min-height:100vh;display:flex;flex-direction:column}
+    a{color:inherit;text-decoration:none;transition:color var(--transition-standard),opacity var(--transition-standard),background var(--transition-standard),border-color var(--transition-standard),box-shadow var(--transition-standard)}
+    img,svg{display:block;max-width:100%}
+    .container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 1.5rem}
+
+    /* Header — reused */
+    .global-header{background-color:var(--color-navy);border-bottom:1px solid var(--color-border-navy);color:var(--color-text-inverse);position:sticky;top:0;z-index:100}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 2rem;width:100%}
+    .header-left{display:flex;align-items:stretch;height:100%;gap:2rem}
+    .header-brand{display:flex;align-items:center;gap:0.85rem;height:100%}
+    .header-logo{width:38px;height:38px;flex-shrink:0}
+    .header-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;letter-spacing:0.01em;color:var(--color-text-inverse)}
+    .header-nav{display:flex;align-items:stretch;height:100%}
+    .header-nav-link{display:flex;align-items:center;height:100%;padding:0 1.25rem;color:#cbd5e1;font-size:0.95rem;font-weight:500;border-bottom:3px solid transparent;transition:color var(--transition-standard),background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-nav-link:hover{color:#ffffff;background-color:rgba(255,255,255,0.08);border-bottom-color:#93c5fd}
+    .header-right{display:flex;align-items:center;gap:1rem}
+    .header-search{display:flex;align-items:center;background-color:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:2px;padding:0.38rem 0.75rem;width:280px;transition:background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-search:focus-within{background-color:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.35)}
+    .header-search-icon{width:15px;height:15px;color:var(--color-text-inverse-muted);margin-right:0.5rem;flex-shrink:0}
+    .header-search-input{background:transparent;border:none;outline:none;color:var(--color-text-inverse);font-size:0.85rem;width:100%;font-family:inherit}
+    .header-search-input::placeholder{color:var(--color-text-inverse-muted)}
+    .header-menu-btn{display:none;background:transparent;border:1px solid rgba(255,255,255,0.18);border-radius:2px;width:38px;height:38px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:7px;transition:background-color var(--transition-standard),border-color var(--transition-standard)}
+    .header-menu-btn:hover,.header-menu-btn[aria-expanded="true"]{background-color:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.35)}
+    .menu-bar{display:block;width:20px;height:2px;background-color:#ffffff;transition:transform 0.2s ease,opacity 0.2s ease}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(2){opacity:0}
+    .header-menu-btn[aria-expanded="true"] .menu-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-nav-panel{display:none;background-color:var(--color-navy-dark);border-top:1px solid var(--color-border-navy);padding:1.25rem 1.5rem 1.5rem;flex-direction:column;gap:1rem}
+    .mobile-nav-panel.open{display:flex}
+    .mobile-nav-links{display:flex;flex-direction:column;gap:0.5rem}
+    .mobile-nav-link{color:#ffffff;font-size:1.05rem;font-weight:500;padding:0.65rem 0.5rem;border-bottom:1px solid rgba(255,255,255,0.08);transition:color var(--transition-standard)}
+    .mobile-nav-link:hover{color:#93c5fd}
+    .mobile-search-wrapper{margin-top:0.5rem}
+    .mobile-search-input{width:100%;background-color:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:0.65rem 0.85rem;color:#ffffff;font-size:0.92rem;font-family:inherit;outline:none}
+    .mobile-search-input::placeholder{color:#94a3b8}
+    .mobile-search-input:focus{border-color:rgba(255,255,255,0.5);background-color:rgba(255,255,255,0.14)}
+
+    .breadcrumb-section{background-color:var(--color-bg-page);border-bottom:1px solid var(--color-border-subtle);padding:0.75rem 0}
+    .breadcrumbs{display:flex;align-items:center;gap:0.5rem;font-size:0.84rem;color:var(--color-text-muted);flex-wrap:wrap;list-style:none}
+    .breadcrumb-item{display:inline-flex;align-items:center;gap:0.5rem}
+    .breadcrumb-link{color:var(--color-text-subtle);transition:color var(--transition-standard)}
+    .breadcrumb-link:hover{color:var(--color-navy);text-decoration:underline}
+    .breadcrumb-separator{color:var(--color-text-light);user-select:none}
+    .breadcrumb-current{color:var(--color-text-main);font-weight:500}
+
+    /* Search hero — prominent, catalogue-aligned */
+    .search-hero{background-color:#eff2fa;border-bottom:1px solid var(--color-border);padding:2.15rem 0 1.85rem}
+    .search-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.55rem}
+    .search-title{font-family:var(--font-serif);font-size:2.05rem;font-weight:500;letter-spacing:-0.02em;line-height:1.15;color:var(--color-navy-dark)}
+    .search-title-sub{font-size:0.92rem;color:var(--color-text-subtle);margin-top:0.4rem;line-height:1.5;max-width:62ch}
+
+    .search-form{margin-top:1.35rem;display:flex;flex-direction:column;gap:0.75rem;max-width:860px}
+    .search-input-row{display:flex;gap:0;box-shadow:0 1px 3px rgba(15,23,42,0.04)}
+    .search-input-wrap{position:relative;flex:1;display:flex;align-items:center;background:#fff;border:1px solid #cbd5e1;border-right:none;border-radius:2px 0 0 2px;transition:border-color var(--transition-standard),box-shadow var(--transition-standard)}
+    .search-input-wrap:focus-within{border-color:var(--color-navy);box-shadow:inset 0 0 0 1px var(--color-navy)}
+    .search-input-icon{position:absolute;left:0.9rem;width:16px;height:16px;color:var(--color-text-light);pointer-events:none}
+    .search-input{width:100%;background:transparent;border:none;outline:none;padding:0.78rem 1rem 0.78rem 2.4rem;font-size:0.96rem;color:var(--color-text-main);font-family:inherit}
+    .search-input::placeholder{color:#64748b}
+    .search-submit{background:var(--color-navy);color:#fff;border:1px solid var(--color-navy);border-radius:0 2px 2px 0;padding:0 1.6rem;font-size:0.93rem;font-weight:600;font-family:inherit;cursor:pointer;display:flex;align-items:center;gap:0.45rem;white-space:nowrap;transition:background var(--transition-standard),border-color var(--transition-standard)}
+    .search-submit:hover{background:var(--color-navy-dark);border-color:var(--color-navy-dark)}
+    .search-submit svg{width:15px;height:15px}
+    .search-clear{display:none;align-items:center;justify-content:center;width:28px;height:28px;margin-right:0.4rem;background:transparent;border:none;border-radius:2px;color:var(--color-text-light);cursor:pointer;transition:color var(--transition-standard),background var(--transition-standard)}
+    .search-clear.visible{display:flex}
+    .search-clear:hover{color:var(--color-navy);background:#f1f5f9}
+
+    .search-filters{display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center}
+    .filter-group{display:flex;align-items:center;gap:0.45rem}
+    .filter-label{font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-text-muted);white-space:nowrap}
+    .filter-select{appearance:none;-webkit-appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 0.7rem center;border:1px solid #cbd5e1;border-radius:2px;padding:0.5rem 2rem 0.5rem 0.75rem;font-size:0.88rem;font-weight:500;color:var(--color-text-main);font-family:inherit;cursor:pointer;min-width:150px;transition:border-color var(--transition-standard),background var(--transition-standard)}
+    .filter-select:focus{outline:none;border-color:var(--color-navy);box-shadow:0 0 0 1px var(--color-navy)}
+    .filter-select:hover{border-color:#94a3b8}
+    .active-filters{display:flex;gap:0.45rem;flex-wrap:wrap;align-items:center;margin-top:0.2rem;min-height:24px}
+    .active-filter-pill{display:inline-flex;align-items:center;gap:0.35rem;background:#fff;border:1px solid #cbd5e1;border-radius:999px;padding:0.22rem 0.6rem;font-size:0.78rem;font-weight:500;color:var(--color-text-subtle)}
+    .active-filter-pill button{background:transparent;border:none;color:var(--color-text-muted);cursor:pointer;padding:0 0 0 0.15rem;display:flex;align-items:center;transition:color var(--transition-standard)}
+    .active-filter-pill button:hover{color:var(--color-navy)}
+    .clear-all{font-size:0.82rem;font-weight:500;color:var(--color-navy);background:transparent;border:none;border-bottom:1px solid transparent;cursor:pointer;padding:0.1rem 0;transition:color var(--transition-standard),border-color var(--transition-standard)}
+    .clear-all:hover{color:var(--color-navy-dark);border-bottom-color:var(--color-navy-dark)}
+
+    /* Results */
+    .results-section{padding:1.75rem 0 4rem;flex-grow:1;min-height:360px}
+    .results-meta{font-size:0.84rem;color:var(--color-text-muted);margin-bottom:1.1rem;line-height:1.5;min-height:20px}
+    .results-meta strong{font-weight:600;color:var(--color-text-main)}
+    .results-meta em{font-style:normal;font-weight:600;color:var(--color-text-main)}
+    .results-list{display:flex;flex-direction:column;border-top:1px solid var(--color-border-subtle)}
+    .result-item{display:flex;gap:1rem;padding:1.1rem 0.9rem;border-bottom:1px solid var(--color-border-subtle);transition:background var(--transition-standard),border-color var(--transition-standard)}
+    .result-item:hover{background:var(--color-bg-card-hover);border-color:transparent;box-shadow:inset 0 0 0 1px #cbd5e1}
+    .result-icon{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:#f1f5f9;border:1px solid var(--color-border);color:var(--color-navy);flex-shrink:0;margin-top:0.15rem}
+    .result-icon svg{width:20px;height:20px}
+    .result-body{flex:1;min-width:0}
+    .result-title-row{display:flex;align-items:flex-start;gap:0.6rem;flex-wrap:wrap;margin-bottom:0.28rem}
+    .result-title{font-size:0.98rem;font-weight:600;color:var(--color-navy-dark);line-height:1.35}
+    .result-title a{color:inherit;text-decoration:none}
+    .result-title a:hover{color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px}
+    .result-badge{font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-navy);background:#eff2fa;border:1px solid #cbd5e1;padding:0.15rem 0.45rem;line-height:1;white-space:nowrap}
+    .result-desc{font-size:0.88rem;color:var(--color-text-subtle);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .result-excerpt{font-size:0.84rem;color:var(--color-text-muted);line-height:1.5;margin-top:0.3rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .result-excerpt mark{background:#fef9c3;border-bottom:1px solid #facc15;padding:0 1px;font-weight:500;color:inherit}
+    .result-meta{margin-top:0.55rem;display:flex;gap:0.55rem;flex-wrap:wrap;align-items:center;font-size:0.78rem;color:var(--color-text-muted);line-height:1}
+    .result-meta-sep{width:1px;height:12px;background:var(--color-border);flex-shrink:0}
+    .result-meta strong{font-weight:600;color:var(--color-text-subtle)}
+    .result-arrow{flex-shrink:0;align-self:center;color:var(--color-text-light);font-size:1.05rem;transition:transform var(--transition-standard),color var(--transition-standard);padding-left:0.25rem}
+    .result-item:hover .result-arrow{color:var(--color-navy);transform:translateX(3px)}
+
+    /* Skeletons */
+    .skeleton{animation:skeletonPulse 1.2s ease-in-out infinite alternate}
+    @keyframes skeletonPulse{0%{opacity:0.65}100%{opacity:1}}
+    .skeleton-block{background:#e2e8f0;border-radius:2px}
+    .skeleton-item{display:flex;gap:1rem;padding:1.1rem 0.9rem;border-bottom:1px solid var(--color-border-subtle)}
+    .skeleton-icon{width:42px;height:42px;background:#e2e8f0;flex-shrink:0}
+    .skeleton-lines{flex:1;display:flex;flex-direction:column;gap:0.55rem}
+    .skeleton-line{height:12px;background:#e2e8f0}
+    .skeleton-line.w60{width:60%}
+    .skeleton-line.w85{width:85%}
+    .skeleton-line.w40{width:40%}
+    .skeleton-meta{height:10px;width:55%;background:#f1f5f9;margin-top:0.4rem}
+
+    /* States — quiet, consistent with search-no-results */
+    .state-box{border:1px solid var(--color-border);background:var(--color-bg-surface);padding:2rem 1.5rem;text-align:center;max-width:560px;margin:1.25rem auto 0}
+    .state-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.75rem}
+    .state-title{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;color:var(--color-navy-dark);margin-bottom:0.5rem;line-height:1.25}
+    .state-desc{font-size:0.92rem;color:var(--color-text-subtle);line-height:1.6;margin:0 auto 1.15rem;max-width:48ch}
+    .state-query{font-size:0.84rem;color:var(--color-text-subtle);background:#fff;border:1px solid var(--color-border);padding:0.45rem 0.75rem;display:inline-block;max-width:100%;word-break:break-word;margin-bottom:1.1rem}
+    .state-query em{font-style:normal;font-weight:600;color:var(--color-text-main)}
+    .state-actions{display:flex;gap:0.6rem;justify-content:center;flex-wrap:wrap;margin-top:0.9rem}
+    .btn-primary{display:inline-flex;align-items:center;justify-content:center;background:var(--color-navy);color:#fff;border:1px solid var(--color-navy);border-radius:2px;padding:0.6rem 1.25rem;font-size:0.88rem;font-weight:600;font-family:inherit;cursor:pointer;transition:background var(--transition-standard),border-color var(--transition-standard)}
+    .btn-primary:hover{background:var(--color-navy-dark);border-color:var(--color-navy-dark)}
+    .btn-ghost{display:inline-flex;align-items:center;justify-content:center;background:#fff;color:var(--color-text-main);border:1px solid var(--color-border);border-radius:2px;padding:0.6rem 1.15rem;font-size:0.88rem;font-weight:500;font-family:inherit;cursor:pointer;transition:all var(--transition-standard)}
+    .btn-ghost:hover{background:var(--color-bg-card-hover);border-color:#cbd5e1;color:var(--color-navy-dark)}
+    .link-action{font-size:0.85rem;font-weight:500;color:#1d4ed8;text-decoration:underline;text-decoration-color:#93c5fd;text-underline-offset:3px;background:transparent;border:none;cursor:pointer;padding:0.15rem 0.2rem}
+    .link-action:hover{color:#1e3a8a;text-decoration-color:#1e3a8a}
+    .suggest-row{display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;margin-top:0.8rem}
+    .suggest-chip{font-size:0.82rem;background:#fff;border:1px solid var(--color-border);border-radius:999px;padding:0.3rem 0.75rem;color:var(--color-text-subtle);cursor:pointer;transition:all var(--transition-standard)}
+    .suggest-chip:hover{border-color:var(--color-navy);color:var(--color-navy);background:#f1f5f9}
+
+    /* Error */
+    .error-box{border:1px solid #fecaca;background:#fef2f2;padding:1.25rem 1.1rem;display:flex;gap:0.85rem;align-items:flex-start;max-width:720px}
+    .error-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:#fee2e2;border:1px solid #fecaca;color:#b91c1c;flex-shrink:0}
+    .error-icon svg{width:18px;height:18px}
+    .error-body{flex:1}
+    .error-title{font-size:0.95rem;font-weight:600;color:#991b1b;margin-bottom:0.25rem}
+    .error-desc{font-size:0.86rem;color:#7f1d1d;line-height:1.5;margin-bottom:0.75rem}
+
+    /* Footer */
+    .global-footer{background-color:var(--color-navy);color:var(--color-text-inverse);padding:4rem 0 2.5rem;border-top:1px solid var(--color-border-navy);margin-top:auto}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1fr;gap:2.5rem 1.5rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+    .footer-brand{display:flex;flex-direction:column;padding-right:1.5rem}
+    .footer-brand-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem}
+    .footer-brand-logo{width:32px;height:32px}
+    .footer-brand-title{font-family:var(--font-serif);font-size:1.4rem;font-weight:500;color:var(--color-text-inverse)}
+    .footer-tagline{font-size:0.95rem;color:var(--color-text-inverse-muted);font-weight:500;margin-bottom:0.65rem}
+    .footer-description{font-size:0.85rem;color:var(--color-text-inverse-muted);line-height:1.6;margin-bottom:1.5rem}
+    .footer-socials{display:flex;align-items:center;gap:1.15rem}
+    .footer-social-link{color:var(--color-text-inverse-muted);transition:color var(--transition-standard);display:flex;align-items:center}
+    .footer-social-link:hover{color:var(--color-text-inverse)}
+    .footer-social-icon{width:18px;height:18px;fill:currentColor}
+    .footer-col-title{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-inverse-muted);margin-bottom:1.15rem}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:0.75rem}
+    .footer-link{font-size:0.88rem;color:#cbd5e1;transition:color var(--transition-standard)}
+    .footer-link:hover{color:var(--color-text-inverse)}
+    .footer-bottom{padding-top:2rem;display:flex;justify-content:space-between;align-items:center;font-size:0.82rem;color:var(--color-text-inverse-muted)}
+
+    @media (max-width: 992px){
+      .footer-grid{grid-template-columns:2fr 1fr 1fr}
+    }
+    @media (max-width: 768px){
+      .header-inner{padding:0 1.25rem}
+      .header-nav{display:none}
+      .header-search{display:none}
+      .header-menu-btn{display:flex}
+      .search-hero{padding:1.6rem 0 1.5rem}
+      .search-title{font-size:1.7rem}
+      .search-input{font-size:0.92rem;padding:0.7rem 1rem 0.7rem 2.2rem}
+      .search-submit{padding:0 1.15rem;font-size:0.88rem}
+      .search-filters{gap:0.5rem}
+      .filter-select{min-width:0;flex:1}
+      .filter-group{flex:1;min-width:140px}
+      .result-item{padding:1rem 0.6rem;gap:0.75rem}
+      .result-icon{width:38px;height:38px}
+      .result-title{font-size:0.94rem}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+      .footer-brand{grid-column:1/-1;padding-right:0}
+    }
+    @media (max-width: 480px){
+      .container{padding:0 1rem}
+      .search-input-row{flex-direction:column;box-shadow:none;gap:0.5rem}
+      .search-input-wrap{border-right:1px solid #cbd5e1;border-radius:2px}
+      .search-submit{border-radius:2px;width:100%;justify-content:center;padding:0.68rem 1rem}
+      .search-filters{flex-direction:column;align-items:stretch}
+      .filter-group{width:100%}
+      .filter-select{width:100%}
+      .result-item{padding:0.9rem 0.5rem}
+      .result-meta{font-size:0.75rem}
+      .state-box{padding:1.5rem 1rem}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-bottom{flex-direction:column;gap:0.75rem;text-align:center}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="global-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="index.html" class="header-brand" aria-label="Continua Home">
+          <img src="assets/logo.svg" alt="Continua Logo" class="header-logo">
+          <span class="header-title">Continua</span>
+        </a>
+        <nav class="header-nav" aria-label="Main Navigation">
+          <a href="resources/navigate.html?resource=ncert-solutions" class="header-nav-link">PYQ Library</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <div class="header-search" role="search">
+          <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" class="header-search-input" id="headerSearchInput" placeholder="Search chapters, questions and resources..." aria-label="Quick search">
+        </div>
+        <button class="header-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav"><span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span></button>
+      </div>
+    </div>
+    <div class="mobile-nav-panel" id="mobileNav" aria-hidden="true">
+      <nav class="mobile-nav-links"><a href="resources/navigate.html?resource=ncert-solutions" class="mobile-nav-link">PYQ Library</a></nav>
+      <div class="mobile-search-wrapper"><input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="Search chapters, questions and resources..." aria-label="Mobile quick search"></div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-section" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" class="breadcrumb-link" itemprop="item"><span itemprop="name">Continua</span></a><meta itemprop="position" content="1"><span class="breadcrumb-separator">/</span></li>
+        <li class="breadcrumb-item"><span class="breadcrumb-current">Search</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="search-hero" aria-labelledby="searchTitle">
+    <div class="container">
+      <div class="search-kicker">Search</div>
+      <h1 id="searchTitle" class="search-title">Search Continua</h1>
+      <p class="search-title-sub">Search chapters, notes, solutions, formulae, PYQs, mock tests and other study material — all in one place.</p>
+
+      <form id="searchForm" class="search-form" role="search" action="search.html" method="get" autocomplete="off">
+        <div class="search-input-row">
+          <label for="searchInput" class="sr-only" style="position:absolute;left:-9999px">Search query</label>
+          <div class="search-input-wrap">
+            <svg class="search-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="searchInput" name="q" class="search-input" placeholder="Try “quadratic equations”, “real numbers”, or “photosynthesis”" aria-label="Search Continua" spellcheck="false" autocomplete="off">
+            <button type="button" id="clearBtn" class="search-clear" aria-label="Clear search"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+          </div>
+          <button type="submit" class="search-submit" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Search</button>
+        </div>
+
+        <div class="search-filters" aria-label="Filters">
+          <div class="filter-group">
+            <label class="filter-label" for="classFilter">Class</label>
+            <select id="classFilter" name="class" class="filter-select" aria-label="Filter by class">
+              <option value="">All Classes</option>
+              <option value="8">Class 8</option>
+              <option value="9">Class 9</option>
+              <option value="10">Class 10</option>
+              <option value="11">Class 11</option>
+              <option value="12">Class 12</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" for="subjectFilter">Subject</label>
+            <select id="subjectFilter" name="subject" class="filter-select" aria-label="Filter by subject">
+              <option value="">All Subjects</option>
+              <option value="mathematics">Mathematics</option>
+              <option value="physics">Physics</option>
+              <option value="chemistry">Chemistry</option>
+              <option value="biology">Biology</option>
+              <option value="science">Science</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="activeFilters" class="active-filters" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <main class="results-section" aria-live="polite" aria-busy="false">
+    <div class="container">
+      <div id="resultsMeta" class="results-meta"></div>
+      <div id="resultsContainer"></div>
+    </div>
+  </main>
+
+  <footer class="global-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-header"><img src="assets/logo.svg" alt="Continua" class="footer-brand-logo"><span class="footer-brand-title">Continua</span></div>
+          <p class="footer-tagline">School study material.</p>
+          <p class="footer-description">NCERT solutions, reference materials, formulae, notes and Mock Tests &amp; Sample Papers for Classes 8–12.</p>
+          <div class="footer-socials">
+            <a href="https://github.com" class="footer-social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+            <a href="https://youtube.com" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="mailto:continua.resource@gmail.com" class="footer-social-link" aria-label="Email Us"><svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+          </div>
+        </div>
+        <div><div class="footer-col-title">Classes</div><ul class="footer-links"><li><a href="index.html" class="footer-link">Class 12</a></li><li><a href="index.html" class="footer-link">Class 11</a></li><li><a href="index.html" class="footer-link">Class 10</a></li><li><a href="index.html" class="footer-link">Class 9</a></li><li><a href="index.html" class="footer-link">Class 8</a></li></ul></div>
+        <div><div class="footer-col-title">Subjects</div><ul class="footer-links"><li><a href="index.html" class="footer-link">Mathematics</a></li><li><a href="index.html" class="footer-link">Physics</a></li><li><a href="index.html" class="footer-link">Chemistry</a></li><li><a href="index.html" class="footer-link">Biology</a></li><li><a href="index.html" class="footer-link">Science</a></li></ul></div>
+        <div><div class="footer-col-title">Resources</div><ul class="footer-links"><li><a href="resources/navigate.html?resource=ncert-solutions" class="footer-link">NCERT Solutions</a></li><li><a href="resources/navigate.html?resource=formulae" class="footer-link">Formulae</a></li><li><a href="resources/navigate.html?resource=examples" class="footer-link">Chapter Examples</a></li><li><a href="resources/navigate.html?resource=reference" class="footer-link">Reference Material</a></li><li><a href="resources/navigate.html?resource=mock-tests" class="footer-link">Mock Tests &amp; Sample Papers</a></li></ul></div>
+        <div><div class="footer-col-title">Support</div><ul class="footer-links"><li><a href="about.html" class="footer-link">About &amp; Contact</a></li><li><a href="index.html" class="footer-link">FAQ</a></li><li><a href="index.html" class="footer-link">Sitemap</a></li></ul></div>
+        <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a href="cfel.html" class="footer-link">CFEL 1.0</a></li><li><a href="ncert-licence.html" class="footer-link">NCERT E-Content</a></li><li><a href="terms.html" class="footer-link">Terms of Service</a></li><li><a href="privacy.html" class="footer-link">Privacy Policy</a></li><li><a href="disclaimer.html" class="footer-link">Disclaimer</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><div>&copy; 2026 Continua. All rights reserved.</div></div>
+    </div>
+  </footer>
+
+  <script>
+/* ==========================================================================
+   Search Results — extensible, backend-agnostic template
+   Replace/override window.ContinuaSearchProvider to connect real data.
+   ========================================================================== */
+(function(){
+  const els = {
+    form: document.getElementById('searchForm'),
+    input: document.getElementById('searchInput'),
+    clearBtn: document.getElementById('clearBtn'),
+    classSel: document.getElementById('classFilter'),
+    subjectSel: document.getElementById('subjectFilter'),
+    active: document.getElementById('activeFilters'),
+    meta: document.getElementById('resultsMeta'),
+    container: document.getElementById('resultsContainer'),
+    section: document.querySelector('.results-section')
+  };
+
+  // Mobile + header search -> this page (authoritative)
+  function wireGlobalSearch(){
+    const headerInput = document.getElementById('headerSearchInput');
+    const mobileInput = document.getElementById('mobileSearchInput');
+    const heroInput = document.getElementById('heroSearchInput'); // may not exist on this page but keep for reuse
+    const headerSearch = document.querySelector('.header-search');
+    const mobileWrapper = document.querySelector('.mobile-search-wrapper');
+
+    function go(q){
+      const trimmed = (q||'').trim();
+      // Even empty query goes to search page (shows empty state) — do not open resource directly
+      const url = 'search.html?q=' + encodeURIComponent(trimmed);
+      location.href = url;
+    }
+    if(headerInput){
+      headerInput.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); go(headerInput.value); }});
+      if(headerSearch){
+        headerSearch.addEventListener('click', ()=> headerInput.focus());
+      }
+    }
+    if(mobileInput){
+      mobileInput.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); go(mobileInput.value); }});
+    }
+    // For any page that includes a hero search form, intercept to route to search page
+    const heroForm = document.querySelector('.hero-search-form');
+    if(heroForm && heroInput){
+      heroForm.addEventListener('submit', e=>{ e.preventDefault(); go(heroInput.value); });
+    }
+  }
+
+  // ——— URL state helpers ———
+  function readState(){
+    const p = new URLSearchParams(location.search);
+    return {
+      q: (p.get('q')||'').trim(),
+      cls: (p.get('class')||'').trim(),
+      subject: (p.get('subject')||'').trim().toLowerCase()
+    };
+  }
+  function writeState(state, replace){
+    const p = new URLSearchParams();
+    if(state.q) p.set('q', state.q);
+    if(state.cls) p.set('class', state.cls);
+    if(state.subject) p.set('subject', state.subject);
+    const qs = p.toString();
+    const url = 'search.html' + (qs ? '?' + qs : '');
+    // keep path as /search when served via routing; search.html works for file protocol
+    const displayUrl = qs ? 'search.html?' + qs : 'search.html';
+    // Also support /search? when history API is available — use search.html for now
+    if(replace) history.replaceState(null,'', displayUrl);
+    else history.pushState(null,'', displayUrl);
+  }
+  function buildShareUrl(state){
+    const p = new URLSearchParams();
+    if(state.q) p.set('q', state.q);
+    if(state.cls) p.set('class', state.cls);
+    if(state.subject) p.set('subject', state.subject);
+    return location.pathname + (p.toString() ? '?' + p.toString() : '');
+  }
+
+  // ——— Clean data interface — backend-agnostic ———
+  // Each result: { title, description?, excerpt?, class, subject, chapter?, type, typeLabel?, url }
+  // type examples: chapter | note | solution | example | formulae | pyq | mock-test | question | reference
+  // url must be the permanent/canonical page (e.g. /class-10/mathematics/real-numbers/ncert-solutions)
+  // Do NOT invent metadata beyond what architecture already supports.
+  const DefaultProvider = {
+    async search({q, cls, subject}){
+      // TEMPLATE STUB — no fake backend. Real implementation replaces this.
+      // Simulate async latency so loading state is visible, then return empty.
+      await new Promise(r=>setTimeout(r, 280));
+      // To demo error state, add ?q=__error__ in manual testing — not user-facing fake data.
+      if(q === '__error__') throw new Error('Simulated search failure');
+      return { results: [], total: 0 };
+    }
+  };
+  // Allow later injection: window.ContinuaSearchProvider = { search: async (params) => {...} }
+  function getProvider(){
+    return (window.ContinuaSearchProvider && typeof window.ContinuaSearchProvider.search === 'function')
+      ? window.ContinuaSearchProvider
+      : DefaultProvider;
+  }
+  // Expose for extensibility
+  window.ContinuaSearch = {
+    setProvider(provider){ window.ContinuaSearchProvider = provider; },
+    // Exposed so future search system can upgrade without redesigning page
+    renderResults,
+    readState
+  };
+
+  // ——— Render helpers ———
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+  }
+  function getTypeBadge(type){
+    const map = {
+      'chapter':'Chapter','note':'Note','solution':'NCERT Solutions','ncert-solutions':'NCERT Solutions',
+      'example':'Example','examples':'Chapter Examples','formulae':'Formulae','pyq':'PYQ','mock-test':'Mock Test','mock-tests':'Mock Tests',
+      'question':'Question','reference':'Reference','default': type ? type.replace(/[-_]/g,' ').replace(/\b\w/g,c=>c.toUpperCase()) : 'Resource'
+    };
+    return map[type] || map['default'];
+  }
+  function getIconForType(type){
+    // reuse single book icon — keep visual family, avoid per-type illustration sprawl
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>';
+  }
+
+  function renderActiveFilters(state){
+    const pills = [];
+    if(state.cls) pills.push('<span class="active-filter-pill">Class ' + escapeHtml(state.cls) + ' <button type="button" data-clear="class" aria-label="Remove class filter">×</button></span>');
+    if(state.subject) {
+      const label = state.subject.charAt(0).toUpperCase()+state.subject.slice(1);
+      pills.push('<span class="active-filter-pill">' + escapeHtml(label) + ' <button type="button" data-clear="subject" aria-label="Remove subject filter">×</button></span>');
+    }
+    if(pills.length){
+      els.active.innerHTML = pills.join('') + ' <button type="button" class="clear-all" data-clear="all">Clear filters</button>';
+      els.active.querySelectorAll('[data-clear]').forEach(b=>{
+        b.addEventListener('click', ()=>{
+          const k = b.getAttribute('data-clear');
+          const next = {...state};
+          if(k==='all'){ next.cls=''; next.subject='';}
+          else if(k==='class') next.cls='';
+          else if(k==='subject') next.subject='';
+          syncForm(next);
+          writeState(next,false);
+          doSearch(next);
+        });
+      });
+    } else {
+      els.active.innerHTML = '';
+    }
+  }
+
+  function renderSkeletons(){
+    els.meta.textContent = '';
+    els.meta.setAttribute('aria-busy','true');
+    let h = '';
+    for(let i=0;i<3;i++){
+      h += '<div class="skeleton-item" aria-hidden="true"><div class="skeleton-icon skeleton skeleton-block"></div><div class="skeleton-lines"><div class="skeleton-line w85 skeleton skeleton-block"></div><div class="skeleton-line w60 skeleton skeleton-block"></div><div class="skeleton-meta skeleton skeleton-block"></div></div></div>';
+    }
+    els.container.innerHTML = '<div class="skeleton" aria-label="Loading results">' + h + '</div>';
+    els.section.setAttribute('aria-busy','true');
+  }
+
+  function renderEmptyInitial(){
+    els.meta.textContent = '';
+    els.container.innerHTML =
+      '<div class="state-box">' +
+        '<div class="state-kicker">Search</div>' +
+        '<h2 class="state-title">Search Continua</h2>' +
+        '<p class="state-desc">Enter a topic, chapter, or question above to find notes, solutions, formulae, PYQs, mock tests and other study material.</p>' +
+        '<p class="state-desc" style="font-size:0.86rem;color:var(--color-text-muted)">Try “quadratic equations”, “real numbers”, or “photosynthesis”. Combine with Class and Subject filters to narrow results.</p>' +
+        '<div class="state-actions" style="margin-top:1.1rem"><a href="resources/navigate.html?resource=ncert-solutions" class="btn-ghost">Browse by Resource</a><a href="index.html" class="btn-ghost">Browse Classes</a></div>' +
+      '</div>';
+  }
+
+  function renderNoResults(state){
+    const qLabel = state.q ? '“' + escapeHtml(state.q) + '”' : 'your search';
+    const hasFilters = !!(state.cls || state.subject);
+    els.meta.innerHTML = 'No results for <em>' + escapeHtml(qLabel) + '</em>' + (hasFilters ? ' with current filters' : '');
+    let actions = '';
+    if(hasFilters){
+      actions += '<button type="button" class="suggest-chip" data-action="clear-filters">Remove filters</button>';
+      if(state.cls) actions += '<button type="button" class="suggest-chip" data-action="all-classes">Search across all classes</button>';
+      if(state.subject) actions += '<button type="button" class="suggest-chip" data-action="all-subjects">Search across all subjects</button>';
+    }
+    actions += '<button type="button" class="suggest-chip" data-action="edit-query">Try a different search</button>';
+    els.container.innerHTML =
+      '<div class="state-box">' +
+        '<div class="state-kicker">No results</div>' +
+        '<h2 class="state-title">No results found</h2>' +
+        '<p class="state-desc">We couldn’t find anything matching ' + escapeHtml(qLabel) + (hasFilters ? ' with the selected filters.' : '.') + '</p>' +
+        (state.q ? '<div class="state-query">Searched for <em>' + escapeHtml(qLabel) + '</em>' + (state.cls ? ' · Class ' + escapeHtml(state.cls) : '') + (state.subject ? ' · ' + escapeHtml(state.subject) : '') + '</div>' : '') +
+        '<p class="state-desc" style="font-size:0.85rem">Suggestions:</p>' +
+        '<div class="suggest-row">' + actions + '</div>' +
+        '<div class="state-actions"><a href="index.html" class="btn-ghost">Browse Classes</a><a href="resources/navigate.html?resource=ncert-solutions" class="btn-ghost">Browse by Resource</a></div>' +
+      '</div>';
+
+    els.container.querySelectorAll('[data-action]').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        const a = b.getAttribute('data-action');
+        if(a==='clear-filters'){ const n={...state, cls:'', subject:''}; syncForm(n); writeState(n,false); doSearch(n); }
+        else if(a==='all-classes'){ const n={...state, cls:''}; syncForm(n); writeState(n,false); doSearch(n); }
+        else if(a==='all-subjects'){ const n={...state, subject:''}; syncForm(n); writeState(n,false); doSearch(n); }
+        else if(a==='edit-query'){ els.input.focus(); els.input.select(); }
+      });
+    });
+  }
+
+  function renderError(state, err){
+    els.meta.textContent = '';
+    els.container.innerHTML =
+      '<div class="error-box" role="alert">' +
+        '<div class="error-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></div>' +
+        '<div class="error-body"><div class="error-title">Something went wrong</div><p class="error-desc">We couldn’t complete your search' + (state.q ? ' for “' + escapeHtml(state.q) + '”' : '') + '. Please check your connection and try again.</p><div style="display:flex;gap:0.6rem;flex-wrap:wrap"><button type="button" class="btn-primary" id="retryBtn">Retry</button><button type="button" class="btn-ghost" id="clearSearchBtn">Clear search</button></div></div>' +
+      '</div>';
+    document.getElementById('retryBtn').addEventListener('click', ()=> doSearch(state));
+    document.getElementById('clearSearchBtn').addEventListener('click', ()=>{
+      const n={q:'', cls:'', subject:''}; syncForm(n); writeState(n,false); renderEmptyInitial(); els.meta.textContent=''; els.input.focus();
+    });
+    console.warn('Search error', err);
+  }
+
+  function renderResults(state, data){
+    const total = typeof data.total === 'number' ? data.total : data.results.length;
+    const qLabel = state.q ? '“' + escapeHtml(state.q) + '”' : '';
+    const filterPart = [ state.cls ? 'Class ' + escapeHtml(state.cls) : null, state.subject ? escapeHtml(state.subject) : null ].filter(Boolean).join(' · ');
+    els.meta.innerHTML = '<strong>' + total + '</strong> result' + (total!==1 ? 's' : '') + (state.q ? ' for ' + escapeHtml(qLabel) : '') + (filterPart ? ' in ' + escapeHtml(filterPart) : '');
+
+    if(total===0){
+      renderNoResults(state);
+      return;
+    }
+
+    let html = '<div class="results-list" role="list">';
+    data.results.forEach(r=>{
+      const title = escapeHtml(r.title || 'Untitled');
+      const desc = r.description ? '<div class="result-desc">' + escapeHtml(r.description) + '</div>' : '';
+      const excerpt = r.excerpt ? '<div class="result-excerpt">' + r.excerpt + '</div>' : ''; // excerpt may contain <mark> — allow if provider sanitizes; we escape by default unless it contains mark
+      // If excerpt contains <mark>, preserve it safely: escape then re-allow mark
+      let excerptHtml = '';
+      if(r.excerpt){
+        const safe = escapeHtml(r.excerpt).replace(/&lt;mark&gt;/g,'<mark>').replace(/&lt;\/mark&gt;/g,'</mark>');
+        excerptHtml = '<div class="result-excerpt">' + safe + '</div>';
+      }
+      const typeLabel = escapeHtml(r.typeLabel || getTypeBadge(r.type));
+      const clsLabel = r.class ? 'Class ' + escapeHtml(String(r.class)) : '';
+      const subjLabel = r.subject ? escapeHtml(String(r.subject).charAt(0).toUpperCase()+String(r.subject).slice(1)) : '';
+      const chapterLabel = r.chapter ? escapeHtml(r.chapter) : '';
+      const metaParts = [ clsLabel, subjLabel, chapterLabel ].filter(Boolean);
+      const metaHtml = metaParts.map((m,i)=> '<span>' + m + '</span>' + (i < metaParts.length-1 ? '<span class="result-meta-sep" aria-hidden="true"></span>' : '')).join('');
+      const url = r.url || '#';
+      html +=
+        '<a href="' + escapeHtml(url) + '" class="result-item" role="listitem">' +
+          '<span class="result-icon" aria-hidden="true">' + getIconForType(r.type) + '</span>' +
+          '<span class="result-body">' +
+            '<span class="result-title-row"><span class="result-title">' + title + '</span><span class="result-badge">' + typeLabel + '</span></span>' +
+            desc + excerptHtml +
+            '<span class="result-meta">' + metaHtml + '</span>' +
+          '</span>' +
+          '<span class="result-arrow" aria-hidden="true">→</span>' +
+        '</a>';
+    });
+    html += '</div>';
+    els.container.innerHTML = html;
+  }
+
+  function syncForm(state){
+    els.input.value = state.q || '';
+    els.classSel.value = state.cls || '';
+    els.subjectSel.value = state.subject || '';
+    els.clearBtn.classList.toggle('visible', !!(state.q && state.q.length));
+    renderActiveFilters(state);
+  }
+
+  let currentSearchId = 0;
+  async function doSearch(state){
+    syncForm(state);
+    // Empty query -> initial state, do not call provider
+    if(!state.q){
+      els.meta.textContent = '';
+      renderEmptyInitial();
+      els.section.setAttribute('aria-busy','false');
+      return;
+    }
+    renderSkeletons();
+    const thisId = ++currentSearchId;
+    const provider = getProvider();
+    try{
+      const data = await provider.search({q: state.q, class: state.cls, subject: state.subject});
+      if(thisId !== currentSearchId) return; // stale
+      els.section.setAttribute('aria-busy','false');
+      // Normalize: ensure results is array
+      const normalized = {
+        results: Array.isArray(data.results) ? data.results : [],
+        total: typeof data.total === 'number' ? data.total : (Array.isArray(data.results) ? data.results.length : 0)
+      };
+      renderResults(state, normalized);
+    } catch(err){
+      if(thisId !== currentSearchId) return;
+      els.section.setAttribute('aria-busy','false');
+      renderError(state, err);
+    }
+  }
+
+  // Init
+  function init(){
+    wireGlobalSearch();
+
+    const initial = readState();
+    syncForm(initial);
+
+    // Header search on this page should also route via this page's form
+    const headerInput = document.getElementById('headerSearchInput');
+    if(headerInput){
+      headerInput.addEventListener('keydown', e=>{
+        if(e.key==='Enter'){
+          e.preventDefault();
+          const q = headerInput.value.trim();
+          const cur = readState();
+          const next = {q, cls: cur.cls, subject: cur.subject};
+          writeState(next,false);
+          doSearch(next);
+          // move focus to main input for accessibility
+          els.input.focus();
+        }
+      });
+    }
+    const mobileInput = document.getElementById('mobileSearchInput');
+    if(mobileInput){
+      mobileInput.addEventListener('keydown', e=>{
+        if(e.key==='Enter'){
+          e.preventDefault();
+          const q = mobileInput.value.trim();
+          const cur = readState();
+          const next = {q, cls: cur.cls, subject: cur.subject};
+          writeState(next,false);
+          doSearch(next);
+          els.input.focus();
+        }
+      });
+    }
+
+    els.form.addEventListener('submit', e=>{
+      e.preventDefault();
+      const state = {
+        q: els.input.value.trim(),
+        cls: els.classSel.value.trim(),
+        subject: els.subjectSel.value.trim().toLowerCase()
+      };
+      writeState(state,false);
+      doSearch(state);
+    });
+    els.classSel.addEventListener('change', ()=>{
+      const state = { q: els.input.value.trim(), cls: els.classSel.value.trim(), subject: els.subjectSel.value.trim().toLowerCase() };
+      // Only auto-search if a query exists; otherwise just update URL quietly
+      if(state.q){
+        writeState(state,false);
+        doSearch(state);
+      } else {
+        writeState(state,true);
+        renderActiveFilters(state);
+      }
+    });
+    els.subjectSel.addEventListener('change', ()=>{
+      const state = { q: els.input.value.trim(), cls: els.classSel.value.trim(), subject: els.subjectSel.value.trim().toLowerCase() };
+      if(state.q){
+        writeState(state,false);
+        doSearch(state);
+      } else {
+        writeState(state,true);
+        renderActiveFilters(state);
+      }
+    });
+    els.clearBtn.addEventListener('click', ()=>{
+      const cur = readState();
+      const next = {q:'', cls: cur.cls, subject: cur.subject};
+      syncForm(next);
+      writeState(next,false);
+      doSearch(next);
+      els.input.focus();
+    });
+    els.input.addEventListener('input', ()=>{
+      els.clearBtn.classList.toggle('visible', !!els.input.value.trim().length);
+    });
+
+    window.addEventListener('popstate', ()=>{
+      const s = readState();
+      syncForm(s);
+      doSearch(s);
+    });
+
+    // Mobile hamburger
+    const btn=document.getElementById('mobileMenuBtn');
+    const nav=document.getElementById('mobileNav');
+    if(btn&&nav){
+      btn.addEventListener('click',()=>{
+        const o=nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded',o);
+        nav.setAttribute('aria-hidden',!o);
+      });
+    }
+
+    // First render based on URL
+    if(!initial.q){
+      // No query -> show empty state, but preserve filters in UI if present
+      renderEmptyInitial();
+      renderActiveFilters(initial);
+    } else {
+      doSearch(initial);
+    }
+  }
+
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+  </script>
+</body>
+</html>

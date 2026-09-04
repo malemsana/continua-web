@@ -1199,7 +1199,37 @@
         });
       }
 
-      // 3. Mobile Hamburger Menu Toggle
+        // 3. Global search -> Search Results Page (authoritative)
+      function navigateToSearch(q){
+        const trimmed = (q||'').trim();
+        location.href = 'search.html?q=' + encodeURIComponent(trimmed);
+      }
+      const heroForm = document.querySelector('.hero-search-form');
+      if(heroForm && heroSearchInput){
+        heroForm.addEventListener('submit', e=>{
+          e.preventDefault();
+          navigateToSearch(heroSearchInput.value);
+        });
+      }
+      if(headerSearchInput){
+        headerSearchInput.addEventListener('keydown', e=>{
+          if(e.key==='Enter'){
+            e.preventDefault();
+            navigateToSearch(headerSearchInput.value);
+          }
+        });
+      }
+      const mobileSearchInput = document.getElementById('mobileSearchInput');
+      if(mobileSearchInput){
+        mobileSearchInput.addEventListener('keydown', e=>{
+          if(e.key==='Enter'){
+            e.preventDefault();
+            navigateToSearch(mobileSearchInput.value);
+          }
+        });
+      }
+
+        // 4. Mobile Hamburger Menu Toggle
       const mobileMenuBtn = document.getElementById('mobileMenuBtn');
       const mobileNav = document.getElementById('mobileNav');
 
